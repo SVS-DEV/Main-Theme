@@ -1,0 +1,74 @@
+{% if search.performed %}
+{% paginate search.results by settings.pagination_limit %}
+
+  {% if search.terms == "" %}
+  <section class="search__content">
+  <div class="wrap">
+        <form class="form search" action="/search">
+          <input type="text" name="q" class="search_box" placeholder="Search SVS" value="">
+        </form>
+    </div>
+  </section>
+  {% else %}
+  
+  {% if search.results == empty %}
+  <section class="search__header">
+    <div class="wrap">
+      <h2><span>No Results</span> Found</h2>
+    </div>
+  </section>
+  <section class="search__content">
+  <div class="wrap">
+      <span class="search__note">{{ 'general.search.no_results_html' | t: search: search.terms }}</span>
+      <form class="form" action="/search">
+          <input type="text" name="q" class="search_box" placeholder="Search SVS" value="">
+      </form>
+    </div>
+  </section>
+  {% else %}
+  
+  <section class="search__header">
+    <div class="wrap">
+      <h2><span>Search</span> Results for &ldquo;<span>{{ search.terms }}</span>&rdquo;</h2>
+    </div>
+  </section>
+  
+  <section class="collection grid">
+
+  <div class="wrap">
+  <!-- Begin results -->
+  {% assign specs_setting = false %}
+  {% assign button_text = "Learn More" %}
+  {% assign coll = "" %}
+  {% for product in search.results %}
+    {% include 'product-loop' with coll, specs: specs_setting, button_text: button_text %}
+  {% endfor %}
+  <!-- End results -->
+  </div>
+  </section>
+  <section class="search__footer">
+    <div class="wrap">
+  		{% include 'pagination' %}
+    </div>
+  </section>
+
+  {% endif %}
+  {% endif %}
+
+  {% endpaginate %}
+  
+  {% else %}
+
+  <section class="search__header">
+    <div class="wrap">
+      <h2><span>Search</span> SVS</h2>
+    </div>
+  </section>
+  <section class="search__content">
+    <div class="wrap">
+      <form class="form search" action="/search">
+        <input type="text" name="q" class="search_box" placeholder="Search SVS" value="">
+      </form>
+    </div>
+  </section>
+{% endif %}

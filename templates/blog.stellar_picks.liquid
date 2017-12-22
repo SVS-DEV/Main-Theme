@@ -1,0 +1,172 @@
+<style>
+  .col-md-4 {
+
+
+    padding-top:25px;
+    border-top:solid 1px #e5e5e5;
+  }
+  .col-md-4:last-child {
+    border-bottom:none;
+  }
+  .newsletter_handle {
+    margin-bottom:10px;
+  }
+  p {
+    margin-bottom:15px;
+  }
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 23px;
+    font-size: 36px;
+    max-width: 80%;
+    line-height: 1.1;
+  }
+  h4 {
+    font-weight: 300;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #e5e5e5;
+  }
+  h6 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  a {
+    color:#ff4500;
+    text-decoration:none;
+  }
+  .left-col {
+    border-right:1px solid #e5e5e5;
+    padding-left:0px;
+  }
+  .right-col {
+    padding-right:0px;
+  }
+  .stellarscreenshot {
+    max-width:100%;
+    margin-bottom:10px;
+  }
+  .stellarauthorimg {
+    max-width:100%;
+    margin-bottom:10px;
+  }
+  .sidebar-promo {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+  }
+  .container-fluid {
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .row {
+    margin-left:0px;
+    margin-right:0px;
+  }
+  @media only screen and (max-width: 1200px){
+    .left-col {
+      border-right:none;
+      padding-right:0px;
+    }
+  }
+  @media only screen and (min-width: 992px){
+    .left-col div div:nth-child(3n+1){
+      clear:left;
+    }
+  }
+  
+  @media only screen and (max-width: 991px) and (min-width: 768px){
+    .left-col div div:nth-child(2n+1){
+      clear:left;
+    }
+  }
+  @media only screen and (max-width: 767px){
+    .col-md-4 {
+      padding-left:0px;
+      padding-right:0px;
+      
+    }
+    .stellarscreenshot {
+      width:100%
+    }
+  }
+</style>
+
+<section>
+  <div class="wrap">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-9 left-col">
+          <h1>{{ blog.title }}</h1>
+          <p>At SVS, we take our passion for immersive audio experiences home with us. Each month, one of our team members shares a “Staff Demo Worthy Pick” for the SVS newsletter by choosing a favorite movie, album, video game or other piece of content that embodies why we love what we do.</p>
+          <div class="container-fluid">
+            <div class="row">
+            {% for article in blog.articles %}
+            <div class="col-md-4 col-sm-6 col-xs-12" data-match-height="article">
+              <h2 class="newsletter_handle" data-match-height="title">{{ article.title }}</h2>
+              <img class="stellarscreenshot" src="{{ article.metafields.global.content_screenshot }}">
+              <p class="newsletter_description" data-match-height="description">{{ article.metafields.global.content_description }}</p>
+              <img class="stellarauthorimg" src="{{ article.metafields.global.author_image }}">
+              <p class="stellarauthor" data-match-height="author">{{ article.metafields.global.author }}</p>
+            </div>
+          {% endfor %}
+          </div>
+          </div>
+          <div class="community-promo">
+            <h3>Continue the Discussion, Join the SVS Community</h3>
+            <p>See what other owners are up to. Share your own system. Talk about setup tips &amp; tricks and stay up to date on the latest from SVS on our Facebook community page.</p>
+            <a href="https://www.facebook.com/SVSound" class="learn-more">Get Connected Now</a>
+          </div>
+        </div>
+        <div class="col-lg-3 right-col">
+          <div class="help-promos">
+            <h4>Need a Hand?</h4>
+            <div class="sidebar-promo">
+              <h6>SVS Faqs</h6>
+              <p>Learn more about choosing the right gear and setting up the perfect system with our frequently asked questions from our audio experts.</p>
+              <a href="{{ shop.url }}/pages/faqs" class="learn-more">Read Now</a>
+            </div>
+            <div class="sidebar-promo">
+              <h6>Expert Tech Support</h6>
+              <p>From your first setup to fine tuning the details, your SVS product is backed by lifetime technical support by our team of audio experts. Whether it’s a question about our products or the AVR they’re connected to, we are here to help.</p>
+              <p>Call: 877.626.5623 | <a data-remodal-target="contact__modal">Email</a> | <a href="#" onclick="OpenLHNChat();return false;">Live Chat</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

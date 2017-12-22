@@ -1,0 +1,71 @@
+
+{% capture collection_handle %}{{ product-loop | handleize }}{% endcapture %}
+{% capture url %}{% if collection_handle != "" %}/collections/{{ product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
+
+
+<div class="product col-1-3">
+  <a class="product__link" href="{{ url }}" onclick="ga('send', 'event', 'Collection', 'Click', 'Image/Title Link - {{ product.title }}');">
+      {{product.metafields.additionalphoto.perspective}}
+    <h3 class="product__handle">{{ product.title }}</h3>
+  </a>
+  <div class="product__price-ratings">
+    {% assign yotpoid = product.metafields.global.reviewid %}
+    {% if yotpoid == blank %}
+    	{% assign yotpoid = 0 %}
+    {% endif %}
+    <a href="{{ product.url }}" onclick="ga('send', 'event', 'Collection', 'Click', 'Review Stars Link - {{ product.title }}');">
+    <div class="ratings">
+      <div class="yotpo bottomLine"
+           data-appkey="HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs"
+           data-domain="{{ shop.permanent_domain | escape }}"
+           data-product-id="{{ yotpoid }}"
+           data-product-models="{{ yotpoid }}"
+           data-name="{{ product.title | escape }}"
+           data-url="{{ page.url }}"
+           data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+           data-description="{{ product.description | escape }}"
+           data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+      </div>
+    </div>
+    </a>
+    
+    <h4 class="price hideRU">{% if product.compare_at_price > 0 %}<span class="oldprice">{{ product.compare_at_price | money }}</span>{% endif %}{% unless product.title contains 'Plus' or product.title contains 'Ultra' or product.title contains 'NSD' or product.title == "PB-2000" %}From {% endunless %}{% if product.title contains 'NSD'%}<sup>$</sup><span class="pricebefore" style="text-decoration:line-through;color:red;margin-right:10px">{{ product.compare_at_price | money_without_currency }}</span>{% endif %}<sup>$</sup><strong>{{ product.price | money_without_currency }}</strong></h4>
+    
+
+    
+  </div>
+
+  <div class="product__description" data-match-height="grid-descrip">
+    <p>
+      {% if product.type contains "Subwoofer Outlet" or product.type contains "Speaker Outlet" or product.type contains "Accessory Outlet" %}
+{{ product.description }}
+{% else %}
+{{ product.metafields.global.list_view_copy }}
+{%  endif %}
+    </p>
+  </div>
+  <div class="buyshopcont cf">
+  <a href="{{ url }}" class="svs-learn" onclick= "ga('send', 'event', 'Collection', 'Click', 'Learn More - {{ product.title }}');">{% if button_text != nil %}{{ button_text }}{% else %}Learn More{% endif %}</a> 
+      {% unless product.title == "PB12-NSD" or product.title == "SB12-NSD" %}
+    <form method="post" name="addtocart" action="/cart/add" class="hideRU">
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        <a href='#' class="svs-buy {% if product.type contains "Subwoofer" or product.type contains "Speaker" %}cart-addon{%  endif %}" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; " data-product-id="{{ product.id }}" data-product-variant-id="{{ product.variants.first.id }}" data-product-title="{{ product.title }}" data-product-type="{{product.type}}">Add to Cart</a>
+      
+      {% if product.title == "PC-4000"%}<p style="color: red;font-size:14px;margin-top:10px">Pre-order now, PC-4000 starts shipping January 15.</p>{% endif %}
+      {% if product.title == "PB-4000"%}<p style="color: red;font-size:14px;margin-top:10px">Black Ash shipping now, Piano gloss will resume shipping December 29th.</p>{% endif %}
+  </form>
+    {% endunless %}
+    <a class="showRU svs-buy" href="https://www.svsound.com/pages/international-dealers" target="_blank">Find a Dealer</a>
+  </div>
+  <div class="wk_product_comparison"> <input class="wk_product_id" type="hidden" value="{{product.id}}"></div> 
+  {% if specs == true %}
+  <hr>
+  <div class="product__quick-specs">
+      <div class="product__specs">
+          <ul>
+              {{ product.metafields.global.quick_specs }}
+          </ul>
+      </div>
+  </div>
+  {% endif %}
+</div>

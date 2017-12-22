@@ -1,0 +1,113 @@
+<style>
+.merlinfooter h4 {
+	font-size:24px;
+	font-weight:800;
+	line-height:1;
+	margin-bottom:10px;
+}
+.merlinfooter p {
+	font-size:16px;
+	font-family:'Open Sans',arial;
+}
+.merlinfooter a {
+	color:#ff4500;
+	font-size:16px;
+	font-family:'Open Sans',arial;
+}
+.merlinfooter ul {
+	margin-top:15px;
+}
+.merlinfooter ul li {
+	list-style:none;
+	padding-left:20px
+}
+.merlinfooter ul li:before {
+	content:'\f101';
+	font-family:FontAwesome;
+	font-style:normal;
+	font-weight:normal;
+	font-size:16px;
+	text-decoration:inherit;
+	color:#ff4500;
+	padding-right:5px;
+	margin-left:-18px;
+}
+.merlinfooter .col-1-4 img {
+	max-width:100%;
+}
+@media screen and (max-width: 1132px) and (min-width: 792px){
+.merlinfooter .col-1-2.cs {
+	width: 100%;
+	margin-top: 35px;
+}
+.merlinfooter .col-1-2.bor {
+    width: 100%;
+}
+}
+@media screen and (max-width: 791px) and (min-width: 500px) {
+.merlinfooter .col-1-2.cs {
+    width: 100%;
+    margin-top: 35px;
+}
+.merlinfooter .col-1-2.bor {
+    width: 100%;
+}
+}
+@media screen and (max-width: 499px) {
+.merlinfooter .col-1-2.cs {
+    width: 100%;
+    margin-top: 35px;
+}
+.merlinfooter .col-1-2.bor {
+    width: 100%;
+}
+}
+</style>
+{% if page.title contains 'Merlin' %}
+
+	{% assign title = '' %}
+{% else %}
+	{% assign title = page.title %}
+{% endif %}
+<section>
+<div class="wrap">
+  
+  <div class="span12 details">
+    <h1 class="p25">{{ title }}</h1>
+    {{ page.content }}
+  </div>
+  
+</div>
+  <!--
+</section>
+<section class="bg-grey merlinfooter">
+<div class="wrap">
+<div class="grid-2">
+<div class="col-1-2 bor">
+<div class="col-1-4"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/sub-cat-45.png?13717502591290617984"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/sub-cat-5yr.png?13717502591290617984"></div>
+<div class="col-3-4">
+<h4>SVS Customer Bill of Rights</h4>
+<p>We understand the best place to demo speakers is in your own home, with your personal system. We also want you to feel confident choosing SVS. For these reasons, we’ve created the industry’s most comprehensive benefits package, which makes it easy, risk-free and rewarding to be a lifelong listener or a tire kicker. Some of these rights include:</p>
+<ul>
+<li><a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 1 - 45 Day Trial');"> <strong> 45 Day Risk-Free In-Home Trial, Fast &amp; Free Shipping and Returns </strong> </a></li>
+<li><a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 2 - 5 Year Warranty');"> <strong> 5-Year Unconditional Warranty </strong> </a></li>
+<li><a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 3 - 60 Day Price Protection');"> 60-Day Guaranteed Price Protection </a></li>
+<li><a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 4 - Sound Expert Advice');"> Pre &amp; Post-Purchase SVS Sound Experts Advice and Support </a></li>
+<li><a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 7 - Review Full Bill of Rights');"> Review Full SVS Customer Bill of Rights </a></li>
+</ul>
+</div>
+</div>
+<div class="col-1-2 cs">
+<div class="cf">
+<div class="col-1-4"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/sub-cat-lifetime.png?13717502591290617984"/></div>
+<div class="col-3-4">
+<h4>Lifetime SVS Sound Experts Support</h4>
+<p>Need help choosing the right speaker for a home theater or two-channel system? Have questions about Dolby Atmos, AV receiver settings or the SVS Customer Bill of Rights?
+Our Sound Experts are knowledgeable on all AV-related topics and available seven days a week via chat, phone or email to assist with any questions.</p>
+<p>(877) 626-5623 | <a href="mailto:custservice@svsound.com" onclick="ga('send', 'event', 'Speaker Category Page', 'Click', 'Customer Service Email Link');">custservice@svsound.com</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>-->

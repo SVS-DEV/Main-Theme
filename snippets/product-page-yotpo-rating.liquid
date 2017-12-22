@@ -1,0 +1,19 @@
+{% assign yotpoid = product.metafields.global.reviewid %}
+            {% if yotpoid == blank %}
+                {% assign yotpoid = 1111 %}
+            {% endif %}
+<div class="yotpo bottomLine"
+     data-appkey="HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs"
+     data-product-id="{{ yotpoid }}"
+     data-product-models="{{ yotpoid }}"
+     data-name="{{ product.title | escape }}"
+     data-url="http://www.svsound.com{{ product.url }}"
+     data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+     data-description="{{ product.description | escape }}"
+     data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+  <div class="ratingsnippet">
+    <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> based on
+    <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews
+  </div>
+</div>
+<div class="write-review">or <a href="#ownerreviews" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Write a Review');">Write a review</a></div>

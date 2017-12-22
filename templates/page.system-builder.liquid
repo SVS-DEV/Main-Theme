@@ -1,0 +1,104 @@
+<div style="display:none">Jeeves</div>
+<section>
+<div class="wrap">
+
+    <div class="jeeves-intro">
+        <img src="{{ 'jeeves-logo-final2.png' | asset_url }}">
+        <p>
+            Jeeves is your personal SVS home audio speaker and subwoofer system builder. Choose from pre-selected systems or custom build your own by selecting any combination of SVS speakers and subwoofers.
+        </p>
+        <p>
+            <strong>IMPORTANT:</strong> SVS Prime Series speakers are sonically voiced to match the Ultra speakers, so you can seamlessly mix any products between the two lines, and any SVS subwoofer, to create your perfect home audio system.
+        </p>
+    </div>
+
+  <div class="span12 details">
+    <h1 class="p25"></h1>
+    {{ page.content }}
+  </div>
+
+</div>
+</section>
+<!--
+<section class="jeeves-bor-exp">
+    <div class="wrap">
+        <div class="grid-2">
+            <div class="col-1-2">
+                <h3> SVS Customer Bill of Rights </h3>
+                <p class="intro-text"> The SVS Customer Bill of Rights is  a comprehensive benefits package that starts long before and extends long after your SVS audio gear arrives. </p>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <img src="{{ 'jeeves-bor-warranty.png' | asset_url }}">
+                    <p class="bor-text"> 5-Year Unconditional Warranty </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <img src="{{ 'jeeves-bor-trial.png' | asset_url }}">
+                    <p class="bor-text"> 45-Day Risk-Free In-Home Trial. Fast & Free Shipping and Returns. </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <img src="{{ 'jeeves-bor-guar.png' | asset_url }}">
+                    <p class="bor-text"> 60-Day Guaranteed Price Protection </p>
+                  </div>
+                </div>
+              </div>
+              <a href="/pages/bill-of-rights" class="bor-link"> See all the entire SVS Customer Bill of Rights… </a>
+          </div>
+          <div class="col-1-2 exp-res">
+            <h3> Expert Resources </h3>
+            <p class="intro-text"> Here’s some helpful SVS resources to help you choose the best home audio gear to build your perfect system!   </p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6 ht-links">
+                  <img src="{{ 'jeeves-prime-system.jpg' | asset_url }}">
+                  <a href="/blogs/svs/how-to-build-the-ultimate-home-theater"> How to Build the Ultimate Home Theater </a>
+                  <a href="http://trending.svsound.com/content/choosing-between-bookshelf-and-tower-speakers"> Tower vs. Bookshelf Speaker Comparison  </a>
+                </div>
+                <div class="col-xs-6 sub-links">
+                  <img src="{{ 'jeeves-sub.jpg' | asset_url }}">
+                  <a href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater"> Choosing the Best Home Theater Subwoofer </a>
+                  <a href="/blogs/svs/75367747-sealed-vs-ported"> Sealed vs. Ported Subwoofers Comparison </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="jeeves-merlin-support">
+    <div class="wrap">
+        <div class="grid-2">
+
+            <div class="col-1-2 merlin">
+                <img src="{{ 'jeeves-merlin-logo.png' | asset_url }}">
+                <p data-mh="para-5">
+                    SVS has the perfect subwoofer for every speaker. Just select your speaker brand and model and Merlin will provide the best SVS subwoofer matches and exact settings for optimizing the output and performance.
+                </p>
+                <a href="/pages/merlin" class="cta"> Try Merlin </a>
+            </div>
+
+            <div class="col-1-2 support">
+                <div class="cf support-header">
+                    
+                    <h3> SVS Sound Experts Support </h3>
+                </div>
+                <p data-mh="para-5">
+                    SVS Sound Experts are experienced in all aspects of audio system set-up and trained to give advice for your specific needs. We take the time to ask about room diensions, existing AV gear, listening preferences and other things that are important when choosing the best speakers, subwoofers and audio equipment. Our Youngstown, OH based Sound Experts are available via phone (1.877.626.5623), <a href="/pages/customer-service#contact__modal">email</a> or <a href="/pages/customer-service">chat</a> seven days a week.
+                </p>
+                <a href="/pages/customer-service" class="cta"> Connect with SVS </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+-->
+<script>
+  var checkExist = setInterval(function() {
+   if ($('#svs-system').length) {
+       ga('send', 'event', 'SystemBuilder', 'Click', 'Jeeves Loaded',{'nonInteraction': 1});
+      clearInterval(checkExist);
+   }
+}, 100);
+</script>

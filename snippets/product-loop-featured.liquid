@@ -1,0 +1,56 @@
+
+
+
+<div class="product-featured">
+  <a data-match-height="title" class="product-featured__link" href="{{ product.url }}" onclick="ga('send', 'event', 'Featured Outlet', 'Click', 'Image/Title Link - {{ product.title }}');">
+      <img style="max-width:277px"src="{% if product.images.size >= 1%}{{ product.featured_image | product_img_url: 'large' }}{% else %}{{ 'no-image-logo.svg' | asset_url }}{% endif %}" alt="{{ product.title | escape  }}" />
+    <h3 class="product-featured__handle"><span>Featured - </span>{{ product.title }}</h3>
+  </a>
+  <div class="product-featured__price-ratings">
+    
+    <h4 class="price">{% if product.compare_at_price > 0 %}<span class="oldprice">{{ product.compare_at_price | money }}</span>{% endif %}     {{ product.price | money }}</h4>
+    
+
+    {% assign yotpoid = product.metafields.global.reviewid %}
+    {% if yotpoid == blank %}
+    	{% assign yotpoid = 0 %}
+    {% endif %}
+    <a href="{{ product.url }}" onclick="ga('send', 'event', 'Featured Outlet', 'Click', 'Review Stars Link - {{ product.title }}');">
+    <div class="ratings">
+      <div class="yotpo bottomLine"
+           data-appkey="HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs"
+           data-domain="{{ shop.permanent_domain | escape }}"
+           data-product-id="{{ yotpoid }}"
+           data-product-models="{{ yotpoid }}"
+           data-name="{{ product.title | escape }}"
+           data-url="{{ page.url }}"
+           data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+           data-description="{{ product.description | escape }}"
+           data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+      </div>
+    </div>
+    </a>
+  </div>
+
+  <div data-match-height="description" class="product-featured__description">
+    <p>
+      {% if product.title == "SB12-NSD" %}<strong>New – Factory Sealed: </strong>
+      Powerful enough to energize a space with deep, effortless bass yet compact enough to complement any room décor without taking over visually at the lowest price ever for a new SVS subwoofer.
+      {% else %}<strong>New – Factory Sealed: </strong>
+      {{ product.description }}
+      {% endif %}
+
+    </p>
+  </div>
+ 
+  <div class="buyshopcont cf">
+  <a href="{{ product.url }}" class="svs-learn" onclick= "ga('send', 'event', 'Featured Outlet', 'Click', 'Learn More - {{ product.title }}');">{% if button_text != nil %}{{ button_text }}{% else %}Learn More{% endif %}</a> 
+    {% unless product.title == "PB12-NSD" %}
+      <form method="post" name="addtocart" action="/cart/add">
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        <a href='#' class="svs-buy {% if product.type contains "Subwoofer" or product.type contains "Speaker" %}cart-addon{%  endif %}" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Featured Outlet', 'Click', 'Buy Now - {{ product.title }}'); return false; " data-product-id="{{ product.id }}" data-product-variant-id="{{ product.variants.first.id }}" data-product-title="{{ product.title }}" data-product-type="{{product.type}}">Add to Cart</a>
+  </form>
+    {% endunless %}
+  </div>
+  <div style="height:15px">&nbsp;</div>
+</div>

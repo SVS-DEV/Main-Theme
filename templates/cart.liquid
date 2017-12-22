@@ -1,0 +1,416 @@
+<img src="https://secure.adnxs.com/px?id=895517&value=[{{cart.total_price | money_without_currency | remove: ','}}]&t=2" width="1" height="1" />
+<style>
+.trust-icons {
+  text-align:right
+}
+  .trust-mobile {
+    display:none;
+  }
+  .trust-mobile .trust-icons {
+    text-align:center !important;
+  }
+  .cart .cart-continue {
+    max-width:240px;
+    margin-bottom:25px;
+    margin-top:25px
+  }
+  .cart .cart-continue:before {
+    font-family:FontAwesome;
+    content:"\f100";
+    margin-right: 10px;
+  }
+  .cart .cont-mobile {
+    text-align:center;
+    margin-bottom:15px;
+    color:#386cb0;
+    display:none;
+  }
+  .cart .cart_resources {
+    font-size: 14px;
+    padding: 25px;
+    color: white;
+    background-image: url(https://cdn.shopify.com/s/files/1/0921/3560/files/geometric-blue-bg.jpg?6425947084382110450);
+    background-position: 35% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .cart .sidebar-wrap {
+    font-size: 14px;
+    padding: 25px;
+    color: white;
+    background: #262626;
+  }
+  .cart .sidebar-wrap p a {
+    color:#eb1717;
+    text-decoration:none;
+  }
+  .cart .sidebar-wrap h3 {
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .cart .sidebar-wrap h3 img {
+    max-width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+  .cart .sidebar-wrap h3 img.moreheight {
+    max-width:94%
+  }
+  .cart .sidebar-wrap p {
+	font-size: 14px;
+    line-height: 20px
+  }
+  .cart .sidebar-wrap ul {
+    list-style: none;
+    margin-bottom: 12px
+  }
+
+  .cart .sidebar-wrap ul li {
+    padding-left: 12px;
+    font-style: italic;
+    margin-bottom: 5px
+  }
+  .cart .sidebar-wrap ul li:before {
+    font-family: FontAwesome;
+    content: "\f101";
+    margin-right: 5px;
+    margin-left: -12px
+  }
+  .cart .bor-img-wrap img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  @media only screen and (min-width: 990px) {
+    .cart .bor-img-wrap {
+      margin-bottom: 0; 
+    }
+  }
+  @media only screen and (max-width:  874px) {
+    .cart .sidebar-wrap {
+      display: none;
+    }
+    .cart .cont-mobile {
+      display:block;
+    }
+    .cart .cont-desktop {
+      display:none;
+    }
+    .cart .checkout-container {
+      width:100%
+    }
+    .trust-mobile {
+      display:block
+    }
+    .trust-desktop {
+      display:none;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .cart .col-sm-5 {
+      padding-left:0px !important;
+    }
+    .cart .amazon-payments-pay-button {
+      width:auto !important;
+    }
+  }
+</style>
+<section class="cart">
+  <div class="wrap">
+    <div id="cart">
+      <!-- Begin empty cart -->
+      {% if cart.item_count == 0 %}
+      <div class="row" style="text-align:center">
+        <div class="empty-cart">
+          <h1 style="">Your Shopping Cart is Currently Empty</h1>      
+        </div>
+        <div class="cart-links">
+          <p>Browse SVS speakers, subwoofers and audio accessories at the links below and explore other resources on the SVS site.</p> 
+          <div class="cart-links2"><a href="/pages/speakers" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Speakers Link');">Speakers</a> | <a href="/pages/subwoofers" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Subwoofers Link');">Subwoofers</a> | <a href="/collections/accessories" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Audio Accessories Link');">Audio Accessories</a> | <a href="/collections/outlet-specials" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Outlet Link');">Outlet</a> | <a href="/blogs/press-reviews" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Product Ratings &amp; Reviews');">Product Ratings &amp; Reviews</a> | <a href="/pages/newsletter" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Connect With SVS Link');">Sound Advice and Tips</a></div>
+          <p>Already own a pair of speakers?  Use <a href="/pages/merlin" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Merlin Link');">Merlin</a> to Find the perfect subwoofer for any Brand of speakers.</p>
+          <p>Looking to build a surround sound home theater?  Use <a href="/pages/system-builder" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Jeeves');">Jeeves</a>, the Speaker and Subwoofer System Builder.</p>
+          <p>Need help making the right choice? Contact the SVS Sound Experts: 877.626.5623 | <a data-remodal-target="contact__modal" onclick= "ga('send', 'event', 'Cart', 'Click', 'No items - Email Link');">EMAIL</a> | <a href="#" onclick="OpenLHNChat(); return false;ga('send', 'event', 'Cart', 'Click', 'No items - Live Chat Link');" >LIVE CHAT</a></p>
+        </div>
+      </div>
+      <!-- End empty cart -->
+      <!-- Begin cart -->
+      {% else %}
+      <div class="row">
+        <h1>Your Shopping Cart</h1>
+         <div class="container-fluid" style="margin-bottom:20px">
+          <div class="row">
+            <div class="col-md-9 tax" style="padding-right:50px;text-align:left">
+              Complete your order with our safe and secure online checkout. You can add special delivery instructions on this page in the box below.
+            </div>
+            <div class="col-md-3 trust trust-desktop">
+              <div class="trust-icons">
+        <a href="//www.shopify.com/pci-compliant/?utm_source=secure&amp;utm_medium=shop" title="This online store is secured by Shopify" target="_blank" onclick= "ga('send', 'event', 'Cart', 'Click', 'Secured by Shopify');"><img src="//cdn.shopify.com/s/images/badges/shopify-secure-badge-dark-shadow.png" alt="Shopify secure badge" /></a>
+                <a href="https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security" target="_blank" onclick= "ga('send', 'event', 'Cart', 'Click', 'Secured by Paypal');"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/trust_icon_secured-by-paypal.jpg?713966553671134308" style="max-height:44px;margin-left:10px"></a>
+      </div>
+            </div>
+          </div>
+        </div>
+        <form action="/cart" method="post" id="cartform">
+          <table>
+            <thead>
+              <tr>
+                <th class="image">{{ 'cart.label.product' | t }}</th>
+                <th class="item">&nbsp;</th>
+                <th class="qty">{{ 'cart.label.quantity' | t }}</th>
+                <th class="price">{{ 'cart.label.price' | t }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in cart.items %}
+              <tr>
+                <td class="image">
+                  <div class="product_image">
+                    <a href="{{ item.url }}">
+                      {% if item.product.metafields.bundle.role == 'bundled_product' and item.product.metafields.bundle.selection_type != 'radio' %} <img src="{{ item.image | product_img_url: 'small' }}" alt="{{ item.title | escape }}" /> {% else %} <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}" /> {% endif %}
+                    </a>
+                  </div>
+                </td>
+                <td class="item">
+                  <a href="{{ item.url }}">
+                    <strong>{{ item.product.title }}</strong>
+                    {% if item.product.variants.size > 1 %}
+                    <span class="variant_title">{{ item.variant.title }}</span>
+                    {% endif %}
+                  </a>
+                </td>
+                <td class="qty">
+                  <table>
+                    <tr>
+                      <td>
+                         
+                        {% if item.product.title contains "Outlet" %}
+                                  {% if item.product.variants.first.inventory_quantity == 1 %}
+                        <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="tc item-quantity" readonly style="color:#c9c9c9; border-color:#c9c9c9 !important" />
+          
+                                  {% elsif item.product.variants.first.inventory_quantity > 1 %}
+                                  <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="tc item-quantity" max="{{ item.product.variants.first.inventory_quantity }}" />
+                                  <script>
+                                    $('.item-quantity').on('keydown keyup', function(e){
+                                      if ($(this).val() > {{item.product.variants.first.inventory_quantity}} 
+                                          && e.keyCode != 46 // delete
+                                          && e.keyCode != 8 // backspace
+                                         ) {
+                                        e.preventDefault();
+                                        $(this).val({{item.product.variants.first.inventory_quantity}});
+                                      }
+                                    });
+                                  </script>
+                                  {% endif %}
+
+                                  {% else %}
+                        <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="tc item-quantity" max=""/>
+                                   
+                                  {% endif %}
+                      </td>
+                      <td style="text-align:left">
+                        <input type="submit" id="update-cart" class="btn update-cart" name="update" value="{{ 'cart.general.update' | t }}" onclick= "ga('send', 'event', 'Cart', 'Click', 'Update Quantity');" /><br />
+                        <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart" onclick= "ga('send', 'event', 'Cart', 'Click', 'Remove Product');">{{ 'cart.general.remove' | t }}</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td class="price">{{ item.line_price | money }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td colspan="4"><a href="/collections/all-products" class="cart-continue" onclick= "ga('send', 'event', 'Cart', 'Click', 'Continue Shopping');">Continue Shopping</a></td>
+              </tr>
+              <tr>
+                <td colspan="4" style="text-align:left;border-top:solid thin #e5e5e5;padding-top:20px">
+                  <div class="container-fluid sidebar-wrap">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="sidebar-bor-wrap">
+                          <h3 data-match-height="cart-sidebar-header"> <img src="//cdn.shopify.com/s/files/1/0921/3560/t/62/assets/bor-footer-logo.png?9668091507872987512"> </h3>
+                          <p>
+                            Benefits package that extends long before and after your products arrive and removes all doubt about purchasing from SVS.
+                          </p>
+                          <div class="col-md-12">
+                            <div class="bor-img-wrap">
+                              <div class="col-xs-4"><img src="{{ 'pp-bor-warranty-filled.png' | asset_url }}"></div>
+                              <div class="col-xs-4"><img src="{{ 'pp-bor-trial-filled.png' | asset_url }}"></div>
+                              <div class="col-xs-4"><img src="{{ 'pp-bor-guarantee-filled.png' | asset_url }}"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="support-sidebar-wrap">
+                          <h3 data-match-height="cart-sidebar-header"> <img src="//cdn.shopify.com/s/files/1/0921/3560/t/62/assets/sound-experts-footer-logo.png?9668091507872987512" class="moreheight"> </h3>
+                          <p>
+                            Ohio-based AV professionals provide customer support, product recommendations and set-up advice for every component in your system, 7 days a week, before and after you own SVS.
+                          </p>
+                          <p style="text-align:center">877.626.5623 | <a data-remodal-target="contact__modal" onclick="ga('send', 'event', 'Cart', 'Click', 'Email');" >EMAIL</a> | <a href="#" onclick="OpenLHNChat();return false;" class="sub-footer-cta"><span onclick="ga('send', 'event', 'Cart', 'Click', 'Chat');">LIVE CHAT</span></a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>   
+          <div class="total-box">
+            <h4>Review Your Order Summary</h4>
+            <span class="subtotal">Subtotal: <span>{{ cart.total_price | money }}</span></span>
+            <span class="shipping">Shipping: <span>Free!*</span></span>
+            <span class="tax">Tax: <span>Determined in Checkout**</span></span>
+            <span class="total">Total: <span><strong>{{ cart.total_price | money }}</strong></span></span>
+            <span class="discount-message" style="display:none;font-size: 11px;text-align: center;line-height: 18px;margin-top: 0px;font-style: italic;margin-top: 20px;    border-bottom: solid thin #d3d3d3;padding-bottom: 10px;margin-left: 15px;margin-right: 15px;"><strong style="display:block">The price shown reflects the original price of your system.</strong> Please proceed to "Check Out" for the system discount to be applied and to review details before completing your order.</span>
+            <span class="cartship hideRU"></span>
+            <span class="affirm" style="margin-top:10px"><a id="learn-more-affirm"  style="visibility:hidden" href="#" onclick= "ga('send', 'event', 'Affirm', 'Click', 'Cart Snippet');"></a></span>
+            <div class="special-instructions">
+              <div class="checkout-buttons">
+                <label for="note">SPECIAL ORDER &amp; DELIVERY INSTRUCTIONS</label>
+                <p style="font-size:11px;text-align:center;line-height:18px;margin-bottom:10px;margin-top:0px;font-style:italic">All deliveries require a signature, please note if you’d like waived. For added convenience, you can request a specific arrival date or provide additional delivery instructions (e.g. back porch, garage, etc.)</p>
+                <textarea id="note" name="note" rows="4" cols="50" maxlength="300">{{ cart.note }}</textarea>
+              </div>
+            </div>
+            <div class="span6 cart-buttons inner-right inner-left" style="width:100%;background-color:#fff">
+              <div class="container-fluid" style="padding:0px;margin-top:10px">
+                <div class="row" style="margin:0px">
+                  <div class="checkout-container" style="padding:0px;padding-left:5px">
+                    <button  id="checkout" class="cart-checkout col-sm-6" onclick= "ga('send', 'event', 'Cart', 'Click', 'Check Out');" name="checkout" value="" style="width:100%;max-width:100%" />{{ 'cart.general.checkout' | t }}<i class="fa fa-angle-double-right" aria-hidden="true" style="margin-left:10px;font-size:14px;font-weight:bold"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="" style="text-align:center; padding-bottom:20px;font-style:italic;font-size:14px">
+                - or choose another payment option -
+              </div>
+              {% if additional_checkout_buttons %}        
+              <div class="extra-checkout-buttons">
+                <center>
+                  {{ content_for_additional_checkout_buttons }}
+                </center>
+              </div>
+              {% endif %}
+            <div class="trust trust-mobile">
+              <div class="trust-icons">
+        <a href="//www.shopify.com/pci-compliant/?utm_source=secure&amp;utm_medium=shop" title="This online store is secured by Shopify" target="_blank" onclick= "ga('send', 'event', 'Cart', 'Click', 'Secured by Shopify');"><img src="//cdn.shopify.com/s/images/badges/shopify-secure-badge-dark-shadow.png" alt="Shopify secure badge" /></a>
+                <a href="https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security" target="_blank" onclick= "ga('send', 'event', 'Cart', 'Click', 'Secured by Paypal');"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/trust_icon_secured-by-paypal.jpg?713966553671134308" style="max-height:44px;margin-left:10px"></a>
+      </div>
+            </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="cart-disclaimers">
+        <p>*United States Only. Excludes Alaska and Hawaii.</p>
+        <p>** SVS charges sales tax in MD, MI, NJ, NY, OH, PA, RI, and TX — All prices are in US dollars (USD).</p>
+      </div>
+      {% endif %}
+      <!-- End cart -->   
+    </div> 
+  </div>
+</section>
+<!--{% include 'bill-of-rights' %}-->
+<script>
+  affirm.ui.ready( function() { updateAffirmAsLowAs( {{ cart.total_price }} ) } );
+  function updateAffirmAsLowAs( amount ){
+    // Only display as low as for items over $50 and less than $17500  
+    if ( ( amount == null ) || ( amount > 1750000 ) || (amount < 5000) ) { return; }
+    // Define payment estimate options
+    var options = {
+      apr: "0.10", // percentage assumed APR for loan
+      months: 12, // can be 3, 6, or 12
+      amount: amount // USD cents
+    }
+    function handleEstimateResponse (payment_estimate) {
+      var dollars = payment_estimate.payment_string;
+      var a = document.getElementById('learn-more-affirm');   
+      // Black logo
+      // var logo = '<img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzEuNjQgMTY2LjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzIzMWYyMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ290eXBlX2JsazwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjk4LjM5LTEuOTJBMTcuNTcsMTcuNTcsMCwxLDAsMzE2LDE1LjY1LDE3LjU5LDE3LjU5LDAsMCwwLDI5OC4zOS0xLjkyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxLjkyKSIvPjxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iMjgzLjMiIHk9IjQ2LjY4IiB3aWR0aD0iMjkuOTkiIGhlaWdodD0iMTE5LjMxIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDAzLjQ3LDQxLjY5Yy0xNSwwLTMyLjI1LDEwLjgtMzcuOTMsMjQuMzRWNDQuNzZIMzM3LjA5VjE2NC4wOGgzMFYxMDguNjdjMC0yMy40NSw5LTM2LjU0LDI4LjYxLTM2LjkxbDE2Ljc1LTI5LjM4QTY0LjE3LDY0LjE3LDAsMCwwLDQwMy40Nyw0MS42OVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMS45MikiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01MjQsNDEuNzdjLTEyLjg3LDAtMjQuNDEsNC44NC0zMi41LDEzLjYybC0wLjQyLjQ1LTAuNDEtLjQ1Yy04LTguNzgtMTkuNDgtMTMuNjItMzIuMzYtMTMuNjItMjcuNTgsMC00Ny42LDIwLjExLTQ3LjYsNDcuODF2NzQuNTNoMjkuNTJWODguOTRjMC0xMS42Myw3LjEtMTkuMTQsMTguMDgtMTkuMTRzMTguMDksNy41MSwxOC4wOSwxOS4xNHY3NS4xN0g1MDZWODguOTRjMC0xMS42Myw3LjEtMTkuMTQsMTguMDktMTkuMTRzMTguMDksNy41MSwxOC4wOSwxOS4xNHY3NS4xN2gyOS41MVY4OS41OEM1NzEuNjQsNjEuODgsNTUxLjYyLDQxLjc3LDUyNCw0MS43N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMS45MikiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNDcsMzMuNzdjMC0zLjk0LjUzLTguNjUsMy45LTExLjI0LDMuNjktMi44Nyw5LjA5LTIuMzQsMTMuNDYtMi4xMmw1LjgyLTIxLjcyLTMuMTEtLjE2Yy0xMi41Mi0uNjctMjUuNjktMS42LTM2LjY3LDUuNjYtOS4zMSw2LjE1LTEzLjQ1LDE2Ljc0LTEzLjQ1LDI3LjYxdjEzSDE4MS4xOHYtMTFjMC0zLjkyLjUyLTguNTgsMy44Mi0xMS4yLDMuNjktMi45Myw5LjE2LTIuMzgsMTMuNTMtMi4xNmw1LjgyLTIxLjcyLTMuMTEtLjE2Yy0xMi42Mi0uNjgtMjUuOTItMS42LTM2LjkxLDUuODYtOS4xMiw2LjE4LTEzLjE2LDE2LjY4LTEzLjE2LDI3LjQydjEzSDEzNy42NVY2Ni40NWgxMy41M3Y5Ny42M2gzMFY2Ni40NWgzNS43NnY5Ny42M2gzMFY2Ni40NWgyMC43N1Y0NC43NkgyNDd2LTExWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxLjkyKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyMi40MywxNjQuMDlsMC0xMDUuMzZhMTcuMzIsMTcuMzIsMCwwLDAtMTUuMzItMTdjLTUuNzMtLjM3LTExLjgyLDEuNzMtMTUuNDEsNi4zOEwwLDE2NC4wOEgyMi42YzksMCwxNi4xOC00LjY5LDIxLjYxLTExLjdMOTUsODguMTV2NzUuOTRoMjcuNDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDEuOTIpIi8+PC9zdmc+" style="height:1em; margin:0 .3em .15em;vertical-align:bottom;">';     
+      // Blue Logo
+      var logo = '<img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzEuNjQgMTY2LjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzJiYzJkZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ290eXBlX2JsdWU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI5OC4zOSwwQTE3LjU3LDE3LjU3LDAsMSwwLDMxNiwxNy41NywxNy41OSwxNy41OSwwLDAsMCwyOTguMzksMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiLz48cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjI4My4zIiB5PSI0Ni42OCIgd2lkdGg9IjI5Ljk5IiBoZWlnaHQ9IjExOS4zMSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQwMy40Nyw0My42MWMtMTUsMC0zMi4yNSwxMC44LTM3LjkzLDI0LjM0VjQ2LjY4SDMzNy4wOVYxNjZoMzBWMTEwLjU5YzAtMjMuNDUsOS0zNi41NCwyOC42MS0zNi45MUw0MTIuNDQsNDQuM0E2NC4xNyw2NC4xNywwLDAsMCw0MDMuNDcsNDMuNjFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTI0LDQzLjY5Yy0xMi44NywwLTI0LjQxLDQuODQtMzIuNSwxMy42MmwtMC40Mi40NS0wLjQxLS40NWMtOC04Ljc4LTE5LjQ4LTEzLjYyLTMyLjM2LTEzLjYyLTI3LjU4LDAtNDcuNiwyMC4xMS00Ny42LDQ3LjgxVjE2NmgyOS41MlY5MC44NmMwLTExLjYzLDcuMS0xOS4xNCwxOC4wOC0xOS4xNHMxOC4wOSw3LjUxLDE4LjA5LDE5LjE0VjE2Nkg1MDZWOTAuODZjMC0xMS42Myw3LjEtMTkuMTQsMTguMDktMTkuMTRzMTguMDksNy41MSwxOC4wOSwxOS4xNFYxNjZoMjkuNTFWOTEuNUM1NzEuNjQsNjMuOCw1NTEuNjIsNDMuNjksNTI0LDQzLjY5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0NywzNS42OWMwLTMuOTQuNTMtOC42NSwzLjktMTEuMjQsMy42OS0yLjg3LDkuMDktMi4zNCwxMy40Ni0yLjEybDUuODItMjEuNzItMy4xMS0uMTZjLTEyLjUyLS42Ny0yNS42OS0xLjYtMzYuNjcsNS42Ni05LjMxLDYuMTUtMTMuNDUsMTYuNzQtMTMuNDUsMjcuNjF2MTNIMTgxLjE4di0xMWMwLTMuOTIuNTItOC41OCwzLjgyLTExLjIsMy42OS0yLjkzLDkuMTYtMi4zOCwxMy41My0yLjE2bDUuODItMjEuNzItMy4xMS0uMTZjLTEyLjYyLS42OC0yNS45Mi0xLjYtMzYuOTEsNS44Ni05LjEyLDYuMTgtMTMuMTYsMTYuNjgtMTMuMTYsMjcuNDJ2MTNIMTM3LjY1VjY4LjM3aDEzLjUzVjE2NmgzMFY2OC4zN2gzNS43NlYxNjZoMzBWNjguMzdoMjAuNzdWNDYuNjhIMjQ3di0xMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjIuNDMsMTY2bDAtMTA1LjM2YTE3LjMyLDE3LjMyLDAsMCwwLTE1LjMyLTE3Yy01LjczLS4zNy0xMS44MiwxLjczLTE1LjQxLDYuMzhMMCwxNjZIMjIuNmM5LDAsMTYuMTgtNC42OSwyMS42MS0xMS43TDk1LDkwLjA3VjE2NmgyNy40NVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiLz48L3N2Zz4=" style="height:1em; margin:0 .3em .15em;vertical-align:bottom;">';
+      // Define the text surrounding the monthly payment price
+      var content = "Starting at $" + dollars + " a month with" + logo + "." + "<span> Learn More</span>";
+      a.innerHTML = content;
+      a.onclick = payment_estimate.open_modal;
+      a.style.visibility = "visible";
+    };
+    affirm.ui.payments.get_estimate(options, handleEstimateResponse);
+  }
+  var urlParams;
+  (window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+    urlParams = {};
+    while (match = search.exec(query))
+      urlParams[decode(match[1])] = decode(match[2]);
+  })(); 
+  var dc = (urlParams["dc"])? urlParams["dc"] : urlParams["discount"];
+  if(dc)
+    document.getElementById('cartform').action = "/cart?discount=" + dc;
+  
+  $( ".extra-checkout-buttons input").click(function(){
+    ga('send', 'event', 'Payment Method', 'Click', 'Cart - Paypal Clicked');
+  });
+  $( ".amazon-payments-pay-button").click(function(){
+    ga('send', 'event', 'Payment Method', 'Click', 'Cart - Amazon Clicked');
+  });
+  
+  if (window.location.href.indexOf("?dc=fe64077c-8314-414a-aca5-0f5f4099f4a4") > -1) {
+    jQuery('.discount-message').css("display","block")
+  }
+</script>
+{% assign num = 0 %}     
+{% for item in cart.items %}            
+    {% if item.product.type == "Subwoofer" or item.product.type == "Speaker" %}       
+         {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num = temp %}
+{% endfor %}
+{% assign new_num = num | plus: 0 %}
+{% if new_num >= 5 %}
+<script>
+  if (document.cookie.indexOf('systembuilder=')!= -1) {
+  if (window.location.href.indexOf("?dc=fe64077c-8314-414a-aca5-0f5f4099f4a4") != -1 ) {   
+  }
+  else{
+    ga('send', 'event', 'Cart', 'Click', 'System Builder - Auto Add DC to URL',{'nonInteraction': 1});
+    var url=window.location.href,
+    separator = (url.indexOf("?")===-1)?"?":"&",
+    newParam=separator + "dc=fe64077c-8314-414a-aca5-0f5f4099f4a4";
+    newUrl=url.replace(newParam,"");
+    newUrl+=newParam;
+    window.location.href =newUrl;
+  }
+  };
+</script>
+{% endif %}
+{% if new_num <= 4 %}
+<script>
+  if (document.cookie.indexOf('systembuilder=')!= -1) {
+  if (window.location.href.indexOf("?dc=fe64077c-8314-414a-aca5-0f5f4099f4a4") != -1 ) {
+    ga('send', 'event', 'Cart', 'Click', 'System Builder - Customer has less than 5 items now. Kill Cookie and Remove URL',{'nonInteraction': 1});
+    document.cookie = 'systembuilder' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    location.href=location.href.replace("?dc=fe64077c-8314-414a-aca5-0f5f4099f4a4", "");
+  }
+  else{
+    ga('send', 'event', 'Cart', 'Click', 'System Builder - Customer has less than 5 items now. Kill Cookie',{'nonInteraction': 1});
+    document.cookie = 'systembuilder' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+  }
+  };
+</script>
+{% endif %}
+<script>
+  var referrer =  document.referrer;
+  if (document.cookie.indexOf('systembuilder=')!= -1) {
+  }
+  else{
+  if (referrer == "https://www.svsound.com/pages/system-builder" && window.location.href.indexOf("?dc=fe64077c-8314-414a-aca5-0f5f4099f4a4") != -1 ){
+    document.cookie = "systembuilder=discount";
+    ga('send', 'event', 'Cart', 'Click', 'System Builder - Customer arrived from system builder with their system in cart. Create Cookie',{'nonInteraction': 1});
+    
+  }}
+</script>

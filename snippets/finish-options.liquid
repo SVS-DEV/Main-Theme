@@ -1,0 +1,188 @@
+<div class="finish-options">
+  {% if product.title == "SoundPath Ultra Speaker Cable" %}
+  <div class="optionsdropdown">
+    <!-- Option Value = Banana Variant ID, Spade Variant ID, Mix Variant ID -->
+    <span class="cableoptiontitle">Length:</span>
+    <select id="lengthselect" class="cableoptionselect" name="length" onchange="sendobject();">
+      <option value="11468152838,11468152902,11468152966" selected="selected">4 Feet</option>
+      <option value="11468153030,11468153094,11468153158">6 Feet</option>
+      <option value="11497537030,11497714758,11497790342">8 Feet</option>
+      <option value="11497546502,11497729030,11497793926">10 Feet</option>
+      <option value="11497551430,11497734598,11500171846">12 Feet</option>
+      <option value="11497559622,11497740102,11497794886">15 Feet</option>
+      <option value="11497573958,11497753222,11497800774">20 Feet</option>
+      <option value="11497580742,11497761478,11497803846">25 Feet</option>
+      <option value="11497590214,11497764742,11497807302">30 Feet</option>
+      <option value="11497596998,11497767878,11497812742">35 Feet</option>
+      <option value="11497604614,11497770374,11497837894">40 Feet</option>
+      <option value="11497626566,11497775430,11497844230">45 Feet</option>
+      <option value="11497636806,11497781062,11497919558">50 Feet</option>       
+    </select>
+    <span class="cableoptiontitle">Connector Options:</span>
+    <select id="terminalselect" class="cableoptionselect"  name="terminal" onchange="sendid();">
+      <option value="11468152838" selected="selected">Banana Connectors (2 pairs)</option>
+      <option value="11468152902">Spade Connectors (2 pairs)</option>
+      <option value="11468152966">Spade &amp; Banana Connectors (1 pair each)</option>
+    </select>
+  </div>
+  <div style="font-size:13px">
+    Need a Custom Length? <a data-remodal-target ="contact__modal" style="color:#e05819">Contact Our Sound Experts</a>
+  </div>
+  <script>
+    function sendobject(){
+      var ele = document.getElementById("lengthselect");
+      var selectedValue = ele.options[ele.selectedIndex].value;
+      var selectedvalueraw = document.getElementById('lengthselect').value;
+      var valuearray = selectedvalueraw.split(',');
+      document.getElementById('terminalselect')[0].value = valuearray[0];
+      document.getElementById('terminalselect')[1].value = valuearray[1];
+      document.getElementById('terminalselect')[2].value = valuearray[2];
+      document.getElementById('id').value = document.getElementById('terminalselect').value;
+      if(selectedValue=="11468152838,11468152902,11468152966"){
+        document.getElementById('price').innerHTML = 43.99 * document.getElementById('quantityselect').value;;
+      }
+      else if(selectedValue=="11468153030,11468153094,11468153158"){
+        document.getElementById('price').innerHTML = 45.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497537030,11497714758,11497790342"){
+        document.getElementById('price').innerHTML = 47.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497546502,11497729030,11497793926"){
+        document.getElementById('price').innerHTML = 49.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497551430,11497734598,11500171846"){
+        document.getElementById('price').innerHTML = 54.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497559622,11497740102,11497794886"){
+        document.getElementById('price').innerHTML = 59.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497573958,11497753222,11497800774"){
+        document.getElementById('price').innerHTML = 64.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497580742,11497761478,11497803846"){
+        document.getElementById('price').innerHTML = 69.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497590214,11497764742,11497807302"){
+       document.getElementById('price').innerHTML = 74.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497596998,11497767878,11497812742"){
+        document.getElementById('price').innerHTML = 79.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497604614,11497770374,11497837894"){
+        document.getElementById('price').innerHTML = 84.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497626566,11497775430,11497844230"){
+        document.getElementById('price').innerHTML = 89.99 * document.getElementById('quantityselect').value;
+      }
+      else if(selectedValue=="11497636806,11497781062,11497919558"){
+        document.getElementById('price').innerHTML = 94.99 * document.getElementById('quantityselect').value;
+      }
+    }
+    function sendid(){
+      document.getElementById('id').value = document.getElementById('terminalselect').value;
+    }
+    function sendquantity() {
+      document.getElementById('quantity').value = document.getElementById('quantityselect').value;
+      if (document.getElementById('quantityselect').value == "1"){
+        document.getElementById('price').innerHTML = document.getElementById('price').innerHTML / 2;
+        document.getElementById('eachspan').innerHTML = " / each";
+      }
+      else{
+        document.getElementById('price').innerHTML = document.getElementById('price').innerHTML * document.getElementById('quantityselect').value;
+        document.getElementById('eachspan').innerHTML = " / pair";
+      }
+    }
+  </script>
+  {% endif %}
+  {% if product.title == "SoundPath RCA Audio Interconnect Cable" %}
+  <div class="optionsdropdown">
+    <span class="cableoptiontitle">Length:</span>
+    <select id="lengthselect" class="cableoptionselect" name="length" onchange="sendobject();">
+      <option value="11658765318,24.99">1 Meter</option>
+      <option value="11658762822,29.99">2 Meters</option>
+      <option value="11658765702,34.99">3 Meters</option>
+      <option value="11658765190,39.99">5 Meters</option>
+      <option value="11658765510,44.99">8 Meters</option>
+      <option value="11658762630,49.99">12 Meters</option>
+      <option value="11658765830,59.99">15 Meters</option>
+    </select>
+  </div>
+  <script>
+    function sendobject() {
+      var variantID = ""
+      var variantPrice = ""
+      var ele = document.getElementById("lengthselect");
+      var selectedValue = ele.options[ele.selectedIndex].value;
+      var selectedvalueraw = document.getElementById('lengthselect').value;
+      var valuearray = selectedvalueraw.split(',');
+      variantID = valuearray[0];
+      variantPrice = valuearray[1];
+      if (document.getElementById('quantityselect').value == "1"){
+        document.getElementById('price').innerHTML = variantPrice;
+        document.getElementById('id').value = variantID;
+      }
+      else{
+        document.getElementById('price').innerHTML = variantPrice * document.getElementById('quantityselect').value;
+        document.getElementById('eachspan').innerHTML = " / pair";
+        document.getElementById('id').value = variantID;
+      }
+    }
+    function sendquantity() {
+      document.getElementById('quantity').value = document.getElementById('quantityselect').value;
+      if (document.getElementById('quantityselect').value == "1"){
+        document.getElementById('price').innerHTML = document.getElementById('price').innerHTML / 2;
+        document.getElementById('eachspan').innerHTML = " / each";
+      }
+      else{
+        document.getElementById('price').innerHTML = document.getElementById('price').innerHTML * document.getElementById('quantityselect').value;
+        document.getElementById('eachspan').innerHTML = " / pair";
+      }
+    }
+  </script>
+  {% endif %}
+  {% if product.variants.size > 0 and product.title != "SoundPath Ultra Speaker Cable" and product.title != "SoundPath RCA Audio Interconnect Cable"%}
+  <!-- ADD  SHOW / HIDE FOR ACCESSORIES -->
+  <h3> {% if product.variants.size > 1 %}Select {% endif %}{% if product.title == "SoundPath Subwoofer Isolation System" %}Feet:{%else%}Finish:{% endif %} </h3>
+  <p class="finish-name"> {{ product.variants.first.title }} </p>
+  <div class="product-details__variants cf{% if product.tags contains 'accessories-crumb' %} single-variant-image{% endif %}" {% if product.variants.size <= 1 %}style="display: none;"{% endif %}>
+    {% for variant in product.variants %}
+    {% if product.metafields.swatches.swatch-1 != blank %}
+    {% if forloop.index == 1 %}
+    <img src="{{product.metafields.swatches.swatch-1}}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant selected ">
+    {% endif %}
+    {% if forloop.index == 2 %}
+    <img src="{{product.metafields.swatches.swatch-2}}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant">
+    {% endif %}
+    {% if forloop.index == 3 %}
+    <img src="{{product.metafields.swatches.swatch-3}}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}"     data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant">
+    {% endif %}
+    {% else %}
+    <img src="{{ variant.image.src | product_img_url }}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant{% if forloop.index < 2 %} selected{% endif %}">
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  <script>
+    var ProductOptions = {{ product | json }};
+    function variantUpdate(variantId) {
+      var selector = jQuery('.MagicToolboxSelectorsContainer img[alt="'+variantId+'"]').closest('a');
+      MagicZoom.update(jQuery('.MagicZoomPlus').attr('id'),selector.attr('href'),selector.attr('data-image') )  ;
+    }
+    var selectCallback = function(variant, selector) {
+      if (variant && variant.featured_image) {
+        var newImage = variant.featured_image; // New image object.
+        var mainImageDomEl = jQuery('.mz-active img')[0]; // DOM element of main image we need to swap.
+        Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+      }
+      if (variant && variant.available) {
+        jQuery('#add-to-cart').removeAttr('disabled').removeClass('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+        if(variant.price < variant.compare_at_price){
+          jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + " <del>" + Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}") + "</del>");} else {jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}"));}
+    } else {
+      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled'); // set add-to-cart button to unavailable class and disable button
+      var message = variant ? {{ 'products.product.sold_out_html' | t | json }} : {{ 'products.product.unavailable_html' | t | json }};
+      jQuery('#price-preview').html(message);
+    }};
+
+</script>
+</div>

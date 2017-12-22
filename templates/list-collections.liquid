@@ -1,0 +1,18 @@
+<div class="wrap">
+  <section>
+
+<div id="collection" class="row">
+  <div class="span12">
+    <h1><span>{{ 'collections.list_collections.product_collections' | t }}</span></h1>
+  </div> <!-- /.span12 -->
+</div> <!-- /.row -->
+
+<div class="row products masonry">
+  {% for collection in collections %}
+  {% unless collection.all_products_count == 0 or collection.handle == "frontpage" %}
+  {% include 'collection-loop' %}
+  {% endunless %}
+  {% endfor %}
+</div> <!-- /#collection.row -->
+  </section>
+    </div>

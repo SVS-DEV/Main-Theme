@@ -1,0 +1,385 @@
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.description %}
+<style>
+  .col-sm-6 img {padding-top:20px}
+    .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .wrap.newstickerwrap {
+        padding-top: 20px !important;
+    }
+
+    .collection-header .wrap {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+    .blog-area {
+        margin-bottom: 25px;
+    }
+    .content-section .wrap {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .content-section a {
+        color: #386cb0;
+        text-decoration: none;
+    }
+
+    .content-section h3 {
+        font-size: 36px;
+        font-weight: 800;
+        border-bottom: 5px solid black;
+        padding: 0 0 10px 0;
+        margin-bottom: 25px;
+        line-height: 1;
+    }
+
+    .content-section h4 {
+        font-size: 24px;
+        font-weight: 800;
+        border-bottom: 1px solid black;
+        padding: 0 0 10px 0;
+        margin-bottom: 15px;
+        line-height: 1;
+        margin-top: 15px;
+        color: #386cb0;
+    }
+
+    .content-section img {
+        max-width: 100%;
+    }
+
+    .reviews-section a {
+        color: #386cb0;
+        text-decoration: none;
+    }
+
+    .reviews-section .row {
+        border-top: 3px solid black;
+        padding-top: 25px;
+        margin-top: 25px;
+    }
+
+    .reviews-section .row:first-child {
+        border-top: none;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+    .reviews-section .row div {
+        text-align: center;
+        border-right: 1px solid black;
+    }
+
+    .reviews-section .row div:last-child {
+        border-right: none;
+    }
+
+    .reviews-section h3 {
+        font-size: 22px;
+        font-weight: 800;
+        font-style: italic;
+        text-align: center;
+        border-bottom: 3px solid white;
+        line-height: 1;
+        margin-bottom: 35px;
+        padding-bottom: 10px;
+    }
+    .blue-section .blue-imglink {
+        display: block;
+    }
+
+    [class*='cta-'] {
+        text-align: center;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+        line-height: 1;
+        padding: 15px 0;
+        border: 3px solid transparent;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+
+    [class*='cta-']:hover {
+        text-decoration: none;
+        background-color: transparent;
+        color: #fff;
+        border-color: white
+    }
+
+    .cta.half {
+        max-width: 50%;
+    }
+
+    .cta-full-white {
+        max-width: 100%;
+        font-size: 16px;
+        display: block;
+        background-color: white;
+        color: #386cb0;
+        clear: both;
+    }
+
+    h5 a {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1;
+        border-bottom: 3px solid black;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+
+    .blue-section {
+        background-color: #386cb0 !important;
+        color: #fff;
+    }
+
+    .blue-section h5 a {
+        border-bottom: none;
+    }
+
+    .blue-section img {
+        max-width: 100%;
+    }
+
+    .blue-section p {
+        border-top: 1px solid white;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .blue-section h5 a,
+    .blue-section h5 a:hover,
+    .blue-section h5 a:visited {
+        color: #fff;
+        text-decoration: none;
+    }
+    .blog-area .blog-title-area {
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 700;
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+    }
+    @media only screen and (min-width: 992px) {
+        .left-clear-issue {
+            clear: left;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        .blue-section .col-sm-4 {
+            margin-bottom: 30px;
+        }
+        .blue-section .col-sm-4:last-child {
+            margin-bottom: 0px;
+        }
+        .reviews-section .row {
+            border-top: none;
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+        .reviews-section .row div {
+            border-right: none;
+            padding-top: 15px;
+            margin-top: 15px;
+            border-top: solid thin #c3c3c3;
+        }
+        .content-section .col-sm-3 {
+            margin-top: 25px;
+        }
+        .container-fluid {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        h1 {
+            font-size: 32px !important;
+        }
+        h1 span {
+            font-size: 48px !important;
+        }
+    }
+</style>
+<section class="content-section">
+    <div class="wrap">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Adding a subwoofer to your home theater is one of the most noticeable upgrades you can make to the audio performance. SVS subwoofers unleash low frequency sound, or bass, that enhances the soundstage and sonic impact in a way no other component or speaker can duplicate. Movie scores are injected with added emotion and suspense, onscreen action like explosions, footsteps, the slam of a door or the revving of an engine are conveyed with palpable realism. You literally hear things you never knew existed.
+                    </p>
+                    <p>
+                        Finding the right subwoofer means weighing several variables, including budget, room size, placement, personal listening tastes and more. Whether you’re researching subwoofers for the first time, replacing an aging subwoofer or upgrading to the ultimate bass experience, SVS has a subwoofer for you.
+                    </p>
+                    <div class="blog-area cf">
+                        <h2 class="blog-title-area"> Helpful Subwoofer Resources </h5>
+                        <div class="col-sm-4">
+                            <a href="#">
+                                <h5> Choosing the Best Home Theater Subwoofer </h5>
+                                Information and advice on the variables to consider when choosing your subwoofer.
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#">
+                                <h5> Ported vs. Sealed Subwoofers </h5>
+                                The differences, advantages and unique acoustic properties of sealed and ported box subwoofers.
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#">
+                                <h5> Why Go Dual: Benefits of Running Multiple Subwoofers </h5>
+                                From greater output to more even bass response, learn if going dual is the right move for your room.
+                            </a>
+                        </div>
+                    </div>
+
+                    <h3> SVS Subwoofers Unleash Massive Sonic Impact. </h3>
+                    <p>
+                        SVS home theater subwoofers are engineered to produce deep and powerful bass that’s also pinpoint accurate in frequency response and speed in transients. Whether you’re looking for a compact sealed subwoofer for a 5.1 home theater surround sound system in a small room, a pair of ported subwoofers for an over-the-top home cinema, or anything else, SVS has an option for you.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a href="https://www.svsound.com/pages/subwoofers#1000-series" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', '1000 Series Link');">
+                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/pb-1000_wood.jpg?8036633185339716263">
+                        <h4>1000 Series Subwoofers</h4>
+                    </a>
+                    <p data-match-height="series-p">
+                        The SVS 1000 Series changed the subwoofer game by bringing deep, palpable, room energizing bass to an all-time low price. The ultra-compact SB-1000 and deceptively powerful PB-1000 outperform subwoofers twice the size and are well-equipped to be the foundation of any music or home theater system.
+                    </p>
+                    <a href="#" class="cta"> Learn More </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="https://www.svsound.com/pages/subwoofers#2000-series" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', '2000 Series Link');">
+                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/sb-2000_lifestyle_wood.jpg?8036633185339716263">
+                        <h4>2000 Series Subwoofers</h4>
+                    </a>
+                    <p data-match-height="series-p">
+                        Featuring award-winning technology from the Ultra Series, the SVS SB-2000, PB-2000 and PC-2000 are the best-selling SVS subwoofers for their rare combination of power, quickness, intelligent processing, and innovative driver design. This potent recipe is redefining expectations for home theater subwoofers in every class.
+                    </p>
+                    <a href="#" class="cta"> Learn More </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="https://www.svsound.com/pages/subwoofers#plus-series" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'Plus Series Link');">
+                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/PB12-Plus_f0b79ad9-b89e-4e6e-a98c-06f2b90fd96e.jpg?8036633185339716263">
+                        <h4>Plus Series Subwoofers</h4>
+                    </a>
+                    <p data-match-height="series-p">
+                        Plus Series subwoofer build quality and performance approaches the Ultra Series and is on par with the finest subwoofers in the world. Designed to handle the most demanding low frequency content with ease, SVS Plus Series Subwoofers are engineered to exceed expectations.
+                    </p>
+                    <a href="/pages/subwoofers#plus-series" class="cta" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'Plus Series CTA');"> Learn More </a>
+                </div>
+                <div class="col-sm-6 col-md-4 left-clear-issue">
+                    <a href="https://www.svsound.com/pages/subwoofers#ultra-series" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'Ultra Series Link');">
+                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/Lifestyle_069.jpg?8036633185339716263">
+                        <h4>Ultra Series Subwoofers</h4>
+                    </a>
+                    <p data-match-height="series-p">
+                        The 13-Ultra series are benchmark-setting home theater subwoofers for their extreme levels of power, innovation and performance. A perfect mix of deep low frequency extension, crushing power and exceptional musicality and accuracy, the 13-Ultra series are the most awarded and reviewed subwoofers in existence with legendary status in the world of bass.
+                    </p>
+                    <a href="#" class="cta"> Learn More </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="https://www.svsound.com/pages/subwoofers#16-ultra" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', '16-Ultra Series Link');">
+                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/sb16_ultra_lifestyle_3.jpg?8036633185339716263">
+                        <h4>16-Ultra Series Subwoofers</h4>
+                    </a>
+                    <p data-match-height="series-p">
+                        Capable of unleashing supreme levels of low frequency output and deep bass extension far below the levels of human hearing, the SVS 16-Ultra subwoofers combine effortless power, palpable sonic energy, pinpoint accuracy and intelligent efficiency with groundbreaking audio innovations. The 16-Ultra series are the subwoofers by which all others are judged.
+                    </p>
+                    <a href="#" class="cta"> Learn More </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="https://www.svsound.com/pages/soundpath" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'SoundPath Link');">
+                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/soundpath_accessories.jpg?8036633185339716263">
+                        <h4> SoundPath Subwoofer Accessories </h4>
+                    </a>
+                    <p data-match-height="series-p">
+                        Subwoofers perform their best when paired with premium accessories. SVS SoundPath Subwoofer Isolation Systems and RCA Audio Interconnect Cables work with any brand of subwoofer to unleash the full potential while protecting against anomalies that can affect performance.
+                    </p>
+                    <a href="/pages/soundpath" class="cta" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'SoundPath Link');"> Learn More </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reviews-section bg-grey">
+    <div class="wrap">
+        <h3> Critical acclaim is pouring in for SVS home theater subwoofers,<a href="/blogs/press-reviews" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'Press Review Page Link');"> read all reviews on our press review page here.</a></h3>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote"> "The SB16-Ultra presents a soundstage that didn’t exist before… a fantastic performer and one of the best built and best sounding subs you can find…more than enough power, integrates flawlessly with speakers and provides phenomenal
+                        bass for movies and music." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_referencehometheater.png?672056218093769185">
+                </div>
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote"> "I've heard almost all of the top subwoofers currently on the market. The SB16-Ultra sounds like none of them. It's almost in a whole different category of low-frequency sound. May well be the best subwoofer ever made." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_hometheaterreview.jpg?11159138777341099721">
+                </div>
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote"> "Reproduced rippling, subterranean bass notes that go from audible to sensory…it will embarrass the audio systems in many commercial movie theaters…The best subwoofer I’ve heard." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviews_pcworld_logo.jpg?12811552983982738480">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote1"> "If there is a more perfect subwoofer in production today, we haven’t heard it." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_hometheatershack_jpg.jpg?16413839835484182669">
+                </div>
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote1"> "Pitch perfect…on my list of recommended subwoofers for music and home theater." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_stereophile.jpg?5920058700800354967">
+                </div>
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote1"> "Astonished me with its depth and clarity…I’m not sure there’s a better value today in home theater audio." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_soundstage.jpg?12139532837933527620">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote2"> "Competes with top-performing subs costing twice or more their price. The kinetic energy reached deafening reference listening levels…I’m surprised it didn’t set off the Earthquake Detection System…My jaw was stuck ajar—man, I love
+                        good bass! Very Highly Recommended." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/toppicks.png?18122446229096429287">
+                </div>
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote2"> "SVS has taken clean deep bass to another level…the cleanest and loudest bass in such a deep frequency that can be physically generated. I can’t think of any subwoofer that has this degree of sophistication…the PB16-Ultra pushes the
+                        envelope in every respect." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/award_logo_bassaholiccertifiedextreme.jpg?2276029991659367002" style="max-width:116px">
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/award_logo_audioholicsproductoftheyear2016.jpg?16089005946834813560" style="max-width:116px">
+                </div>
+                <div class="col-sm-4">
+                    <p data-match-height="artist-quote2"> "The power and depth of the bass this sub produces makes AV experiences more visceral. There was never an instance where the demands of what I listened to exceeded what the PB16-Utra could deliver. The best-performing, highest-impact
+                        sub I’ve heard." </p>
+                    <img class="attribution" src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_avsforum.jpg?7180780231508549347">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'news-ticker-subwoofers' %}
+</section>
+
+<section class="reviews-section">
+    <div class="wrap">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="/pages/subwoofers" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'All Subwoofers Link');"> <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/bottom-image-subwoofer-cta.jpg?14379691002502405233"> </a>
+                    <a href="/pages/subwoofers" class="cta half" onClick="ga('send', 'event', 'Choosing a Subwoofer', 'Click', 'All Subwoofers CTA Link');"> Browse All SVS Subwoofers </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

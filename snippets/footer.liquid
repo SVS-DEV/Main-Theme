@@ -1,0 +1,182 @@
+<footer class="cf">
+	<div class="container-fluid sub-footer-callouts">
+		<div class="row">
+
+			{% if page.handle contains 'system-builder' %}
+				<div class="col-sm-6 col-lg-3">
+					<a href="/blog/svs" data-match-height="sub-footer-logo" onclick= "ga('send', 'event', 'Footer', 'Click', 'Helpful-Resources-image-jeeves');"> <img src="{{ 'hr-logo-footer-full.png' | asset_url }}" class="sub-footer-jeeves"> </a>
+					<ul>
+						<li> <a href="/blogs/svs/74742851-the-essentials-of-a-spine-tingling-chest-thumping-home-theater-experience"> The Essentials of an Immersive Home Theater Speaker System </a> </li>
+						<li> <a href="http://trending.svsound.com/content/choosing-between-bookshelf-and-tower-speakers "> Choosing Between Tower and Bookshelf Speakers </a> </li>
+						<li> <a href="/blogs/svs/75358787-intro-to-dolby-atmos"> Intro to Dolby Atmos and Height Effects Speakers </a> </li>
+						<li> <a href="/blogs/svs/74790851-the-art-of-speaker-placement"> The Art of Speaker Placement </a> </li>
+					</ul>
+				</div>
+			{% else %}
+				<div class="col-sm-6 col-lg-3">
+					<a href="/pages/system-builder" data-match-height="sub-footer-logo" onclick= "ga('send', 'event', 'Footer', 'Click', 'Jeeves-image');"> <img src="{{ 'jeeves-logo-footer.png' | asset_url }}" class="sub-footer-jeeves"> </a>
+					<p>
+						Jeeves is an interactive tool for building your perfect SVS home audio system. Choose from preset systems or customize your own by selecting any combination of SVS speakers and subwoofers.
+					</p>
+					<a href="/pages/system-builder" class="sub-footer-cta" onclick= "ga('send', 'event', 'Footer', 'Click', 'Jeeves');"> Start Building <i class="fa fa-angle-double-right"></i></a>
+				</div>
+			{% endif %}
+
+			{% if page.handle contains 'merlin' %}
+				<div class="col-sm-6 col-lg-3">
+					<a href="/blog/svs" data-match-height="sub-footer-logo" onclick= "ga('send', 'event', 'Footer', 'Click', 'Helpful-Resources-image-merlin');"> <img src="{{ 'hr-logo-footer-full.png' | asset_url }}" class="sub-footer-jeeves"> </a>
+
+					<ul>
+						<li> <a href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater"> Choosing the Best Subwoofer for your Home Theater </a> </li>
+						<li> <a href="/blogs/svs/75040195-why-go-dual"> Why Go with Dual Subwoofers </a> </li>
+						<li> <a href="/blogs/svs/75367747-sealed-vs-ported"> Comparing Ported vs. Sealed Subwoofers  </a> </li>
+						<li> <a href="/blogs/svs/75365187-the-art-of-subwoofer-placement"> The Art of Subwoofer Placement </a> </li>
+					</ul>
+
+				</div>
+			{% else %}
+				<div class="col-sm-6 col-lg-3">
+					<a href="/pages/merlin" data-match-height="sub-footer-logo" onclick= "ga('send', 'event', 'Footer', 'Click', 'Merlin-image');"> <img src="{{ 'merlin-logo-footer-full.png' | asset_url }}"> </a>
+					<p>
+						SVS has the perfect subwoofer for every model and brand of speaker. Just enter your speakers and our Merlin engine will recommend the best subwoofer match, instantly!
+					</p>
+					<a href="/pages/merlin" class="sub-footer-cta" onclick= "ga('send', 'event', 'Footer', 'Click', 'Merlin');"> Find a Subwoofer Match <i class="fa fa-angle-double-right"></i></a>
+				</div>
+			{% endif %}
+
+			<div class="col-sm-6 col-lg-3">
+				<a href="/pages/bill-of-rights" data-match-height="sub-footer-logo" onclick= "ga('send', 'event', 'Footer', 'Click', 'Bill-of-Rights-image');"> <img src="{{ 'bor-footer-logo.png' | asset_url }}"> </a>
+				<p>
+					45-Day Risk-Free In-Home Trial, Fast & Free Shipping and Returns, 5-Year Unconditional Warranty, Expert Support, 1-Year Trade-Up Policy and more.
+				</p>
+				<a href="/pages/bill-of-rights" class="sub-footer-cta" onclick= "ga('send', 'event', 'Footer', 'Click', 'Bill-of-Rights');"> View My SVS Bill of Rights <i class="fa fa-angle-double-right"></i></a>
+			</div>
+
+			<div class="col-sm-6 col-lg-3">
+				<a href="/pages/customer-service" data-match-height="sub-footer-logo" onclick= "ga('send', 'event', 'Footer', 'Click', 'Sound-Experts-image');"> <img src="{{ 'sound-experts-footer-logo.png' | asset_url }}"> </a>
+				<p>
+				Need advice on choosing the best speaker, subwoofer or home sound system? Have an AV receiver, placement or service question? We’re available 7 days a week for expert support on everything home audio and SVS.
+				</p>
+				<span class="sub-footer-cs-cta"> 877.626.5623 |
+					<a data-remodal-target="contact__modal" onclick= "ga('send', 'event', 'Footer', 'Click', 'Email');" class="sub-footer-cta"> EMAIL </a>  |
+					<a href="#" onclick="OpenLHNChat();return false;" class="sub-footer-cta"><span onclick="ga('send', 'event', 'Footer', 'Click', 'Chat');"> Live Chat </span> </a> </span>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer-brands hideRU">
+		<div class="footer-wrap" style="position:relative">
+			<span class="footer-copy">
+				Also available at these and <a href="/pages/us-dealers" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Many Other Link');">many other</a> local retailers:
+			</span>
+			<a class="" href="/pages/us-dealers" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Magnolia');">
+              <img src="{{ 'footer-logo-magnolia.jpg' | asset_url }}" >
+          </a> 
+			<a class="" href="/pages/us-dealers" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'One Call');">
+				<img src="{{ 'footer-logo-onecall.jpg' | asset_url }}">
+			</a>
+			<a class="" href="/pages/us-dealers" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Crutchfield');">
+				<img src="{{ 'footer-logo-crutchfield.png' | asset_url }}">
+			</a>
+			<a class="" href="/pages/us-dealers" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Nebraska Furniture Mart');">
+				<img src="{{ 'footer-logo-nbf.png' | asset_url }}" style="max-width:185px">
+			</a>
+			<a class="" href="/pages/us-dealers" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'ABT');">
+				<img src="{{ 'footer-logo-abt.png' | asset_url }}" style="max-width:75px">
+			</a>
+			<a class="hidden" href="/pages/us-dealers" class="" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'IQ');">
+				<img src="{{ 'footer-logo-IQ.JPG' | asset_url }}">
+			</a>
+			<a class="hidden" href="/pages/us-dealers" class="" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Electronics Expo');">
+				<img src="{{ 'footer-logo-electronicsexpo.jpg' | asset_url }}">
+			</a>
+			<a class="hidden" href="/pages/us-dealers" class="" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Bjorns');">
+				<img src="{{ 'footer-logo-bjorns.jpg' | asset_url }}">
+			</a>
+			<a class="hidden" href="/pages/us-dealers" class="" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'Listenup');">
+				<img src="{{ 'footer-logo-listenup2.png' | asset_url }}">
+			</a>
+			<a class="hidden" href="/pages/us-dealers" class="" alt="" onclick="ga('send', 'event', 'Footer Dealer Rotation', 'Click', 'World Wide Stereo');">
+				<img src="{{ 'footer-logo-worldwidestereo.png' | asset_url }}">
+			</a>
+
+		</div>
+	</div>
+
+	<div class="footer-nav">
+		<div class="footer-wrap">
+			<div class="footer__social social__mobile">
+				<h3>Find Us On</h3>
+				<ul>
+					<li><a target="_blank" href="https://www.pinterest.com/svsound/" onclick="ga('send', 'event', 'Footer', 'Click', 'Pinterest-mobile');"><i class="fa fa-pinterest-square"></i></a></li>
+					<li><a target="_blank" href="https://instagram.com/svs_sound/" onclick="ga('send', 'event', 'Footer', 'Click', 'Instagram-mobile');"><i class="fa fa-instagram"></i></a></li>
+					<li><a target="_blank" href="https://twitter.com/SVS_SOUND" onclick="ga('send', 'event', 'Footer', 'Click', 'Twitter-mobile');"><i class="fa fa-twitter-square"></i></a></li>
+					<li><a target="_blank" href="https://www.facebook.com/SVSound" onclick="ga('send', 'event', 'Footer', 'Click', 'Facebook-mobile');"><i class="fa fa-facebook-square"></i></a></li>
+                  <li><a target="_blank" href="https://www.youtube.com/c/SVS_Sound" onclick="ga('send', 'event', 'Footer', 'Click', 'Youtube');"><i class="fa fa-youtube-square"></i></a></li>
+				</ul>
+			</div>
+			<div class="mobile-accordion">
+				<h3>Customer Support</h3>
+				<ul>
+					<li><a href="/account/orders" onclick="ga('send', 'event', 'Footer', 'Click', 'My Orders');">My Orders</a></li>
+					<li><a href="/pages/faqs" onclick="ga('send', 'event', 'Footer', 'Click', 'FAQs');">FAQs</a></li>
+					<li><a href="/pages/customer-service" onclick="ga('send', 'event', 'Footer', 'Click', 'Customer Service');">Customer Service</a></li>
+					<li><a href="/pages/document-library" onclick="ga('send', 'event', 'Footer', 'Click', 'Document Library');">Document Library</a></li>
+					<li class="hideRU"><a href="/products/gift-card" onclick="ga('send', 'event', 'Footer', 'Click', 'Gift Cards');">Gift Cards</a></li>
+					<li><a href="/pages/product-registration" onclick="ga('send', 'event', 'Footer', 'Click', 'Product Registration');">Product Registration</a></li>
+				</ul>
+			</div>
+			<div class="mobile-accordion">
+				<h3>Company Info</h3>
+				<ul>
+					<li><a href="/pages/about-us" onclick="ga('send', 'event', 'Footer', 'Click', 'About SVS');">About SVS</a></li>
+					<li class="hideRU"><a href="/pages/us-dealers" onclick="ga('send', 'event', 'Footer', 'Click', 'U.S. Dealers');">U.S. Dealers</a></li>
+					<li><a href="/pages/international-dealers" onclick="ga('send', 'event', 'Footer', 'Click', 'International Dealers');">International Dealers</a></li>
+					<li><a href="/pages/terms-and-conditions" onclick="ga('send', 'event', 'Footer', 'Click', 'Terms &amp; Conditions');">Terms &amp; Conditions</a></li>
+					<li><a href="/pages/privacy-policy" onclick="ga('send', 'event', 'Footer', 'Click', 'Privacy Policy');">Privacy Policy</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>Contact Us</h3>
+				<p>
+					877.626.5623<br/> Mon-Fri 9AM-9PM ET<br/> Saturdays 12-6PM ET<br/> Sundays 12-4PM ET
+				</p>
+			</div>
+			<div class="footer__social social__desktop">
+				<h3>Find Us On</h3>
+				<ul>
+					<li><a target="_blank" href="https://www.facebook.com/SVSound" onclick="ga('send', 'event', 'Footer', 'Click', 'Facebook');"><i class="fa fa-facebook-square"></i></a></li>
+					<li><a target="_blank" href="https://instagram.com/svs_sound/" onclick="ga('send', 'event', 'Footer', 'Click', 'Instagram');"><i class="fa fa-instagram"></i></a></li>
+					<li><a target="_blank" href="https://twitter.com/SVS_SOUND" onclick="ga('send', 'event', 'Footer', 'Click', 'Twitter');"><i class="fa fa-twitter-square"></i></a></li>
+					<li><a target="_blank" href="https://www.pinterest.com/svsound/" onclick="ga('send', 'event', 'Footer', 'Click', 'Pinterest');"><i class="fa fa-pinterest-square"></i></a></li>
+                  <li><a target="_blank" href="https://www.youtube.com/c/SVS_Sound" onclick="ga('send', 'event', 'Footer', 'Click', 'Youtube');"><i class="fa fa-youtube-square"></i></a></li>
+				</ul>
+			</div>
+			<div class="footer__cc-badge hideRU">
+				<img src="{{ 'cc-badge.png' | asset_url }}">
+				<img class="amazon-payments-logo" src="{{ 'amazon-payments-logo.png' | asset_url }}">
+				<img style="width:195px; margin-top:10px" src="https://cdn.shopify.com/s/files/1/0921/3560/files/affirmlogoWhite.png?5032948012052495542">
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<small>&copy; Copyright {{ 'now' | date: "%Y" }} SVS Inc. All Rights Reserved</small>
+	</div>
+</footer>
+<!--{% include 'global_banner_footer' %}-->
+<script>
+	// BE CLA 3
+	(function() {
+		var bec = document.createElement('script');
+		bec.type = 'text/javascript';
+		bec.async = true;
+		bec.setAttribute("data-id", "bec");
+		bec.setAttribute("org-id", "f00000000041599");
+		bec.setAttribute("domain", ".svsound.com");
+		bec.setAttribute("timeout", 10 * 31 * 24 * 60 * 60 * 1000);
+		bec.src = document.location.protocol + '//ccdn.brightedge.com/conv_v3.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(bec, s);
+	})();
+</script>

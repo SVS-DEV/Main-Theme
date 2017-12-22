@@ -1,0 +1,467 @@
+{% comment %}
+	SEO Meta Manager - v4.0
+
+	Written by Josh Highland / NewLeaf Labs
+	http://newleaflabs.com
+{% endcomment %}
+
+{% comment %}
+------------------------------------------------
+get the global settings - parse into variables
+------------------------------------------------
+{% endcomment %}
+
+{% assign globalConfig = shop.metafields.SEOMetaManager.globalConfig %}
+{% assign globalConfigData = globalConfig | remove: "{"| remove: "}" %}
+{% assign keyValPairs = globalConfigData | split: ',"' %}
+
+{% comment %} loop over settings, assign variables {% endcomment %}
+{% for keyVal in keyValPairs %}
+	{% assign keyValClean = keyVal | remove: '"' %}
+	{% assign keyValArray = keyValClean | split: ":" %}
+
+	{% case keyValArray[0] %}
+
+		{% when 'product_title_template' %}
+			{% assign product_title_template = keyValArray[1] %}
+		{% when 'product_title_template_force' %}
+			{% assign product_title_template_force = keyValArray[1] %}
+		{% when 'product_noindex_follow' %}
+			{% assign product_noindex_follow = keyValArray[1] %}
+
+		{% when 'collection_title_template' %}
+			{% assign collection_title_template = keyValArray[1] %}
+		{% when 'collection_title_template_force' %}
+			{% assign collection_title_template_force = keyValArray[1] %}
+		{% when 'collection_noindex_follow' %}
+			{% assign collection_noindex_follow = keyValArray[1] %}
+
+		{% when 'page_title_template' %}
+			{% assign page_title_template = keyValArray[1] %}
+		{% when 'page_title_template_force' %}
+			{% assign page_title_template_force = keyValArray[1] %}
+		{% when 'page_noindex_follow' %}
+			{% assign page_noindex_follow = keyValArray[1] %}
+
+		{% when 'article_title_template' %}
+			{% assign article_title_template = keyValArray[1] %}
+		{% when 'article_title_template_force' %}
+			{% assign article_title_template_force = keyValArray[1] %}
+		{% when 'article_noindex_follow' %}
+			{% assign article_noindex_follow = keyValArray[1] %}
+
+		{% when 'robots_noodp' %}
+			{% assign robots_noodp = keyValArray[1] %}
+		{% when 'google_notranslate' %}
+			{% assign google_notranslate = keyValArray[1] %}
+		{% when 'google_unavailable_after_globalDisabled' %}
+			{% assign google_unavailable_after_globalDisabled = keyValArray[1] %}
+		{% when 'google_nositelinkssearchbox' %}
+			{% assign google_nositelinkssearchbox = keyValArray[1] %}
+		{% when 'show_keywordsMeta' %}
+			{% assign show_keywordsMeta = keyValArray[1] %}
+		{% when 'use_shopify_meta_control' %}
+			{% assign use_shopify_meta_control = keyValArray[1] %}
+
+		{% when 'metaRedirect_globalDisabled' %}
+			{% assign metaRedirect_globalDisabled = keyValArray[1] %}
+
+	{% endcase %}
+{% endfor %}
+
+
+{% comment %}
+------------------------------------------------
+get meta info we need based on the template loaded
+------------------------------------------------
+{% endcomment %}
+
+{% if template contains 'index' %}
+	{% assign currentObj = 'shop' %}
+	{% assign metaObj = shop.metafields.SEOMetaManager %}
+	{% assign nonControlledObj = 'yes' %}
+	{% assign objTag = 'homepage' %}
+	{% assign configObj = shop.metafields.SEOMetaManager.config_homepage %}
+
+{% elsif template contains 'product' %}
+	{% assign currentObj = 'product' %}
+	{% assign metaObj = product.metafields.SEOMetaManager %}
+	{% assign title_template = product_title_template %}
+	{% assign title_template_force_global = product_title_template_force %}
+	{% if product_noindex_follow == 'yes' %}
+		{% assign noindex_follow = 'yes' %}
+	{% endif %}
+
+{% elsif template contains 'list-collections' %}
+	{% assign currentObj = 'shop' %}
+	{% assign metaObj = shop.metafields.SEOMetaManager %}
+	{% assign nonControlledObj = 'yes' %}
+	{% assign objTag = 'collectionsALL' %}
+	{% assign configObj = shop.metafields.SEOMetaManager.config_collectionsAll %}
+	{% assign collectionsAll = 'yes' %}
+
+{% elsif template contains 'collection' %}
+	{% assign currentObj = 'collection' %}
+	{% assign metaObj = collection.metafields.SEOMetaManager %}
+	{% comment %} this is collection/all {% endcomment %}
+	{% if collection.title == 'Products' %}
+		{% assign metaObj = shop.metafields.SEOMetaManager %}
+		{% assign collectionsAll = 'yes' %}
+	{% endif %}
+	{% assign title_template = collection_title_template %}
+	{% assign title_template_force_global = collection_title_template_force %}
+	{% if collection_noindex_follow == 'yes' %}
+		{% assign noindex_follow = 'yes' %}
+	{% endif %}
+
+{% elsif template contains 'page' %}
+	{% assign currentObj = 'page' %}
+	{% assign metaObj = page.metafields.SEOMetaManager %}
+	{% assign title_template = page_title_template %}
+	{% assign title_template_force_global = page_title_template_force %}
+	{% if page_noindex_follow == 'yes' %}
+		{% assign noindex_follow = 'yes' %}
+	{% endif %}
+
+{% elsif template contains 'article' %}
+	{% assign currentObj = 'article' %}
+	{% assign metaObj = article.metafields.SEOMetaManager %}
+	{% assign title_template = article_title_template %}
+	{% assign title_template_force_global = article_title_template_force %}
+	{% if article_noindex_follow == 'yes' %}
+		{% assign noindex_follow = 'yes' %}
+	{% endif %}
+
+{% elsif template contains 'blog' %}
+	{% assign currentObj = 'blog' %}
+	{% assign metaObj = blog.metafields.SEOMetaManager %}
+
+{% elsif template contains 'search' %}
+	{% assign currentObj = 'shop' %}
+	{% assign metaObj = shop.metafields.SEOMetaManager %}
+	{% assign nonControlledObj = 'yes' %}
+	{% assign objTag = 'search' %}
+	{% assign configObj = shop.metafields.SEOMetaManager.config_search %}
+
+{% elsif template contains '404' %}
+	{% assign currentObj = 'shop' %}
+	{% assign metaObj = shop.metafields.SEOMetaManager %}
+	{% assign nonControlledObj = 'yes' %}
+	{% assign objTag = '404' %}
+	{% assign configObj = shop.metafields.SEOMetaManager.config_404 %}
+
+{% else %}
+	<!-- NO OBJECT - {{ template }} -->
+{% endif %}
+
+
+{% comment %}
+------------------------------------------------
+get the local setings for the object we are working with - parse into variables
+------------------------------------------------
+{% endcomment %}
+
+{% if nonControlledObj == 'yes' %}
+	{% assign config = configObj %}
+{% else %}
+	{% assign config = metaObj.config %}
+{% endif %}
+
+{% assign configData = config | remove: "{"| remove: "}" %}
+{% assign keyValPairs = configData | split: ',"' %}
+
+{% comment %} loop over settings, assign variables {% endcomment %}
+{% for keyVal in keyValPairs %}
+	{% assign keyValClean = keyVal | remove: '"' %}
+	{% assign keyValArray = keyValClean | split: ":" %}
+	{% assign key = keyValArray[0] %}
+	{% assign keyValue = keyValArray[1] | replace: '%3A', ':' | replace: '\/', '/' %}
+	{% case key %}
+		{% when 'use_shopify_meta_control' %}
+			{% assign use_shopify_meta_control = keyValue %}
+		{% when 'title_template_force' %}
+			{% assign title_template_force_local = keyValue %}
+		{% when 'robots_index' %}
+			{% assign robots_index = keyValue %}
+		{% when 'robots_follow' %}
+			{% assign robots_follow = keyValue %}
+		{% when 'robots_noimageindex' %}
+			{% assign robots_noimageindex = keyValue %}
+		{% when 'robots_noarchive' %}
+			{% assign robots_noarchive = keyValue %}
+		{% when 'robots_nosnippet' %}
+			{% assign robots_nosnippet = keyValue %}
+		{% when 'robots_noodp' %}
+			{% assign robots_noodp = keyValue %}
+		{% when 'google_notranslate' %}
+			{% assign google_notranslate = keyValue %}
+		{% when 'google_unavailable_after' %}
+			{% assign google_unavailable_after = keyValue %}
+		{% when 'google_unavailable_after_date' %}
+			{% assign google_unavailable_after_date = keyValue %}
+
+		{% when 'metaRedirect_enabled' %}
+			{% assign metaRedirect_enabled = keyValue %}
+		{% when 'metaRedirect_url' %}
+			{% assign metaRedirect_url = keyValue %}
+
+	{% endcase %}
+{% endfor %}
+
+
+{% comment %}
+------------------------------------------------
+redirect if needed
+------------------------------------------------
+{% endcomment %}
+{% if currentObj == 'product' %}
+	{% if metaRedirect_globalDisabled == 'yes' %}
+		{% comment %} do nothing {% endcomment %}
+	{% else %}
+		{% if metaRedirect_enabled == 'yes' %}
+          {% if product.available != true %}
+              <meta HTTP-EQUIV="refresh" CONTENT="0;URL={{metaRedirect_url}}">
+          {% endif %}
+		{% endif %}
+	{% endif %}
+{% endif %}
+
+
+{% comment %}
+------------------------------------------------
+set up the title tag
+------------------------------------------------
+{% endcomment %}
+
+{% comment %} if we are ignoring the legacy title tag {% endcomment %}
+{% if use_shopify_meta_control == 'yes' %}
+	{% assign output_title = page_title %}
+	<!-- using shopify meta -->
+
+{% comment %} if there is no over ride try to use the legacy meta {% endcomment %}
+{% elsif metaObj.title == empty or metaObj.title == nil %}
+	{% assign output_title = page_title %}
+	<!-- using default -->
+
+{% comment %} legacy title tag is set, and there is no override in place {% endcomment %}
+{% else %}
+	{% assign output_title = metaObj.title %}
+	<!-- using legacy meta -->
+
+{% endif %}
+
+{% comment %} do something special for collection/all{% endcomment %}
+{% if collectionsAll == 'yes' %}
+	<!-- using collectionsALL -->
+	{% if metaObj.title_collectionsAll == empty or metaObj.title_collectionsAll == nil %}
+		{% assign output_title = page_title %}
+	{% else %}
+		{% assign output_title = metaObj.title_collectionsAll %}
+	{% endif %}
+{% endif %}
+
+
+{% comment %}
+------------------------------------------------
+set up the description
+------------------------------------------------
+{% endcomment %}
+
+{% comment %} if we are ignoring the legacy description tag {% endcomment %}
+{% if use_shopify_meta_control == 'yes' %}
+	{% assign output_description = page_description %}
+
+{% comment %} if there is no over ride try to use the legacy meta {% endcomment %}
+{% elsif metaObj.description == empty or metaObj.description == nil %}
+	{% assign output_description = page_description %}
+
+{% comment %} no override and legacy meta is not set, use the default {% endcomment %}
+{% else %}
+	{% assign output_description = metaObj.description %}
+
+{% endif %}
+
+
+{% comment %} do something special for collection/all{% endcomment %}
+{% if collectionsAll == 'yes' %}
+	{% if metaObj.description_collectionsAll == empty or metaObj.description_collectionsAll == nil %}
+		{% assign output_description = page_description %}
+	{% else %}
+		{% assign output_description = metaObj.description_collectionsAll %}
+	{% endif %}
+{% endif %}
+
+
+{% comment %}
+------------------------------------------------
+set up the keywords meta if needed
+------------------------------------------------
+{% endcomment %}
+
+{% comment %} if the user wants keyword meta, give them keywords meta {% endcomment %}
+{% if show_keywordsMeta == 'yes' %}
+	{% assign output_keywordsMeta = metaObj.keywords %}
+{% endif %}
+
+
+{% comment %}
+------------------------------------------------
+if this is a tag filter of a collection, lets get wild
+------------------------------------------------
+{% endcomment %}
+
+{% comment %} always look for tags in a collection{% endcomment %}
+{% for tag in collection.all_tags %}
+  {% if current_tags contains tag %}
+		{% comment %} set a default {% endcomment %}
+		{% capture output_title %}{{ output_title }} - {{tag}}{% endcapture %}
+
+		{% comment %} buld the names of the meta variables {% endcomment %}
+		{% capture tag_title %}title_{{tag}}{% endcapture %}
+		{% capture tag_description %}description_{{tag}}{% endcapture %}
+
+		{% comment %} loop the meta obj looking for the known fields  {% endcomment %}
+		{% for keyVal in metaObj %}
+      		{% capture key%}{{keyVal | first}}{%endcapture%}
+      		{% capture value %}{{keyVal | last}}{% endcapture %}
+
+			{% if key == tag_title %}
+				{% assign output_title = value %}
+
+			{% elsif key == tag_description %}
+				{% assign output_description = value %}
+
+			{% elsif key == tag_keywords %}
+				{% assign output_keywordsMeta = value %}
+
+			{% endif %}
+
+		{% endfor %}
+
+
+		{% assign title_template_force_global = 'no' %}
+		{% assign title_template_force_local = 'no' %}
+
+		{% break %}
+
+	{% endif %}
+{% endfor %}
+
+
+{% comment %}
+------------------------------------------------
+if this is a nonControlled Obj, lets get wild
+------------------------------------------------
+{% endcomment %}
+
+{% if nonControlledObj == 'yes' %}
+
+	{% comment %} buld the names of the meta variables {% endcomment %}
+	{% capture objTag_title %}title_{{objTag}}{% endcapture %}
+	{% capture objTag_description %}description_{{objTag}}{% endcapture %}
+
+	{% comment %} loop the non controlled obj looking for the known fields  {% endcomment %}
+	{% for keyVal in metaObj %}
+  		{% capture key%}{{keyVal | first}}{%endcapture%}
+    	{% capture value %}{{keyVal | last}}{% endcapture %}
+
+		{% if key == objTag_title %}
+			{% assign output_title = value %}
+		{% elsif key == objTag_description %}
+			{% assign output_description = value %}
+		{% elsif key == objTag_keywords %}
+			{% assign output_keywordsMeta = value %}
+		{% endif %}
+
+	{% endfor %}
+{% endif %}
+
+
+
+{% comment %}
+------------------------------------------------
+if the title template is in use, process it and use it
+------------------------------------------------
+{% endcomment %}
+
+{% comment %} use the page template if its enforced {% endcomment %}
+{% if title_template_force_global == 'yes' or title_template_force_local == 'yes' %}
+	{% assign price_max = [currentObj].price_max | money %}
+	{% assign price_min = [currentObj].price_min | money %}
+	{% assign title =  title_template | replace: '##title##', [currentObj].title %}
+	{% assign title =  title | replace: '##seotitle##', page_title %}
+	{% assign title =  title | replace: '##price_max##', price_max %}
+	{% assign title =  title | replace: '##price_min##', price_min %}
+	{% assign title =  title | replace: '##type##', [currentObj].type %}
+	{% assign title =  title | replace: '##vendor##', [currentObj].vendor %}
+	{% assign title =  title | replace: '##author##', [currentObj].author %}
+	{% assign title =  title | replace: '##shopname##', shop.name %}
+
+	{% assign output_title = title %}
+{% endif %}
+
+
+{% comment %}
+------------------------------------------------
+output title, description, and keyword if needed
+------------------------------------------------
+{% endcomment %}
+
+<!-- SEO Meta Manager 4.0 -->
+<title>{{ output_title }}</title>
+<meta name='description' content='{{ output_description }}' />
+{% if show_keywordsMeta == 'yes' %}
+	<meta name='keywords' content='{{ output_keywordsMeta }}' />
+{% endif %}
+
+{% comment %}
+------------------------------------------------
+use the robot meta
+------------------------------------------------
+{% endcomment %}
+
+{% if noindex_follow == 'yes' %}
+	<meta name="robots" content="noindex">
+	<meta name="robots" content="follow">
+
+{% else %}
+	{% if robots_index == 'no' %}
+		<meta name="robots" content="noindex">
+	{% else %}
+		<meta name="robots" content="index">
+	{% endif %}
+
+	{% if robots_follow == 'no' %}
+		<meta name="robots" content="nofollow">
+	{% else %}
+		<meta name="robots" content="follow">
+	{% endif %}
+{% endif %}
+
+{% if robots_noimageindex == 'yes' %}
+	<meta name="robots" content="noimageindex">
+{% endif %}
+
+{% if robots_noarchive == 'yes' %}
+	<meta name="robots" content="noarchive">
+{% endif %}
+
+{% if robots_nosnippet == 'yes' %}
+	<meta name="robots" content="nosnippet">
+{% endif %}
+
+{% if robots_noodp == 'yes' %}
+	<meta name="robots" content="noodp">
+{% endif %}
+
+{% if google_notranslate == 'yes' %}
+	<meta name="google" content="notranslate" />
+{% endif %}
+
+{% if google_unavailable_after_globalDisabled == 'yes' %}
+	{% comment %}do nothing{% endcomment %}
+{% elsif google_unavailable_after == 'yes' %}
+	<meta name="googlebot" content="unavailable_after: {{google_unavailable_after_date}} UTC" />
+{% endif %}
+
+{% comment %} ROM 8:31 {% endcomment %}

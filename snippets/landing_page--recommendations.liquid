@@ -1,0 +1,17 @@
+{% capture collection_name %}{{ lp_collection }}{% endcapture %}
+
+<section class="recommendations">
+  <div class="wrap">
+    <h2 class="recommendations__heading">{{ page.metafields.global.recommendations_headline }}</h2>
+    <h3 class="recommendations__subheading">{{ page.metafields.global.recommendations_subheadline }}</h3>
+
+    {% for product in collections[collection_name].products %}
+    	<div class="recommendation">
+      <a class="recommendation__link" href="{{ site.url }}{{ product.url }}">
+        <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title }}" class="recommendation__image">
+        <span>{{ product.title }}</span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>

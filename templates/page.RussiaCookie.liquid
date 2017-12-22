@@ -1,0 +1,22 @@
+
+
+<style>
+  .russia span {display:block;cursor:pointer;color:#ff4500}
+</style>
+<section>
+  <div class="wrap russia">
+    <span onclick="set_cookie('countrylocation', 'hide')">Activate Russia</span>
+    <span onclick="delete_cookie('countrylocation')">Deactivate Russia</span>
+  </div>
+</section>
+
+<script>
+  function set_cookie(name, value) {
+  document.cookie = name +'='+ value +'; Path=/;';
+    location.reload();
+}
+function delete_cookie(name) {
+  document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  location.reload();
+}
+</script>

@@ -1,0 +1,40 @@
+<div class="blog-post-view__header featured-systems" style="background-image: url('https://cdn.shopify.com/s/files/1/0921/3560/files/page-header_pressreviews3.jpg?16003286081415883151');">
+		<div class="blog-list-view__header-copy">
+          <h1><span>SVS Home Audio News and Reviews</span></h1>
+		</div>
+	</div>
+<div class="wrap">
+		
+		<section class="blog-list-view sound-advice col-md-9 col-sm-12">
+
+			<div class="blog-list-view__header">
+				<!-- <h1>{{ blog.title }}</h1> -->
+			</div>
+			
+			{% paginate blog.articles by 20 %}
+			<div class="blog-list-view__posts">
+
+				{% for article in blog.articles %}
+				<div class="post">
+					<div class="post__content">
+						<p class="post__full-date">{{ article.published_at | date: "%m/%d/%Y" }}</p>
+						<h2><a href="{{ article.content | strip_html }}" target="_blank">{{ article.title }}</a></h2>
+                      
+					</div>
+				</div>
+				{% endfor %}
+				{% include 'pagination' %}
+			</div>
+			{% endpaginate %}
+
+			<!--<div class="community-promo">
+				<h3>Continue the Discussion, Join the SVS Community</h3>
+				<p>See what other owners are up to. Share your own system. Talk about setup tips &amp; tricks and stay up to date on the latest from SVS on our Facebook community page.</p>
+				<a href="https://www.facebook.com/SVSound" class="learn-more">Get Connected Now</a>
+			</div>-->
+
+		</section>
+
+		{% include 'blog-sidebar_V2' %}
+	
+	</div>

@@ -1,0 +1,16 @@
+{% if page.title contains 'Merlin' %}
+
+	{% assign title = '' %}
+{% else %}
+	{% assign title = page.title %}
+{% endif %}
+<section>
+<div class="wrap">
+  
+  <div class="span12 details">
+    <h1 class="p25">{{ title }}</h1>
+    {{ page.content }}
+  </div>
+  
+</div>
+</section>

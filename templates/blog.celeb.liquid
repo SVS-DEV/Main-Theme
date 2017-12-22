@@ -1,0 +1,47 @@
+	<div class="blog-post-view__header" style="background-image: url('{{ 'artist-spotlight-header.jpg' | asset_url }}');">
+		<div class="blog-list-view__header-copy">
+          <h1>Sound R|Evolution Sessions: <span>SVS Featured Artist and Producer Systems</span></h1>
+		</div>
+	</div>
+
+	<div class="wrap">
+      <div class="container-fluid">
+		<div class="grid-2 row">
+          <div class="col-md-9 col-sm-12">
+            <section class="featured-systems">
+
+                <div class="featured-systems__header">
+                    <p> 
+                        SVS speakers and subwoofers are used in the personal audio systems of artists and sound professionals who demand the highest level of performance and understand the role great sound plays in conveying the emotion and realism of music, movies, TV and other entertainment.
+                    </p>
+                    <p>
+                        In the Sound R|Evolution Sessions, we talk to individuals from across the world of entertainment about sound quality, artistry, and how SVS speakers and subwoofers elevate their personal listening experiences at home and also play a critical role in mixing, mastering and production.
+                    </p>
+                </div>
+
+                <div class="featured-systems__posts cf">
+
+                    {% for article in blog.articles %}
+                        {% if article.image != blank %}
+                            {% assign blog-header = article.image %}
+                        {% else %}
+                            {% assign blog-header = 'featured-system.jpg' %}
+                        {% endif %}
+                    <div class="post col-1-3">
+                        <a href="{{ article.url }}">
+                            <img src="{{ blog-header | img_url: 'large' }}" alt="{{ article.title }}">
+                            <h2>{{ article.title }}</h2>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </section>
+          </div>
+          
+          {% include 'blog-sidebar_V2' %}
+      </div>
+      </div>
+
+	</div>

@@ -1,0 +1,22 @@
+{% assign heading_copy = page.metafields.global.collection_heading %}
+{% assign subheading_copy = page.metafields.global.collection_subheading %}
+
+{% if second_heading == true %}
+	{% assign heading_copy = page.metafields.global.collection_heading_second %}
+{% endif %}
+
+{% if second_subheading == true %}
+	{% assign subheading_copy = page.metafields.global.collection_subheading_second %}
+{% endif %}
+
+<section class="collection-display {{ layout }}">
+	<div class="wrap">
+		  <div class="collection-display__headings">
+		        {% unless heading_copy == blank %}<h2 class="collection-display__heading">{{ heading_copy }}</h2>{% endunless %}
+		    	{% unless subheading_copy == blank %}<h2 class="collection-display__subheading">{{ subheading_copy }}</h2>{% endunless %}
+		  </div>
+
+
+		    {% include 'landing_page--grid_item', lp_collection: lp_collection %}
+    </div>
+</section>

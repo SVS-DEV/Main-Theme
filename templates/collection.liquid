@@ -1,0 +1,33 @@
+{% assign specs_setting = false %}
+
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , second_heading: collection.metafields.header.second_heading , description_heading: collection.metafields.header.description_heading, main_description: collection.description %}
+
+{% if collection.handle contains 'subwoofer' %}
+  
+  {% assign specs_setting = true %}
+  <section class="subwoofers-subpage__summary">
+    <div class="wrap">
+      <ul>
+       {{ collection.metafields.global.special_summary }}
+      </ul>
+    </div>
+  </section>
+
+{% endif %}
+  
+
+<section class="collection grid">
+
+  <div class="wrap">
+
+    {% for product in collection.products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  </div>
+  
+  <!--{% include 'collection--footer' %}
+  {% include 'bill-of-rights' %}-->
+
+
+</section>

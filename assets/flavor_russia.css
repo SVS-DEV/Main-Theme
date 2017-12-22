@@ -1,0 +1,37 @@
+.rec-price {
+  display:none;
+}
+.hideRU {
+  display:none !important;
+}
+.showRU {
+  display:block !important;
+}
+.ProductDetail1 {
+  display:none !important;
+}
+.snize-price{
+  display:none;
+}
+#snize_filters_dropdown_price {
+  display:none;
+}
+#snize_filters_block_price{
+  display:none;
+}
+footer .footer-links li {
+  width:50%
+}
+footer .footer-nav .footer-wrap div {
+  width:25%
+}
+@media only screen and (max-width: 800px){
+  footer .footer-nav .footer-wrap div {
+    width:33.33333333333333%
+  }
+}
+@media only screen and (max-width: 680px){
+  footer .footer-links li {
+    width:100%;
+  }
+}

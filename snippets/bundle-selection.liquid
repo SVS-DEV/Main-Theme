@@ -1,0 +1,46 @@
+<script>
+  var RCB = RCB || {};
+  RCB.bundles = RCB.bundles || [];
+  RCB.base = RCB.base || {};
+  RCB.bundle = RCB.bundle || {};
+</script>
+
+
+{% assign bundle_collection = bundled_products_collection %}
+
+
+{{ product_bundle.metafields.bundle.selection_type }}
+{% assign first_bundle = '' %}
+{% for product_bundle in bundled_products_collection.products %}
+  {% if product_bundle.metafields.bundle.base_product_handle == product.handle %}
+	{% assign first_bundle = product_bundle %}
+  {% endif %}
+{% endfor %}
+
+{% if first_bundle.metafields.bundle.selection_type == 'radio' %}
+<h3>Step Up Your Experience &amp; Save:</h3>
+{% endif %}
+
+
+{% comment %} loop all products in the bundled products collection {% endcomment %}
+
+{% for product_bundle in bundled_products_collection.products %}
+
+  {% comment %} if the current product is a base product of one of the bundled products {% endcomment %}
+  {% if product_bundle.metafields.bundle.base_product_handle == product.handle %}
+
+    {% include 'bundle-selection-template' with 'bundle_collection':bundled_products_collection,'product_bundle':product_bundle %}
+	
+	<script>
+      RCB.bundles.push({{ product_bundle | json }});
+	</script>
+
+  {% endif %}
+
+{% endfor %}
+
+
+{% comment %}
+{{ 'bundler.js' | asset_url | script_tag }}
+{% endcomment %}
+

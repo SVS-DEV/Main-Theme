@@ -1,0 +1,87 @@
+{% assign landingpage_collection = 'prime-collection-landing-page-collection' %}
+{% assign landingpage_collection_secondary = landingpage_collection | append: "-2" %}
+{% assign landingpage_collection_recommendations = landingpage_collection | append: "-3" %}
+
+
+{% include 'landing_page--header', first_heading: page.metafields.global.collection_heading_first , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.content %}
+
+		
+
+  <section class="image-text right first-section radial-shadow--top radial-shadow--bottom">
+
+    <div class="wrap">
+
+    <img src="{{ 'prime-series-section1.png' | asset_url }}" alt="Expertise + Passion">
+
+    <div class="image-text__copy">
+      <h2 class="image-text__heading">Audiophile Precision, Cinematic Dynamics, Unprecedented Value.</h2>
+
+      <p>Welcome to Prime: audiophile precision, cinematic dynamics, elegant design. Prime defies convention, granting you access to the high-end audio experiences previously reserved for the few. <strong>Clean and accurate, effortless and earthshaking,</strong> Prime is pure SVS.</p>
+
+      <p>Their <strong>uncompromising performance</strong> was borne of the same philosophy as the critically acclaimed, award-winning Ultra series. In fact, to deliver Prime’s uncompromising audiophile-grade experience at their unprecedented price, we drew deeply on Ultra’s component technology, engineering rigor, and design palette. Like the Ultras, each technical element and cabinet characteristic has been carefully selected, crafted and tuned.</p>
+
+      <p><strong>They sound extraordinary.</strong> And look beautiful in any décor with their modern styling and piano gloss black or black ash-grain vinyl finish. We’re pleased to say Prime is worthy of the SVS name—and more importantly worthy of being invited into your home.</p>
+    </div>
+
+    </div>
+
+  </section>
+
+  <section class="short-copy">
+
+    <div class="wrap">
+
+    <img src="{{ 'prime-series-excellence.png' | asset_url }}" alt="">
+
+    <div class="short-copy__content">
+      <h2 class="short-copy__heading">Born <span>From</span> Excellence</h2>
+      <p class="short-copy__copy">Spawned from the acclaimed Ultra Series Speakers, the SVS Prime Series was developed through exhaustive new engineering and form factor refinement to achieve true flagship performance at mainstream prices.</p>
+    </div>
+
+    </div>
+
+
+  </section>
+
+  <section class="image-text right radial-shadow--top radial-shadow--bottom">
+
+    <div class="wrap">
+
+    <img src="{{ 'prime-series-section3.png' | asset_url }}" alt="">
+
+    <div class="image-text__copy">
+      <h2 class="image-text__heading">World-class Performance, Right At Home.</h2>
+
+      <p>Prime was designed to overcome the audio limitations of dual-purpose living/listening spaces. An uncompromising system of high-fidelity speakers —from towers, to revolutionary satellites—the Prime series’ voicing has been expertly matched to create a coherent and world-class soundstage.</p>
+
+      <p><strong>With each unit cleverly playing multiple sonic roles,</strong> you will finally experience the full musical artistry and cinematic illusion their creators imagined—right in your own home.</p>
+
+    </div>
+
+    </div>
+
+  </section>
+
+  {% include 'landing_page--audition_promo' %}
+  
+  {% include 'landing_page--variable_collection_grid', layout: 'columns', lp_collection: landingpage_collection  %}
+  
+  {% include 'landing_page--variable_collection_grid', layout: 'columns', lp_collection: landingpage_collection_secondary, second_heading: true %}
+
+
+  <section class="slider-wrapper radial-shadow--top radial-shadow--bottom">
+    <div class="wrap">
+      <section class="large-slider">
+        <img src="{{ 'prime-series-large-slider-1.jpg' | asset_url }}" alt="">
+        <img src="{{ 'prime-series-large-slider-2.jpg' | asset_url }}" alt="">
+        <img src="{{ 'prime-series-large-slider-3.jpg' | asset_url }}" alt="">
+      </section>
+    </div>
+  </section>
+
+  
+  {% include 'landing_page--recommendations', lp_collection: landingpage_collection_recommendations %}
+
+  </section>
+
+</div>

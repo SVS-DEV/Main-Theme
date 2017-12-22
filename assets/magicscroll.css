@@ -1,0 +1,17 @@
+/*
+
+
+   Magic Scroll v2.0.16 
+   Copyright 2016 Magic Toolbox
+   Buy a license: https://www.magictoolbox.com/magicscroll/
+   License agreement: https://www.magictoolbox.com/license/
+
+
+*/
+@import url('magicscroll.core.css');
+@import url('magicscroll.slidein.css?v=1');
+@import url('magicscroll.bounce.css?v=1');
+
+@import url('magicscroll.default.css?v=1');
+@import url('magicscroll.loader.css?v=1');
+@import url('magicscroll.rounded.css?v=1');

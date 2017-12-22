@@ -1,0 +1,145 @@
+<style>
+  .blog-post-view__content h1 {
+    font-weight: 700;
+    font-size: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+    text-transform: uppercase;
+  }
+  .featured-systems__posts 
+  {
+    clear:both;
+    float:none;
+  }
+  .featured-systems__posts img 
+  {
+    min-width: 550px;
+    float: none !important;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+  .post.featured a 
+  {
+    overflow:hidden;
+  }
+  .blog .glossary-post-view__header 
+  {
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 187px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+  .blog .glossary-post-view__header-copy 
+  {
+    margin-left: 50px;
+    position: absolute;
+    bottom: 10%;
+    max-width: 70%;
+    color: #fff;
+  }
+  .blog .glossary-post-view__header h1
+  {
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 36px;
+    line-height: .875;
+    font-weight: 900;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  .blog .glossary-post-view__header h2
+  {
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 36px;
+    line-height: .875;
+    font-weight: 300;
+    letter-spacing: 0px;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom:10px;
+  }
+  .blog .glossary-post-view__header h1 span 
+  {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 0;
+  display: block;
+  }
+  .blog .blog-post-view__content img {
+    float: right;
+    max-width: 250px;
+    height: auto;
+    margin: 0 0 20px 20px;
+  }
+ .blog-post .blog-post-view__content h2 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+   padding-top:20px;
+   margin-top:20px;
+    text-transform: normal;
+   clear:both
+  }
+  @media (max-width: 680px) {
+    .blog .blog-post-view__content img:not(.featured-systems__posts img) {
+      display:none;
+      float:none;
+    }
+    .blog-post-view__content h1 {
+    font-size: 22px;
+  }
+
+  }
+  
+  
+
+  
+</style>
+<div class="glossary-post-view__header"{% if article.image %} style="background-image: url('{{ article | img_url: 'master' }}');"{% endif %}>
+  <div class="glossary-post-view__header-copy">
+    <h2><i class="fa fa-book" aria-hidden="true"></i> SVS Home Audio Glossary</h2>
+  </div>
+</div>
+<div class="wrap"> 
+    <section class="blog-post-view sound-advice col-md-9 col-sm-12">
+      <div class="blog-post-view__content">
+        <h1>{{ article.title }}</h1>
+        {{ article.content }}
+        <div class="featured-systems__posts cf">
+          <h2>Other Sound Expert Articles</h2>
+          <div class="container-fluid">
+            <div class="row">
+              {% assign thisproduct = article.title %}
+              {% for article in blogs.svs.articles %}
+              {% if article.metafields.global.recommended_image  != blank %}
+              {% assign blog-header = article.metafields.global.recommended_image %}
+              {% else %}
+              {% assign blog-header = article.image | img_url: 'large' %}
+              {% endif %}
+              <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if forloop.index > 6 %}bloghide{% endif %}">
+                <a href="{{ article.url }}">
+                  <img src="{{ blog-header }}" alt="{{ article.title }}">
+                  <h2>{{ article.title }}</h2>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="showmore" onclick="$('.bloghide').show(); $(this).hide()">Show All</div>
+        </div>
+        <!--  {% include 'article-pagination' %} -->
+      </div>
+    </section>
+    {% include 'blog-sidebar_V2' %}
+  </div>          
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5445bf84544be1bf"></script>
+

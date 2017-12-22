@@ -1,0 +1,294 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+
+<script>
+  var _affirm_config = {
+    public_api_key:  "D14SUXY2PKEA6DRK",
+    script:          "https://cdn1-sandbox.affirm.com/js/v2/affirm.js"
+  };
+  (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+</script>
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/png" />
+
+  <meta charset="utf-8" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+  <title>
+  {{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tagged' | t }} "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description }}" />
+  {% endif %}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+
+  {% include 'fb-open-graph-tags' %}
+  {% include 'twitter-card' %}
+
+  <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <!-- Favicons -->
+    <!-- Fonts -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <!-- Stylesheets -->
+  
+  {{ 'svs.min.css' | asset_url | stylesheet_tag }}
+  {{ 'tweaks.css' | asset_url | stylesheet_tag }}
+  
+  
+  
+  
+  
+  
+  
+  
+  {% if template contains 'test' %}
+  	{{ 'test.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  {{ 'html5shiv.js' | asset_url | script_tag }}
+
+  {{ content_for_header }}
+
+  {{ 'jquery.min.js' | asset_url | script_tag }}
+  {{ 'jquery-migrate-1.2.0.min.js' | asset_url | script_tag }}
+
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+  
+
+
+
+
+  
+  <meta name="google-site-verification" content="2kqIBH0rkB8_fkvXplAT82YhuMqq3c78YkGywXj9NHw" />
+
+
+</head>
+
+
+{% assign body_classes="" %}
+
+{% assign cur_page = page_title | handle %}
+
+{% if template contains 'index' %}
+  {% assign body_classes="home" %}
+{% elsif template == 'product' %}
+  {% assign body_classes="product-page" %}
+{% elsif template contains 'collection'%}
+  {% assign body_classes="collection" %}
+  {% if collection.handle contains 'subwoofer' %}
+      {% assign body_classes = body_classes | append: ' subwoofers-subpage' %}
+  {% endif %}
+{% elsif template contains 'series' or template contains 'speakers' or template contains 'subwoofers' or template contains 'upsell' %}
+  {% assign body_classes="landing-page " | append: cur_page %}
+{% elsif template contains 'systems'%}
+  {% assign body_classes="landing-page systems " | append: cur_page %}
+{% elsif template contains 'faqs'%}
+  {% assign body_classes="faqs updated-basic" %}
+{% elsif template contains 'terms-and-conditions'%}
+  {% assign body_classes="terms-and-conditions updated-basic" %}
+{% elsif template contains 'bill-of-rights'%}
+  {% assign body_classes="bill-of-rights updated-basic" %}
+{% elsif template contains 'about'%}
+  {% assign body_classes="about updated-basic" %}
+{% elsif template contains 'privacy-policy'%}
+  {% assign body_classes="privacy-policy updated-basic" %}
+{% elsif template contains 'document-library'%}
+  {% assign body_classes="document-library updated-basic" %}
+{% elsif template contains 'customer-service'%}
+  {% assign body_classes="customer-service updated-basic" %}
+{% elsif template contains 'newsletter'%}
+  {% assign body_classes="newsletter updated-basic" %}
+{% elsif template contains 'blog' or template contains 'page.reviews' or contains 'featured' %}
+  {% assign body_classes="blog" %}
+{% elsif template contains 'article'%}
+  {% assign body_classes="blog blog-post" %}
+{% elsif template contains 'press-reviews'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'us-dealers'%}
+  {% assign body_classes="dealers us-dealers" %}
+{% elsif template contains 'international-dealers'%}
+  {% assign body_classes="dealers international-dealers" %}
+{% elsif template contains 'register'%}
+  {% assign body_classes="updated-basic register" %}
+{% elsif template contains 'login'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'activate_account'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'reset_password'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'customer'%}
+  {% assign body_classes='account-page' %}
+{% elsif template contains '404'%}
+  {% assign body_classes='updated-basic' %}
+{% elsif template contains 'soundpath' or template contains 'ultra-cat-v2' %}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'prime-cat-v2' %}
+  {% assign body_classes='soundpath-main landing-page prime-cat' %}
+{% elsif template contains 'gift_guide' or template contains 'grad-gift-guide' %}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'calendar'%}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'big-game-guide' %}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'landing-page-subwoofer' %}
+  {% assign body_classes='lp-subwoofers landing-page' %}
+{% elsif template contains 'all-products' %}
+  {% assign body_classes='collection-all' %}
+{% endif %}
+
+
+
+<body class="{{ body_classes }} template-{{ template | handleize }}{% if template == "product" %} {{ product.handle }}{% endif %}">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJCXDF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJCXDF');</script>
+<!-- End Google Tag Manager -->
+
+  
+  <!-- Begin footer -->
+    {% include 'header' %}
+  <!-- End footer -->
+
+  <!-- Begin wrapper -->
+     
+
+      <!-- Begin content-->
+      <section id="content" class="clearfix">
+        {{ content_for_layout }}
+      </section>
+      <!-- End content-->
+
+  <!-- End wrapper -->
+
+  <!-- Begin footer -->
+  {% include 'modal' %}
+  {% include 'footer' %}
+  
+  <!-- End footer -->
+
+  <!-- Scripts -->
+  
+   <script>
+
+     var SVS = SVS ? SVS : {};
+       SVS.currentSite = '{{ shop.domain }}';
+
+  </script>
+  
+  {% raw %}
+  <script id="redirect_bar" type="x-tmpl-mustache">
+      <div class="redirectbar"><p>Looks like you're in {{ user_location }}, so we sent you to {{ site_url }}. You can visit  <a href="http://{{ site_one }}">{{ site_one }}</a> and  <a href="http://{{ site_two }}">{{ site_two }}</a> any time.</p></div>
+  </script>
+  {% endraw %}
+  
+  {{ 'mustache.min.js' | asset_url | script_tag }}
+  <script src="{{ 'svs.min.js' | asset_url }}"></script>
+  
+  
+  {% assign staging = false %}
+  
+  {% if staging == true %}
+    {{ 'staging--mauney.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'staging--mauney.js' | shopify_asset_url | script_tag }}
+    
+    {{ 'staging--coble.css' | asset_url | stylesheet_tag }}
+    {{ 'staging--coble.js' | asset_url | script_tag }}
+
+  
+    {{ 'staging-breneman.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+  {% if template contains 'product' %}
+    {{ 'bundler.js' | asset_url | script_tag }}
+  {% endif %}
+
+
+<input type="hidden" name="_pc_params" value="{{ shop.permanent_domain }}:{{ customer.id }}" />
+  
+
+  <script>
+    function waitForElementToDisplay(selector, time) {
+        if(document.querySelector(selector)!=null) {
+          $( "#gts-c" ).click(function() {
+  ga('send', 'event', 'Google Trusted Stores', 'Click', 'Badge')
+            return;
+            });
+          $( ".gtss-ac" ).click(function() {
+  ga('send', 'event', 'Google Trusted Stores', 'Click', 'View Details')
+            return;
+            });
+          $( ".gtss-ub" ).click(function() {
+  ga('send', 'event', 'Google Trusted Stores', 'Click', 'Learn More')
+            return;
+            });
+            $("a.gtss-eb:eq(0)").click(function() {
+  ga('send', 'event', 'Google Trusted Stores', 'Click', 'Privacy Policy')
+            return;
+            });
+  $("a.gtss-eb:eq(1)").click(function() {
+  ga('send', 'event', 'Google Trusted Stores', 'Click', 'Verify')
+            return;
+            });
+  $("a.gtss-eb:eq(2)").click(function() {
+  ga('send', 'event', 'Google Trusted Stores', 'Click', 'About Google Trusted Stores')
+            return;
+            });
+        }
+        else {
+            setTimeout(function() {
+                waitForElementToDisplay(selector, time);
+            }, time);
+        }
+    }
+    
+    waitForElementToDisplay("#gts-c", 2000);
+  </script>
+  <script>
+    function OpenLHNChat(){
+if (typeof lhnWin !== 'undefined' && lhnWin){
+if (!lhnWin.closed){
+lhnWin.blur();
+setTimeout(lhnWin.focus(), 10);
+return false;
+}
+}
+var wleft = (screen.width - 580-32) / 2;
+var wtop = (screen.height - 420 - 96) / 2;
+lhnWin=window.open('https://www.livehelpnow.net/lhn/livechatvisitor.aspx?lhnid=17930', 'lhnchat', 
+'left=' + wleft + ',top=' + wtop +',width=580, height=435,toolbar=no,location=no,directories=no, status=yes,menubar=no,scrollbars=no,copyhistory=no,resizable=yes');
+return false;
+}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<div class="sidebar-wrap cf">
+{% if product.type == "Speaker" or product.type == "System" or product.type == "Speaker Outlet" or product.type == "Subwoofer" or product.type == "Dual Subwoofer" or product.type == "Subwoofer Outlet" or product.type == "Test Product" %}
+    <div class="sidebar-top cf">
+
+        {% if product.type == "Speaker" or product.type == "System" or product.type == "Speaker Outlet" %}
+            <div class="col-md-12"> <h2> System Building Tool </h2> </div>
+            <div class="col-md-12">
+            	<div class="tool-sidebar-wrap">
+                    <img src="{{ 'jeeves-logo-reverse-final.png' | asset_url }}">
+                    <p>
+                        Personal SVS speaker and subwoofer system builder. Choose from preset home theater surround sound set-ups like 5.1, or custom build your own.
+                    </p>
+                    <a href="/pages/system-builder" class="sidebar-cta"> Build with Jeeves </a>
+                </div>
+            </div>
+            <div class="col-md-12">
+            	<div class="browse-products-sidebar">
+                    <h3> Browse all SVS Tower, Bookshelf, Center Channel, Satellite and Height Channel speakers from the Ultra and Prime Series. </h3>
+                    <a href="/pages/speakers" class="sidebar-cta"> Learn More </a>
+                </div>
+            </div>
+
+
+        {% elsif product.type == "Subwoofer" or product.type == "Dual Subwoofer" or product.type == "Subwoofer Outlet" or product.type == "Test Product" %}
+            <div class="col-md-12"> <h2> Subwoofer Matching Tool </h2> </div>
+            <div class="col-md-12">
+                <div class="tool-sidebar-wrap">
+                    <img src="{{ 'merlin-logo-footer-full.png' | asset_url }}">
+                    <p>
+                        Enter your speakers and the Merlin engine instantly suggests ideal SVS subwoofer matches along with crossover frequency and low pass filter settings.
+                    </p>
+                    <a href="/pages/merlin" class="sidebar-cta"> Get Merlin’s Recommendation </a>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+            	<div class="browse-products-sidebar">
+                    <h3> Browse all SVS subwoofers from the 2000, 1000, Ultra & Plus Series. </h3>
+                    <a href="/pages/subwoofers" class="sidebar-cta"> See All SVS Subwoofers </a>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+  {% endif %}
+
+
+    <div class="sidebar-bottom cf">
+
+        <div class="col-md-12"> <h2> SVS Owner Experience </h2> </div>
+        <div class="col-md-12">
+            <div class="sidebar-bor-wrap">
+                <!--<img src="{{ 'bor-footer-logo.png' | asset_url }}">-->
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/bor-footer-logo-2.png?14056002896033595759" alt="">
+                <p>
+                    A benefits package that instills confidence and extends before and after your SVS products arrive.
+                </p>
+                <ul>
+                    <li> 45 Day Risk-Free In-Home Trial, Fast & Free Shipping and Returns </li>
+                    <li> 5-Year Unconditional Warranty, 1-Year Trade-up Policy </li>
+                    <li> Guaranteed Price Protection and more… </li>
+                </ul>
+                <a href="/pages/bill-of-rights" class="sidebar-cta"> View My Bill of Rights </a>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="support-sidebar-wrap">
+                <!--<img src="{{ 'sound-experts-footer-logo.png' | asset_url }}">-->
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/sound-experts-footer-logo-2.png?14056002896033595759" alt="">
+                <p>
+                    Ohio-based AV professionals provide customer support, product recommendations and set-up advice for every component in your system, 7 days a week, before and after you own SVS.
+                </p>
+                <a href="/pages/customer-service" class="sidebar-cta"> Contact SVS Sound Experts </a>
+            </div>
+        </div>
+
+    </div>
+</div>

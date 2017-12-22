@@ -1,0 +1,96 @@
+<style>
+  .post.featured {
+    height:209px;
+  }
+  .post.featured a {
+    height:209px;
+  }
+</style>
+<div class="blog-post-view__header" style="background-image: url('{{ 'featured-home-theater-header.jpg' | asset_url }}');">
+    <div class="blog-post-view__header-copy">
+        <h1>SVS Featured <span>Home Theater:</span></h1>
+    </div>
+</div>
+
+<div class="wrap">
+
+    <section class="blog-post-view sound-advice col-md-9 col-sm-12">
+
+        <div class="blog-post-view__content">
+          
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_sharing_toolbox" style="margin-bottom:0px"></div>
+          
+            {{ article.content }}
+
+            <div class="featured-systems__posts cf">
+            <h2>Other Featured Owner Systems</h2>
+        <div class="container-fluid">
+          
+
+
+    
+
+          <div class="row">
+{% assign thisproduct = article.title %}
+                    {% for article in blog.articles %}
+
+    {% if article.title <> thisproduct %}
+
+                        {% if article.image != blank %}
+                            {% assign blog-header = article.image %}
+                        {% else %}
+                            {% assign blog-header = 'featured-system.jpg' %}
+                        {% endif %}
+                    <div class="post featured col-lg-4 col-md-6 col-sm-12 col-xs-12 {%if forloop.index > 7 %}bloghide{% endif %}">
+                        <a href="{{ article.url }}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Additional Resource - {{ article.title }}')">
+                            <img src="{{ blog-header | img_url: 'large' }}" alt="{{ article.title }}">
+                            <h2>{{ article.title }}</h2>
+                        </a>
+                    </div>
+            {% endif %}
+                    {% endfor %}
+          </div>
+        </div>
+            <div class="showmore" onclick="$('.bloghide').show(); $(this).hide()">Show All</div>
+
+                </div>
+
+            
+
+        </div>
+
+        <div class="gallery-modal-wrapper" data-remodal-id="gallery-modal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <img src="" alt="">
+        </div>
+
+    </section>
+  {% include 'blog-sidebar_V2' %}
+  {% include 'disqus' %}
+
+</div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5445bf84544be1bf"></script>
+<script>
+  // Begin SVS Visitor Analytics
+  
+  $( document ).ready(function() {
+if(document.referrer.split('/')[2]!=location.hostname){
+    document.cookie = "FromExtDomain=ToBlog";
+}else{
+}
+
+var domaincookie=getCookie("FromExtDomain");
+    if (domaincookie!="") {
+    } else {
+      if(document.referrer.split('/')[2]!=location.hostname){
+}else{
+    ga('send', 'event', 'SVS Visitor', 'Click', 'Not Blog Entry - Featured Customer');
+	
+} 
+    }
+    });
+    
+// End SVS Visitor Analytics
+</script>

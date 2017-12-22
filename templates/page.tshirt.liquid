@@ -1,0 +1,150 @@
+{% if page.title contains 'Merlin' %}
+
+	{% assign title = '' %}
+{% else %}
+	{% assign title = page.title %}
+{% endif %}
+<section>
+<div class="wrap">
+  <div class="span12 details">
+    <h1 class="p25">{{ title }}</h1>
+    {{ page.content }}
+    {% form 'contact' %}
+
+  {% if form.posted_successfully? %}
+    <script>
+$(document).ready(function() {
+
+      document.getElementById('fttext').className="fttext2";
+      document.getElementById('fttext').innerHTML ="<h5 class='fth6'>Thanks!</h5><p class='ftp'>Your order and free t-shirt are on the way.</p>";
+  	  document.getElementById('contactFormSubmit').style.display ="none";
+    });
+    </script>
+    
+  {% endif %}
+
+  {% if form.errors %}
+  <div class="errorForm feedback">
+    <!-- {{ form.errors.size }} or {{ form.errors | size }} -->
+    <p>Your contact form has {{ form.errors | size | pluralize: ‘an error’, ‘a few errors’ }}. To submit your form, make the following changes and try again:</p>
+    {% for field in form.errors %}
+      <p>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <span class="os-order-number">Order 1002542</span>
+<p class="os-step__description">We've accepted your order, and we're getting it ready. A confirmation email has been sent to "<span class="emphasis">ryana@svsound.com</span>". Come back to this page for updates on your order status.
+        </p>
+    <div class="section__content__column section__content__column--half">
+            <h3>Shipping address</h3>
+            <p>Ryan Alfredo<br>SVS<br>441 Sunset Dr<br>Hubbard, OH, 44425-1412<br>United States<br>3303013747</p>
+              <h3>Shipping method</h3>
+              <p>Free Ground Shipping</p>
+          </div>
+          <div class="section__content__column section__content__column--half">
+            <h3>Billing address</h3>
+            <p>Ryan Alfredo<br>SVS<br>441 Sunset Dr<br>Hubbard, OH, 44425-1412<br>United States<br>3303013747</p>
+              <h3>Payment method</h3>
+              <ul class="payment-method-list">
+                <li class="payment-method-list__item">
+  <i class="payment-method-list__item__icon payment-icon payment-icon--visa">
+    <span class="visually-hidden">Visa</span>
+  </i>
+  <span class="payment-method-list__item__info">ending with 2601 —</span>
+  <span class="payment-method-list__item__amount emphasis">$ 13.93</span>
+</li>
+
+
+              </ul>
+          </div>
+<div class="ftouterwrapper" id="tshirt">
+<div class="ftinnerwrapper">
+<img src="https://system.na1.netsuite.com/core/media/media.nl?id=82213&c=3634088&h=df68e3890af67ac8d4aa" class="tshirtimg">
+
+<div id ="fttext">
+<h5 class="fth5">WELCOME TO THE SVS EXPERIENCE</h5>
+<p class="ftp">To show our thanks for choosing SVS, we'd<br>like to send you our SOUND R|EVOLUTION<br>T-shirt as a token of our appreciation. Just<br>select your size from the menu below and<br>we'll include it with your order.</p>
+<select class="ftselect" id="shirtsize" name="shirtsize" onchange="changeshirt()">
+  <option value="none">SELECT SIZE</option>
+  <option value="medium">M</option>
+  <option value="large">L</option>
+  <option value="extra_large">XL</option>
+  <option value="extra_extra_large">XXL</option>
+</select>
+</div>
+</div>
+</div>
+  <div id="contactFormWrapper">
+    <p>
+      <input type="text" required id="contactFormName" name="contact[name]" value="{{ customer.first_name }} {{ customer.last_name }}">
+    </p>
+    <p>
+      <input type="email" required id="contactFormEmail" name="contact[email]" value="{{ customer.email }}">
+    </p>
+    <p>
+      <textarea required rows="10" id="contactFormMessage" name="contact[body]"></textarea>
+    </p>
+    <p>
+      <input type="submit" class="btn-sm ft" id="contactFormSubmit" value="{{ 'contact.form.send' | t }}" />
+    </p>
+  </div>
+  
+{% if customer %} 
+<script>
+function changeshirt(){
+var messageHTML = "";
+	
+	messageHTML = messageHTML + "Name: " + "{{ customer.first_name }} {{ customer.last_name }}" + "          ";
+	messageHTML = messageHTML + "Email: " + "{{ customer.email }}" + "          ";
+	messageHTML = messageHTML + $('.os-order-number').html() + "          ";
+	messageHTML = messageHTML + "Shirt Size: " + document.getElementById("shirtsize").value + "          ";
+		
+	document.getElementById("contactFormMessage").value = messageHTML;
+}
+
+</script>
+{% else %}
+<script>
+function changeshirt(){
+	var namecontainer = $('.section__content__column.section__content__column--half p').html();
+	var name = namecontainer.substr(0, namecontainer.indexOf('<br>')); 
+var messageHTML = "";
+	
+	messageHTML = messageHTML + "Name: " + name + "          ";
+	messageHTML = messageHTML + "Email: " + $('.os-step__description .emphasis').html() + "          ";
+	messageHTML = messageHTML + $('.os-order-number').html() + "          ";
+	messageHTML = messageHTML + "Shirt Size: " + document.getElementById("shirtsize").value + "          ";
+	document.getElementById("contactFormName").value = name;
+    document.getElementById("contactFormEmail").value = $('.os-step__description .emphasis').html();
+	document.getElementById("contactFormMessage").value = messageHTML;
+}
+
+</script>
+{% endif %}
+
+  {% endform %}
+
+  <style>
+    .styledSelect {display:none}
+  .contact-form {margin:1em 0}
+  .feedback {padding:0.5em 0.7em;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px}
+  .feedback p {padding:0.5em 0 !important;margin:0 !important}
+  .successForm {background:#bde0a8;color:green}
+  .errorForm {background:#eebdbd;color:red}
+    .ftouterwrapper {background-color:#e5e5e5; width:513px; min-height:242px; overflow:hidden}
+.ftinnerwrapper {padding-top:30px;padding-bottom:27px;padding-left:30px; position:relative}
+.fth5{font-family: 'Open Sans', Helvetica, Arial, sans-serif!important; font-size: 16px; font-weight: 800!important; text-transform: uppercase; margin: 0px 0 10px 0; line-height: 1;color:#000}
+.fth6{font-family: 'Open Sans', Helvetica, Arial, sans-serif!important; font-size: 48px; font-weight: 800!important; text-transform: uppercase; margin: 0px 0 10px 0; line-height: 1;color:#000}
+.ftp {font-family:'Open Sans',helvetica,arial; font-size:15px;font-weight:300;line-height:21px; color:#000; margin-bottom:8px}
+.ftp6 {font-family:'Open Sans',helvetica,arial; font-size:15px;font-weight:300;line-height:21px; color:#000; margin-bottom:0px}
+.ftselect {padding:6px; margin-right:-4px; padding-right:0px; padding-bottom:7px; font-size:14px; font-family:'Open Sans', arial}
+.ft {background-color:#ff4500 !important; font-size:14px !important; padding:10px 20px 10px 20px !important}
+.tshirtimg {position:absolute;right:0}
+.fttext2 {margin-top:41px; border: 3px solid; padding:15px; width:285px;text-align:center;margin-left:10px}
+    .options {display:none}
+  </style>
+  </div>
+  
+</div>
+</section>
+<script type="text/javascript" src="https://form.jotform.com/jsform/60176586278164"></script>

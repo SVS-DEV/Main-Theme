@@ -1,0 +1,96 @@
+{% assign specs_setting = false %}
+
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , second_heading: collection.metafields.header.second_heading , description_heading: collection.metafields.header.description_heading, main_description: collection.description %}
+
+{% if collection.handle contains 'subwoofer' %}
+  
+  {% assign specs_setting = true %}
+  <section class="subwoofers-subpage__summary">
+    <div class="wrap">
+      <ul>
+       {{ collection.metafields.global.special_summary }}
+      </ul>
+    </div>
+  </section>
+
+{% endif %}
+  
+
+<section class="collection grid">
+
+  <div class="wrap">
+
+    {% for product in collection.products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  </div>
+  
+  <!--{% include 'collection--footer' %}
+  {% include 'bill-of-rights' %}-->
+
+
+</section>
+<div class="wk_compare_products_block"> </div>
+<script>
+function comparedeny(){
+  var nocomparelist = "";
+$.each($('.wk_title'), function () { 
+  
+  if($(this).is(':contains("PB-1000")'))  {
+	  nocomparelist += 'PB-1000 <br>'
+			}
+			else if($(this).is(':contains("PB-2000")')) {
+				nocomparelist += 'PB-2000 <br>'
+				}
+				else if($(this).is(':contains("PB12-Plus")')) {
+					nocomparelist += 'PB12-Plus <br>'
+					}
+					else if($(this).is(':contains("PB13-Ultra")')) {
+						nocomparelist += 'PB13-Ultra <br>'
+						}
+						else if($(this).is(':contains("SB-1000")')) {
+							nocomparelist += 'SB-1000 <br>'
+							}
+							else if($(this).is(':contains("SB-2000")')) {
+								nocomparelist += 'SB-2000 <br>'
+								}
+								else if($(this).is(':contains("SB13-Ultra")')) {
+									nocomparelist += 'SB13-Ultra <br>'
+									}
+									else if($(this).is(':contains("PC-2000")')) {
+										nocomparelist += 'PC-2000 <br>'
+										}
+										else if($(this).is(':contains("PC12-Plus")')) {
+											nocomparelist += 'PC12-Plus <br>'
+											}
+											else if($(this).is(':contains("PC13-Ultra")')) {
+												nocomparelist += 'PC13-Ultra <br>'
+											}
+  else if($(this).is(':contains("SB16-Ultra")')) {
+												nocomparelist += 'SB16-Ultra <br>'
+											}
+  else if($(this).is(':contains("PB16-Ultra")')) {
+												nocomparelist += 'PB16-Ultra <br>'
+											}
+
+});
+  if (nocomparelist !=""){
+    WK_PC.showPopup('Oops! We’re not able to compare speakers and subwoofers','Please remove:<br><br>' + nocomparelist);
+	setTimeout(function() {
+      $checkbox.removeAttr('checked');
+    }, 0);
+    event.preventDefault();
+    event.stopPropagation();
+	}
+};
+	var checkExist = setInterval(function() {
+		if ($(".wk_product_comparison input[type='checkbox']").length) {
+			
+			$(".wk_product_comparison input[type='checkbox']").click(function(){ comparedeny(); });
+          
+			clearInterval(checkExist);
+			}
+			}, 500); // check every 100ms
+			
+</script>

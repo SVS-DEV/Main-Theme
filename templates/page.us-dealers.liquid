@@ -1,0 +1,36 @@
+<section class="dealers__content">	
+  <div class="wrap">
+    <section class="find-a-dealer">
+      <h1 class="dealerh3">Find an SVS Retailer Near You</h1>
+      <div id="map">
+        <!-- MetaLocator.com Code START --><script language="javascript" src="//code.metalocator.com/index.php?option=com_locator&view=directory&layout=_javascript&framed=1&format=raw&tmpl=component&no_html=1&Itemid=5479"></script><a href="http://www.metalocator.com" style="color:#ccc; font-size:0.7em;" target="_new">Store Locator Software</a><!-- MetaLocator.com Code END: Do not modify this code block. See TOS for details. -->
+      </div>
+    </section>
+  </div>
+  <section class="dealers__intro">
+    <div class="wrap" style="padding-top:0px">
+      <p>SVS Subwoofers, Speakers and Audio Accessories are available from SVSound.com and select ecommerce partners, and by phone (877.626.5623) in the United States. Our expanding network of retail partners carry a wide assortment of SVS products and are trained to make the best recommendations based on your needs, all while providing the convenience of a local name you trust.</p>
+      <p class="emphasized-text">Shopping outside of the US? <a href="{{ shop.url }}/pages/international-dealers">Click here</a> for international purchasing information.</p>
+    </div>
+  </section>
+  {% include 'usdealer_ecommerce' %}
+  
+  <div class="wrap">
+    <h4 class="dealerh4">Retail &amp; Custom Installation Partners</h4>
+    <section class="dealers__list">
+    {% include 'usdealer_retail' %}
+    {% include 'usdealer_retail2' %}
+                </section>
+                </div>
+                </section>
+                <script>
+				$(document).bind('click', function(e) {  
+				var $clicked = $(e.target);
+				if (!$clicked.parents().hasClass("dealerwrapper")) {
+					$(".availtooltip").hide();
+					}
+					});
+
+
+						
+				</script>

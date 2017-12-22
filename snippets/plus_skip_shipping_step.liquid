@@ -1,0 +1,79 @@
+{% if plus_skip_shipping_step %}
+  <style>
+    .js body.is-hidden {
+      display: none !important;
+    }
+  </style>
+
+  <script>
+  (function($) {
+    'use strict';
+
+    $(document).on('page:load page:change', function() {
+
+      // hide shipping method navigation elements and change hrefs
+      var changeShippingNavigationFn = function() {
+        Plus.func('change-back-to-href', 'main', function() {
+          var $returnToShipping = $(".step__footer__previous-link:contains('{{ 'shopify.checkout.general.back_to_shipping_method' | t }}')");
+                                    
+          if( $returnToShipping.length > 0 ){
+            var href = $returnToShipping.attr('href').replace('?step=shipping_method', '?step=contact_information');
+          }
+
+
+          $returnToShipping.attr('href', href);
+        });
+
+        Plus.func('hide-breadcrumb', 'main', function() {
+          $(".breadcrumb__item:contains('{{ 'shopify.checkout.shipping.title' | t }}')").hide();
+        });
+      };
+
+      // select the first shipping method available and redirect to payment
+      // otherwise, show the shipping page with no possible methods
+      var selectShippingMethodsFn = function() {
+        var $shippingInputs = $('input[name="checkout[shipping_rate][id]"]');
+        var shippingInputsLength = $shippingInputs.length;
+        var validShippingMethod = false;
+
+        if (shippingInputsLength === 0) {
+          var noShippingMethods = '<i class="blank-slate__icon icon icon--closed-box"></i>';
+          noShippingMethods += '<p>{{ "shopify.checkout.shipping.no_rates_for_cart_or_destination_notice" | t }}</p>';
+
+          $('[data-shipping-methods]').addClass('blank-slate').append(noShippingMethods);
+          $('.step__footer__continue-btn').addClass('btn--disabled').attr('disabled', 'disabled');
+          revealPageFn();
+          return true;
+        }
+
+        for (var i = 0; i < shippingInputsLength; i++) {
+          if ($($shippingInputs[i]).prop('checked') === true) {
+            validShippingMethod = true;
+            $('[data-step] form').first().submit();
+            return true;
+          }
+        }
+
+        if (validShippingMethod === false) {
+          $('[data-shipping-method]:eq(0) input').attr('checked', true);
+          $('[data-step] form').first().submit();
+          return true;
+        }
+      };
+
+      // show page when ready
+      var revealPageFn = function() {
+        $('body').removeClass('is-hidden');
+      };
+
+      changeShippingNavigationFn();
+
+      if (Shopify.Checkout.step === 'shipping_method') {
+        selectShippingMethodsFn();
+      } else {
+        revealPageFn();
+      }
+    });
+  })(jQuery);
+  </script>
+{% endif %}

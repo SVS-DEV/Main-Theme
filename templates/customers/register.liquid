@@ -1,0 +1,35 @@
+<meta name="description" content="Register your product to speed up service requests, ensure proof of purchase and for exclusive SVS news and updates.">
+<div class="wrap">
+	<section class="form account-form">
+		<h1><span>Create</span> Account</h1>
+      		{% if form.posted_successfully? %}
+                {{ form.errors | default_errors }}
+      		{% else %}
+      			{% form 'create_customer' %}
+
+                	{{ form.errors | default_errors }}
+
+                  <input type="text" value="" name="customer[first_name]" id="first_name" class="text" size="30" placeholder="First Name *">
+                  <input type="text" value="" name="customer[last_name]" id="last_name" class="text" size="30" placeholder="Last Name *">
+                  <input type="email" value="" name="customer[email]" id="email" class="text" size="30" placeholder="Email Address *">
+                  <input type="password" value="" name="customer[password]" id="password" class="password text" size="30" placeholder="Password *">
+<input type="checkbox" name="customer[accepts_marketing]" id="reg_acceptmarketing" checked>
+      <label for="reg_acceptmarketing">Subscribe to our newsletter</label>
+                  <input type="submit" value="{{ 'customer.register.submit' | t }}" style="margin-top:20px;" id="regsubmit">
+                  <span class="account-form__footnote">{{ 'customer.general.or' | t }} <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a></span>
+
+				{% endform %}
+            {% endif %}
+	</section>
+</div>
+<script>
+  var myVar = setInterval(myTimer, 3000);
+  function myTimer() {
+  _ltk.Signup.New("Account", "email", _ltk.Signup.TYPE.DEFAULT, "regsubmit");
+_ltk.Signup.SetField("Account", "first_name");
+_ltk.Signup.SetField("Account", "last_name");
+_ltk.Signup.SetOptIn("Account", "reg_acceptmarketing");
+    _ltk.Signup.SetValue("Account", "registration", "on");
+
+  };
+</script>

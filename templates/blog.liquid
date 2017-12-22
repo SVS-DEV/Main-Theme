@@ -1,0 +1,36 @@
+	<div class="wrap">
+		<div class="grid-2">
+          <section class="blog-list-view sound-advice col-3-4">
+
+              <div class="blog-list-view__header">
+                  <h1>{{ blog.title }}</h1>
+                  <p>Whether you’re looking to perfect your setup or find the best way to clean your new speakers, our educational blog has you covered. Get immediate answers to some of the most popular topics and keep following for more insights every month!</p>
+              </div>
+
+              <div class="blog-list-view__posts">
+
+                  {% for article in blog.articles %}
+                  <div class="post">
+                     <!-- <div class="post__date">
+                          <span>{{ article.published_at | date: "%m" }}<br>{{ article.published_at | date: "%y" }}</span>
+                      </div>-->
+                      <div class="post__content" style="margin-left:10px">
+                          <h2><a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a></h2>
+                          <p class="post__excerpt">{{ article.excerpt_or_content | strip_html | truncate: 180 }}</p>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+
+              <!--<div class="community-promo">
+                  <h3>Continue the Discussion, Join the SVS Community</h3>
+                  <p>See what other owners are up to. Share your own system. Talk about setup tips &amp; tricks and stay up to date on the latest from SVS on our Facebook community page.</p>
+                  <a href="https://www.facebook.com/SVSound" class="learn-more">Get Connected Now</a>
+              </div>-->
+
+          </section>
+
+          {% include 'blog-sidebar_V2' %}
+          
+      </div>
+	</div>

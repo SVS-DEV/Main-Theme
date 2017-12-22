@@ -1,0 +1,202 @@
+
+
+<noscript>
+<style>
+.ui-tabs-panel {display:block !important}
+#category-tabs .col-1-6 { display:none}
+.col-3-4 {
+		width:100%;
+		border-left:none !important;
+	}
+  
+
+</style>
+</noscript>
+<style>
+  .speaker-newsticker {
+    background:#f3f3f3 !important;
+  }
+  .newstickerwrap {
+    padding-top:0px !important;
+  }
+
+  
+
+</style>
+
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.description %}
+<section>
+  <div class="wrap padtopnone">
+
+    <h1>
+      EXPERIENCE THE THRILL OF AN IMMERSIVE HOME THEATER SYSTEM
+      <span>Custom and pre-built speaker systems for amazing home theater surround sound and stereo performance with no guesswork.</span>
+    </h1>
+    <h2>SVS home theater systems set the stage for immersive, high-impact music and cinema audio experiences in your home. Available in two-channel, home theater surround sound and custom systems, there’s an SVS home theater system to fit every room and budget. Plus, SVS Ultra and Prime Series speakers and all SVS subwoofers are sonically matched to blend perfectly so you can combine any of our products to create your ideal home audio system.</h2>
+
+    <div id="category-tabs" class="grid-2 category-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+         <ul class="col-1-6 ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Prime Series Packages Tab');" class="ui-state-default ui-corner-top " role="tab" tabindex="0" aria-controls="tab-1" aria-labelledby="ui-id-1" ><a href="#prime-packages" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1"><span class="subtabname">Prime Series Systems</span><span class="subtabprice"> from $699.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Ultra Series Packages Tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-2" aria-labelledby="ui-id-2" aria-selected="false"><a href="#ultra-systems" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span class="subtabname">Ultra Series Systems</span> <span class="subtabprice"> from $3,699.99</span></a></li>
+         </ul>
+         <div class="col-5-6">
+           <div id="prime-packages" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="true" aria-hidden="false">
+             <h3> <span>Prime Series Systems</span> </h3>
+              <p>
+                Truly immersive and high-end in every way, the SVS Prime Series borrow technology breakthroughs from the Ultra Series to set the benchmark for speaker systems performance value. The end result is world-class audio that’s more inclusive than ever before.
+              </p>
+              <div class="products cf">
+  {% for product in collections["prime-packages"].products %}
+    {% include 'product-loop-grid' with "prime-packages" %}
+{% endfor %}
+</div>
+  </div>
+  
+  <div id="ultra-systems" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Ultra Series Systems</span> </h3>
+             <p>
+               Featuring all the finest SVS engineering and technology, our Ultra Series surround sound systems bring the thrill of cinema and live music experiences home with sound quality, dynamics and styling normally reserved for the highest end systems in the world.
+             </p>
+             <div class="products cf">
+  {% for product in collections["ultra-systems"].products %}
+    {% include 'product-loop-grid' with "ultra-systems" %}
+{% endfor %}
+</div>
+           </div>
+
+
+         </div>
+      </div>
+  </div>
+</section>
+<section class="bg-grey">
+	<div class="wrap">
+		<div class="grid-2 quotes">
+			<div class="col-1-3 quotesinner">
+				<blockquote>
+					<p>
+						“SVS Prime Bookshelf speakers are destined to become classics—that's how good they are… I found myself in awe of how transparent these speakers sounded.”
+					</p>
+					<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/speaker-cat-avs.png?3044387578193192902" alt="AVS Forum">
+				</blockquote>
+			</div>
+			<div class="col-1-3 quotesinner">
+				<blockquote>
+					<p> “Dynamics of a custom theater system, neutrality and ambience of an audiophile system…Certified and Recommended.” </p>
+					<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/speaker-cat-snv.png?3044387578193192902" alt="Sound&Vision">
+				</blockquote>
+			</div>
+			<div class="col-1-3 quotesinner">
+				<blockquote>
+					<p>
+						“The SVS Prime Satellite 5.1 home theater system is the best satellite speaker surround sound system I know for under $1,000. Congratulations, SVS. The old king is dead, long live the new king."
+					</p>
+					<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/speaker-cat-htr.png?3044387578193192902" alt="HomeTheaterReview">
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% include 'news-ticker-speakers' %}
+<!--
+<section>
+	<div class="wrap">
+		<div class="grid-2">
+			<div class="col-1-2 bor">
+				<div class="col-1-4">
+					<img src="{{ 'sub-cat-45.png' | asset_url }}">
+					<img src="{{ 'sub-cat-5yr.png' | asset_url }}">
+				</div>
+				<div class="col-3-4">
+					<h4> SVS Customer Bill of Rights </h4>
+					<p>
+						We understand the best place to demo speakers is in your own home, with your personal system. We also want you to feel confident choosing SVS. For these reasons, we’ve created the industry’s most comprehensive benefits package, which makes it easy, risk-free and rewarding to be a lifelong listener or a tire kicker. Some of these rights include:
+					</p>
+					<ul>
+						<li>
+							<a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Speaker Category Page', 'Click', 'Bill of Rights - 1 - 45 Day Trial');"> <strong> 45 Day Risk-Free In-Home Trial, Fast & Free Shipping and Returns </strong> </a>
+						</li>
+						<li>
+							<a href="/pages/bill-of-rights"onclick= "ga('send', 'event', 'Speaker Category Page', 'Click', 'Bill of Rights - 2 - 5 Year Warranty');"> <strong> 5-Year Unconditional Warranty </strong> </a>
+						</li>
+						<li> <a href="/pages/bill-of-rights"onclick= "ga('send', 'event', 'Speaker Category Page', 'Click', 'Bill of Rights - 3 - 60 Day Price Protection');"> 60-Day Guaranteed Price Protection </a> </li>
+						<li> <a href="/pages/bill-of-rights"onclick= "ga('send', 'event', 'Speaker Category Page', 'Click', 'Bill of Rights - 4 - Sound Expert Advice');"> Pre & Post-Purchase SVS Sound Experts Advice and Support </a> </li>
+						<li> <a href="/pages/bill-of-rights"onclick= "ga('send', 'event', 'Speaker Category Page', 'Click', 'Bill of Rights - 5 - Review Full Bill of Rights');"> Review full SVS Customer Bill of Rights </a> </li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-1-2 cs">
+				<div class="cf">
+					<div class="col-1-4">
+						<img src="{{ 'sub-cat-lifetime.png' | asset_url }}">
+					</div>
+					<div class="col-3-4">
+						<h4> Lifetime SVS Sound Experts Support </h4>
+						<p>
+							Need help choosing the right speaker for a home theater or two-channel system? Have questions about Dolby Atmos, AV receiver settings or the SVS Customer Bill of Rights?
+						</p>
+						<p>
+							Our Sound Experts are knowledgeable on all AV-related topics and available seven days a week via chat, phone or email to assist with any questions.
+						</p>
+						<p>
+							(877) 626-5623 | <a href="mailto:custservice@svsound.com" onclick= "ga('send', 'event', 'Speaker Category Page', 'Click', 'Customer Service Email Link');">custservice@svsound.com</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+<script>
+  function heightsEqualizer(selector) {
+    var elements = document.querySelectorAll(selector),
+        max_height = 0,
+        len = 0,
+        i;
+ 
+    if ( (elements) && (elements.length > 0) ) {
+        len = elements.length;
+ 
+        for (i = 0; i < len; i++) { // get max height
+			elements[i].style.height = ''; // reset height attr
+            if (elements[i].clientHeight > max_height) {
+                max_height = elements[i].clientHeight;
+            }
+        }
+ 
+        for (i = 0; i < len; i++) { // set max height to all elements
+            elements[i].style.height = max_height + 'px';
+        }
+    }
+}
+ 
+if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', function() {
+        heightsEqualizer('.js-equal-height');
+    });
+	window.addEventListener('resize', function(){
+		heightsEqualizer('.js-equal-height');
+	});
+}
+ 
+setTimeout(function () { // set 1 second timeout for having all fonts loaded
+	heightsEqualizer('.js-equal-height');
+}, 1000);
+</script>
+<script type="text/javascript">
+
+            $( "#category-tabs" ).tabs();
+
+
+  	</script>
+
+
+<script>
+  $(".reload").click(function(){
+location.reload();
+});
+</script>

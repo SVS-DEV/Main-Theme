@@ -1,0 +1,197 @@
+.template-index #content section {
+  background: none; }
+  .template-index #content section img {
+    max-width: 100%; }
+.template-index.home .wrap {
+  background: none; }
+.template-index .home-message {
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  font-weight: 700;
+  border-top: solid 1px #386cb0;
+  border-bottom: solid 1px #386cb0;
+  margin-bottom: 30px;
+  background-color: #000 !important;
+  font-size: 14px; }
+  @media (min-width: 768px) {
+    .template-index .home-message {
+      font-size: 16px;
+      font-weight: 800; } }
+.template-index .home-message-container {
+  background-color: #000 !important;
+  padding: 0px; }
+.template-index .home-message-outer {
+   }
+.template-index .index-main-callouts {
+  max-width: 1470px;
+  margin: 0 auto; }
+  .template-index .index-main-callouts a {
+    display: block; }
+    @media (min-width: 768px) {
+      .template-index .index-main-callouts a {
+        margin-bottom: 10px; } }
+  .template-index .index-main-callouts .main-callout {
+    margin-bottom: 6px; }
+.template-index .index-main-callouts .main-callout img {
+    margin-bottom: 6px; margin: 0 auto; display: block; }
+  .template-index .index-main-callouts .secondary-callout {
+    margin-bottom: 6px; }
+    @media (min-width: 768px) {
+      .template-index .index-main-callouts .secondary-callout {
+        padding: 0; }
+        .template-index .index-main-callouts .secondary-callout:nth-child(2n) {
+          padding-left: 15px;
+          padding-right: 3px; }
+        .template-index .index-main-callouts .secondary-callout:nth-child(3n) {
+          padding-right: 15px;
+          padding-left: 3px; } }
+.template-index .news-ticker-section {
+  margin: 0 15px;
+  display: block; }
+.template-index .news-ticker-section .wrap {
+  padding: 0;
+  position: relative; }
+.template-index .news-ticker-wrap {
+  padding: 15px 25px;
+  border: 5px solid white;
+  background: url("https://cdn.shopify.com/s/files/1/0921/3560/files/news-ticker-bg.jpg?4427707352850100436");
+  background-size: cover;
+  height: 225px;
+  position: relative;
+  margin-bottom: 15px; }
+  .template-index .news-ticker-wrap:before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 46px;
+    width: 50px;
+    background: url("https://cdn.shopify.com/s/files/1/0921/3560/files/copy_3.png?11286927612111243200");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    left: 0;
+    top: 40px; }
+    @media (min-width: 768px) {
+      .template-index .news-ticker-wrap:before {
+        background-size: 80%;
+        left: 8px;
+        top: 55px; } }
+  .template-index .news-ticker-wrap:after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 46px;
+    width: 50px;
+    background: url("https://cdn.shopify.com/s/files/1/0921/3560/files/copy_4.png?11286927612111243200");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    right: 0;
+    bottom: 150px; }
+    @media (min-width: 768px) {
+      .template-index .news-ticker-wrap:after {
+        background-size: 80%;
+        right: 8px;
+        bottom: 125px; } }
+  .template-index .news-ticker-wrap .news-ticker-header {
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid white;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 5px;
+    padding-bottom: 5px; }
+  .template-index .news-ticker-wrap .news-ticker-quotes blockquote {
+    display: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    left: 60px;
+    right: 60px; }
+    @media (min-width: 768px) {
+      .template-index .news-ticker-wrap .news-ticker-quotes blockquote {
+        font-size: 18px; } }
+    @media (min-width: 900px) {
+      .template-index .news-ticker-wrap .news-ticker-quotes blockquote {
+        font-size: 24px; } }
+.template-index .index-category-callouts {
+  max-width: 1470px;
+  margin: 0 auto 15px auto; }
+  .template-index .index-category-callouts .indiv-wrap {
+    position: relative;
+    margin-bottom: 5px; }
+    @media (min-width: 768px) {
+      .template-index .index-category-callouts .indiv-wrap {
+        padding: 0; }
+        .template-index .index-category-callouts .indiv-wrap:first-child {
+          padding-left: 15px; }
+        .template-index .index-category-callouts .indiv-wrap:nth-child(2n) {
+          padding: 0 8px; }
+        .template-index .index-category-callouts .indiv-wrap:nth-child(3n) {
+          padding-right: 15px; } }
+    .template-index .index-category-callouts .indiv-wrap h4 {
+      color: white;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 18px;
+      line-height: 1.1;
+      text-shadow: 0px 0px 13px rgba(0, 0, 0, 0.95); }
+      @media (min-width: 768px) {
+        .template-index .index-category-callouts .indiv-wrap h4 {
+          font-size: 24px; } }
+    .template-index .index-category-callouts .indiv-wrap a {
+      display: block;
+      position: relative; }
+.template-index .hr {
+  border-bottom: 1px solid #a2a2a2;
+  margin-top: 25px; }
+.template-index .cta {
+  text-align: center;
+  border: 3px solid transparent;
+  background: #386cb0;
+  color: white;
+  padding: 8px 0;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+  .template-index .cta:after {
+    content: '\f101';
+    margin-left: 10px;
+    font-family: 'FontAwesome'; }
+  .template-index .cta:hover {
+    border: 3px solid #386cb0;
+    background: none;
+    text-decoration: none; }
+  @media (min-width: 850px) {
+    .template-index .cta {
+      font-size: 16px;
+      padding: 10px 0; } }
+  @media (min-width: 768px) {
+    .template-index .cta {
+      margin-bottom: 0; } }
+.award-bar-home, .award-bar-home-mobile {
+      position: absolute;
+    bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    right: 0;
+    left: 0;
+}
+.award-bar-home-mobile {
+  width: 70%; 
+}
+.template-index .four-tile {
+  
+}
+.template-index .four-tile img {
+  margin: 0 auto;
+  display: block;
+}
+/*# sourceMappingURL=main-scss.css.map */

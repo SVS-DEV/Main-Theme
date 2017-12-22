@@ -1,0 +1,530 @@
+{{ 'ultra16.css' | asset_url | stylesheet_tag }}
+<style>
+  .quotesright img.tall {
+    height:75px;
+  }
+  .quotesleft img.wide {
+    width:180px;
+    height:auto
+  }
+  .ultra-16-landing-wrap h1 {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-align: center;
+    line-height: 1;
+  }
+  #janlittleguys {
+    clear:both;
+    padding-top:35px;
+    float:none;
+  }
+  .cta-lm {
+    color:#fff;
+  }
+  .quotesleft {
+    float:left;
+    width:49%;
+    margin-right:2%;
+    text-align:center;
+  }
+  .quotesleft img {
+    height:32px
+  }
+  .quotesright {
+    float:left;
+    width:49%;
+    text-align:center;
+  }
+  .quotesright img {
+    height:32px;
+  }
+  #littleguysframe {display:block;margin:0 auto;}
+  @media (max-width: 980px) {
+    #littleguysframe {
+      width:300px;
+      height:200px;
+    }
+  }
+  @media (max-width: 660px) {
+    .quotesleft {
+      float:none;
+      width:100%;
+      margin-right:0px;
+    }
+    .quotesleft img {
+      margin-top:10px
+    }
+    .quotesright img {
+      margin-top:10px;
+    }
+    .quotesright {
+      float:none;
+      width:100%;
+    }
+    #littleguysframe {
+      float:none;
+      margin-right:0px;
+      width:100%;
+      height:300px;
+    }
+  }
+   @media (max-width: 540px) {
+    #littleguysframe {
+      height:250px;
+    }
+  }
+  .ultra16_ctaholder {
+              display:block;
+              width:100%;
+              border:solid 4px #000;
+              padding:20px;
+            }
+            .ultra16_ctainner {
+              display:table-row;
+            }
+            .ultra16_productcontainer {
+              display:table-cell; 
+              vertical-align:middle; 
+              width:50%
+            }
+            .ultra16title {
+              font-weight:900;
+              font-size:30px;
+              border-right:solid thin #000;
+              padding-right:10px;
+            }
+            .ultra16price {
+              padding-left:7px;
+              font-size:24px;
+            }
+            .ultra16_product {
+              display:table-row
+            }
+            .ultra16_productcontainerleft {
+              width:50%;
+              float:left;
+              display:table;
+              padding-right:25px
+            }
+            .ultra16_productcontainerright {
+              width:49%;
+              float:right;
+              display:table;
+              padding-left:25px;
+            }
+
+            .ultra16_image {
+              display:table-cell;
+              vertical-align:middle;
+              padding-right:30px;
+              width:39%
+            }
+            .ultra16_content {
+              display:table-cell;
+              vertical-align:middle;
+            }
+            .ultra16_content .learnmore {
+              display: block;
+              width: 100%;
+              color: #991b1e;
+              background-color: #fff;
+              float: right;
+              padding: 15px 35px;
+              text-align: center;
+              text-transform: uppercase;
+              font-weight: 800;
+              border: 3px solid #991b1e;
+              -webkit-transition: all 0.1s ease-out;
+              transition: all 0.1s ease-out;
+              margin-bottom:10px;
+            }
+         /*    .ultra16_content .learnmore:hover {
+              background-color: #991b1e;
+              border: 3px solid transparent;
+              text-decoration: none;
+              color: #fff;
+              
+            } */
+            .ultra16_content .addtocart {
+              display: block;
+              width: 100%;
+              color: white;
+              background-color: #991b1e;
+              float: right;
+              padding: 15px 35px;
+              text-align: center;
+              text-transform: uppercase;
+              font-weight: 800;
+              border: 3px solid transparent;
+              -webkit-transition: all 0.1s ease-out;
+              transition: all 0.1s ease-out;
+            }
+            @media (max-width: 1215px) {
+              .ultra16title {
+                font-size:25px;
+              }
+              .ultra16price {
+                font-size:19px;
+              }
+            }
+            @media (max-width: 1045px) {
+              .ultra16title {
+                font-size:22px;
+              }
+              .ultra16price {
+                font-size:16px;
+              }
+            }
+            @media (max-width: 900px) {
+              .ultra16_productcontainerleft {
+                float:none;
+                clear:both;
+                width:100%;
+                padding-right:0px;
+                margin-bottom:20px;
+              }
+              .ultra16_productcontainerright {
+                float:none;
+                clear:both;
+                width:100%;
+                padding-left:0px;
+              }
+              .ultra16title {
+                font-size:30px;
+              }
+              .ultra16price {
+                font-size:24px;
+              }
+            }
+             
+            @media (max-width: 620px) {
+              .ultra16title {
+                font-size:25px;
+              }
+              .ultra16price {
+                font-size:19px;
+              }
+            }
+            @media (max-width: 530px) {
+              .ultra16_image {
+                display:block;
+                padding:0px;
+                width:100%;
+                text-align:center;
+              }
+              .ultra16_content {
+                display:block;
+                
+              }
+              
+            }
+       /*      .ultra16_content .addtocart:hover {
+              background-color: transparent;
+              border: 3px solid #991b1e;
+              text-decoration: none;
+              color: #991b1e
+            } /*
+            
+</style>
+
+<script src="https://cdn.shopify.com/s/files/1/0921/3560/files/unslider-min.js?4614958483608292717"></script>
+
+<div class="ultra-16-landing-wrap">
+    <section class="">
+        <div class="wrap">
+            <div class="intro">
+                <!-- <img src="{{ 'prime_elevation_header.jpg' | asset_url }}" class="elevation-header-img"> -->
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/16u-header.jpg?10572347653500328438" class="ultra-16-header-img desktop">
+
+
+                <!-- <h1> SVS SB16-Ultra and PB16-Ultra Subwoofers </h1> -->
+                <!--<h2 class="heading-border"> The Ultimate Reference Standard for Bass Has Arrived. SVS 16-Ultra Series. </h2>-->
+                <!-- <h3> A Tour-de-Force of Subwoofer Engineering </h3> -->
+                <h1 style="margin-bottom:15px"> SVS 16-Ultra Subwoofer Reviews from Top Home Theater and Audio Critics </h1>
+              <div class="cf">
+              <div class="quotesleft">
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_sound_vision.jpg?13236800812728659799">
+                <p id="jansoundvision">"Smile-inducing bass, the kinetic energy reached deafening reference listening levels…<strong>My jaw was stuck ajar…Highly Recommended.</strong>"<br/><a href="http://www.soundandvision.com/content/svs-pb16-ultra-and-sb16-ultra-subwoofers-review#ygztUXrXI8djP3W6.97" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_pcworld.jpg?1948101004590732412">
+                <p id="janpcworld">"Reproduced rippling, subterranean bass notes that go from audible to sensory… <strong>The best subwoofer I’ve heard.</strong>”<br/><a href="http://www.pcworld.com/article/3153595/speakers/svs-sb16-ultra-subwoofer-revew-this-astonishing-sub-will-rock-your-houseand-your-neighbors-too.html" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/AudioholicsLogo.jpg?1342981898174301316">
+                <p id="janaudioholics">“SVS has taken <strong>clean, deep bass</strong> to another level. The 16-Ultras push the envelope in every respect.”<br/><a href="http://www.audioholics.com/subwoofer-reviews/svs-pb16-ultra-subwoofer" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/AVSForumlogo180px_8dc7a469-b0a5-4764-bee2-ae655a91593d_medium.jpg?1342981898174301316">
+                <p id="janavsforum">"The power and depth of the bass this sub produces makes AV experiences more visceral. There was never an instance where the demands of what I listened to exceeded what the PB16-Utra could deliver. <strong>The best-performing, highest-impact sub I’ve heard.</strong>"<br/><a href="http://www.avsforum.com/svs-pb16-ultra-subwoofer-exclusive-pre-review-blog/" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/AudioholicsLogo.jpg?1342981898174301316">
+                <p id="janaudioholics2">"Tight and natural sounding. The SVS SB16-Ultra was capable of subtlety but also brought grandeur when asked. Hit hard when it needed to and had a soft touch in those moments when less-is-more. <strong>It never strained at any volume, no matter how loud I cranked it.</strong> At times beautiful and other times thunderous. A top-notch subwoofer."<br/><a href="http://www.audioholics.com/subwoofer-reviews/svs-sb16-ultra" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_widescreen-review.jpg?6725127257379228005">
+                <p id="janwidescreenreview">"<strong>Spending 2.5-3 times more money won’t guarantee better performance.</strong> A single SB16-Utra sounds better than any single $4000 subwoofer. I can’t over-state how good the SB16-Ultra sounds, makes me want to use every possible over-the-top adjective, and on top of the sound quality, it plays so loudly and so cleanly. Very strong bass that drives performance to you-are-there levels with more dynamic impact leading to a more visceral and exciting (adrenaline?) listening experience."<br/><span style="color:#386cb0">Print only, July 2017 issue</span></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_referencehometheater.png?4164259197670694524" class="wide">
+                <p id="janreferencehometheater">"Hearing, or feeling, subsonic notes is a treat and I thank SVS for engineering and producing a subwoofer that is capable of doing this while maintaining quality sound with low distortion. Bravo! A monster of a sub. <strong>Incredible depth and detail and perfect for intense, bone crushing bass.</strong> Competes with subwoofers costing much more."<br/><a href="http://referencehometheater.com/review/svs-pb16-ultra-subwoofer-review/" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_the_master_switch.jpg?14001803183907282910" class="wide">
+                <p id="janthemasterswitch">"Within minutes of testing it for the first time, we loved it unconditionally. Watching a movie through a 5.1 system, or listening to music, is revelatory and is some of the best fun we’ve had with a piece of audio equipment. The PB16-Ultra is <strong>the single best home subwoofer available today.</strong>"<br/><a href="https://www.themasterswitch.com/review-svs-pb16-ultra" style="color:#386cb0">Read Review</a></p>
+              </div>
+              <div class="quotesright">
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_residentialsystems.png?13303039559411976425">
+                <p id="janresidential">"No matter the material I threw at it, the sub delivered bass that was massive yet tight and lightning fast. Had no problem energizing the air in my large family room, producing <strong>tactile bass that hammered my chest</strong>, and delivering next-level bass realism, letting you feel the soundtrack and experience the action more deeply. The SB16-Ultra is a force multiplier, improving the performance of any system you add it to. <strong>I give it my highest recommendation.</strong>"<br/><a href="http://www.residentialsystems.com/blogentry/1314" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/HomeTheaterReviewLogo180px_f0135258-7347-43fd-ba88-1673861d313a_medium.jpg?1342981898174301316">
+                <p id="janhometheaterreview">“I've heard almost all of the top subwoofers currently on the market. The SB16-Ultra sounds like none of them. It's almost in <strong>a whole different category of low-frequency sound.</strong>”<br/><a href="http://hometheaterreview.com/svs-sb16-ultra-subwoofer-reviewed/" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_z-reviews.jpg?5115522861614948478">
+                <p id="janzreviews">"This is the scariest subwoofer I’ve ever played with. I am not able to go to the limit on this subwoofer. <strong>It makes the fur on my arms stand up.</strong>"<br/><a href="https://www.youtube.com/watch?v=aQrwQU4VfAI&feature=youtu.be" style="color:#386cb0">Watch Video</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_home_theater_forum.jpg?17319890589438860495" class="tall">
+                <p id="janhometheaterforum">"Instead of bass that booms, it's bass that hits, and it hits hard. Deep and authoritative, the SB16-Ultra can flex its ample muscle and deliver impressively clean output and very high sound pressure levels and it has features and aesthetics that are unmatched. <strong>Betters the competition in every way.</strong>"<br/><a href="https://www.hometheaterforum.com/svs-sb16-ultra-subwoofer-review/" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_png_av_online.png?18223841952740869509">
+                <p id="janavonline">"Extraordinary. Hit the air like a hammer. The sounds grabbed us with two hands and dragged us into the middle of the action. <strong>The most outstanding subwoofer for combining power and high precision ever.</strong>"<br/><a href="http://www.av-online.hu/hangfal/svs-sb16-ultra-aktiv-melylada-teszt_2047/3" style="color:#386cb0">Read Review</a></p>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_hometheatershack.jpg?11847160462268266115" class="tall">
+                <p id="janhometheatershack">"SVS has outdone themselves. This is a <strong>'move the bar' type of product. It does everything exceptionally well, never revealing a single weakness.</strong> The 16-Ultra subwoofers expertly blends precision and power into one cohesive package, remaining composed at all times. Makes everything sound good."<br/><a href="http://www.hometheatershack.com/forums/speaker-subwoofer-reviews/165442-svs-sb16-ultra-review.html" style="color:#386cb0">Read Review</a></p>
+              </div>
+              </div>
+              
+              
+              
+             
+              <p style="clear:both;float:none;padding-top:35px; border-top:1px solid #e5e5e5;margin-top:25px;">
+                    The new 16-Ultra Series are the biggest and most powerful SVS subwoofers ever built and the culmination of all SVS engineering advancements, but that’s only part of the story. <span class="break">SVS designed a completely new driver, amplifier and cabinet, scrutinized every design element and pioneered <em>3 game-changing subwoofer</em> innovations to achieve unprecedented output levels, extreme low frequency extension, near-perfect frequency response accuracy, and pinpoint transient response.</span>
+                </p>
+                <p>
+                    One of these innovations would’ve made the 16-Ultra Series an engineering tour-de-force, but the combination of 3 subwoofer firsts and all new driver, amplifier and control platforms propel the SB16-Ultra and PB16-Ultra into the pantheon of all-time great audio products.
+                </p>
+            </div>
+
+            <h2> Masterful Engineering. 3 Game-Changing Innovations. </h2>
+
+            <div class="cf mod-wrap">
+                <div class="module-3-1">
+                    <div class="image"> </div>
+                    <div class="text" data-match-height="group-name3-1">
+                        <p> Massive All New 16” Ultra Driver with Unprecedented 8” Edge Wound Voice Coil. </p>
+                    </div>
+                </div>
+
+                <div class="module-3-2">
+                    <div class="image"> </div>
+                    <div class="text" data-match-height="group-name3-1">
+                        <p>
+                            Stunningly Powerful 1,500 Watts Continuous, 5,000+ Watts Peak Power Sledge Amplifier with Fully Discrete MOSFET Output.
+                        </p>
+                    </div>
+                </div>
+                <div class="module-3-3">
+                    <div class="image"> </div>
+                    <div class="text" data-match-height="group-name3-1">
+                        <p> Groundbreaking New Subwoofer Control and Bass Management Smartphone App for Apple® and Android® Devices. </p>
+                    </div>
+                </div>
+            </div>
+            <p>
+              The SB16-Ultra and PB16-Ultra Subwoofers obliterate expectations with room-shaking levels of low frequency extension and massive output with pinpoint accuracy and speed in transients resulting in the ultimate bass experience.
+            </p>
+
+            <div class="ultra16_ctaholder cf" id="anchor1">
+              
+                  <div class="ultra16_productcontainerleft">
+                      <div class="ultra16_image">
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/16ultra_sb16.jpg?13641391323660743372" style="max-width:100%">
+                      </div>
+                  <div class="ultra16_content">
+                    <p> <span class="ultra16title">SB16-Ultra</span> <span class="ultra16price hideRU">$1,999.99</span></p>
+                    <a href="/products/sb16-ultra" class="learnmore" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Learn More - SB16-Ultra 1');"> Learn More </a>
+                    <form class="hideRU" method="post" name="addtocart" action="/cart/add">
+                    <input type="hidden" name="id" value="29705182156" />
+                    <a href="#" class="addtocart cart-addon" onclick="$(this).closest('form').submit(); ga('send', 'event', '16-Ultra Category Page', 'Click', 'Buy Now - SB16-Ultra 1'); return false; " data-product-id="8650180492" data-product-variant-id="29705182156" data-product-title="SB16-Ultra" data-product-type="Subwoofer"> Add to Cart </a>
+                </form>
+                  </div>
+                </div>
+              
+              <div class="ultra16_productcontainerright">
+                      <div class="ultra16_image">
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/16ultra_pb16a.jpg?5760621717891300880" style="max-width:100%">
+                      </div>
+                  <div class="ultra16_content">
+                    <p> <span class="ultra16title">PB16-Ultra</span> <span class="ultra16price hideRU">$2,499.99</span></p>
+                    <a href="/products/pb16-ultra" class="learnmore" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Learn More - PB16-Ultra 1');"> Learn More </a>
+                    <form class="hideRU" method="post" name="addtocart" action="/cart/add">
+                    <input type="hidden" name="id" value="29707906572" />
+                    <a href="#" class="addtocart cart-addon" onclick="$(this).closest('form').submit(); ga('send', 'event', '16-Ultra Category Page', 'Click', 'Buy Now - PB16-Ultra 1'); return false; " data-product-id="8651014988" data-product-variant-id="29707906572" data-product-title="PB16-Ultra" data-product-type="Subwoofer"> Add to Cart </a>
+                </form>
+                  </div>
+                </div>
+
+          </div>
+
+            <div class="module-1 cf">
+                <div class="image" data-match-height="group-name1"> </div>
+
+                <div class="text" data-match-height="group-name1">
+                    <h3> Massive All New 16” Ultra Driver with Unprecedented 8” Edge Wound Voice Coil. </h3>
+                    <h5> 16” Driver with Record-Breaking 8” Edge Wound Voice Coil </h5>
+                    <p>
+                        To handle the crushing power of a 16” driver, SVS designed a massive 8” edge wound voice coil, the largest ever deployed in a consumer subwoofer. This innovation ensures ultra-low distortion and pinpoint control at the highest drive levels resulting in incredible output and low frequency extension, with accuracy in frequency response and speed in transients.
+                    </p>
+                    <h5>World-Class Driver Materials and Technology</h5>
+                    <p>
+                        Four of the heaviest toroidal ferrite magnets used in a consumer subwoofer generate unprecedented levels of magnetic force to drive the highest levels of excursion, SPL, and low frequency output. Cone material is a rigid but lightweight fiberglass resin composite that never flexes and conveys subtle and room-shaking low frequency effects with equal aplomb.
+                    </p>
+                </div>
+            </div>
+
+            <div class="module-2 cf">
+                <div class="image" data-match-height="group-name1"> </div>
+
+                <div class="text" data-match-height="group-name1">
+                    <h3> Stunningly Powerful 1,500 Watts Continuous, 5,000+ Watts Peak Power Sledge Amplifier with Fully Discrete MOSFET Output. </h3>
+                    <h5> Fully Discrete MOSFET Output from Highly Efficient Class D Sledge Amplifier </h5>
+                    <p>
+                        Robust 64 Amp 200-Volt MOSFET’s provide the sonic muscle behind the astonishingly powerful 1,500 watts continuous, 5,000+ watts peak power amplifier with fully discrete output. MOSFET output offers far superior power handling and tighter control when compared to the integrated circuit output stage found in nearly all other Class D subwoofer amplifiers.
+                    </p>
+                    <h5> Sophisticated Analog Devices Audio DSP with Active Power Correction </h5>
+                    <p>
+                        Effortless power must be harnessed to ensure refined behavior and pristine output at the most demanding drive levels. The 16-Ultra Series subwoofers use the audio industry’s most advanced Analog Devices Audio DSP to handle the nearly limitless power so the perfect amount of low frequency energy is released at just the right time and just the right frequency. To ensure a steady flow of power, the amplifier uses an active Power Factor Correction (PFC) regulator to smooth input current to a clean and steady 360V DC, while using 30-50% less current than a subwoofer without PFC.
+                    </p>
+                </div>
+            </div>
+
+            <div class="module-5 cf" id="anchor3">
+                <div class="image" data-match-height="group-name1"> </div>
+
+                <div class="text" data-match-height="group-name1">
+                    <h3> Groundbreaking New Subwoofer Control and Bass Management Smartphone App for Apple® and Android® Devices.  </h3>
+                    <h5>Subwoofer Control and DSP Is Easier and More Convenient than Ever </h5>
+                    <p>
+                        The 16-Ultra subwoofer app is the most powerful bass management and subwoofer control app ever developed and the easiest way ever to adjust volume, crossover frequencies, parametric EQ, polarity, room gain and all other DSP functions. It also features convenient custom presets for one-touch tuning in any room or system, from your favorite seat.
+                    </p>
+                    <p>
+                        Bi-directional feedback shows adjustments in real time on both the app and subwoofer interface and Bluetooth connectivity allows control, even when the subwoofer is out of sight.
+                    </p>
+                    <div class="app-stores">
+                        <a href="https://play.google.com/store/apps/details?id=com.svsound.svs" target="_blank" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'App Button - Google');">
+                            <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/google_play_button.png?7555066196431922316">
+                        </a>
+                        <a href="https://itunes.apple.com/us/app/svs/id1148462104?ls=1&mt=8" target="_blank" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'App Button - Apple');">
+                            <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/app_store_button.png?7555066196431922316">
+                        </a>
+                        <p> Google Play and the Google Play logo are trademarks of Google Inc. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ultra16_ctaholder cf" id="anchor2">
+              
+                  <div class="ultra16_productcontainerleft">
+                      <div class="ultra16_image">
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/16ultra_sb16.jpg?13641391323660743372" style="max-width:100%">
+                      </div>
+                  <div class="ultra16_content">
+                    <p> <span class="ultra16title">SB16-Ultra</span> <span class="ultra16price hideRU">$1,999.99</span></p>
+                    <a href="/products/sb16-ultra" class="learnmore" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Learn More - SB16-Ultra 2');"> Learn More </a>
+                    <form class="hideRU" method="post" name="addtocart" action="/cart/add">
+                    <input type="hidden" name="id" value="29705182156" />
+                    <a href="#" class="addtocart cart-addon" onclick="$(this).closest('form').submit(); ga('send', 'event', '16-Ultra Category Page', 'Click', 'Buy Now - SB16-Ultra 2'); return false; " data-product-id="8650180492" data-product-variant-id="29705182156" data-product-title="SB16-Ultra" data-product-type="Subwoofer"> Add to Cart </a>
+                </form>
+                  </div>
+                </div>
+              
+              <div class="ultra16_productcontainerright">
+                      <div class="ultra16_image">
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/16ultra_pb16a.jpg?5760621717891300880" style="max-width:100%">
+                      </div>
+                  <div class="ultra16_content">
+                    <p> <span class="ultra16title">PB16-Ultra</span> <span class="ultra16price hideRU">$2,499.99</span></p>
+                    <a href="/products/pb16-ultra" class="learnmore" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Learn More - PB16-Ultra 2');"> Learn More </a>
+                    <form class="hideRU" method="post" name="addtocart" action="/cart/add">
+                    <input type="hidden" name="id" value="29707906572" />
+                    <a href="#" class="addtocart cart-addon" onclick="$(this).closest('form').submit(); ga('send', 'event', '16-Ultra Category Page', 'Click', 'Buy Now - PB16-Ultra 2'); return false; " data-product-id="8651014988" data-product-variant-id="29707906572" data-product-title="PB16-Ultra" data-product-type="Subwoofer"> Add to Cart </a>
+                </form>
+                  </div>
+                </div>
+
+          </div>
+          
+            <div class="module-4-2 cf">
+                <div class="text"> <h3> An Engineering Tour de Force </h3> </div>
+                <a href="/products/sb16-ultra" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Explode Image Desktop')"><img src="{{ '16-ultra-callouts.jpg' | asset_url }}" class="desktop"></a>
+                <a href="/products/sb16-ultra" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Explode Image Mobile')"><img src="{{ '16u-exploded-view-mobile.jpg' | asset_url }}" class="mobile"></a>
+            </div>
+          <h2 id="janlittleguys"> SVS President Gary Yacoubian’s 16-Ultra Subwoofer Technology Deep Dive </h2>
+          <div style="max-width:70%; margin:0 auto; padding-top:20px; padding-bottom:20px;">
+          <div class="video-embed-wrap">
+            <iframe src="https://www.youtube.com/embed/YqqqsXRtCs8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+            <div class="module-cross-sell cf">
+                <h2> Check out all of our award-winning subwoofers. </h2>
+                <div class="thirds">
+                    <a href="/pages/subwoofers#1000-series" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Award Winning Subwoofers - 1000 Series');">
+                        <h4> 1000 Series </h4>
+                        <img src="{{ 'cross-sell-1k.jpg' | asset_url }}">
+                    </a>
+                    <a href="/pages/subwoofers#1000-series" class="cta-lm" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Award Winning Subwoofers - 1000 Series');"> Learn More </a>
+                </div>
+                <div class="thirds">
+                    <a href="/pages/subwoofers#2000-series" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Award Winning Subwoofers - 2000 Series');">
+                        <h4> 2000 Series </h4>
+                        <img src="{{ 'cross-sell-2k.jpg' | asset_url }}">
+                    </a>
+                    <a href="/pages/subwoofers#2000-series" class="cta-lm" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Award Winning Subwoofers - 2000 Series');"> Learn More </a>
+                </div>
+                <div class="thirds">
+                    <a href="/pages/subwoofers#ultra-series" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Award Winning Subwoofers - Ultra Series');">
+                        <h4> Ultra Series </h4>
+                        <img src="{{ 'cross-sell-ultra.jpg' | asset_url }}">
+                    </a>
+                    <a href="/pages/subwoofers#ultra-series" class="cta-lm" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Award Winning Subwoofers - Ultra Series');"> Learn More </a>
+                </div>
+            </div>
+
+            <!--<div class="cf mod-wrap">
+                <div class="module-6 cf">
+                    <div class="image" data-match-height="group-name1"> </div>
+
+                    <div class="text" data-match-height="group-name1">
+                        <h3> svs bill of rights </h3>
+                        <p>
+                            Choosing SVS means you also get our 45-day Risk-Free In-Home Trial, Fast & Free Shipping and Returns, a One-Year Trade-up Policy, 5-Year Unconditional Warranty and other valuable benefits included in our SVS Customer Bill of Rights.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="module-7 cf">
+                    <div class="image" data-match-height="group-name1"></div>
+
+                    <div class="text" data-match-height="group-name1">
+                        <h3> svs sound experts </h3>
+                        <p>
+                            Our Sound Experts provide technical support for your entire AV system and take the time to ask about room layout, AV components, listening preferences and other things that are important to making the perfect decisions.
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="world-of-svs">
+                <img src="">
+                <p>
+                    Get helpful advice from our Sound Experts blog, check out SVS Featured Owner Systems, learn about artists/producers who use SVS and check out our social sites in the always fresh <a href="/blogs/svs" onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Sound Experts - World of SVS');">World of SVS</a> section of our site. Here’s some posts that may interest you:
+                </p>
+                <div class="blog-links">
+                    <a href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater"
+                    onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Choosing the Best Subwoofer for Your Home Theater');">
+                        Choosing the Best Subwoofer for Your Home Theater
+                    </a>
+                    <a href="/blogs/svs/75040195-why-go-dual" class="bp"
+                    onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Why Go with Dual Subwoofers?');">
+                        Why Go with Dual Subwoofers?
+                    </a>
+                    <a href="/blogs/svs/75367747-sealed-vs-ported" class="bp"
+                    onclick="ga('send', 'event', '16-Ultra Category Page', 'Click', 'Sealed vs. Ported Subwoofers: A Comparison');">
+                        Sealed vs. Ported Subwoofers: A Comparison
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+	jQuery(document).ready(function($) {
+		$('.my-slider').unslider({
+        	animateHeight: true
+        });
+	});
+</script>

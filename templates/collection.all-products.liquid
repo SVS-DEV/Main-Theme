@@ -1,0 +1,285 @@
+<style>
+  .collection .product img {width:100%}
+</style>
+{% assign specs_setting = false %}
+{% assign 1000_collection = '1000-series' %}
+{% assign 2000_collection = '2000-series' %}
+{% assign plus_collection = 'plus-series' %}
+{% assign 16ultra_collection = '16-ultra-series' %}
+{% assign 4000_collection = '4000-series' %}
+{% assign prime_collection = 'prime-series' %}
+{% assign ultra_collection = 'ultra-series' %}
+{% assign svs_accessories = 'accessories' %}
+{% assign prime_packages = 'prime-packages' %}
+{% assign ultra_packages = 'ultra-systems' %}
+{% assign dual_subwoofers_1000 = '1000-series-dual-subwoofers' %}
+{% assign dual_subwoofers_2000 = '2000-series-dual-subwoofers' %}
+{% assign dual_subwoofers_plus = 'plus-series-dual-subwoofers' %}
+{% assign dual_subwoofers_16ultra = '16-ultra-series-dual-subwoofers' %}
+{% assign dual_subwoofers_4000 = '4000-series-dual-subwoofers' %}
+
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , second_heading: collection.metafields.header.second_heading , description_heading: collection.metafields.header.description_heading, main_description: collection.description %}
+
+
+  
+
+<section class="collection grid">
+ 
+  <div class="wrap">
+    <span class="outletdesc">
+    {{ collection.description }}
+    </span>
+     <nav class="collection__filters">
+          	<a href="javascript: void(0)" class="filter active" id="all" onclick="selectAll();">All</a>
+            <a href="javascript: void(0)" class="filter" id="subwoofer" onclick="selectSubwoofer();">Subwoofers</a>
+            <a href="javascript: void(0)" class="filter" id="dual" onclick="selectDualsubwoofers();">Dual Subwoofers</a>
+          	<a href="javascript: void(0)" class="filter" id="speakers" onclick="selectSpeakers();">Speakers</a>
+          	<a href="javascript: void(0)" class="filter" id="packages" onclick="selectPackages();">Speaker Systems</a>
+          	<a href="javascript: void(0)" class="filter" id="acc" onclick="selectAccessories();">Accessories</a>
+    </nav>
+  </div>
+  <div class="wrap" id="4000subwoofer">
+     <h2 class="collection__subheading">New - 4000 Series Subwoofers</h2>
+
+    {% for product in collections[4000_collection].products %}
+      {% include 'product-loop-grid' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+
+  <div class="wrap" id="1000subwoofer">
+    <h2 class="collection__subheading">1000 Series Subwoofers</h2>
+
+    {% for product in collections[1000_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="2000subwoofer">
+     <h2 class="collection__subheading">2000 Series Subwoofers</h2>
+
+    {% for product in collections[2000_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="plussubwoofer">
+     <h2 class="collection__subheading">Plus Series Subwoofers</h2>
+
+    {% for product in collections[plus_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="ultrasubwoofer">
+     <h2 class="collection__subheading">16-Ultra Series Subwoofers</h2>
+
+    {% for product in collections[16ultra_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  
+  <div class="wrap" id="1000subwooferdual">
+        <h2 class="collection__subheading">New - Dual 4000 Series Subwoofers - New</h2>
+
+    {% for product in collections[dual_subwoofers_4000].products %}
+      {% include 'product-loop-grid' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  
+  </div>
+  
+  <div class="wrap" id="1000subwooferdual">
+        <h2 class="collection__subheading">Dual 1000 Series Subwoofers</h2>
+
+    {% for product in collections[dual_subwoofers_1000].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  
+  </div>
+  <div class="wrap" id="2000subwooferdual">
+        <h2 class="collection__subheading">Dual 2000 Series Subwoofers</h2>
+
+    {% for product in collections[dual_subwoofers_2000].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  
+  </div>
+ <div class="wrap" id="plussubwooferdual">
+        <h2 class="collection__subheading">Dual Plus Series Subwoofers</h2>
+
+    {% for product in collections[dual_subwoofers_plus].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  
+  </div>
+  <div class="wrap" id="ultrasubwooferdual">
+        <h2 class="collection__subheading">Dual 16-Ultra Series Subwoofers</h2>
+
+    {% for product in collections[dual_subwoofers_16ultra].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  
+  </div>
+  
+  <div class="wrap" id="prime-speakers">
+    <h2 class="collection__subheading">Prime Speakers</h2>
+
+    {% for product in collections[prime_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="ultra-speakers">
+    <h2 class="collection__subheading">Ultra Speakers</h2>
+
+    {% for product in collections[ultra_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="prime-packages">
+    <h2 class="collection__subheading">Prime Systems</h2>
+
+    {% for product in collections[prime_packages].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="ultra-packages">
+    <h2 class="collection__subheading">Ultra Systems</h2>
+
+    {% for product in collections[ultra_packages].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+  </div>
+  <div class="wrap" id="accessories">
+        <h2 class="collection__subheading">SVS Accessories</h2>
+
+    {% for product in collections[svs_accessories].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  
+  </div>
+  
+ <script>
+  function selectAll (){
+	  	$(".filter").removeClass("active");
+	  	document.getElementById('all').className += ' active';
+		document.getElementById('1000subwoofer').style.display="block";
+        document.getElementById('2000subwoofer').style.display="block";
+        document.getElementById('plussubwoofer').style.display="block";
+    	document.getElementById('ultrasubwoofer').style.display="block";
+        document.getElementById('1000subwooferdual').style.display="block";
+        document.getElementById('2000subwooferdual').style.display="block";
+        document.getElementById('plussubwooferdual').style.display="block";
+        document.getElementById('ultrasubwooferdual').style.display="block";
+        document.getElementById('prime-speakers').style.display="block";
+        document.getElementById('ultra-speakers').style.display="block";
+        document.getElementById('prime-packages').style.display="block";
+        document.getElementById('ultra-packages').style.display="block";
+        document.getElementById('accessories').style.display="block";
+    	ga('send', 'event', 'All Products Collection', 'Click', 'Filtering - All');
+ };
+ 
+ function selectSubwoofer (){
+	 	  	$(".filter").removeClass("active");
+	  	document.getElementById('subwoofer').className += ' active';
+	 	document.getElementById('1000subwoofer').style.display="block";
+        document.getElementById('2000subwoofer').style.display="block";
+        document.getElementById('plussubwoofer').style.display="block";
+   		document.getElementById('ultrasubwoofer').style.display="block";
+        document.getElementById('1000subwooferdual').style.display="none";
+        document.getElementById('2000subwooferdual').style.display="none";
+        document.getElementById('plussubwooferdual').style.display="none";
+   		document.getElementById('ultrasubwooferdual').style.display="none";
+        document.getElementById('prime-speakers').style.display="none";
+        document.getElementById('ultra-speakers').style.display="none";
+        document.getElementById('prime-packages').style.display="none";
+        document.getElementById('ultra-packages').style.display="none";
+        document.getElementById('accessories').style.display="none";
+   		ga('send', 'event', 'All Products Collection', 'Click', 'Filtering - Subwoofer');
+ };
+ 
+  function selectDualsubwoofers (){
+	  	 	  	$(".filter").removeClass("active");
+	  	document.getElementById('dual').className += ' active';
+	 	document.getElementById('1000subwoofer').style.display="none";
+        document.getElementById('2000subwoofer').style.display="none";
+        document.getElementById('plussubwoofer').style.display="none";
+    	document.getElementById('ultrasubwoofer').style.display="none";
+        document.getElementById('1000subwooferdual').style.display="block";
+        document.getElementById('2000subwooferdual').style.display="block";
+        document.getElementById('plussubwooferdual').style.display="block";
+    	document.getElementById('ultrasubwooferdual').style.display="block";
+        document.getElementById('prime-speakers').style.display="none";
+        document.getElementById('ultra-speakers').style.display="none";
+        document.getElementById('prime-packages').style.display="none";
+        document.getElementById('ultra-packages').style.display="none";
+        document.getElementById('accessories').style.display="none";
+    	ga('send', 'event', 'All Products Collection', 'Click', 'Filtering - Dual Subwoofers');
+ };
+ 
+  function selectSpeakers (){
+	  	 	  	$(".filter").removeClass("active");
+	  	document.getElementById('speakers').className += ' active';
+	    document.getElementById('1000subwoofer').style.display="none";
+        document.getElementById('2000subwoofer').style.display="none";
+        document.getElementById('plussubwoofer').style.display="none";
+    	document.getElementById('ultrasubwoofer').style.display="none";
+        document.getElementById('1000subwooferdual').style.display="none";
+        document.getElementById('2000subwooferdual').style.display="none";
+        document.getElementById('plussubwooferdual').style.display="none";
+   		document.getElementById('ultrasubwooferdual').style.display="none";
+        document.getElementById('prime-speakers').style.display="block";
+        document.getElementById('ultra-speakers').style.display="block";
+        document.getElementById('prime-packages').style.display="none";
+        document.getElementById('ultra-packages').style.display="none";
+        document.getElementById('accessories').style.display="none";
+    	ga('send', 'event', 'All Products Collection', 'Click', 'Filtering - Speakers');
+ };
+ 
+  function selectPackages (){
+	  	 	  	$(".filter").removeClass("active");
+	  	document.getElementById('packages').className += ' active';
+	    document.getElementById('1000subwoofer').style.display="none";
+        document.getElementById('2000subwoofer').style.display="none";
+        document.getElementById('plussubwoofer').style.display="none";
+    	document.getElementById('ultrasubwoofer').style.display="none";
+        document.getElementById('1000subwooferdual').style.display="none";
+        document.getElementById('2000subwooferdual').style.display="none";
+        document.getElementById('plussubwooferdual').style.display="none";
+    	document.getElementById('ultrasubwooferdual').style.display="none";
+        document.getElementById('prime-speakers').style.display="none";
+        document.getElementById('ultra-speakers').style.display="none";
+        document.getElementById('prime-packages').style.display="block";
+        document.getElementById('ultra-packages').style.display="block";
+        document.getElementById('accessories').style.display="none";
+    	ga('send', 'event', 'All Products Collection', 'Click', 'Filtering - Packages');
+        }; 
+
+ 
+  function selectAccessories (){
+	  	 	  	$(".filter").removeClass("active");
+	  	document.getElementById('acc').className += ' active';
+	  	document.getElementById('1000subwoofer').style.display="none";
+        document.getElementById('2000subwoofer').style.display="none";
+        document.getElementById('plussubwoofer').style.display="none";
+    	document.getElementById('ultrasubwoofer').style.display="none";
+        document.getElementById('1000subwooferdual').style.display="none";
+        document.getElementById('2000subwooferdual').style.display="none";
+        document.getElementById('plussubwooferdual').style.display="none";
+   		document.getElementById('ultrasubwooferdual').style.display="none";
+        document.getElementById('prime-speakers').style.display="none";
+        document.getElementById('ultra-speakers').style.display="none";
+        document.getElementById('prime-packages').style.display="none";
+        document.getElementById('ultra-packages').style.display="none";
+        document.getElementById('accessories').style.display="block";
+    	ga('send', 'event', 'All Products Collection', 'Click', 'Filtering - Accessories');
+	 
+ }
+ </script>
+  
+  <!--{% include 'bill-of-rights' %}-->
+
+
+</section>
+<div class="wk_compare_products_block"></div>

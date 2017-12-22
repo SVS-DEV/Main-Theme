@@ -1,0 +1,26 @@
+{% assign specs_setting = false %}
+
+<section class="collection grid">
+
+  <div class="wrap">
+    <!--<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/memorial-day-outlet-banner.jpg" style="max-width:100%"> -->
+    <span class="outletdesc">
+    {{ collection.description }}
+    </span>
+    
+    <div class="outlets">
+	{% paginate collection.products by 48 %}
+    {% for product in collections["featured-speaker-outlet-specials"].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    <br><center  style="margin-bottom:15px"><span style="width:auto;margin:0 auto;">{% include 'pagination' %}</span></center>
+    {% endpaginate %}
+    </div>
+
+  </div><br>
+  
+  {% include 'bill-of-rights' %}
+
+
+</section>
+

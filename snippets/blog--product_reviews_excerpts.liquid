@@ -1,0 +1,11 @@
+	{% for post in blogs['press-reviews'].articles limit: 3 %}
+		<div class="post">
+			<div class="post__content">		
+				{% if post.image %}
+				<img src="{{ post.image | img_url: "medium" }}" alt="{{ post.title }}">
+				{% endif %}
+				<h3>{{ post.title }}</h3>
+				<p class="post__excerpt">{{ post.content }}</p>
+			</div>
+		</div>
+	{% endfor %}
