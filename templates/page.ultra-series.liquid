@@ -1,0 +1,74 @@
+{% assign landingpage_collection = 'ultra-series' %}
+{% assign landingpage_collection_recommendations = landingpage_collection | append: "-2" %}
+
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.content %}
+		
+
+<section class="image-text right first-section radial-shadow--top radial-shadow--bottom">
+
+	<div class="wrap">
+
+		<img src="{{ 'ultra-series-section1-5.png' | asset_url }}" alt="Expertise + Passion">
+
+		<div class="image-text__copy">
+			<h2 class="image-text__heading">Astonishing Dynamics. World-Class Refinement.</h2>
+		
+			<p>To create the Ultra Series, we started with extremely high expectations—and then set out to exceed them in every arena. We drew on our deepest reserves of passion, expertise and decades in audio.</p>
+
+			<p>In keeping with the SVS process, the Ultra Series was digitally prototyped, then developed with FEA optimization, and scientifically tested in anechoic chambers. Endless hours were spent doing what we love the most: We listened, tweaked, and listened again to all kinds of movies and music in a multitude of real-world listening rooms. Relentlessly. Only then was the Ultra Series ready to delight audio’s most passionate listeners—including you.</p>
+		</div>
+	</div>
+
+</section>
+
+<section class="image-section">
+
+	<div class="wrap">
+	
+		<h2 class="image-section__header">Ultra Technology</h2>
+
+		<img src="{{ 'ultra-series-technology.png'  | asset_url }}" alt="">
+	
+	</div>
+
+</section>
+
+<section class="image-text right radial-shadow--top radial-shadow--bottom">
+
+	<div class="wrap">
+
+	<img src="{{ 'ultra-series-no-compromise.png' | asset_url }}" alt="">
+
+		<div class="image-text__copy">
+			<h2 class="image-text__heading">No Compromise</h2>
+		
+			<p>We’ve long believed the joys of high-end audio were too great to be enjoyed by so few. Our vision was clear. The new Ultra Series speakers were to do what many high-end systems can’t. They must rival the audiophile refinement and accuracy of exclusive brands. And, they must deliver the awesome dynamics of the most demanding content. Both. Not one or the other. No compromise. We’re proud to say, the Ultra Series does precisely that. It delivers a world-class level of performance in a beautiful modern package—all at renowned SVS value.</p>
+			
+		</div>
+
+	</div>
+	
+
+</section>
+
+<section class="review">
+
+	<div class="wrap">
+	
+		<div class="review-wrap">
+			<img class="review-image left" src="http://www.svsound.com/core/media/media.nl?id=35521&c=3634088&h=55874238bf792b7bec1a" alt="">
+			<img class="review-image right" src="http://www.svsound.com/core/media/media.nl?id=35520&c=3634088&h=a701a1bfaba0823972ed" alt="">
+
+			<p class="review-copy">Dynamics Of A Custom Theater System, <strong>Neutrality &amp; Ambience</strong> Audiophile System...</p>
+			<p class="review-attribution">Sound &amp; Vision</p>
+		</div>
+
+	</div>
+
+</section>
+
+{% include 'landing_page--variable_collection_grid', layout: 'columns two-wide', lp_collection: landingpage_collection %}
+
+{% include 'landing_page--audition_promo' %}
+
+{% include 'landing_page--recommendations', lp_collection: landingpage_collection_recommendations %}

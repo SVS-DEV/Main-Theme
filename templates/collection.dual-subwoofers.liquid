@@ -1,0 +1,272 @@
+
+
+<noscript>
+<style>
+.ui-tabs-panel {display:block !important}
+#category-tabs .col-1-6 { display:none}
+.col-3-4 {
+		width:100%;
+		border-left:none !important;
+	}
+</style>
+</noscript>
+
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , second_heading: collection.metafields.header.second_heading  %}
+<section>
+  <div class="wrap padtopnone">
+
+    <h1>
+      One Subwoofer to Rule Them All.
+      <span>SVS Obliterates Expectations. Nothing Else Comes Close. </span>
+    </h1>
+    <h2> Running two or more subwoofers improves low frequency performance in several ways, compared to running a single subwoofer.  These include: reduced phase cancellation for more room-filing bass, increased headroom for deeper, harder-hitting output, easier room integration and reduced localization so it feels like bass is emanating from all around you.<br><br>For an in-depth understanding of how going dual can improve the bass in your system, check out the SVS Sound Experts post, <a href="https://www.svsound.com/blogs/svs/75040195-why-go-dual" style="color:#ff4500">Why Go Dual</a>. </h2>
+    
+    <div id="category-tabs" class="grid-2 category-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+         <ul class="col-1-6 ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Dual Subwoofer Category Page', 'Click', '4000-series tab');" class="ui-state-default ui-corner-top " role="tab" tabindex="0" aria-controls="tab-1" aria-labelledby="ui-id-1" ><a href="#4000-series-dual-subwoofers" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1"><span class="subtabname">Dual 4000 Series - <span style="color:#ff4500;font-weight:800;letter-spacing:.5px;display:inline-block">New</span></span><span class="subtabprice hideRU"> from $2,799.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Dual Subwoofer Category Page', 'Click', '1000-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-2" aria-labelledby="ui-id-2" aria-selected="false"><a href="#dual-1000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span class="subtabname">Dual 1000 Series</span> <span class="subtabprice hideRU"> from $949.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Dual Subwoofer Category Page', 'Click', '2000-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-3" aria-labelledby="ui-id-3" aria-selected="false"><a href="#dual-2000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span class="subtabname">Dual 2000 Series</span> <span class="subtabprice hideRU"> from $1,299.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Dual Subwoofer Category Page', 'Click', 'plus-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-4" aria-labelledby="ui-id-4" aria-selected="false"><a href="#dual-plus-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span class="subtabname">Dual Plus Series</span> <span class="subtabprice hideRU"> from $2,279.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Dual Subwoofer Category Page', 'Click', '16-Ultra Series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-5" aria-labelledby="ui-id-5" aria-selected="false"><a href="#dual-16-ultra" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span class="subtabname">Dual 16-Ultra Series</span> <span class="subtabprice hideRU"> from $3,799.99</span></a></li>
+         </ul>
+         <div class="col-5-6">
+           <div id="4000-series-dual-subwoofers" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="true" aria-hidden="false">
+             <h3> <span>Dual 4000 Series - New</span> </h3>
+              <p>
+                SVS 4000 Series subwoofers demolish all preconceived notions about subwoofer performance and technology by bringing reference caliber bass to the lowest price ever. With trickle down technology from the 16-Ultra Series, named top subwoofers in the world by nearly every audio publication and industry group, the 4000 Series establish lofty performance benchmarks and offer valuable features found only with SVS.
+              </p>
+              <div class="products cf">
+  {% for product in collections["4000-series-dual-subwoofers"].products %}
+    {% include 'product-loop-grid' with "4000-series-dual-subwoofers" %}
+{% endfor %}
+</div>
+  </div>
+  
+  <div id="dual-1000-series" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Dual 1000 Series</span> </h3>
+             <p>
+               The SVS 1000 Series changed the game by bringing legitimate, world-class subwoofer performance to a new level of affordability. Compact and commanding with astonishing power, the 1000 Series outperform subwoofers twice the price and are well-equipped to serve as the sonic foundation of any music or home theater system.
+             </p>
+             <div class="products cf">
+  {% for product in collections["1000-series-dual-subwoofers"].products %}
+    {% include 'product-loop-grid' with "1000-series-dual-subwoofers" %}
+{% endfor %}
+</div>
+           </div>
+
+
+           <div id="dual-2000-series" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Dual 2000 Series</span> </h3>
+             <p>
+               Featuring award-winning technology from the Ultra Series, the 2000 Series subwoofers are the best-selling SVS models for their rare combination of effortless power, quickness, intelligent processing, and innovative driver design, all at a price that is within reach of any audio enthusiast. This potent recipe is redefining expectations for subwoofers in every class.
+             </p>
+             <div class="products cf">
+  {% for product in collections["2000-series-dual-subwoofers"].products %}
+    {% include 'product-loop-grid' with "2000-series-dual-subwoofers" %}
+{% endfor %}
+</div>
+           </div>
+
+           <div id="dual-plus-series" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Dual Plus Series</span> </h3>
+             <p>
+               A favorite among home theater fans and serious audiophiles as well, the Plus Series build quality and performance approaches the Ultra Series and is on par with the best subwoofers in the world. Designed to handle the most demanding low frequency content with ease, SVS Plus Series Subwoofers are engineered to exceed expectations.
+             </p>
+             <div class="products cf">
+  {% for product in collections["plus-series-dual-subwoofers"].products %}
+    {% include 'product-loop-grid' with "plus-series-dual-subwoofers" %}
+{% endfor %}
+</div>
+           </div>
+
+           <div id="dual-16-ultra" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Dual 16-Ultra Series</span> </h3>
+             <p>
+               Reference SVS subwoofers obliterate expectations with effortless low frequency extension, massive output and pinpoint accuracy and speed in transients. Featuring three game-changing innovations: a robust 16” driver with unprecedented 8” voice coil, 1,500 watts RMS, 5,000+ watts peak amplifier with fully discrete MOSFET output and groundbreaking new SVS smartphone app for convenient DSP and control; the 16-Ultra Series are the ultimate reference standard for bass.
+             </p>
+             <div class="products cf">
+  {% for product in collections["16-ultra-series-dual-subwoofers"].products %}
+    {% include 'product-loop-grid' with "16-ultra-series-dual-subwoofers" %}
+{% endfor %}
+</div>
+           </div>
+         </div>
+      </div>
+
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <h5>Benefits and Placement of Multiple Subwoofers</h5>
+    <div class="video-embed-wrap">
+      <iframe src="https://www.youtube.com/embed/OXVpy5jaNsk" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+  </div>
+</section>
+<!--
+<section class="bg-grey">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="col-1-2 bor">
+        <div class="col-1-4">
+          <img src="{{ 'sub-cat-45.png' | asset_url }}" alt="Powered Home Theater Subwoofer 45 Day Trial">
+          <img src="{{ 'sub-cat-5yr.png' | asset_url }}" alt="Powered Home Theater Subwoofer 5 Year Warranty">
+        </div>
+        <div class="col-3-4">
+          <h4> SVS Customer Bill of Rights </h4>
+          <p> We stand behind our products with the industry’s most comprehensive policies and guarantees that make it easy, risk-free and rewarding to be a lifelong listener. Some of these rights include: </p>
+          <ul>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 1 - 45 Day Trial');"> <strong> 45 Day Risk-Free In-Home Trial, Fast & Free Shipping and Returns </strong> </a> </li>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 2 - 5 Year Warranty');"> <strong> 5-Year Unconditional Warranty </strong> </a> </li>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 3 - 60 Day Price Protection');"> 60-Day Guaranteed Price Protection </a> </li>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 4 - Sound Expert Advice');"> Pre & Post-Purchase SVS Sound Experts Advice and Support </a> </li>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 5 - Trade up Policy');"> 1-Year Trade-Up Policy </a> </li>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 6 - 1 Year Performance Upgrade');"> 1-Year Performance Upgrade </a> </li>
+            <li> <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 7 - Review Full Bill of Rights');"> Review Full SVS Customer Bill of Rights </a> </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="col-1-2 cs">
+        <div class="cf">
+          <div class="col-1-4">
+            <img src="{{ 'sub-cat-lifetime.png' | asset_url }}" alt="Powered Home Theater Subwoofer Lifetime Support">
+          </div>
+          <div class="col-3-4">
+          <h4> Lifetime SVS Sound Experts Support </h4>
+            <p>
+              Need a hand with AV system set-up, troubleshooting, or calibration? Our SVS Sound Experts want to hear from you and are available seven days a week via <a data-remodal-target="contact__modal" style="color:#ff4500" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - Chat, Phone, Email');">chat, phone, or email</a> to assist with all your home theater or audio system needs.
+            </p>
+          </div>
+        </div>
+        
+        <ul class="clear">
+          <li> <a href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater" onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 1 - Perfect Subwoofer for Me');"> What is the perfect subwoofer for me? </a> </li>
+          <li> <a href="/blogs/svs/75367747-sealed-vs-ported " onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 2 - Sealed VS Ported');"> What is the difference between a sealed and ported subwoofer? </a> </li>
+          <li> <a href="/blogs/svs/75365187-the-art-of-subwoofer-placement " onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 3 - Subwoofer Placement');"> Where should I place my subwoofer for optimal performance? </a> </li>
+          <li> <a href="/blogs/svs/75366339-digital-bass-management-a-primer " onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 4 - Subwoofer Features');"> What are all the features of my subwoofer? </a> </li>
+          <li> <a href="/blogs/svs/75366339-digital-bass-management-a-primer   " onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 5 - Optimize Speakers');"> How can I optimize the sound and output to blend with my speakers? </a> </li>
+          <li> <a href="/products/soundpath-subwoofer-isolation-system " onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 6 - Floor/Window Vibration');"> It sounds awesome, but my floors and windows are vibrating, anything I can do about that? </a> </li>
+          <li> <a href="/blogs/svs/75040195-why-go-dual " onclick= "ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 7 - Why go Dual');"> What are the benefits of going with dual subwoofers? </a> </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+<section class="">
+  <div class="wrap">
+    <h5> The SVS Subwoofer Difference </h5>
+    <p>
+      The essence of our design philosophy is driven by five key performance objectives that elevate SVS Subwoofers above all others. This essence is revealed with every visceral and emotionally charged moment that only SVS can deliver. From startlingly realistic high impact movie sound effects to the subtlest musical details, it’s like hearing everything for the first time.
+    </p>
+    <img src="{{ 'subwoofer-callouts.jpg' | asset_url }}" class="sub-callout"  alt="SVS Powered Home Theater Subwoofer Difference">
+  </div>
+</section>
+<div class="wk_compare_products_block"></div>
+{% include 'news-ticker-subwoofers' %}
+<script>
+  function heightsEqualizer(selector) {
+    var elements = document.querySelectorAll(selector),
+        max_height = 0,
+        len = 0,
+        i;
+ 
+    if ( (elements) && (elements.length > 0) ) {
+        len = elements.length;
+ 
+        for (i = 0; i < len; i++) { // get max height
+			elements[i].style.height = ''; // reset height attr
+            if (elements[i].clientHeight > max_height) {
+                max_height = elements[i].clientHeight;
+            }
+        }
+ 
+        for (i = 0; i < len; i++) { // set max height to all elements
+            elements[i].style.height = max_height + 'px';
+        }
+    }
+}
+ 
+if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', function() {
+        heightsEqualizer('.js-equal-height');
+    });
+	window.addEventListener('resize', function(){
+		heightsEqualizer('.js-equal-height');
+	});
+}
+ 
+setTimeout(function () { // set 1 second timeout for having all fonts loaded
+	heightsEqualizer('.js-equal-height');
+}, 1000);
+</script>
+<script type="text/javascript">
+
+            $( "#category-tabs" ).tabs();
+
+
+  	</script>
+
+<script>
+function comparedeny(){
+  var nocomparelist = "";
+  var $checkbox = $(this);
+$.each($('.wk_title'), function () { 
+  
+  if($(this).is(':contains("Prime Tower")'))  {
+	  nocomparelist += 'Prime Tower <br>'
+			}
+			else if($(this).is(':contains("Prime Bookshelf")')) {
+				nocomparelist += 'Prime Bookshelf <br>'
+				}
+				else if($(this).is(':contains("Prime Center")')) {
+					nocomparelist += 'Prime Center <br>'
+					}
+					else if($(this).is(':contains("Prime Satellite")')) {
+						nocomparelist += 'Prime Satellite <br>'
+						}
+						else if($(this).is(':contains("Ultra Tower")')) {
+							nocomparelist += 'Ultra Tower <br>'
+							}
+							else if($(this).is(':contains("Ultra Bookshelf")')) {
+								nocomparelist += 'Ultra Bookshelf <br>'
+								}
+								else if($(this).is(':contains("Ultra Center")')) {
+									nocomparelist += 'Ultra Center <br>'
+									}
+									else if($(this).is(':contains("Ultra Surround")')) {
+										nocomparelist += 'Ultra Surround <br>'
+										}
+										else if($(this).is(':contains("Prime Elevation")')) {
+											nocomparelist += 'Prime Elevation <br>'
+											}
+
+});
+  if (nocomparelist !=""){
+    WK_PC.showPopup('Oops! We’re not able to compare speakers and subwoofers','Please remove:<br><br>' + nocomparelist);
+    setTimeout(function() {
+      $checkbox.removeAttr('checked');
+    }, 0);
+    event.preventDefault();
+    event.stopPropagation();
+	}
+};
+	var checkExist = setInterval(function() {
+		if ($(".wk_product_comparison input[type='checkbox']").length) {
+			
+			$(".wk_product_comparison input[type='checkbox']").click(function(){ comparedeny(); });
+			clearInterval(checkExist);
+			}
+			}, 500); // check every 100ms
+  
+  $( ".wk_image" ).before( "<span class='clearall' onclick='wkErase()' id='clearall' style='color:#ff4500;cursor:pointer'>Remove all products</span>" );
+			
+</script>
+<script>
+  $(".reload").click(function(){
+location.reload();
+});
+</script>

@@ -1,0 +1,72 @@
+<style>
+  @media screen and (max-width: 719px){
+    .collection .product {max-width:100%; width:100% !important} 
+  }
+  .collection .product__description {margin-bottom:10px}
+  .landing-page #content .yotpo .pull-left {text-align:left}
+  .collection .product img {margin: 0 auto 25px auto}
+
+</style>
+<section class="collection">
+{% for product in collections[lp_collection].products %}
+  <div class="product">
+  <a class="product__link" href="{{ product.url }}">
+      <img src="{% if product.images.size >= 1%}{{ product.featured_image | product_img_url: 'large' }}{% else %}{{ 'no-image-logo.svg' | asset_url }}{% endif %}" alt="{{ product.title | escape  }}" />
+    <h3 class="product__handle">{{ product.title }}</h3>
+  </a>
+  <div class="product__price-ratings">
+    
+    <h4 class="price">{% if product.compare_at_price > 0 %}<span class="oldprice">{{ product.compare_at_price | money }}</span>{% endif %}     {{ product.price | money }}</h4>
+    
+
+    {% assign yotpoid = product.metafields.global.reviewid %}
+    {% if yotpoid == blank %}
+    	{% assign yotpoid = 0 %}
+    {% endif %}
+    <a href="{{ product.url }}">
+    <div class="ratings">
+      <div class="yotpo bottomLine"
+           data-appkey="HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs"
+           data-domain="{{ shop.permanent_domain | escape }}"
+           data-product-id="{{ yotpoid }}"
+           data-product-models="{{ yotpoid }}"
+           data-name="{{ product.title | escape }}"
+           data-url="{{ url }}"
+           data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+           data-description="{{ product.description | escape }}"
+           data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+      </div>
+    </div>
+    </a>
+  </div>
+
+  <div class="product__description">
+    <p>
+      {% if product.type contains "Subwoofer Outlet" or product.type contains "Speaker Outlet" or product.type contains "Accessory Outlet" %}
+{{ product.description }}
+{% else %}
+{{ product.metafields.global.list_view_copy }}
+{%  endif %}
+    </p>
+  </div>
+  <div class="buyshopcont cf">
+  <a href="{{ product.url }}" class="svs-learn" onclick= "ga('send', 'event', 'Collection', 'Click', 'Learn More - {{ product.title }}');">{% if button_text != nil %}{{ button_text }}{% else %}Learn More{% endif %}</a> 
+      <form method="post" name="addtocart" action="/cart/add">
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        <a href='#' class="svs-buy" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+  </form>
+  </div>
+  {% if specs == true %}
+  <hr>
+  <div class="product__quick-specs">
+      <div class="product__specs">
+          <ul>
+              {{ product.metafields.global.quick_specs }}
+          </ul>
+      </div>
+  </div>
+  {% endif %}
+</div>
+ 
+{% endfor %}
+</section>

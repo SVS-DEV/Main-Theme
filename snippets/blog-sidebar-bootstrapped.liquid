@@ -1,0 +1,76 @@
+
+<aside class="blog-sidebar col-md-3 col-sm-12">
+    <h4> Get Social with SVS </h4>
+
+    <div class="social-wrappers">
+        <a href="https://www.facebook.com/SVSound/" onclick= "ga('send', 'event', 'Social Sidebar', 'Click', 'Facebook Title');" class="social-header"  target="_blank">
+            <h6 class="fb-ico-header"> /SVSound</h6>
+        </a>
+        <div class="fb-page" data-href="https://www.facebook.com/svsound" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <blockquote cite="https://www.facebook.com/svsound" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/svsound">SVS</a>
+            </blockquote>
+        </div>
+    </div>
+    <div class="social-wrappers">
+        <a href="https://www.instagram.com/svs_sound/" onclick= "ga('send', 'event', 'Social Sidebar', 'Click', 'Instagram Title');" class="social-header" target="_blank">
+            <h6 class="insta-ico-header"> @SVS_Sound </h6>
+        </a>
+        <script src="//lightwidget.com/widgets/lightwidget.js"></script>
+        <iframe src="//lightwidget.com/widgets/ea4a4c5712865cd5ab7ed0a6deff6c04.html" id="lightwidget_ea4a4c5712" name="lightwidget_ea4a4c5712"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+    </div>
+    <div class="social-wrappers">
+        <a href="https://twitter.com/SVS_Sound" onclick= "ga('send', 'event', 'Social Sidebar', 'Click', 'Twitter Title');" class="social-header"  target="_blank">
+            <h6 class="tw-ico-header"> @SVS_Sound </h6>
+        </a>
+        <a class="twitter-timeline" href="https://twitter.com/SVS_Sound" data-widget-id="256850299346632704" data-chrome="noheader noborders">Tweets by @SVS_Sound</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+  
+
+
+    {% if blog.all_tags != blank %}
+        <div class="blog-tags">
+            <h4>Blog Tags</h4>
+            <ul>
+                {% for tag in blog.all_tags %}            
+                    <li>
+                        <a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+                    </li>
+                {% endfor %} 
+            </ul>
+        </div>
+    {% endif %}
+
+              
+    <div class="help-promos">
+      <h4>Stay Connected!</h4>
+      <div class="sidebar-promo">
+            <h6>SVS Newsletter</h6>
+            <p>Sign up to be the first to learn about new products, special offers and helpful articles about subwoofer placement, system optimization and more.</p>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="//svsound.us6.list-manage.com/subscribe/post?u=7633d39bda9cfdce45d505f6f&amp;id=932c6e125c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group">
+
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+  <input type="text" value="Blog" name="SIGNUP" class="" id="mce-SIGNUP" style="display:none">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7633d39bda9cfdce45d505f6f_932c6e125c" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button svs-subscribe" onclick="ga('send', 'event', 'Social Sidebar', 'Click', 'Newsletter Subscribe Button');"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[4]='MMERGE4';ftypes[4]='text';fnames[5]='MMERGE5';ftypes[5]='text';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='SIGNUP';ftypes[8]='text';fnames[9]='LAST_ORDER';ftypes[9]='date';fnames[10]='COMPANY';ftypes[10]='text';fnames[11]='PHONE';ftypes[11]='phone';fnames[12]='ADDRESS';ftypes[12]='address';fnames[13]='TAGS';ftypes[13]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+        </div>
+    </div>
+</aside>
+

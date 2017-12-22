@@ -1,0 +1,17 @@
+<div class="wrap">
+  <section class="form account-form">
+    <h2><span>Activate</span> Account</h2>
+    <p class="account-form__footnote">{{ 'customer.activate_account.subtext' | t }}</p>
+
+    {% form 'activate_customer_password' %}
+    {{ form.errors | default_errors }}
+
+    <input type="password" value="" name="customer[password]" id="customer_password" class="text" size="16" placeholder="Password *">
+
+    <input type="password" value="" name="customer[password_confirmation]" id="customer_password_confirmation" class="text" size="16" placeholder="Confirm Password *">
+
+      <input type="submit" value="{{ 'customer.activate_account.submit' | t }}" />
+      <span class="account-form__footnote"><a href="/">{{ 'customer.activate_account.cancel' | t }}</a></span>
+    {% endform %}
+  </section>
+</div>

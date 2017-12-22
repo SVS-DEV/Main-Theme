@@ -1,0 +1,40 @@
+{% include 'product--stickynav' %}
+{% include 'product' %}
+<div class="custom-sections">
+
+	{{ product.metafields.custom_sections.section-1 }}
+  	{{ product.metafields.custom_sections.section-2 }}
+  
+  	{% assign yotpoid = product.metafields.global.reviewid %}
+	{% if yotpoid == blank %}
+	{% assign yotpoid = 1111 %}
+	{% endif %}
+
+<section class="product-customerreviews" id="reviews-anchor">
+	<div class="wrap">
+      <h2> <i class="fa fa-users"></i> User Ratings &amp; Reviews </h2>
+		<div class="yotpo yotpo-main-widget"
+	      data-product-id="{{ yotpoid }}"
+	      data-name="{{ product.title | escape }}"
+	      data-url="http://www.svsound.com{{ product.url }}"
+	      data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+	      data-description="{{ product.description | escape }}">
+	  	</div>
+  	</div>
+</section>
+  
+  	{{ product.metafields.custom_sections.section-3 }}
+  	{{ product.metafields.custom_sections.section-4 }}
+  	{{ product.metafields.custom_sections.section-5 }}
+  	{{ product.metafields.custom_sections.section-6 }}
+
+
+
+
+{% assign img_src = 'test' | asset_url %}
+{% assign img_src = img_src | split: 'test' %}
+  
+</div>
+
+
+{% include 'product--footer_section' %}

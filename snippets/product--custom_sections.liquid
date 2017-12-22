@@ -1,0 +1,12 @@
+<div class="custom-sections">
+
+{% for section in product.metafields.custom_sections %}
+
+	{{ section | last }}
+
+{% endfor %}
+
+{% assign img_src = 'test' | asset_url %}
+{% assign img_src = img_src | split: 'test' %}
+  
+</div>

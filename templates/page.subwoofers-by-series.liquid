@@ -1,0 +1,523 @@
+<noscript>
+<style>
+.ui-tabs-panel {display:block !important}
+#category-tabs .col-1-6 { display:none}
+.col-3-4 {
+		width:100%;
+		border-left:none !important;
+	}
+</style>
+</noscript>
+
+<style>
+.template-page-subwoofers-by-series li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active a:before {
+  height:94px;
+}
+.ui-tabs-anchor {
+  height:58px;
+}
+  
+	.template-page-subwoofers-by-series .quotes blockquote {
+		border-right: none;
+		margin-bottom: 15px;
+	}
+	.template-page-subwoofers-by-series .quotes blockquote p {
+		font-weight: 400;
+		font-style: italic;
+		padding: 0 30px 0 0;
+		font-size: 15px;
+	}
+	.template-page-subwoofers-by-series .quotes img {
+		max-height: 55px;
+	}
+	.newsticker {
+		background: #f3f3f3 !important;
+		margin-top: 15px;
+	}
+	.template-page-subwoofers-by-series #content h2 {
+		font-size: 18px;
+	}
+	@media (max-width: 660px) {
+		.desktop-copy {
+			display: none;
+		}
+	}
+	@media (max-width: 672px) {
+		.quotesinner {
+			width: 100%;
+			float: none;
+			clear: both;
+			padding-right: 0;
+		}
+		.template-page-speakers .quotes blockquote {
+			border-right: none;
+		}
+	}
+		@media (min-width: 992px) {
+			.template-page-subwoofers-by-series .quotes blockquote {
+				border-right: 1px solid black;
+			}
+			.col-md-3.quotesinner:nth-child(4n+1) blockquote {
+				border-right: none;
+			}
+			.col-md-3.quotesinner:nth-child(4n) {
+				clear: right;
+			}
+		}
+
+.template-page-subwoofers-by-series .news-ticker-section {
+  margin: 0 15px;
+  display: block; }
+.template-page-subwoofers-by-series .news-ticker-section .wrap {
+  padding: 0;
+  position: relative; }
+.template-page-subwoofers-by-series .news-ticker-wrap {
+  padding: 15px 25px;
+  border: 5px solid white;
+  background: url("https://cdn.shopify.com/s/files/1/0921/3560/files/news-ticker-bg.jpg?4427707352850100436");
+  background-size: cover;
+  height: 225px;
+  position: relative;
+  margin-bottom: 15px; }
+  .template-page-subwoofers-by-series .news-ticker-wrap:before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 46px;
+    width: 50px;
+    background: url("https://cdn.shopify.com/s/files/1/0921/3560/files/copy_3.png?11286927612111243200");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    left: 0;
+    top: 40px; }
+    @media (min-width: 768px) {
+      .template-page-subwoofers-by-series .news-ticker-wrap:before {
+        background-size: 80%;
+        left: 8px;
+        top: 55px; } }
+  .template-page-subwoofers-by-series .news-ticker-wrap:after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 46px;
+    width: 50px;
+    background: url("https://cdn.shopify.com/s/files/1/0921/3560/files/copy_4.png?11286927612111243200");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    right: 0;
+    bottom: 150px; }
+    @media (min-width: 768px) {
+      .template-page-subwoofers-by-series .news-ticker-wrap:after {
+        background-size: 80%;
+        right: 8px;
+        bottom: 125px; } }
+  .template-page-subwoofers-by-series .news-ticker-wrap .news-ticker-header {
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid white;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 5px;
+    padding-bottom: 5px; }
+  .template-page-subwoofers-by-series .news-ticker-wrap .news-ticker-quotes blockquote {
+    display: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    left: 60px;
+    right: 60px; }
+    @media (min-width: 768px) {
+      .template-page-subwoofers-by-series .news-ticker-wrap .news-ticker-quotes blockquote {
+        font-size: 18px; } }
+    @media (min-width: 900px) {
+      .template-page-subwoofers-by-series .news-ticker-wrap .news-ticker-quotes blockquote {
+        font-size: 24px; } }
+  
+  .atr-video-thumb {
+   float:right;
+    max-width:30%;
+    padding: 0 0 10px 10px; 
+    
+  }
+  .atr-video-thumb-mobile {
+    max-width:100%;
+    padding: 10px 0; 
+  }
+  @media screen and (max-width: 450px) {
+     .secondary {margin-top:10px}
+     .site-runner-inner {text-align:center}
+     .firetexttext {margin-bottom:10px}
+   }
+</style>
+
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.description %}
+<section>
+	<div class="wrap padtopnone">
+
+		<h1>
+	      One Subwoofer to Rule Them All.
+	      <span>SVS Obliterates Expectations. Nothing Else Comes Close. </span>
+	    </h1>
+        <a href="#atr-video" class="hidden-xs" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', '5 Performance Attributes Video Thumb - Mobile');">
+          <img class="atr-video-thumb" src="https://cdn.shopify.com/s/files/1/0921/3560/files/5-performance-thumb.png?331910304318556296">
+        </a>
+          <p style="margin-bottom: 12px;">
+			SVS subwoofers stand alone as the reference standard for bass. All SVS subwoofers effortlessly produce the lowest frequencies at the highest output levels while maintaining pinpoint accuracy and speed in transients, and blending seamlessly with all speakers. Music, movies and TV shows become more convincing and every audio experience takes on an added energy and feeling with an SVS subwoofer anchoring the low end.
+		</p>
+      	<a href="#atr-video" class="visible-xs-block" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', '5 Performance Attributes Video Thumb - Desktop');">
+          <img class="atr-video-thumb-mobile" src="https://cdn.shopify.com/s/files/1/0921/3560/files/5-performance-thumb.png?331910304318556296">
+        </a>
+		<p>
+          SVS makes a variety of ported and sealed home subwoofers to fit every room, audio system and budget. Our <a href="/pages/customer-service">Sound Experts</a> are available 7 days-a-week to help you choose the best powered subwoofer based on your personal set-up and listening preferences. 
+		</p>
+      	<div class="container-fluid">
+          <div class="row">
+          	<div class="col-sm-12">
+              <img style="max-width:100%;padding:10px 0;margin:0 auto;" src="https://cdn.shopify.com/s/files/1/0921/3560/files/awards-bar-home-mobile_8ae66002-1d85-4c21-af92-237f27f0fddc.png?6667761948192811983" class="visible-xs-block">
+          		<img style="max-width:100%;padding:10px 0;" src="https://cdn.shopify.com/s/files/1/0921/3560/files/awards-bar-home_7d6556b1-7d80-40f7-8d47-570bb8e33b90.png?15869294166980313591" class="hidden-xs">
+            </div>
+          </div>  
+      	</div>
+		<h2 style="font-size: 22px;font-weight: 800;"> <span class="desktop-copy"> Click the boxes below each product to compare up to four models at once. </span> </h2> 
+		
+		<div id="category-tabs" class="grid-2 category-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+			<ul class="col-1-6 ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+              <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', '4000-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="0" aria-controls="tab-1" aria-labelledby="ui-id-1"><a href="#4000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1"><span class="subtabname"><span style="color:#eb1; font-size:12px;font-weight:bold">New!</span>4000 Series</span> <span class="subtabprice hideRU"> from $1499.99</span></a></li>
+              <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', 'NSD-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-2" aria-labelledby="ui-id-2" ><a href="#nsd-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span class="subtabname"><span style="color:#eb1; font-size:12px;font-weight:bold">Limited Time Only!</span>NSD Series</span> <span class="subtabprice hideRU"> from $399.99</span></a></li>
+				<li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', '1000-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-3" aria-labelledby="ui-id-3" ><a href="#1000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span class="subtabname">1000 Series</span> <span class="subtabprice hideRU"> from $499.99</span></a></li>
+				<li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', '2000-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-4" aria-labelledby="ui-id-4" ><a href="#2000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span class="subtabname">2000 Series</span> <span class="subtabprice hideRU"> from $699.99</span></a></li>
+				<li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', 'plus-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-5" aria-labelledby="ui-id-5" ><a href="#plus-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span class="subtabname">Plus Series</span> <span class="subtabprice hideRU"> from $1,199.99</span></a></li>
+				<li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', '16-Ultra Series tab');" class="ui-state-default ui-corner-top " role="tab" tabindex="-1" aria-controls="tab-6" aria-labelledby="ui-id-6"><a href="#16-ultra" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6"><span class="subtabname">16-Ultra Series</span><span class="subtabprice hideRU"> from $1,999.99</span></a></li>
+			</ul>
+			<div class="col-5-6">
+              <div id="4000-series" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="true" aria-hidden="false">
+                <h3> <span>4000 Series - New</span> </h3>
+					<p>
+						SVS 4000 Series subwoofers demolish all preconceived notions about subwoofer performance and technology by bringing reference caliber bass to the lowest price ever. With trickle down technology from the 16-Ultra Series, named top subwoofers in the world by nearly every audio publication and industry group, the 4000 Series establish lofty performance benchmarks and offer valuable features found only with SVS.
+					</p>
+					<div class="products cf">
+						{% for product in collections["4000-series"].products %} {% include 'product-loop-grid' with "4000-series" %} {% endfor %}
+					</div>
+				</div>
+              
+              <div id="nsd-series" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display:none">
+					<h3> <span>NSD Series - Limited Time Only</span> </h3>
+					<p>
+						A combination of innovative driver design, massive amplifier power, advanced room integration options and handsome styling put the NSD subwoofers in a class above models from other brands costing 2-3 times more. Experience room energizing SPLs and deep bass extension with pinpoint accuracy and speed in transients for the lowest price you’ll ever find on brand new SVS ported and sealed subwoofers.
+					</p>
+					<div class="products cf">
+						{% for product in collections["nsd-series"].products %} {% include 'product-loop-grid' with "nsd-series" %} {% endfor %}
+					</div>
+				</div>
+
+
+				<div id="1000-series" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display:none">
+					<h3> <span>1000 Series</span> </h3>
+					<p>
+						The SVS 1000 Series changed the game by bringing legitimate, world-class subwoofer performance to a new level of affordability. Compact and commanding with astonishing power, the 1000 Series outperform subwoofers twice the price and are well-equipped
+						to serve as the sonic foundation of any music or home theater system.
+					</p>
+					<div class="products cf">
+						{% for product in collections["1000-series"].products %} {% include 'product-loop-grid' with "1000-series" %} {% endfor %}
+					</div>
+				</div>
+
+
+				<div id="2000-series" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+					<h3> <span>2000 Series</span> </h3>
+					<p>
+						Featuring award-winning technology from the Ultra Series, the 2000 Series subwoofers are the best-selling SVS models for their rare combination of effortless power, quickness, intelligent processing, and innovative driver design, all at a price that is
+						within reach of any audio enthusiast. This potent recipe is redefining expectations for subwoofers in every class.
+					</p>
+					<div class="products cf">
+						{% for product in collections["2000-series"].products %} {% include 'product-loop-grid' with "2000-series" %} {% endfor %}
+					</div>
+				</div>
+
+				<div id="plus-series" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+					<h3> <span>Plus Series</span> </h3>
+					<p>
+					    A favorite among home theater fans and serious audiophiles as well, the Plus Series build quality and performance approaches the Ultra Series and is on par with the best powered home subwoofers in the world. Designed to handle the most demanding low frequency content with ease, SVS Plus Series Subwoofers are engineered to exceed expectations.
+					</p>
+					<div class="products cf">
+						{% for product in collections["plus-series"].products %} {% include 'product-loop-grid' with "plus-series" %} {% endfor %}
+					</div>
+				</div>
+              
+				<div id="16-ultra" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+					<h3> <span>16-Ultra Series</span> </h3>
+					<p>
+						Reference SVS subwoofers set the standard for bass with effortless low frequency extension, massive output and pinpoint accuracy and speed in transients. Featuring three game-changing innovations: a robust 16” driver with unprecedented 8” voice coil,
+						1,500 watts RMS, 5,000+ watts peak amplifier with fully discrete MOSFET output and groundbreaking new SVS smartphone app for convenient DSP and control; the 16-Ultra Series are the ultimate reference standard for bass.
+					</p>
+					<div class="products cf">
+						{% for product in collections["16-ultra-series"].products %} {% include 'product-loop-grid' with "16-ultra-series" %} {% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<section class="bg-grey">
+	<div class="wrap">
+		<div class="container-fluid quotes">
+			<div class="row">
+				<div class="col-md-12">
+					<h3> <span style="border: none; margin: 0; padding: 0;">SVS Subwoofer Reviews - What the critics are saying.</span> </h3>
+					<h2 style="margin-top: auto;"> Reviewers agree that SVS makes the best home audio subwoofers . Read all reviews on our  <a href="/pages/reviews">product ratings and reviews page.</a> </h2>
+				</div>
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							“<strong>Competes with top-performing subs costing twice or more their price</strong>. The kinetic energy reached deafening reference listening levels…I’m surprised it didn’t set off the Earthquake Detection System! <strong>Very Highly Recommended</strong>.”
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_s_v.png?10520316399816398245" alt="Sound&Vision">
+					</blockquote>
+				</div>
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							“I've heard almost all of the top subwoofers currently on the market. The SB16-Ultra sounds like none of them. <strong>It's a whole different category of low-frequency sound. May well be the best subwoofer ever made</strong>."
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_htr_black.png?11268718067786920852" alt="HomeTheaterReview">
+					</blockquote>
+				</div>
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							“<strong>I can’t over-state how good the SVS subwoofer sounds</strong>, makes me want to use every possible over-the-top adjective. Very strong bass that drives performance to you-are-there levels with more dynamic impact leading to a more visceral listening experience.”
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_wsr.png?18149488814532756435" alt="Widescreen Review">
+					</blockquote>
+				</div>
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							"Instead of bass that booms, it's bass that hits, and it hits hard. Deep and authoritative, SVS subwoofers deliver <strong>impressively clean output and very high sound pressure levels</strong> and have features and aesthetics that are unmatched. <strong>Betters the competition in every way</strong>."
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_htf.png?4413458335147438901" alt="HomeTheaterForum">
+					</blockquote>
+				</div>
+
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							“The power and depth of the bass this sub produces makes AV experiences more visceral. There was never an instance where the demands of what I listened to exceeded what the SVS subwoofer could deliver.<strong> The best-performing, highest-impact sub I’ve heard</strong>.”
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_avsforum.png?10520316399816398245" alt="AVS">
+					</blockquote>
+				</div>
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							“<strong>Fear-inducing SPLs. Bass that you feel as well as hear</strong>. Delicious weight and scale, without a trace of distortion…beauty of its tone to bathe in…a full-bodied experience. <strong>It’s jaw on the floor stuff</strong>.”
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_hcc.png?14435764155248730346" alt="HomeCinemaChoice">
+					</blockquote>
+				</div>
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							<strong>“Does everything exceptionally well, never revealing a single weakness</strong>. SVS subwoofers expertly blend precision and power into one cohesive package, remaining composed at all times.<strong> Makes everything sound good</strong>.”
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/articles/HomeTheaterShackLogo90px_1ae16246-3366-4a05-843e-a27246172ad4_grande.jpg?v=1474420479" alt="HomeTheaterShack">
+					</blockquote>
+				</div>
+
+				<div class="col-md-3 quotesinner">
+					<blockquote data-match-height="bq-height">
+						<p data-match-height="quote-para">
+							“Watching a movie through a 5.1 system, or listening to music, is revelatory and is some of the best fun we’ve had with a piece of audio equipment. <strong>SVS subwoofers are the best home subwoofers available today</strong>."
+						</p>
+						<img src="https://cdn.shopify.com/s/files/1/0921/3560/files/reviewer_logo_tms.png?10520316399816398245" alt="TheMasterSwitch">
+					</blockquote>
+				</div>
+
+			</div>
+		</div>
+		{% include 'news-ticker-subwoofers' %}
+	</div>
+</section>
+
+
+
+<section class="bg-grey">
+	<div class="wrap">
+		<div class="grid-2">
+			<div class="col-1-2 bor">
+				<div class="col-1-4">
+					<img src="{{ 'sub-cat-45.png' | asset_url }}" alt="Powered Home Theater Subwoofer 45 Day Trial">
+					<img src="{{ 'sub-cat-5yr.png' | asset_url }}" alt="Powered Home Theater Subwoofer 5 Year Warranty">
+				</div>
+				<div class="col-3-4">
+					<h4> SVS Customer Bill of Rights </h4>
+					<p> We stand behind our products with the industry’s most comprehensive policies and guarantees that make it easy, risk-free and rewarding to be a lifelong listener. Some of these rights include: </p>
+					<ul>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 1 - 45 Day Trial');"> <strong> 45 Day Risk-Free In-Home Trial, Fast & Free Shipping and Returns </strong> </a> </li>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 2 - 5 Year Warranty');"> <strong> 5-Year Unconditional Warranty </strong> </a> </li>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 3 - 60 Day Price Protection');"> 60-Day Guaranteed Price Protection </a> </li>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 4 - Sound Expert Advice');"> Pre & Post-Purchase SVS Sound Experts Advice and Support </a> </li>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 5 - Trade up Policy');"> 1-Year Trade-Up Policy </a> </li>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 6 - 1 Year Performance Upgrade');"> 1-Year Performance Upgrade </a> </li>
+						<li> <a href="/pages/bill-of-rights" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Bill of Rights - 7 - Review Full Bill of Rights');"> Review Full SVS Customer Bill of Rights </a> </li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="col-1-2 cs">
+				<div class="cf">
+					<div class="col-1-4">
+						<img src="{{ 'sub-cat-lifetime.png' | asset_url }}" alt="Powered Home Theater Subwoofer Lifetime Support">
+					</div>
+					<div class="col-3-4">
+						<h4> Lifetime SVS Sound Experts Support </h4>
+						<p>
+							Need a hand with AV system set-up, troubleshooting, or calibration? Our SVS Sound Experts want to hear from you and are available seven days a week via <a data-remodal-target="contact__modal" style="color:#ff4500" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - Chat, Phone, Email');">chat, phone, or email</a>							to assist with all your home theater or audio system needs.
+						</p>
+					</div>
+				</div>
+				<ul class="clear">
+					<li> <a href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater" onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 1 - Perfect Subwoofer for Me');"> What is the perfect subwoofer for me? </a>						</li>
+					<li> <a href="/blogs/svs/75367747-sealed-vs-ported " onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 2 - Sealed VS Ported');"> What is the difference between a sealed and ported subwoofer? </a> </li>
+					<li> <a href="/blogs/svs/75365187-the-art-of-subwoofer-placement " onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 3 - Subwoofer Placement');"> Where should I place my subwoofer for optimal performance? </a> </li>
+					<li> <a href="/blogs/svs/75366339-digital-bass-management-a-primer " onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 4 - Subwoofer Features');"> What are all the features of my subwoofer? </a> </li>
+					<li> <a href="/blogs/svs/75366339-digital-bass-management-a-primer   " onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 5 - Optimize Speakers');"> How can I optimize the sound and output to blend with my speakers? </a>						</li>
+					<li> <a href="/products/soundpath-subwoofer-isolation-system " onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 6 - Floor/Window Vibration');"> It sounds awesome, but my floors and windows are vibrating, anything I can do about that? </a>						</li>
+					<li> <a href="/blogs/svs/75040195-why-go-dual " onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Sound Expert Support - 7 - Why go Dual');"> What are the benefits of going with dual subwoofers? </a> </li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="" id="atr-video">
+	<div class="wrap">
+		<h5> SVS Subwoofer Design Philosophy </h5>
+		<p>
+			The essence of our design philosophy is driven by five key performance objectives that elevate SVS Subwoofers above all others. This essence is revealed with every visceral and emotionally charged moment that only SVS can deliver. From startlingly realistic
+			high impact movie sound effects to the subtlest musical details, it’s like hearing everything for the first time.
+		</p>
+		<div class="video-embed-wrap" style="margin-top: 25px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/_xZ5wbahIkA" frameborder="0" allowfullscreen=""></iframe></div>
+	</div>
+</section>
+<section>
+
+	<div class="wrap">
+		<div class="container-fluid">
+			<div class="row">
+				<h5> Helpful Subwoofer Resources </h5>
+				<ul>
+					<!--<li> <a href="#"> Five Performance Attributes of a World-Class Subwoofer - </a> Learn about the SVS subwoofer design philosophy. </li>-->
+					<li> <a onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Helpful Resources - Choosing Best Subwoofer');" href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater"> Choosing the Best Home Theater Subwoofer </a> – Tips and advice if you’re just getting started. </li>
+					<li> <a onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Helpful Resources - Sealed vs Ported');"href="/blogs/svs/75367747-sealed-vs-ported"> Comparing Ported vs. Sealed Subwoofers for Home Audio </a> – Understanding the benefits and properties of subwoofer cabinet design. </li>
+					<li> <a onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Helpful Resources - Why go Dual');"href="/blogs/svs/75040195-why-go-dual"> The Benefits of Dual or Multiple Subwoofers </a> – Removing peaks and nulls, more headroom and other benefits. </li>
+					<li> <a onclick="ga('send', 'event', 'Subwoofer Category Page', 'Click', 'Helpful Resources - Is a Subwoofer Important for Music');"href="/blogs/svs/114690950-is-a-subwoofer-important-for-music"> Is a Subwoofer Important for Music? </a> – 6 ways a subwoofer benefits the music listening experience. </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<div class="wk_compare_products_block"></div>
+
+<script>
+	function heightsEqualizer(selector) {
+		var elements = document.querySelectorAll(selector),
+			max_height = 0,
+			len = 0,
+			i;
+
+		if ((elements) && (elements.length > 0)) {
+			len = elements.length;
+
+			for (i = 0; i < len; i++) { // get max height
+				elements[i].style.height = ''; // reset height attr
+				if (elements[i].clientHeight > max_height) {
+					max_height = elements[i].clientHeight;
+				}
+			}
+
+			for (i = 0; i < len; i++) { // set max height to all elements
+				elements[i].style.height = max_height + 'px';
+			}
+		}
+	}
+
+	if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', function() {
+			heightsEqualizer('.js-equal-height');
+		});
+		window.addEventListener('resize', function() {
+			heightsEqualizer('.js-equal-height');
+		});
+	}
+
+	setTimeout(function() { // set 1 second timeout for having all fonts loaded
+		heightsEqualizer('.js-equal-height');
+	}, 1000);
+</script>
+<script type="text/javascript">
+	$("#category-tabs").tabs();
+</script>
+
+<script>
+	function comparedeny() {
+		var nocomparelist = "";
+		var $checkbox = $(this);
+		$.each($('.wk_title'), function() {
+
+			if ($(this).is(':contains("Prime Tower")')) {
+				nocomparelist += 'Prime Tower <br>'
+			} else if ($(this).is(':contains("Prime Bookshelf")')) {
+				nocomparelist += 'Prime Bookshelf <br>'
+			} else if ($(this).is(':contains("Prime Center")')) {
+				nocomparelist += 'Prime Center <br>'
+			} else if ($(this).is(':contains("Prime Satellite")')) {
+				nocomparelist += 'Prime Satellite <br>'
+			} else if ($(this).is(':contains("Ultra Tower")')) {
+				nocomparelist += 'Ultra Tower <br>'
+			} else if ($(this).is(':contains("Ultra Bookshelf")')) {
+				nocomparelist += 'Ultra Bookshelf <br>'
+			} else if ($(this).is(':contains("Ultra Center")')) {
+				nocomparelist += 'Ultra Center <br>'
+			} else if ($(this).is(':contains("Ultra Surround")')) {
+				nocomparelist += 'Ultra Surround <br>'
+			} else if ($(this).is(':contains("Prime Elevation")')) {
+				nocomparelist += 'Prime Elevation <br>'
+			}
+
+		});
+		if (nocomparelist != "") {
+			WK_PC.showPopup('Oops! We’re not able to compare speakers and subwoofers', 'Please remove:<br><br>' + nocomparelist);
+			setTimeout(function() {
+				$checkbox.removeAttr('checked');
+			}, 0);
+			event.preventDefault();
+			event.stopPropagation();
+		}
+	};
+	var checkExist = setInterval(function() {
+		if ($(".wk_product_comparison input[type='checkbox']").length) {
+
+			$(".wk_product_comparison input[type='checkbox']").click(function() {
+				comparedeny();
+			});
+			clearInterval(checkExist);
+		}
+	}, 500); // check every 100ms
+
+	$(".wk_image").before("<span class='clearall' onclick='wkErase()' id='clearall' style='color:#ff4500;cursor:pointer'>Remove all products</span>");
+</script>
+<script>
+	$(".reload").click(function() {
+		location.reload();
+	});
+</script>

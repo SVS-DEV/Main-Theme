@@ -1,0 +1,22 @@
+{% assign specs_setting = false %}
+
+<section class="collection grid">
+
+  <div class="wrap">
+    
+ <div class="collection__filters">
+</div>
+	{% paginate collection.products by 48 %}
+    {% for product in collection.products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    <br><center><span style="width:auto;margin:0 auto;">{{ paginate | default_pagination }}</span></center>
+    {% endpaginate %}
+
+  
+  </div>
+  
+  {% include 'bill-of-rights' %}
+
+
+</section>

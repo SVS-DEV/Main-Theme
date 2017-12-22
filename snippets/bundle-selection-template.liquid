@@ -1,0 +1,89 @@
+{% comment %}
+
+  This file will output all the templates we support
+  
+  @param bundle_collection - The bundled products collection
+  @param product_bundle - The bundled product object
+
+  @output - The bundled product template with filled in data
+{% endcomment %}
+
+
+{% comment %} output the option to select bundles {% endcomment %}
+
+{% comment %} 
+The way this works
+We have the value which represents the product within shopify which represent a bundle of products
+For each variant, in this case finishes, we store a data attribute for the price of the bundled product
+This is done in the following format data-{addon product title without spaces}-{attribute that we store}="{value of that attribute}"
+{% endcomment %}
+
+{% assign selection_type = product_bundle.metafields.bundle.selection_type %}
+
+{% assign addonString = 'Adds ' %}
+
+{% assign addons = product_bundle.metafields.bundle.addons | split:',' %}
+{% assign addons_count = addons.size %}
+
+{% for addonStr in addons %}
+  {% assign addon = addonStr | split:'|' %}
+  
+  {% assign handle = addon[0] %}
+  {% assign quantity = addon[1] %}
+
+  {% assign addon_product = '' %}
+
+  {% for product in bundle_collection.products %}
+    {% if product.handle == handle %}
+      {% assign addon_product = product %}
+    {% endif %}
+  {% endfor %}
+
+  
+  {% assign productTitle = addon_product.title %}
+    {% if quantity != '1' %}
+    {% assign productTitle = productTitle | append:'s' %}
+    {% endif %}
+  
+  {% assign productLink = '<a href="/products/' | append:addon_product.handle | append:'">' | append:productTitle | append:'</a>' %}
+  
+
+  {% assign addonString = addonString | append:quantity | append:' ' | append:productLink %}
+   
+  {% if addons_count >= 3 %}
+    {% assign addon_count_minus_1 = addons_count | minus:1 %}
+      {% if forloop.index < addon_count_minus_1 %}
+          {% assign addonString = addonString | append:', ' %}
+      {% elsif forloop.index == addon_count_minus_1  %}
+          {% assign addonString = addonString | append:' and ' %}
+      {% endif %}
+  {% elsif addons_count == 2 %}
+      {% if forloop.index < addons_count %}
+    {% assign addonString = addonString | append:' and ' %}
+      {% endif %}
+  {% endif %}
+
+{% endfor %}
+
+<div class="product-details__offer-holder" data-bundle-product-id="{{ product_bundle.id }}">
+
+  <select class="bundle-variants" style="display: none !important;">
+    {% for variant in product_bundle.variants %}
+      <option 
+           data-bundle-variant-id="{{ variant.id }}"
+           data-additional-price="{{ variant.metafields.bundle.additional_price }}"
+           data-savings="{{ variant.metafields.bundle.savings }}"
+           data-image="{{ variant.featured_image.src | product_img_url:'small' }}">
+        </option>
+    {% endfor %}
+  </select>
+  
+  {% if product_bundle.metafields.bundle.selection_type contains 'dual' %}
+    <img class="bundle-image" src="{{ product_bundle.variants.first.featured_image.src | product_img_url:'small' }}">
+    <h4>Go Dual &amp; Save: <a href="/blogs/svs/75040195-why-go-dual">[Why Go Dual?]</a><span><button class="bundle-activate-btn"></button> +<b class="additional-price">${{ product_bundle.variants.first.metafields.bundle.additional_price }}</b> <em>(save $<b class="savings">{{ product_bundle.variants.first.metafields.bundle.savings }}</b>)</em> | {{ addonString }}</span></h4>
+  {% else %}
+   <h4>{{ product_bundle.title}}<span><button class="bundle-activate-btn"></button> +<b class="additional-price">${{ product_bundle.variants.first.metafields.bundle.additional_price }}</b> <em>(save $<b class="savings">{{ product_bundle.variants.first.metafields.bundle.savings }}</b>)</em> | {{ addonString }}</span></h4>
+  {% endif %}
+</div>
+
+

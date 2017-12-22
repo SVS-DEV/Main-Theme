@@ -1,0 +1,520 @@
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , main_description: collection.description %}
+{% assign specs_setting = false %}
+    {{ 'magicscroll.js' | asset_url | script_tag }}
+    {{ 'magicscroll.css' | asset_url | stylesheet_tag }}
+<style>
+  h3 {
+        font-size: 36px;
+    font-weight: 800;
+    border-bottom: 3px solid #e5e5e5;
+    margin: 0 0 15px 0;
+    padding-top:20px;
+    padding-bottom:20px;
+    line-height: 1;
+    display: block;
+    color: #000;
+  }
+  .cf-options-container {
+    display:block;clear:both
+  }
+
+
+  .cf-radio {
+    top:-2px !important;
+  }
+
+
+  /* Side Navigation */
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+  }
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+  }
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ .filtermobile {
+   display:none;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-bottom: 20px;
+   border-bottom: 1px solid #e5e5e5;
+ }
+  .filter {border-right:solid 2px #e5e5e5}
+  .styledSelect {display:none}
+  .options {display:none}
+  .collection-filters-container {
+/*
+  
+*/
+  text-align: left;
+  margin: 10px 0px 10px 0px;
+  font-size: 16px;
+  display: block;
+}
+
+.cf-title { 
+  display: block; /* to have filters separated one per line, change "inline-block" to "block" */
+  font-weight: bold;
+  font-size: 16px;
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.cf-options-container {
+/* optional, restrict height of available options to a scrollable container */
+/*
+  display: block;
+  max-height: 220px; 
+  overflow: auto;
+*/	
+}
+
+.cf-select {
+  display: inline-block; /* to have filters separated one per line, change "inline-block" to "block" */
+  max-width: 14em;
+  float: none !important;
+  height: 40px;
+  
+  /*background: transparent url(https://cdn.shopify.com/s/files/1/0653/0119/t/1/assets/select.png) no-repeat right;*/
+  /*border-radius: 15px;*/
+  padding: 2px 2px 2px 17px;
+  
+  color: #000;
+  background-color: #dedede;
+  border: solid 1px #d3d2d2;
+  
+  /*border: 0px solid;*/
+  /*box-shadow: none;*/
+  /*background-image: none;*/
+  /*-webkit-appearance: none;*/
+/*  vertical-align: middle;*/  
+/*
+  background-color: #000;
+  border-color: #000;
+  color: #ffffff;
+  padding: 0px;  
+  margin-left: 4em;
+*/
+}
+
+.cf-checkbox, .cf-radio {
+  /*display: none !important;*/
+  padding: 0;
+  margin: 0 !important;
+  vertical-align: bottom;
+  position: relative;
+  top: -6px;
+}
+
+/* individual checkbox labels */
+.collection-filters-container label span {
+	font-weight: normal;  
+}
+
+.collection-filters-container label { 
+  display: block; /* to have checkboxes on the same line, change "block" to "inline-block" */
+  margin: 0px 0px 6px 0px;
+  cursor: pointer;
+  font-weight: normal;
+  font-size:14px;
+}
+
+/*
+.collection-filters-container label { 
+  margin: 0px;
+  padding: 10px 0px 10px 10px;
+  background-color: #fff;
+}
+.collection-filters-container label:nth-child(even) { 
+	background: #fafafa;
+}
+*/
+.outletfiltermobile .collection-filters-container {
+  padding:25px;
+}
+.cf-checkbox:checked + span {
+  font-weight: bold !important;
+  /* color: #000000; */
+}
+.cf-radio:checked + span {
+  font-weight: bold !important;
+  /* color: #000000; */
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* mobile */
+  @media (max-width: 760px) {
+    .filterdesktop {
+    display:none;
+  }
+    .filtermobile {
+      display:block;
+    }
+  }
+@media (max-width: 760px) {
+	.cf-title { 
+	 
+	  font-weight: bold;
+	  margin: 2px 5px 0px 0px;
+	}
+
+	.cf-select {
+	  display: block; /* to have filters separated one per line, change "inline-block" to "block" */
+	  width: 100%;
+	  max-width:none; 
+	}
+  
+  
+
+}
+  .styledSelect { display:none};
+  .options {display:none}
+  .outofproduct {
+    display:none;
+    text-align:center;
+    border-bottom:1px solid #e5e5e5;
+    padding-bottom:25px;
+  }
+  .outofproduct img {
+    margin-top:10px;
+    margin-bottom:10px;
+    max-width:100%;
+    
+  }
+  .MagicScroll > .mcs-button-arrow {
+    font-size:38px;
+    color:#fff;
+  }
+  .MagicScroll-horizontal .mcs-button-arrow-prev {
+    left:-2px !important;
+  }
+  .MagicScroll-horizontal .mcs-button-arrow-next {
+    right:5px !important;
+  }
+  .MagicScroll-horizontal .mcs-item {
+    text-align:left;
+    padding:7px;
+    overflow:visible;
+    
+  }
+  .MagicScroll .product {
+    width:98% !important;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color:#fff;
+    margin: 15px 0;
+    padding: 20px 0 0 35px;
+    line-height:38px;
+  }
+  h2 p {
+    font-weight: 300;
+    display: block;
+    font-size:36px;
+  }
+  .featured {
+    background-color:#454545;
+    display:none;
+    margin-bottom:10px;
+    padding-bottom:36px;
+    
+  }
+  .product-featured__description p { white-space: normal; }
+  .product-featured h3 { white-space: normal; }
+.MagicScroll {
+  height:654px;
+}
+  .MagicScroll .product-featured {
+  width: 100%;
+  display: inline-block;
+    padding:10px;
+    padding-top:0px;
+    padding-bottom:0px;
+    background-color:#fff;
+    
+    
+}
+  .MagicScroll .svs-buy {
+    margin-bottom:0px !important;
+  }
+.MagicScroll .product-featured:nth-of-type(4n) {
+  margin-right: 0;
+}
+.MagicScroll .product-featured img {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.MagicScroll .product-featured__description {
+  font-size: 12px;
+  line-height:normal;
+}
+.MagicScroll .product-featured__handle {
+   color: #386cb0;
+   font-weight: 800;
+   font-size: 18px;
+   border-bottom: 3px solid #e5e5e5;
+   padding-bottom: 5px;
+  text-transform: uppercase;
+   line-height:24px;
+}
+  .MagicScroll .product-featured__handle span {
+    color:#ff4500;
+  }
+.yotpo .text-m {
+	padding-left: 7px;  
+}
+.MagicScroll .product-featured__link {
+  color: #346CB1;
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+.MagicScroll .product-featured__link:hover {
+  text-decoration: none;
+  color: #ff4500;
+}
+
+.MagicScroll .product-featured .ratings {
+  font-size: 12px;
+}
+.MagicScroll .product-featured .price {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+.MagicScroll .product-featured .product-featured__price-ratings {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 7px 0;
+  margin: 5px 0 10px;
+}
+.MagicScroll .product-featured .shop-now {
+  display: block;
+  max-width: 100%;
+  margin: 11px 0 25px;
+  color: #fff;
+  font-size: 14px;
+  background: #386cb0;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px 0;
+  border: 3px solid transparent;
+  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+}
+.MagicScroll .product-featured .shop-now:hover {
+  border: 3px solid #386cb0;
+  background: none;
+  color: #386cb0;
+  text-decoration: none;
+}
+.MagicScroll .product-featured .shop-now:after {
+  content: "";
+  margin-left: 10px;
+  font-size: 15px;
+}
+  @media (max-width: 510px) {
+    h2 {
+      font-size: 25px;
+      line-height:28px;
+    }
+    h2 p {
+      display:none;
+    }
+  }
+  .outlet-banner-mobile {
+   		display: none; 
+  }
+  @media (max-width: 600px) {
+   		.outlet-banner-mobile {
+          	display: block;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+    .outlet-banner-full {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 1200px){
+    .product:nth-child(4n+1){
+      clear:left;
+    }
+  }
+  @media only screen and (max-width: 1199px) and (min-width: 992px){
+    .product:nth-child(3n+1){
+      clear:left;
+    }
+  }
+  @media only screen and (max-width: 991px) and (min-width: 768px){
+    .product:nth-child(2n+1){
+      clear:left;
+    }
+  }
+
+ 
+</style>
+<section class="collection grid">
+
+  <div class="wrap">
+   <!-- <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/labor-day-outlet-banner.jpg?2452599315708483674" style="max-width:100%" class="outlet-banner-full">
+    <center><a href="https://ghcf.org/hurricane-relief/"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/hurricane-relief-banner.jpg?6388285070571576115" style="max-width:100%;margin-top:20px" class="outlet-banner-full"></a></center>
+   <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/presidentsday-outlet-banner.jpg?16538767692418525891" style="max-width:100%" class="outlet-banner-full">
+    <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/presidentsday-outlet-banner-mobile.jpg?16538767692418525891" class="outlet-banner-mobile"> 
+    <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/memorial-day-outlet-promo-banner.jpg?11606375265802834341" style="max-width:100%;margin-top:-30px;" class="outlet-banner-full">-->
+    <span class="outletdesc">
+    Our outlet specials offer huge savings on gently-used speakers and subwoofers. All outlet special products are guaranteed to look and perform like-new (unless otherwise specified below) and carry our <a href="/pages/bill-of-rights">full 5 year Unconditional Warranty and complete Bill of Rights coverage</a>.
+    </span>
+    <div class="featured">
+      <h2>Featured Outlet Specials<p>Lowest prices on popular SVS speakers and subwoofers</p></h2>
+      
+      <div class="featureditem">
+<div class="MagicScroll"  data-options="items: [[500,1],[800,2],[1000,3],[1500,4]]; step: 1">
+
+
+  {% for product in collections["featured-outlet-specials"].products %}
+  {% if product.available %}
+  {% include 'product-loop-featured' with "featured-outlet-specials" %}
+  {% endif %}
+  {% endfor %}
+
+        </div>
+        </div>
+    </div>
+    <div class="outofproduct">
+      <p style="font-size:24px;text-transform:uppercase;font-weight:800">Sorry, there are no SVS products that fit your search. Please update selections and try again.</p>
+    </div>
+    <div style="clear:both; text-align:right" class="filtermobile">Filter Results <i class="fa fa-bars outletfilter" aria-hidden="true" onclick="openNav()"></i></div>  
+    <span class="outletfiltermobile sidenav" id="mySidenav">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="collection-filters-container cf-select-wrapper"></div>
+      <a href="https://svsound-3.myshopify.com/collections/outlet-specials" onclick="ga('send', 'event', 'Outlet Specials', 'Click', 'Mobile - Reset All');">Reset All</a>
+    </span>
+    <script>
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0px";
+}
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+    <div class="filterdesktop filter col-lg-2 col-md-3 col-sm-4 col-xs-12">
+      <div style="font-size:21px;font-weight:700;border-bottom:solid 1px #efefef; padding-bottom:10px">Filter Products</div>
+      <div class="collection-filters-container cf-select-wrapper"></div>
+      <a href="/collections/outlet-specials" onclick="ga('send', 'event', 'Outlet Specials', 'Click', 'Desktop - Reset All');">Reset All</a>
+    </div>
+    <div class="outlets col-lg-10 col-md-9 col-sm-8 col-xs-12">
+      <div class="container-fluid">
+     <!--   <div class="row" id="nsdrow" style="border-bottom:solid 3px #e5e5e5;margin-bottom:20px">
+    {% for product in collections["nsd-series"].products %}
+      {% include 'product-loop-nsd' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    <br><center  style="margin-bottom:15px"><span style="width:auto;margin:0 auto;">{% include 'pagination' %}</span></center>
+        </div> -->
+        <div class="row">
+	{% paginate collection.products by 48 %}
+    {% for product in collection.products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    <br><center  style="margin-bottom:15px"><span style="width:auto;margin:0 auto;">{% include 'pagination' %}</span></center>
+    {% endpaginate %}
+        </div>
+    </div>
+    </div>
+      </div>
+    </div>
+
+  
+  </div><br>
+  
+  <!--{% include 'bill-of-rights' %}-->
+
+
+</section>
+
+<script>
+  if ($(".featured").find(".product-featured").length > 0){ 
+  $(".featured").css("display", "block");
+}
+  
+  if ($(".outlets").find(".product").length > 0){ 
+  }
+  else {
+    $(".outofproduct").css("display", "block");
+  }
+
+setTimeout(function() { 
+  $( "input" ).each(function() {
+    $(this).on("click", function(){
+        var labelval = $(this).closest("label").find("input").val();
+      var labeldata = $(this).closest("label").find("input").data("group-name");
+      if (labelval == "") {
+        ga('send', 'event', 'Outlet Filter', 'Click', labeldata);
+      }
+      else {
+      ga('send', 'event', 'Outlet Filter', 'Click', labelval);
+      }
+    });
+});
+  }, 3000);
+</script>
+{% include 'collection-filter-v2' %}
+<script>
+  if (window.location.href.indexOf("speakers") > -1) {
+    $("#nsdrow").css("display", "none");
+}
+</script>

@@ -1,0 +1,689 @@
+<style>
+  .ship_countdown {
+    font-size:15px;
+    color:#000;
+    font-weight:normal;
+    border-bottom:solid 1px #c2c2c2;
+    padding-bottom:8px;
+    display:block;
+  }
+  .ship_countdown strong {
+    color:#ff4500;
+    
+  }
+  .headerCallout p.headerShip {
+    display:none;
+    border:none !important;
+    padding:0px;
+    padding-bottom:8px;
+    color:#fff;
+    font-size:18px;
+    font-weight:normal;
+    display:block;
+  }
+  .cartship {
+    display:none;
+    margin-top:15px;
+    border-bottom:solid 1px #c2c2c2;
+    text-align:center;
+    padding-bottom:14px !important;
+    font-style:italic;
+    margin-left:15px;
+    margin-right:15px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+  }
+  .cartship strong {
+    color:#eb1717;
+  }
+
+  @media (max-width: 769px) {
+    .ship_countdown {
+      border-bottom:none;
+    }
+    }
+</style>
+
+
+
+<script>
+  /* Start /includes/js/jquery/plugins/moment.min.js */
+!function(c,d){"object"==typeof exports&&"undefined"!=typeof module?module.exports=d():"function"==typeof define&&define.amd?define(d):c.moment=d()}(this,function(){function at(){return dp.apply(null,arguments)}function aG(b){dp=b}function aT(b){return b instanceof Array||"[object Array]"===Object.prototype.toString.call(b)}function a6(b){return null!=b&&"[object Object]"===Object.prototype.toString.call(b)}function bp(c){var d;for(d in c){return !1}return !0}function bC(b){return b instanceof Date||"[object Date]"===Object.prototype.toString.call(b)}function bP(e,f){var g,h=[];for(g=0;g<e.length;++g){h.push(f(e[g],g))}return h}function b2(c,d){return Object.prototype.hasOwnProperty.call(c,d)}function cl(d,e){for(var f in e){b2(e,f)&&(d[f]=e[f])}return b2(e,"toString")&&(d.toString=e.toString),b2(e,"valueOf")&&(d.valueOf=e.valueOf),d}function cx(e,f,g,h){return d9(e,f,g,h,!0).utc()}function cK(){return{empty:!1,unusedTokens:[],unusedInput:[],overflow:-2,charsLeftOver:0,nullInput:!1,invalidMonth:null,invalidFormat:!1,userInvalidated:!1,iso:!1,parsedDateParts:[],meridiem:null}}function cX(b){return null==b._pf&&(b._pf=cK()),b._pf}function dg(e){if(null==e._isValid){var f=cX(e),g=dC.call(f.parsedDateParts,function(b){return null!=b}),h=!isNaN(e._d.getTime())&&f.overflow<0&&!f.empty&&!f.invalidMonth&&!f.invalidWeekday&&!f.nullInput&&!f.invalidFormat&&!f.userInvalidated&&(!f.meridiem||f.meridiem&&g);if(e._strict&&(h=h&&0===f.charsLeftOver&&0===f.unusedTokens.length&&void 0===f.bigHour),null!=Object.isFrozen&&Object.isFrozen(e)){return h}e._isValid=h}return e._isValid}function du(c){var d=cx(NaN);return null!=c?cl(cX(d),c):cX(d).userInvalidated=!0,d}function dH(b){return void 0===b}function dT(f,g){var h,i,j;if(dH(g._isAMomentObject)||(f._isAMomentObject=g._isAMomentObject),dH(g._i)||(f._i=g._i),dH(g._f)||(f._f=g._f),dH(g._l)||(f._l=g._l),dH(g._strict)||(f._strict=g._strict),dH(g._tzm)||(f._tzm=g._tzm),dH(g._isUTC)||(f._isUTC=g._isUTC),dH(g._offset)||(f._offset=g._offset),dH(g._pf)||(f._pf=cX(g)),dH(g._locale)||(f._locale=g._locale),dP.length>0){for(h in dP){i=dP[h],j=g[i],dH(j)||(f[i]=j)}}return f}function d5(a){dT(this,a),this._d=new Date(null!=a._d?a._d.getTime():NaN),d1===!1&&(d1=!0,at.updateOffset(this),d1=!1)}function en(b){return b instanceof d5||null!=b&&null!=b._isAMomentObject}function ez(b){return 0>b?Math.ceil(b)||0:Math.floor(b)}function eL(d){var e=+d,f=0;return 0!==e&&isFinite(e)&&(f=ez(e)),f}function eX(h,i,j){var k,l=Math.min(h.length,i.length),m=Math.abs(h.length-i.length),n=0;for(k=0;l>k;k++){(j&&h[k]!==i[k]||!j&&eL(h[k])!==eL(i[k]))&&n++}return n+m}function e9(a){at.suppressDeprecationWarnings===!1&&"undefined"!=typeof console&&console.warn&&console.warn("Deprecation warning: "+a)}function fr(a,e){var f=!0;return cl(function(){if(null!=at.deprecationHandler&&at.deprecationHandler(null,a),f){for(var b,c=[],d=0;d<arguments.length;d++){if(b="","object"==typeof arguments[d]){b+="\n["+d+"] ";for(var i in arguments[0]){b+=i+": "+arguments[0][i]+", "}b=b.slice(0,-2)}else{b=arguments[d]}c.push(b)}e9(a+"\nArguments: "+Array.prototype.slice.call(c).join("")+"\n"+(new Error).stack),f=!1}return e.apply(this,arguments)},e)}function fD(a,d){null!=at.deprecationHandler&&at.deprecationHandler(a,d),ej[a]||(e9(d),ej[a]=!0)}function fP(b){return b instanceof Function||"[object Function]"===Object.prototype.toString.call(b)}function f1(d){var e,f;for(f in d){e=d[f],fP(e)?this[f]=e:this["_"+f]=e}this._config=d,this._ordinalParseLenient=new RegExp(this._ordinalParse.source+"|"+/\d{1,2}/.source)}function au(d,f){var g,h=cl({},d);for(g in f){b2(f,g)&&(a6(d[g])&&a6(f[g])?(h[g]={},cl(h[g],d[g]),cl(h[g],f[g])):null!=f[g]?h[g]=f[g]:delete h[g])}for(g in d){b2(d,g)&&!b2(f,g)&&a6(d[g])&&(h[g]=cl({},h[g]))}return h}function aH(b){null!=b&&this.set(b)}function aU(e,f,g){var h=this._calendar[e]||this._calendar.sameElse;return fP(h)?h.call(f,g):h}function a7(d){var e=this._longDateFormat[d],f=this._longDateFormat[d.toUpperCase()];return e||!f?e:(this._longDateFormat[d]=f.replace(/MMMM|MM|DD|dddd/g,function(b){return b.slice(1)}),this._longDateFormat[d])}function bq(){return this._invalidDate}function bD(b){return this._ordinal.replace("%d",b)}function bQ(f,g,h,i){var j=this._relativeTime[h];return fP(j)?j(f,g,h,i):j.replace(/%d/i,f)}function b3(d,e){var f=this._relativeTime[d>0?"future":"past"];return fP(f)?f(e):f.replace(/%s/i,e)}function cm(d,e){var f=d.toLowerCase();f9[f]=f9[f+"s"]=f9[e]=d}function cy(b){return"string"==typeof b?f9[b]||f9[b.toLowerCase()]:void 0}function cL(e){var f,g,h={};for(g in e){b2(e,g)&&(f=cy(g),f&&(h[f]=e[g]))}return h}function cY(c,d){aC[c]=d}function dh(d){var e=[];for(var f in d){e.push({unit:f,priority:aC[f]})}return e.sort(function(c,g){return c.priority-g.priority}),e}function dv(a,d){return function(b){return null!=b?(dU(this,a,b),at.updateOffset(this,d),this):dI(this,a)}}function dI(c,d){return c.isValid()?c._d["get"+(c._isUTC?"UTC":"")+d]():NaN}function dU(d,e,f){d.isValid()&&d._d["set"+(d._isUTC?"UTC":"")+e](f)}function d6(b){return b=cy(b),fP(this[b])?this[b]():this}function eo(e,f){if("object"==typeof e){e=cL(e);for(var g=dh(e),h=0;h<g.length;h++){this[g[h].unit](e[g[h].unit])}}else{if(e=cy(e),fP(this[e])){return this[e](f)}}return this}function eA(g,h,i){var j=""+Math.abs(g),k=h-j.length,l=g>=0;return(l?i?"+":"":"-")+Math.pow(10,Math.max(0,k)).toString().substr(1)+j}function eM(f,g,h,i){var j=i;"string"==typeof i&&(j=function(){return this[i]()}),f&&(by[f]=j),g&&(by[g[0]]=function(){return eA(j.apply(this,arguments),g[1],g[2])}),h&&(by[h]=function(){return this.localeData().ordinal(j.apply(this,arguments),f)})}function eY(b){return b.match(/\[[\s\S]/)?b.replace(/^\[|\]$/g,""):b.replace(/\\/g,"")}function fg(e){var f,g,h=e.match(aP);for(f=0,g=h.length;g>f;f++){by[h[f]]?h[f]=by[h[f]]:h[f]=eY(h[f])}return function(a){var c,d="";for(c=0;g>c;c++){d+=h[c] instanceof Function?h[c].call(a,e):h[c]}return d}}function fs(c,d){return c.isValid()?(d=fE(d,c.localeData()),bl[d]=bl[d]||fg(d),bl[d](c)):c.localeData().invalidDate()}function fE(e,f){function g(b){return f.longDateFormat(b)||b}var h=5;for(a2.lastIndex=0;h>=0&&a2.test(e);){e=e.replace(a2,g),a2.lastIndex=0,h-=1}return e}function fQ(d,e,f){fA[d]=fP(e)?e:function(b,c){return b&&f?f:e}}function f2(c,d){return b2(fA,c)?fA[c](d._strict,d._locale):new RegExp(ag(c))}function ag(b){return am(b.replace("\\","").replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g,function(f,g,h,i,j){return g||h||i||j}))}function am(b){return b.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&")}function av(e,f){var g,h=f;for("string"==typeof e&&(e=[e]),"number"==typeof f&&(h=function(b,d){d[f]=eL(b)}),g=0;g<e.length;g++){fM[e[g]]=h}}function aI(c,d){av(c,function(b,f,g,h){g._w=g._w||{},d(b,g._w,g,h)})}function aV(d,e,f){null!=e&&b2(fM,d)&&fM[d](e,f._a,f,d)}function a8(c,d){return new Date(Date.UTC(c,d+1,0)).getUTCDate()}function br(c,d){return c?aT(this._months)?this._months[c.month()]:this._months[(this._months.isFormat||bM).test(d)?"format":"standalone"][c.month()]:this._months}function bE(c,d){return c?aT(this._monthsShort)?this._monthsShort[c.month()]:this._monthsShort[bM.test(d)?"format":"standalone"][c.month()]:this._monthsShort}function bR(h,i,j){var k,l,m,n=h.toLocaleLowerCase();if(!this._monthsParse){for(this._monthsParse=[],this._longMonthsParse=[],this._shortMonthsParse=[],k=0;12>k;++k){m=cx([2000,k]),this._shortMonthsParse[k]=this.monthsShort(m,"").toLocaleLowerCase(),this._longMonthsParse[k]=this.months(m,"").toLocaleLowerCase()}}return j?"MMM"===i?(l=eH.call(this._shortMonthsParse,n),-1!==l?l:null):(l=eH.call(this._longMonthsParse,n),-1!==l?l:null):"MMM"===i?(l=eH.call(this._shortMonthsParse,n),-1!==l?l:(l=eH.call(this._longMonthsParse,n),-1!==l?l:null)):(l=eH.call(this._longMonthsParse,n),-1!==l?l:(l=eH.call(this._shortMonthsParse,n),-1!==l?l:null))}function b4(g,h,i){var j,k,l;if(this._monthsParseExact){return bR.call(this,g,h,i)}for(this._monthsParse||(this._monthsParse=[],this._longMonthsParse=[],this._shortMonthsParse=[]),j=0;12>j;j++){if(k=cx([2000,j]),i&&!this._longMonthsParse[j]&&(this._longMonthsParse[j]=new RegExp("^"+this.months(k,"").replace(".","")+"$","i"),this._shortMonthsParse[j]=new RegExp("^"+this.monthsShort(k,"").replace(".","")+"$","i")),i||this._monthsParse[j]||(l="^"+this.months(k,"")+"|^"+this.monthsShort(k,""),this._monthsParse[j]=new RegExp(l.replace(".",""),"i")),i&&"MMMM"===h&&this._longMonthsParse[j].test(g)){return j}if(i&&"MMM"===h&&this._shortMonthsParse[j].test(g)){return j}if(!i&&this._monthsParse[j].test(g)){return j}}}function cn(d,e){var f;if(!d.isValid()){return d}if("string"==typeof e){if(/^\d+$/.test(e)){e=eL(e)}else{if(e=d.localeData().monthsParse(e),"number"!=typeof e){return d}}}return f=Math.min(d.date(),a8(d.year(),e)),d._d["set"+(d._isUTC?"UTC":"")+"Month"](e,f),d}function cz(a){return null!=a?(cn(this,a),at.updateOffset(this,!0),this):dI(this,"Month")}function cM(){return a8(this.year(),this.month())}function cZ(b){return this._monthsParseExact?(b2(this,"_monthsRegex")||dw.call(this),b?this._monthsShortStrictRegex:this._monthsShortRegex):(b2(this,"_monthsShortRegex")||(this._monthsShortRegex=cv),this._monthsShortStrictRegex&&b?this._monthsShortStrictRegex:this._monthsShortRegex)}function di(b){return this._monthsParseExact?(b2(this,"_monthsRegex")||dw.call(this),b?this._monthsStrictRegex:this._monthsRegex):(b2(this,"_monthsRegex")||(this._monthsRegex=cH),this._monthsStrictRegex&&b?this._monthsStrictRegex:this._monthsRegex)}function dw(){function g(c,d){return d.length-c.length}var h,i,j=[],k=[],l=[];for(h=0;12>h;h++){i=cx([2000,h]),j.push(this.monthsShort(i,"")),k.push(this.months(i,"")),l.push(this.months(i,"")),l.push(this.monthsShort(i,""))}for(j.sort(g),k.sort(g),l.sort(g),h=0;12>h;h++){j[h]=am(j[h]),k[h]=am(k[h])}for(h=0;24>h;h++){l[h]=am(l[h])}this._monthsRegex=new RegExp("^("+l.join("|")+")","i"),this._monthsShortRegex=this._monthsRegex,this._monthsStrictRegex=new RegExp("^("+k.join("|")+")","i"),this._monthsShortStrictRegex=new RegExp("^("+j.join("|")+")","i")}function dJ(b){return dV(b)?366:365}function dV(b){return b%4===0&&b%100!==0||b%400===0}function d7(){return dV(this.year())}function ep(i,j,k,l,m,n,o){var p=new Date(i,j,k,l,m,n,o);return 100>i&&i>=0&&isFinite(p.getFullYear())&&p.setFullYear(i),p}function eB(c){var d=new Date(Date.UTC.apply(null,arguments));return 100>c&&c>=0&&isFinite(d.getUTCFullYear())&&d.setUTCFullYear(c),d}function eN(f,g,h){var i=7+g-h,j=(7+eB(f,0,i).getUTCDay()-g)%7;return -j+i-1}function eZ(k,l,m,n,o){var p,q,r=(7+m-n)%7,s=eN(k,n,o),t=1+7*(l-1)+r+s;return 0>=t?(p=k-1,q=dJ(p)+t):t>dJ(k)?(p=k+1,q=t-dJ(k)):(p=k,q=t),{year:p,dayOfYear:q}}function fh(h,i,j){var k,l,m=eN(h.year(),i,j),n=Math.floor((h.dayOfYear()-m-1)/7)+1;return 1>n?(l=h.year()-1,k=n+ft(l,i,j)):n>ft(h.year(),i,j)?(k=n-ft(h.year(),i,j),l=h.year()+1):(l=h.year(),k=n),{week:k,year:l}}function ft(f,g,h){var i=eN(f,g,h),j=eN(f+1,g,h);return(dJ(f)-i+j)/7}function fF(b){return fh(b,this._week.dow,this._week.doy).week}function fR(){return this._week.dow}function f3(){return this._week.doy}function aw(c){var d=this.localeData().week(this);return null==c?d:this.add(7*(c-d),"d")}function aJ(c){var d=fh(this,1,4).week;return null==c?d:this.add(7*(c-d),"d")}function aW(c,d){return"string"!=typeof c?c:isNaN(c)?(c=d.weekdaysParse(c),"number"==typeof c?c:null):parseInt(c,10)}function a9(c,d){return"string"==typeof c?d.weekdaysParse(c)%7||7:isNaN(c)?null:c}function bs(c,d){return c?aT(this._weekdays)?this._weekdays[c.day()]:this._weekdays[this._weekdays.isFormat.test(d)?"format":"standalone"][c.day()]:this._weekdays}function bF(b){return b?this._weekdaysShort[b.day()]:this._weekdaysShort}function bS(b){return b?this._weekdaysMin[b.day()]:this._weekdaysMin}function b5(h,i,j){var k,l,m,n=h.toLocaleLowerCase();if(!this._weekdaysParse){for(this._weekdaysParse=[],this._shortWeekdaysParse=[],this._minWeekdaysParse=[],k=0;7>k;++k){m=cx([2000,1]).day(k),this._minWeekdaysParse[k]=this.weekdaysMin(m,"").toLocaleLowerCase(),this._shortWeekdaysParse[k]=this.weekdaysShort(m,"").toLocaleLowerCase(),this._weekdaysParse[k]=this.weekdays(m,"").toLocaleLowerCase()}}return j?"dddd"===i?(l=eH.call(this._weekdaysParse,n),-1!==l?l:null):"ddd"===i?(l=eH.call(this._shortWeekdaysParse,n),-1!==l?l:null):(l=eH.call(this._minWeekdaysParse,n),-1!==l?l:null):"dddd"===i?(l=eH.call(this._weekdaysParse,n),-1!==l?l:(l=eH.call(this._shortWeekdaysParse,n),-1!==l?l:(l=eH.call(this._minWeekdaysParse,n),-1!==l?l:null))):"ddd"===i?(l=eH.call(this._shortWeekdaysParse,n),-1!==l?l:(l=eH.call(this._weekdaysParse,n),-1!==l?l:(l=eH.call(this._minWeekdaysParse,n),-1!==l?l:null))):(l=eH.call(this._minWeekdaysParse,n),-1!==l?l:(l=eH.call(this._weekdaysParse,n),-1!==l?l:(l=eH.call(this._shortWeekdaysParse,n),-1!==l?l:null)))}function co(g,h,i){var j,k,l;if(this._weekdaysParseExact){return b5.call(this,g,h,i)}for(this._weekdaysParse||(this._weekdaysParse=[],this._minWeekdaysParse=[],this._shortWeekdaysParse=[],this._fullWeekdaysParse=[]),j=0;7>j;j++){if(k=cx([2000,1]).day(j),i&&!this._fullWeekdaysParse[j]&&(this._fullWeekdaysParse[j]=new RegExp("^"+this.weekdays(k,"").replace(".",".?")+"$","i"),this._shortWeekdaysParse[j]=new RegExp("^"+this.weekdaysShort(k,"").replace(".",".?")+"$","i"),this._minWeekdaysParse[j]=new RegExp("^"+this.weekdaysMin(k,"").replace(".",".?")+"$","i")),this._weekdaysParse[j]||(l="^"+this.weekdays(k,"")+"|^"+this.weekdaysShort(k,"")+"|^"+this.weekdaysMin(k,""),this._weekdaysParse[j]=new RegExp(l.replace(".",""),"i")),i&&"dddd"===h&&this._fullWeekdaysParse[j].test(g)){return j}if(i&&"ddd"===h&&this._shortWeekdaysParse[j].test(g)){return j}if(i&&"dd"===h&&this._minWeekdaysParse[j].test(g)){return j}if(!i&&this._weekdaysParse[j].test(g)){return j}}}function cA(c){if(!this.isValid()){return null!=c?this:NaN}var d=this._isUTC?this._d.getUTCDay():this._d.getDay();return null!=c?(c=aW(c,this.localeData()),this.add(c-d,"d")):d}function cN(c){if(!this.isValid()){return null!=c?this:NaN}var d=(this.day()+7-this.localeData()._week.dow)%7;return null==c?d:this.add(c-d,"d")}function c0(c){if(!this.isValid()){return null!=c?this:NaN}if(null!=c){var d=a9(c,this.localeData());return this.day(this.day()%7?d:d-7)}return this.day()||7}function dj(b){return this._weekdaysParseExact?(b2(this,"_weekdaysRegex")||dW.call(this),b?this._weekdaysStrictRegex:this._weekdaysRegex):(b2(this,"_weekdaysRegex")||(this._weekdaysRegex=d3),this._weekdaysStrictRegex&&b?this._weekdaysStrictRegex:this._weekdaysRegex)}function dx(b){return this._weekdaysParseExact?(b2(this,"_weekdaysRegex")||dW.call(this),b?this._weekdaysShortStrictRegex:this._weekdaysShortRegex):(b2(this,"_weekdaysShortRegex")||(this._weekdaysShortRegex=el),this._weekdaysShortStrictRegex&&b?this._weekdaysShortStrictRegex:this._weekdaysShortRegex)}function dK(b){return this._weekdaysParseExact?(b2(this,"_weekdaysRegex")||dW.call(this),b?this._weekdaysMinStrictRegex:this._weekdaysMinRegex):(b2(this,"_weekdaysMinRegex")||(this._weekdaysMinRegex=ex),this._weekdaysMinStrictRegex&&b?this._weekdaysMinStrictRegex:this._weekdaysMinRegex)}function dW(){function j(c,d){return d.length-c.length}var l,m,n,o,p,q=[],r=[],s=[],t=[];for(l=0;7>l;l++){m=cx([2000,1]).day(l),n=this.weekdaysMin(m,""),o=this.weekdaysShort(m,""),p=this.weekdays(m,""),q.push(n),r.push(o),s.push(p),t.push(n),t.push(o),t.push(p)}for(q.sort(j),r.sort(j),s.sort(j),t.sort(j),l=0;7>l;l++){r[l]=am(r[l]),s[l]=am(s[l]),t[l]=am(t[l])}this._weekdaysRegex=new RegExp("^("+t.join("|")+")","i"),this._weekdaysShortRegex=this._weekdaysRegex,this._weekdaysMinRegex=this._weekdaysRegex,this._weekdaysStrictRegex=new RegExp("^("+s.join("|")+")","i"),this._weekdaysShortStrictRegex=new RegExp("^("+r.join("|")+")","i"),this._weekdaysMinStrictRegex=new RegExp("^("+q.join("|")+")","i")}function d8(){return this.hours()%12||12}function eq(){return this.hours()||24}function eC(c,d){eM(c,0,0,function(){return this.localeData().meridiem(this.hours(),this.minutes(),d)})}function eO(c,d){return d._meridiemParse}function e0(b){return"p"===(b+"").toLowerCase().charAt(0)}function fi(d,e,f){return d>11?f?"pm":"PM":f?"am":"AM"}function fu(b){return b?b.toLowerCase().replace("_","-"):b}function fG(g){for(var h,i,j,k,l=0;l<g.length;){for(k=fu(g[l]).split("-"),h=k.length,i=fu(g[l+1]),i=i?i.split("-"):null;h>0;){if(j=fS(k.slice(0,h).join("-"))){return j}if(i&&i.length>=h&&eX(k,i,!0)>=h-1){break}h--}l++}return null}function fS(d){var e=null;if(!fB[d]&&"undefined"!=typeof module&&module&&module.exports){try{e=eJ._abbr,require("./locale/"+d),f4(e)}catch(f){}}return fB[d]}function f4(d,e){var f;return d&&(f=dH(e)?ax(d):ah(d,e),f&&(eJ=f)),eJ._abbr}function ah(d,e){if(null!==e){var f=fp;return e.abbr=d,null!=fB[d]?(fD("defineLocaleOverride","use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."),f=fB[d]._config):null!=e.parentLocale&&(null!=fB[e.parentLocale]?f=fB[e.parentLocale]._config:fD("parentLocaleUndefined","specified parentLocale is not defined yet. See http://momentjs.com/guides/#/warnings/parent-locale/")),fB[d]=new aH(au(f,e)),f4(d),fB[d]}return delete fB[d],null}function an(e,f){if(null!=f){var g,h=fp;null!=fB[e]&&(h=fB[e]._config),f=au(h,f),g=new aH(f),g.parentLocale=fB[e],fB[e]=g,f4(e)}else{null!=fB[e]&&(null!=fB[e].parentLocale?fB[e]=fB[e].parentLocale:null!=fB[e]&&delete fB[e])}return fB[e]}function ax(c){var d;if(c&&c._locale&&c._locale._abbr&&(c=c._locale._abbr),!c){return eJ}if(!aT(c)){if(d=fS(c)){return d}c=[c]}return fG(c)}function aK(){return ev(fB)}function aX(d){var e,f=d._a;return f&&-2===cX(d).overflow&&(e=f[gg]<0||f[gg]>11?gg:f[ak]<1||f[ak]>a8(f[fY],f[gg])?ak:f[aq]<0||f[aq]>24||24===f[aq]&&(0!==f[aD]||0!==f[aQ]||0!==f[a3])?aq:f[aD]<0||f[aD]>59?aD:f[aQ]<0||f[aQ]>59?aQ:f[a3]<0||f[a3]>999?a3:-1,cX(d)._overflowDayOfYear&&(fY>e||e>ak)&&(e=ak),cX(d)._overflowWeeks&&-1===e&&(e=bm),cX(d)._overflowWeekday&&-1===e&&(e=bz),cX(d).overflow=e),d}function bg(j){var k,l,m,n,o,p,q=j._i,r=fN.exec(q)||fZ.exec(q);if(r){for(cX(j).iso=!0,k=0,l=aE.length;l>k;k++){if(aE[k][1].exec(r[1])){n=aE[k][0],m=aE[k][2]!==!1;break}}if(null==n){return void (j._isValid=!1)}if(r[3]){for(k=0,l=aR.length;l>k;k++){if(aR[k][1].exec(r[3])){o=(r[2]||" ")+aR[k][0];break}}if(null==o){return void (j._isValid=!1)}}if(!m&&null!=o){return void (j._isValid=!1)}if(r[4]){if(!gh.exec(r[4])){return void (j._isValid=!1)}p="Z"}j._f=n+(o||"")+(p||""),cB(j)}else{j._isValid=!1}}function bt(a){var d=a4.exec(a._i);return null!==d?void (a._d=new Date(+d[1])):(bg(a),void (a._isValid===!1&&(delete a._isValid,at.createFromInputFallback(a))))}function bG(d,e,f){return null!=d?d:null!=e?e:f}function bT(a){var d=new Date(at.now());return a._useUTC?[d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()]:[d.getFullYear(),d.getMonth(),d.getDate()]}function b6(g){var h,i,j,k,l=[];if(!g._d){for(j=bT(g),g._w&&null==g._a[ak]&&null==g._a[gg]&&cp(g),g._dayOfYear&&(k=bG(g._a[fY],j[fY]),g._dayOfYear>dJ(k)&&(cX(g)._overflowDayOfYear=!0),i=eB(k,0,g._dayOfYear),g._a[gg]=i.getUTCMonth(),g._a[ak]=i.getUTCDate()),h=0;3>h&&null==g._a[h];++h){g._a[h]=l[h]=j[h]}for(;7>h;h++){g._a[h]=l[h]=null==g._a[h]?2===h?1:0:g._a[h]}24===g._a[aq]&&0===g._a[aD]&&0===g._a[aQ]&&0===g._a[a3]&&(g._nextDay=!0,g._a[aq]=0),g._d=(g._useUTC?eB:ep).apply(null,l),null!=g._tzm&&g._d.setUTCMinutes(g._d.getUTCMinutes()-g._tzm),g._nextDay&&(g._a[aq]=24)}}function cp(j){var k,l,m,n,o,p,q,r;k=j._w,null!=k.GG||null!=k.W||null!=k.E?(o=1,p=4,l=bG(k.GG,j._a[fY],fh(er(),1,4).year),m=bG(k.W,1),n=bG(k.E,1),(1>n||n>7)&&(r=!0)):(o=j._locale._week.dow,p=j._locale._week.doy,l=bG(k.gg,j._a[fY],fh(er(),o,p).year),m=bG(k.w,1),null!=k.d?(n=k.d,(0>n||n>6)&&(r=!0)):null!=k.e?(n=k.e+o,(k.e<0||k.e>6)&&(r=!0)):n=o),1>m||m>ft(l,o,p)?cX(j)._overflowWeeks=!0:null!=r?cX(j)._overflowWeekday=!0:(q=eZ(l,m,n,o,p),j._a[fY]=q.year,j._dayOfYear=q.dayOfYear)}function cB(a){if(a._f===at.ISO_8601){return void bg(a)}a._a=[],cX(a).empty=!0;var k,l,m,n,o,p=""+a._i,q=p.length,r=0;for(m=fE(a._f,a._locale).match(aP)||[],k=0;k<m.length;k++){n=m[k],l=(p.match(f2(n,a))||[])[0],l&&(o=p.substr(0,p.indexOf(l)),o.length>0&&cX(a).unusedInput.push(o),p=p.slice(p.indexOf(l)+l.length),r+=l.length),by[n]?(l?cX(a).empty=!1:cX(a).unusedTokens.push(n),aV(n,l,a)):a._strict&&!l&&cX(a).unusedTokens.push(n)}cX(a).charsLeftOver=q-r,p.length>0&&cX(a).unusedInput.push(p),a._a[aq]<=12&&cX(a).bigHour===!0&&a._a[aq]>0&&(cX(a).bigHour=void 0),cX(a).parsedDateParts=a._a.slice(0),cX(a).meridiem=a._meridiem,a._a[aq]=cO(a._locale,a._a[aq],a._meridiem),b6(a),aX(a)}function cO(e,f,g){var h;return null==g?f:null!=e.meridiemHour?e.meridiemHour(f,g):null!=e.isPM?(h=e.isPM(g),h&&12>f&&(f+=12),h||12!==f||(f=0),f):f}function c1(g){var h,i,j,k,l;if(0===g._f.length){return cX(g).invalidFormat=!0,void (g._d=new Date(NaN))}for(k=0;k<g._f.length;k++){l=0,h=dT({},g),null!=g._useUTC&&(h._useUTC=g._useUTC),h._f=g._f[k],cB(h),dg(h)&&(l+=cX(h).charsLeftOver,l+=10*cX(h).unusedTokens.length,cX(h).score=l,(null==j||j>l)&&(j=l,i=h))}cl(g,i||h)}function dk(c){if(!c._d){var d=cL(c._i);c._a=bP([d.year,d.month,d.day||d.date,d.hour,d.minute,d.second,d.millisecond],function(b){return b&&parseInt(b,10)}),b6(c)}}function dy(c){var d=new d5(aX(dL(c)));return d._nextDay&&(d.add(1,"d"),d._nextDay=void 0),d}function dL(c){var e=c._i,f=c._f;return c._locale=c._locale||ax(c._l),null===e||void 0===f&&""===e?du({nullInput:!0}):("string"==typeof e&&(c._i=e=c._locale.preparse(e)),en(e)?new d5(aX(e)):(aT(f)?c1(c):bC(e)?c._d=e:f?cB(c):dX(c),dg(c)||(c._d=null),c))}function dX(a){var c=a._i;void 0===c?a._d=new Date(at.now()):bC(c)?a._d=new Date(c.valueOf()):"string"==typeof c?bt(a):aT(c)?(a._a=bP(c.slice(0),function(b){return parseInt(b,10)}),b6(a)):"object"==typeof c?dk(a):"number"==typeof c?a._d=new Date(c):at.createFromInputFallback(a)}function d9(c,d,e,j,k){var l={};return"boolean"==typeof e&&(j=e,e=void 0),(a6(c)&&bp(c)||aT(c)&&0===c.length)&&(c=void 0),l._isAMomentObject=!0,l._useUTC=l._isUTC=k,l._l=e,l._i=c,l._f=d,l._strict=j,dy(l)}function er(e,f,g,h){return d9(e,f,g,h,!1)}function eD(c,f){var g,h;if(1===f.length&&aT(f[0])&&(f=f[0]),!f.length){return er()}for(g=f[0],h=1;h<f.length;++h){f[h].isValid()&&!f[h][c](g)||(g=f[h])}return g}function eP(){var b=[].slice.call(arguments,0);return eD("isBefore",b)}function e1(){var b=[].slice.call(arguments,0);return eD("isAfter",b)}function fj(l){var m=cL(l),n=m.year||0,o=m.quarter||0,p=m.month||0,q=m.week||0,r=m.day||0,s=m.hour||0,t=m.minute||0,u=m.second||0,v=m.millisecond||0;this._milliseconds=+v+1000*u+60000*t+1000*s*60*60,this._days=+r+7*q,this._months=+p+3*o+12*n,this._data={},this._locale=ax(),this._bubble()}function fv(b){return b instanceof fj}function fH(b){return 0>b?-1*Math.round(-1*b):Math.round(b)}function fT(c,d){eM(c,0,0,function(){var b=this.utcOffset(),e="+";return 0>b&&(b=-b,e="-"),e+eA(~~(b/60),2)+d+eA(~~b%60,2)})}function f5(g,h){var i=(h||"").match(g)||[],j=i[i.length-1]||[],k=(j+"").match(b0)||["-",0,0],l=+(60*k[1])+eL(k[2]);return"+"===k[0]?l:-l}function ay(a,f){var g,h;return f._isUTC?(g=f.clone(),h=(en(a)||bC(a)?a.valueOf():er(a).valueOf())-g.valueOf(),g._d.setTime(g._d.valueOf()+h),at.updateOffset(g,!1),g):er(a).local()}function aL(b){return 15*-Math.round(b._d.getTimezoneOffset()/15)}function aY(a,f){var g,h=this._offset||0;return this.isValid()?null!=a?("string"==typeof a?a=f5(eU,a):Math.abs(a)<16&&(a=60*a),!this._isUTC&&f&&(g=aL(this)),this._offset=a,this._isUTC=!0,null!=g&&this.add(g,"m"),h!==a&&(!f||this._changeInProgress?eE(this,dz(a-h,"m"),1,!1):this._changeInProgress||(this._changeInProgress=!0,at.updateOffset(this,!0),this._changeInProgress=null)),this):this._isUTC?h:aL(this):null!=a?this:NaN}function bh(c,d){return null!=c?("string"!=typeof c&&(c=-c),this.utcOffset(c,d),this):-this.utcOffset()}function bu(b){return this.utcOffset(0,b)}function bH(b){return this._isUTC&&(this.utcOffset(0,b),this._isUTC=!1,b&&this.subtract(aL(this),"m")),this}function bU(){if(this._tzm){this.utcOffset(this._tzm)}else{if("string"==typeof this._i){var b=f5(eI,this._i);0===b?this.utcOffset(0,!0):this.utcOffset(f5(eI,this._i))}}return this}function b7(b){return this.isValid()?(b=b?er(b).utcOffset():0,(this.utcOffset()-b)%60===0):!1}function cq(){return this.utcOffset()>this.clone().month(0).utcOffset()||this.utcOffset()>this.clone().month(5).utcOffset()}function cC(){if(!dH(this._isDSTShifted)){return this._isDSTShifted}var c={};if(dT(c,this),c=dL(c),c._a){var d=c._isUTC?cx(c._a):er(c._a);this._isDSTShifted=this.isValid()&&eX(c._a,d.toArray())>0}else{this._isDSTShifted=!1}return this._isDSTShifted}function cP(){return this.isValid()?!this._isUTC:!1}function c2(){return this.isValid()?this._isUTC:!1}function dl(){return this.isValid()?this._isUTC&&0===this._offset:!1}function dz(h,i){var j,k,l,m=h,n=null;return fv(h)?m={ms:h._milliseconds,d:h._days,M:h._months}:"number"==typeof h?(m={},i?m[i]=h:m.milliseconds=h):(n=cj.exec(h))?(j="-"===n[1]?-1:1,m={y:0,d:eL(n[ak])*j,h:eL(n[aq])*j,m:eL(n[aD])*j,s:eL(n[aQ])*j,ms:eL(fH(1000*n[a3]))*j}):(n=cw.exec(h))?(j="-"===n[1]?-1:1,m={y:dM(n[2],j),M:dM(n[3],j),w:dM(n[4],j),d:dM(n[5],j),h:dM(n[6],j),m:dM(n[7],j),s:dM(n[8],j)}):null==m?m={}:"object"==typeof m&&("from" in m||"to" in m)&&(l=eg(er(m.from),er(m.to)),m={},m.ms=l.milliseconds,m.M=l.months),k=new fj(m),fv(h)&&b2(h,"_locale")&&(k._locale=h._locale),k}function dM(d,e){var f=d&&parseFloat(d.replace(",","."));return(isNaN(f)?0:f)*e}function dY(d,e){var f={milliseconds:0,months:0};return f.months=e.month()-d.month()+12*(e.year()-d.year()),d.clone().add(f.months,"M").isAfter(e)&&--f.months,f.milliseconds=+e-+d.clone().add(f.months,"M"),f}function eg(d,e){var f;return d.isValid()&&e.isValid()?(e=ay(e,d),d.isBefore(e)?f=dY(d,e):(f=dY(e,d),f.milliseconds=-f.milliseconds,f.months=-f.months),f):{milliseconds:0,months:0}}function es(c,d){return function(a,b){var g,h;return null===b||isNaN(+b)||(fD(d,"moment()."+d+"(period, number) is deprecated. Please use moment()."+d+"(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."),h=a,a=b,b=h),a="string"==typeof a?+a:a,g=dz(a,b),eE(this,g,c),this}}function eE(a,i,j,k){var l=i._milliseconds,m=fH(i._days),n=fH(i._months);a.isValid()&&(k=null==k?!0:k,l&&a._d.setTime(a._d.valueOf()+l*j),m&&dU(a,"Date",dI(a,"Date")+m*j),n&&cn(a,dI(a,"Month")+n*j),k&&at.updateOffset(a,m||n))}function eQ(d,e){var f=d.diff(e,"days",!0);return -6>f?"sameElse":-1>f?"lastWeek":0>f?"lastDay":1>f?"sameDay":2>f?"nextDay":7>f?"nextWeek":"sameElse"}function e2(a,h){var i=a||er(),j=ay(i,this).startOf("day"),k=at.calendarFormat(this,j)||"sameElse",l=h&&(fP(h[k])?h[k].call(this,i):h[k]);return this.format(l||this.localeData().calendar(k,this,er(i)))}function fk(){return new d5(this)}function fw(d,e){var f=en(d)?d:er(d);return this.isValid()&&f.isValid()?(e=cy(dH(e)?"millisecond":e),"millisecond"===e?this.valueOf()>f.valueOf():f.valueOf()<this.clone().startOf(e).valueOf()):!1}function fI(d,e){var f=en(d)?d:er(d);return this.isValid()&&f.isValid()?(e=cy(dH(e)?"millisecond":e),"millisecond"===e?this.valueOf()<f.valueOf():this.clone().endOf(e).valueOf()<f.valueOf()):!1}function fU(e,f,g,h){return h=h||"()",("("===h[0]?this.isAfter(e,g):!this.isBefore(e,g))&&(")"===h[1]?this.isBefore(f,g):!this.isAfter(f,g))}function f6(e,f){var g,h=en(e)?e:er(e);return this.isValid()&&h.isValid()?(f=cy(f||"millisecond"),"millisecond"===f?this.valueOf()===h.valueOf():(g=h.valueOf(),this.clone().startOf(f).valueOf()<=g&&g<=this.clone().endOf(f).valueOf())):!1}function ai(c,d){return this.isSame(c,d)||this.isAfter(c,d)}function ao(c,d){return this.isSame(c,d)||this.isBefore(c,d)}function az(h,i,j){var k,l,m,n;return this.isValid()?(k=ay(h,this),k.isValid()?(l=60000*(k.utcOffset()-this.utcOffset()),i=cy(i),"year"===i||"month"===i||"quarter"===i?(n=aM(this,k),"quarter"===i?n/=3:"year"===i&&(n/=12)):(m=this-k,n="second"===i?m/1000:"minute"===i?m/60000:"hour"===i?m/3600000:"day"===i?(m-l)/86400000:"week"===i?(m-l)/604800000:m),j?n:ez(n)):NaN):NaN}function aM(g,h){var i,j,k=12*(h.year()-g.year())+(h.month()-g.month()),l=g.clone().add(k,"months");return 0>h-l?(i=g.clone().add(k-1,"months"),j=(h-l)/(l-i)):(i=g.clone().add(k+1,"months"),j=(h-l)/(i-l)),-(k+j)||0}function aZ(){return this.clone().locale("en").format("ddd MMM DD YYYY HH:mm:ss [GMT]ZZ")}function bi(){var b=this.clone().utc();return 0<b.year()&&b.year()<=9999?fP(Date.prototype.toISOString)?this.toDate().toISOString():fs(b,"YYYY-MM-DD[T]HH:mm:ss.SSS[Z]"):fs(b,"YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]")}function bv(a){a||(a=this.isUtc()?at.defaultFormatUtc:at.defaultFormat);var d=fs(this,a);return this.localeData().postformat(d)}function bI(c,d){return this.isValid()&&(en(c)&&c.isValid()||er(c).isValid())?dz({to:this,from:c}).locale(this.locale()).humanize(!d):this.localeData().invalidDate()}function bV(b){return this.from(er(),b)}function b8(c,d){return this.isValid()&&(en(c)&&c.isValid()||er(c).isValid())?dz({from:this,to:c}).locale(this.locale()).humanize(!d):this.localeData().invalidDate()}function cr(b){return this.to(er(),b)}function cD(c){var d;return void 0===c?this._locale._abbr:(d=ax(c),null!=d&&(this._locale=d),this)}function cQ(){return this._locale}function c3(b){switch(b=cy(b)){case"year":this.month(0);case"quarter":case"month":this.date(1);case"week":case"isoWeek":case"day":case"date":this.hours(0);case"hour":this.minutes(0);case"minute":this.seconds(0);case"second":this.milliseconds(0)}return"week"===b&&this.weekday(0),"isoWeek"===b&&this.isoWeekday(1),"quarter"===b&&this.month(3*Math.floor(this.month()/3)),this}function dm(b){return b=cy(b),void 0===b||"millisecond"===b?this:("date"===b&&(b="day"),this.startOf(b).add(1,"isoWeek"===b?"week":b).subtract(1,"ms"))}function dA(){return this._d.valueOf()-60000*(this._offset||0)}function dN(){return Math.floor(this.valueOf()/1000)}function dZ(){return new Date(this.valueOf())}function eh(){var b=this;return[b.year(),b.month(),b.date(),b.hour(),b.minute(),b.second(),b.millisecond()]}function et(){var b=this;return{years:b.year(),months:b.month(),date:b.date(),hours:b.hours(),minutes:b.minutes(),seconds:b.seconds(),milliseconds:b.milliseconds()}}function eF(){return this.isValid()?this.toISOString():null}function eR(){return dg(this)}function e3(){return cl({},cX(this))}function fl(){return cX(this).overflow}function fx(){return{input:this._i,format:this._f,locale:this._locale,isUTC:this._isUTC,strict:this._strict}}function fJ(c,d){eM(0,[c,c.length],0,d)}function fV(b){return a0.call(this,b,this.week(),this.weekday(),this.localeData()._week.dow,this.localeData()._week.doy)}function f7(b){return a0.call(this,b,this.isoWeek(),this.isoWeekday(),1,4)}function aA(){return ft(this.year(),1,4)}function aN(){var b=this.localeData()._week;return ft(this.year(),b.dow,b.doy)}function a0(g,h,i,j,k){var l;return null==g?fh(this,j,k).year:(l=ft(g,j,k),h>l&&(h=l),bj.call(this,g,h,i,j,k))}function bj(h,i,j,k,l){var m=eZ(h,i,j,k,l),n=eB(m.year,0,m.dayOfYear);return this.year(n.getUTCFullYear()),this.month(n.getUTCMonth()),this.date(n.getUTCDate()),this}function bw(b){return null==b?Math.ceil((this.month()+1)/3):this.month(3*(b-1)+this.month()%3)}function bJ(c){var d=Math.round((this.clone().startOf("day")-this.clone().startOf("year"))/86400000)+1;return null==c?d:this.add(c-d,"d")}function bW(c,d){d[a3]=eL(1000*("0."+c))}function b9(){return this._isUTC?"UTC":""}function cs(){return this._isUTC?"Coordinated Universal Time":""}function cE(b){return er(1000*b)}function cR(){return er.apply(null,arguments).parseZone()}function c4(b){return b}function dn(g,h,i,j){var k=ax(),l=cx().set(j,h);return k[i](l,g)}function dB(f,g,h){if("number"==typeof f&&(g=f,f=void 0),f=f||"",null!=g){return dn(f,g,h,"month")}var i,j=[];for(i=0;12>i;i++){j[i]=dn(f,i,h,"month")}return j}function dO(i,j,k,l){"boolean"==typeof i?("number"==typeof j&&(k=j,j=void 0),j=j||""):(j=i,k=j,i=!1,"number"==typeof j&&(k=j,j=void 0),j=j||"");var m=ax(),n=i?m._week.dow:0;if(null!=k){return dn(j,(k+n)%7,l,"day")}var o,p=[];for(o=0;7>o;o++){p[o]=dn(j,(o+n)%7,l,"day")}return p}function d0(c,d){return dB(c,d,"months")}function ei(c,d){return dB(c,d,"monthsShort")}function eu(d,e,f){return dO(d,e,f,"weekdays")}function eG(d,e,f){return dO(d,e,f,"weekdaysShort")}function eS(d,e,f){return dO(d,e,f,"weekdaysMin")}function e4(){var b=this._data;return this._milliseconds=e8(this._milliseconds),this._days=e8(this._days),this._months=e8(this._months),b.milliseconds=e8(b.milliseconds),b.seconds=e8(b.seconds),b.minutes=e8(b.minutes),b.hours=e8(b.hours),b.months=e8(b.months),b.years=e8(b.years),this}function fm(f,g,h,i){var j=dz(g,h);return f._milliseconds+=i*j._milliseconds,f._days+=i*j._days,f._months+=i*j._months,f._bubble()}function fy(c,d){return fm(this,c,d,1)}function fK(c,d){return fm(this,c,d,-1)}function fW(b){return 0>b?Math.floor(b):Math.ceil(b)}function f8(){var j,k,l,m,n,o=this._milliseconds,p=this._days,q=this._months,r=this._data;return o>=0&&p>=0&&q>=0||0>=o&&0>=p&&0>=q||(o+=86400000*fW(ap(q)+p),p=0,q=0),r.milliseconds=o%1000,j=ez(o/1000),r.seconds=j%60,k=ez(j/60),r.minutes=k%60,l=ez(k/60),r.hours=l%24,p+=ez(l/24),n=ez(aj(p)),q+=n,p-=fW(ap(n)),m=ez(q/12),q%=12,r.days=p,r.months=q,r.years=m,this}function aj(b){return 4800*b/146097}function ap(b){return 146097*b/4800}function aB(e){var f,g,h=this._milliseconds;if(e=cy(e),"month"===e||"year"===e){return f=this._days+h/86400000,g=this._months+aj(f),"month"===e?g:g/12}switch(f=this._days+Math.round(ap(this._months)),e){case"week":return f/7+h/604800000;case"day":return f+h/86400000;case"hour":return 24*f+h/3600000;case"minute":return 1440*f+h/60000;case"second":return 86400*f+h/1000;case"millisecond":return Math.floor(86400000*f)+h;default:throw new Error("Unknown unit "+e)}}function aO(){return this._milliseconds+86400000*this._days+this._months%12*2592000000+31536000000*eL(this._months/12)}function a1(b){return function(){return this.as(b)}}function bk(b){return b=cy(b),this[b+"s"]()}function bx(b){return function(){return this._data[b]}}function bK(){return ez(this.days()/7)}function bX(f,g,h,i,j){return j.relativeTime(g||1,!!h,f,i)}function cg(l,m,n){var o=dz(l).abs(),p=cJ(o.as("s")),q=cJ(o.as("m")),r=cJ(o.as("h")),s=cJ(o.as("d")),t=cJ(o.as("M")),u=cJ(o.as("y")),v=p<cW.s&&["s",p]||1>=q&&["m"]||q<cW.m&&["mm",q]||1>=r&&["h"]||r<cW.h&&["hh",r]||1>=s&&["d"]||s<cW.d&&["dd",s]||1>=t&&["M"]||t<cW.M&&["MM",t]||1>=u&&["y"]||["yy",u];return v[2]=m,v[3]=+l>0,v[4]=n,bX.apply(null,v)}function ct(b){return void 0===b?cJ:"function"==typeof b?(cJ=b,!0):!1}function cF(c,d){return void 0===cW[c]?!1:void 0===d?cW[c]:(cW[c]=d,!0)}function cS(d){var e=this.localeData(),f=cg(this,!d,e);return d&&(f=e.pastFuture(+this,f)),e.postformat(f)}function c5(){var n,o,p,q=c9(this._milliseconds)/1000,r=c9(this._days),s=c9(this._months);n=ez(q/60),o=ez(n/60),q%=60,n%=60,p=ez(s/12),s%=12;var t=p,u=s,v=r,w=o,x=n,y=q,z=this.asSeconds();return z?(0>z?"-":"")+"P"+(t?t+"Y":"")+(u?u+"M":"")+(v?v+"D":"")+(w||x||y?"T":"")+(w?w+"H":"")+(x?x+"M":"")+(y?y+"S":""):"P0D"}var dp,dC;dC=Array.prototype.some?Array.prototype.some:function(e){for(var f=Object(this),g=f.length>>>0,h=0;g>h;h++){if(h in f&&e.call(this,f[h],h,f)){return !0}}return !1};var dP=at.momentProperties=[],d1=!1,ej={};at.suppressDeprecationWarnings=!1,at.deprecationHandler=null;var ev;ev=Object.keys?Object.keys:function(d){var e,f=[];for(e in d){b2(d,e)&&f.push(e)}return f};var eH,eT={sameDay:"[Today at] LT",nextDay:"[Tomorrow at] LT",nextWeek:"dddd [at] LT",lastDay:"[Yesterday at] LT",lastWeek:"[Last] dddd [at] LT",sameElse:"L"},e5={LTS:"h:mm:ss A",LT:"h:mm A",L:"MM/DD/YYYY",LL:"MMMM D, YYYY",LLL:"MMMM D, YYYY h:mm A",LLLL:"dddd, MMMM D, YYYY h:mm A"},fn="Invalid date",fz="%d",fL=/\d{1,2}/,fX={future:"in %s",past:"%s ago",s:"a few seconds",m:"a minute",mm:"%d minutes",h:"an hour",hh:"%d hours",d:"a day",dd:"%d days",M:"a month",MM:"%d months",y:"a year",yy:"%d years"},f9={},aC={},aP=/(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,a2=/(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g,bl={},by={},bL=/\d/,bY=/\d\d/,ch=/\d{3}/,cu=/\d{4}/,cG=/[+-]?\d{6}/,cT=/\d\d?/,c6=/\d\d\d\d?/,dq=/\d\d\d\d\d\d?/,dD=/\d{1,3}/,dQ=/\d{1,4}/,d2=/[+-]?\d{1,6}/,ek=/\d+/,ew=/[+-]?\d+/,eI=/Z|[+-]\d\d:?\d\d/gi,eU=/Z|[+-]\d\d(?::?\d\d)?/gi,e6=/[+-]?\d+(\.\d{1,3})?/,fo=/[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i,fA={},fM={},fY=0,gg=1,ak=2,aq=3,aD=4,aQ=5,a3=6,bm=7,bz=8;eH=Array.prototype.indexOf?Array.prototype.indexOf:function(c){var d;for(d=0;d<this.length;++d){if(this[d]===c){return d}}return -1},eM("M",["MM",2],"Mo",function(){return this.month()+1}),eM("MMM",0,0,function(b){return this.localeData().monthsShort(this,b)}),eM("MMMM",0,0,function(b){return this.localeData().months(this,b)}),cm("month","M"),cY("month",8),fQ("M",cT),fQ("MM",cT,bY),fQ("MMM",function(c,d){return d.monthsShortRegex(c)}),fQ("MMMM",function(c,d){return d.monthsRegex(c)}),av(["M","MM"],function(c,d){d[gg]=eL(c)-1}),av(["MMM","MMMM"],function(f,g,h,i){var j=h._locale.monthsParse(f,i,h._strict);null!=j?g[gg]=j:cX(h).invalidMonth=f});var bM=/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/,bZ="January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ci="Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"),cv=fo,cH=fo;eM("Y",0,0,function(){var b=this.year();return 9999>=b?""+b:"+"+b}),eM(0,["YY",2],0,function(){return this.year()%100}),eM(0,["YYYY",4],0,"year"),eM(0,["YYYYY",5],0,"year"),eM(0,["YYYYYY",6,!0],0,"year"),cm("year","y"),cY("year",1),fQ("Y",ew),fQ("YY",cT,bY),fQ("YYYY",dQ,cu),fQ("YYYYY",d2,cG),fQ("YYYYYY",d2,cG),av(["YYYYY","YYYYYY"],fY),av("YYYY",function(a,d){d[fY]=2===a.length?at.parseTwoDigitYear(a):eL(a)}),av("YY",function(a,d){d[fY]=at.parseTwoDigitYear(a)}),av("Y",function(c,d){d[fY]=parseInt(c,10)}),at.parseTwoDigitYear=function(b){return eL(b)+(eL(b)>68?1900:2000)};var cU=dv("FullYear",!0);eM("w",["ww",2],"wo","week"),eM("W",["WW",2],"Wo","isoWeek"),cm("week","w"),cm("isoWeek","W"),cY("week",5),cY("isoWeek",5),fQ("w",cT),fQ("ww",cT,bY),fQ("W",cT),fQ("WW",cT,bY),aI(["w","ww","W","WW"],function(e,f,g,h){f[h.substr(0,1)]=eL(e)});var c7={dow:0,doy:6};eM("d",0,"do","day"),eM("dd",0,0,function(b){return this.localeData().weekdaysMin(this,b)}),eM("ddd",0,0,function(b){return this.localeData().weekdaysShort(this,b)}),eM("dddd",0,0,function(b){return this.localeData().weekdays(this,b)}),eM("e",0,0,"weekday"),eM("E",0,0,"isoWeekday"),cm("day","d"),cm("weekday","e"),cm("isoWeekday","E"),cY("day",11),cY("weekday",11),cY("isoWeekday",11),fQ("d",cT),fQ("e",cT),fQ("E",cT),fQ("dd",function(c,d){return d.weekdaysMinRegex(c)}),fQ("ddd",function(c,d){return d.weekdaysShortRegex(c)}),fQ("dddd",function(c,d){return d.weekdaysRegex(c)}),aI(["dd","ddd","dddd"],function(f,g,h,i){var j=h._locale.weekdaysParse(f,i,h._strict);null!=j?g.d=j:cX(h).invalidWeekday=f}),aI(["d","e","E"],function(e,f,g,h){f[h]=eL(e)});var dr="Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),dE="Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"),dR="Su_Mo_Tu_We_Th_Fr_Sa".split("_"),d3=fo,el=fo,ex=fo;eM("H",["HH",2],0,"hour"),eM("h",["hh",2],0,d8),eM("k",["kk",2],0,eq),eM("hmm",0,0,function(){return""+d8.apply(this)+eA(this.minutes(),2)}),eM("hmmss",0,0,function(){return""+d8.apply(this)+eA(this.minutes(),2)+eA(this.seconds(),2)}),eM("Hmm",0,0,function(){return""+this.hours()+eA(this.minutes(),2)}),eM("Hmmss",0,0,function(){return""+this.hours()+eA(this.minutes(),2)+eA(this.seconds(),2)}),eC("a",!0),eC("A",!1),cm("hour","h"),cY("hour",13),fQ("a",eO),fQ("A",eO),fQ("H",cT),fQ("h",cT),fQ("HH",cT,bY),fQ("hh",cT,bY),fQ("hmm",c6),fQ("hmmss",dq),fQ("Hmm",c6),fQ("Hmmss",dq),av(["H","HH"],aq),av(["a","A"],function(d,e,f){f._isPm=f._locale.isPM(d),f._meridiem=d}),av(["h","hh"],function(d,e,f){e[aq]=eL(d),cX(f).bigHour=!0}),av("hmm",function(e,f,g){var h=e.length-2;f[aq]=eL(e.substr(0,h)),f[aD]=eL(e.substr(h)),cX(g).bigHour=!0}),av("hmmss",function(f,g,h){var i=f.length-4,j=f.length-2;g[aq]=eL(f.substr(0,i)),g[aD]=eL(f.substr(i,2)),g[aQ]=eL(f.substr(j)),cX(h).bigHour=!0}),av("Hmm",function(e,f,g){var h=e.length-2;f[aq]=eL(e.substr(0,h)),f[aD]=eL(e.substr(h))}),av("Hmmss",function(f,g,h){var i=f.length-4,j=f.length-2;g[aq]=eL(f.substr(0,i)),g[aD]=eL(f.substr(i,2)),g[aQ]=eL(f.substr(j))});var eJ,eV=/[ap]\.?m?\.?/i,e7=dv("Hours",!0),fp={calendar:eT,longDateFormat:e5,invalidDate:fn,ordinal:fz,ordinalParse:fL,relativeTime:fX,months:bZ,monthsShort:ci,week:c7,weekdays:dr,weekdaysMin:dR,weekdaysShort:dE,meridiemParse:eV},fB={},fN=/^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?/,fZ=/^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?/,gh=/Z|[+-]\d\d(?::?\d\d)?/,aE=[["YYYYYY-MM-DD",/[+-]\d{6}-\d\d-\d\d/],["YYYY-MM-DD",/\d{4}-\d\d-\d\d/],["GGGG-[W]WW-E",/\d{4}-W\d\d-\d/],["GGGG-[W]WW",/\d{4}-W\d\d/,!1],["YYYY-DDD",/\d{4}-\d{3}/],["YYYY-MM",/\d{4}-\d\d/,!1],["YYYYYYMMDD",/[+-]\d{10}/],["YYYYMMDD",/\d{8}/],["GGGG[W]WWE",/\d{4}W\d{3}/],["GGGG[W]WW",/\d{4}W\d{2}/,!1],["YYYYDDD",/\d{7}/]],aR=[["HH:mm:ss.SSSS",/\d\d:\d\d:\d\d\.\d+/],["HH:mm:ss,SSSS",/\d\d:\d\d:\d\d,\d+/],["HH:mm:ss",/\d\d:\d\d:\d\d/],["HH:mm",/\d\d:\d\d/],["HHmmss.SSSS",/\d\d\d\d\d\d\.\d+/],["HHmmss,SSSS",/\d\d\d\d\d\d,\d+/],["HHmmss",/\d\d\d\d\d\d/],["HHmm",/\d\d\d\d/],["HH",/\d\d/]],a4=/^\/?Date\((\-?\d+)/i;at.createFromInputFallback=fr("value provided is not in a recognized ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.",function(b){b._d=new Date(b._i+(b._useUTC?" UTC":""))}),at.ISO_8601=function(){};var bn=fr("moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/",function(){var b=er.apply(null,arguments);return this.isValid()&&b.isValid()?this>b?this:b:du()}),bA=fr("moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/",function(){var b=er.apply(null,arguments);return this.isValid()&&b.isValid()?b>this?this:b:du()}),bN=function(){return Date.now?Date.now():+new Date};fT("Z",":"),fT("ZZ",""),fQ("Z",eU),fQ("ZZ",eU),av(["Z","ZZ"],function(d,e,f){f._useUTC=!0,f._tzm=f5(eU,d)});var b0=/([\+\-]|\d\d)/gi;at.updateOffset=function(){};var cj=/^(\-)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/,cw=/^(-)?P(?:(-?[0-9,.]*)Y)?(?:(-?[0-9,.]*)M)?(?:(-?[0-9,.]*)W)?(?:(-?[0-9,.]*)D)?(?:T(?:(-?[0-9,.]*)H)?(?:(-?[0-9,.]*)M)?(?:(-?[0-9,.]*)S)?)?$/;dz.fn=fj.prototype;var cI=es(1,"add"),cV=es(-1,"subtract");at.defaultFormat="YYYY-MM-DDTHH:mm:ssZ",at.defaultFormatUtc="YYYY-MM-DDTHH:mm:ss[Z]";var c8=fr("moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.",function(b){return void 0===b?this.localeData():this.locale(b)});eM(0,["gg",2],0,function(){return this.weekYear()%100}),eM(0,["GG",2],0,function(){return this.isoWeekYear()%100}),fJ("gggg","weekYear"),fJ("ggggg","weekYear"),fJ("GGGG","isoWeekYear"),fJ("GGGGG","isoWeekYear"),cm("weekYear","gg"),cm("isoWeekYear","GG"),cY("weekYear",1),cY("isoWeekYear",1),fQ("G",ew),fQ("g",ew),fQ("GG",cT,bY),fQ("gg",cT,bY),fQ("GGGG",dQ,cu),fQ("gggg",dQ,cu),fQ("GGGGG",d2,cG),fQ("ggggg",d2,cG),aI(["gggg","ggggg","GGGG","GGGGG"],function(e,f,g,h){f[h.substr(0,2)]=eL(e)}),aI(["gg","GG"],function(a,f,g,h){f[h]=at.parseTwoDigitYear(a)}),eM("Q",0,"Qo","quarter"),cm("quarter","Q"),cY("quarter",7),fQ("Q",bL),av("Q",function(c,d){d[gg]=3*(eL(c)-1)}),eM("D",["DD",2],"Do","date"),cm("date","D"),cY("date",9),fQ("D",cT),fQ("DD",cT,bY),fQ("Do",function(c,d){return c?d._ordinalParse:d._ordinalParseLenient}),av(["D","DD"],ak),av("Do",function(c,d){d[ak]=eL(c.match(cT)[0],10)});var ds=dv("Date",!0);eM("DDD",["DDDD",3],"DDDo","dayOfYear"),cm("dayOfYear","DDD"),cY("dayOfYear",4),fQ("DDD",dD),fQ("DDDD",ch),av(["DDD","DDDD"],function(d,e,f){f._dayOfYear=eL(d)}),eM("m",["mm",2],0,"minute"),cm("minute","m"),cY("minute",14),fQ("m",cT),fQ("mm",cT,bY),av(["m","mm"],aD);var dF=dv("Minutes",!1);eM("s",["ss",2],0,"second"),cm("second","s"),cY("second",15),fQ("s",cT),fQ("ss",cT,bY),av(["s","ss"],aQ);var dS=dv("Seconds",!1);eM("S",0,0,function(){return ~~(this.millisecond()/100)}),eM(0,["SS",2],0,function(){return ~~(this.millisecond()/10)}),eM(0,["SSS",3],0,"millisecond"),eM(0,["SSSS",4],0,function(){return 10*this.millisecond()}),eM(0,["SSSSS",5],0,function(){return 100*this.millisecond()}),eM(0,["SSSSSS",6],0,function(){return 1000*this.millisecond()}),eM(0,["SSSSSSS",7],0,function(){return 10000*this.millisecond()}),eM(0,["SSSSSSSS",8],0,function(){return 100000*this.millisecond()}),eM(0,["SSSSSSSSS",9],0,function(){return 1000000*this.millisecond()}),cm("millisecond","ms"),cY("millisecond",16),fQ("S",dD,bL),fQ("SS",dD,bY),fQ("SSS",dD,ch);var d4;for(d4="SSSS";d4.length<=9;d4+="S"){fQ(d4,ek)}for(d4="S";d4.length<=9;d4+="S"){av(d4,bW)}var em=dv("Milliseconds",!1);eM("z",0,0,"zoneAbbr"),eM("zz",0,0,"zoneName");var ey=d5.prototype;ey.add=cI,ey.calendar=e2,ey.clone=fk,ey.diff=az,ey.endOf=dm,ey.format=bv,ey.from=bI,ey.fromNow=bV,ey.to=b8,ey.toNow=cr,ey.get=d6,ey.invalidAt=fl,ey.isAfter=fw,ey.isBefore=fI,ey.isBetween=fU,ey.isSame=f6,ey.isSameOrAfter=ai,ey.isSameOrBefore=ao,ey.isValid=eR,ey.lang=c8,ey.locale=cD,ey.localeData=cQ,ey.max=bA,ey.min=bn,ey.parsingFlags=e3,ey.set=eo,ey.startOf=c3,ey.subtract=cV,ey.toArray=eh,ey.toObject=et,ey.toDate=dZ,ey.toISOString=bi,ey.toJSON=eF,ey.toString=aZ,ey.unix=dN,ey.valueOf=dA,ey.creationData=fx,ey.year=cU,ey.isLeapYear=d7,ey.weekYear=fV,ey.isoWeekYear=f7,ey.quarter=ey.quarters=bw,ey.month=cz,ey.daysInMonth=cM,ey.week=ey.weeks=aw,ey.isoWeek=ey.isoWeeks=aJ,ey.weeksInYear=aN,ey.isoWeeksInYear=aA,ey.date=ds,ey.day=ey.days=cA,ey.weekday=cN,ey.isoWeekday=c0,ey.dayOfYear=bJ,ey.hour=ey.hours=e7,ey.minute=ey.minutes=dF,ey.second=ey.seconds=dS,ey.millisecond=ey.milliseconds=em,ey.utcOffset=aY,ey.utc=bu,ey.local=bH,ey.parseZone=bU,ey.hasAlignedHourOffset=b7,ey.isDST=cq,ey.isLocal=cP,ey.isUtcOffset=c2,ey.isUtc=dl,ey.isUTC=dl,ey.zoneAbbr=b9,ey.zoneName=cs,ey.dates=fr("dates accessor is deprecated. Use date instead.",ds),ey.months=fr("months accessor is deprecated. Use month instead",cz),ey.years=fr("years accessor is deprecated. Use year instead",cU),ey.zone=fr("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/",bh),ey.isDSTShifted=fr("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information",cC);var eK=ey,eW=aH.prototype;eW.calendar=aU,eW.longDateFormat=a7,eW.invalidDate=bq,eW.ordinal=bD,eW.preparse=c4,eW.postformat=c4,eW.relativeTime=bQ,eW.pastFuture=b3,eW.set=f1,eW.months=br,eW.monthsShort=bE,eW.monthsParse=b4,eW.monthsRegex=di,eW.monthsShortRegex=cZ,eW.week=fF,eW.firstDayOfYear=f3,eW.firstDayOfWeek=fR,eW.weekdays=bs,eW.weekdaysMin=bS,eW.weekdaysShort=bF,eW.weekdaysParse=co,eW.weekdaysRegex=dj,eW.weekdaysShortRegex=dx,eW.weekdaysMinRegex=dK,eW.isPM=e0,eW.meridiem=fi,f4("en",{ordinalParse:/\d{1,2}(th|st|nd|rd)/,ordinal:function(d){var e=d%10,f=1===eL(d%100/10)?"th":1===e?"st":2===e?"nd":3===e?"rd":"th";return d+f}}),at.lang=fr("moment.lang is deprecated. Use moment.locale instead.",f4),at.langData=fr("moment.langData is deprecated. Use moment.localeData instead.",ax);var e8=Math.abs,fq=a1("ms"),fC=a1("s"),fO=a1("m"),f0=a1("h"),gi=a1("d"),al=a1("w"),ar=a1("M"),aF=a1("y"),aS=bx("milliseconds"),a5=bx("seconds"),bo=bx("minutes"),bB=bx("hours"),bO=bx("days"),b1=bx("months"),ck=bx("years"),cJ=Math.round,cW={s:45,m:45,h:22,d:26,M:11},c9=Math.abs,dt=fj.prototype;dt.abs=e4,dt.add=fy,dt.subtract=fK,dt.as=aB,dt.asMilliseconds=fq,dt.asSeconds=fC,dt.asMinutes=fO,dt.asHours=f0,dt.asDays=gi,dt.asWeeks=al,dt.asMonths=ar,dt.asYears=aF,dt.valueOf=aO,dt._bubble=f8,dt.get=bk,dt.milliseconds=aS,dt.seconds=a5,dt.minutes=bo,dt.hours=bB,dt.days=bO,dt.weeks=bK,dt.months=b1,dt.years=ck,dt.humanize=cS,dt.toISOString=c5,dt.toString=c5,dt.toJSON=c5,dt.locale=cD,dt.localeData=cQ,dt.toIsoString=fr("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)",c5),dt.lang=c8,eM("X",0,0,"unix"),eM("x",0,0,"valueOf"),fQ("x",ew),fQ("X",e6),av("X",function(d,e,f){f._d=new Date(1000*parseFloat(d,10))}),av("x",function(d,e,f){f._d=new Date(eL(d))}),at.version="2.15.1",aG(er),at.fn=eK,at.min=eP,at.max=e1,at.now=bN,at.utc=cx,at.unix=cE,at.months=d0,at.isDate=bC,at.locale=f4,at.invalid=du,at.duration=dz,at.isMoment=en,at.weekdays=eu,at.parseZone=cR,at.localeData=ax,at.isDuration=fv,at.monthsShort=ei,at.weekdaysMin=eS,at.defineLocale=ah,at.updateLocale=an,at.locales=aK,at.weekdaysShort=eG,at.normalizeUnits=cy,at.relativeTimeRounding=ct,at.relativeTimeThreshold=cF,at.calendarFormat=eQ,at.prototype=eK;var dG=at;return dG});
+/* End /includes/js/jquery/plugins/moment.min.js */
+
+/* Start /includes/js/jquery/plugins/moment-timezone-with-data-2010-2020.min.js */
+!function(c,d){"function"==typeof define&&define.amd?define(["moment"],d):"object"==typeof module&&module.exports?module.exports=d(require("moment")):d(c.moment)}(this,function(O){function Q(b){return b>96?b-87:b>64?b-29:b-48}function S(b){var k,l=0,m=b.split("."),n=m[0],o=m[1]||"",p=1,q=0,r=1;for(45===b.charCodeAt(0)&&(l=1,r=-1),l;l<n.length;l++){k=Q(n.charCodeAt(l)),q=60*q+k}for(l=0;l<o.length;l++){p/=60,k=Q(o.charCodeAt(l)),q+=k*p}return q*r}function U(c){for(var d=0;d<c.length;d++){c[d]=S(c[d])}}function W(d,e){for(var f=0;f<e;f++){d[f]=Math.round((d[f-1]||0)+60000*d[f])}d[e-1]=1/0}function Y(e,f){var g,h=[];for(g=0;g<f.length;g++){h[g]=e[f[g]]}return h}function aa(d){var e=d.split("|"),f=e[2].split(" "),i=e[3].split(""),j=e[4].split(" ");return U(f),U(i),U(j),W(j,i.length),{name:e[0],abbrs:Y(e[1].split(" "),i),offsets:Y(f,i),untils:j,population:0|e[5]}}function ac(b){b&&this._set(aa(b))}function ae(d){var e=d.toTimeString(),f=e.match(/\([a-z ]+\)/i);f&&f[0]?(f=f[0].match(/[A-Z]/g),f=f?f.join(""):void 0):(f=e.match(/[A-Z]{3,5}/g),f=f?f[0]:void 0),"GMT"===f&&(f=void 0),this.at=+d,this.abbr=f,this.offset=d.getTimezoneOffset()}function ag(b){this.zone=b,this.offsetScore=0,this.abbrScore=0}function ai(e,f){for(var g,h;h=60000*((f.at-e.at)/120000|0);){g=new ae(new Date(e.at+h)),g.offset===e.offset?e=g:f=g}return e}function ak(){var g,h,i,j=(new Date).getFullYear()-2,k=new ae(new Date(j,0,1)),l=[k];for(i=1;i<48;i++){h=new ae(new Date(j,i,1)),h.offset!==k.offset&&(g=ai(k,h),l.push(g),l.push(new ae(new Date(g.at+60000)))),k=h}for(i=0;i<4;i++){l.push(new ae(new Date(j+i,0,1))),l.push(new ae(new Date(j+i,6,1)))}return l}function am(c,d){return c.offsetScore!==d.offsetScore?c.offsetScore-d.offsetScore:c.abbrScore!==d.abbrScore?c.abbrScore-d.abbrScore:d.zone.population-c.zone.population}function ao(d,f){var g,h;for(U(f),g=0;g<f.length;g++){h=f[g],af[h]=af[h]||{},af[h][d]=!0}}function aq(h){var i,j,k,l=h.length,m={},n=[];for(i=0;i<l;i++){k=af[h[i].offset]||{};for(j in k){k.hasOwnProperty(j)&&(m[j]=!0)}}for(i in m){m.hasOwnProperty(i)&&n.push(ad[i])}return n}function ar(){try{var j=Intl.DateTimeFormat().resolvedOptions().timeZone;if(j){var l=ad[au(j)];if(l){return l}aC("Moment Timezone found "+j+" from the Intl api, but did not have that data loaded.")}}catch(m){}var n,o,p,q=ak(),r=q.length,s=aq(q),t=[];for(o=0;o<s.length;o++){for(n=new ag(aw(s[o]),r),p=0;p<r;p++){n.scoreOffsetAt(q[p])}t.push(n)}return t.sort(am),t.length>0?t[0].zone.name:void 0}function at(b){return V&&!b||(V=ar()),V}function au(b){return(b||"").toLowerCase().replace(/\//g,"_")}function av(f){var g,h,i,j;for("string"==typeof f&&(f=[f]),g=0;g<f.length;g++){i=f[g].split("|"),h=i[0],j=au(h),Z[j]=f[g],ad[j]=h,i[5]&&ao(j,i[2].split(" "))}}function aw(e,f){e=au(e);var g,h=Z[e];return h instanceof ac?h:"string"==typeof h?(h=new ac(h),Z[e]=h,h):ab[e]&&f!==aw&&(g=aw(ab[e],aw))?(h=Z[e]=new ac,h._set(g),h.name=ad[e],h):null}function ax(){var c,d=[];for(c in ad){ad.hasOwnProperty(c)&&(Z[c]||Z[ab[c]])&&ad[c]&&d.push(ad[c])}return d.sort()}function ay(f){var g,h,i,j;for("string"==typeof f&&(f=[f]),g=0;g<f.length;g++){h=f[g].split("|"),i=au(h[0]),j=au(h[1]),ab[i]=j,ad[i]=h[0],ab[j]=i,ad[j]=h[1]}}function az(b){av(b.zones),ay(b.links),P.dataVersion=b.version}function aA(b){return aA.didShowError||(aA.didShowError=!0,aC("moment.tz.zoneExists('"+b+"') has been deprecated in favor of !moment.tz.zone('"+b+"')")),!!aw(b)}function aB(b){return !(!b._a||void 0!==b._tzm)}function aC(b){"undefined"!=typeof console&&"function"==typeof console.error&&console.error(b)}function P(a){var g=Array.prototype.slice.call(arguments,0,-1),h=arguments[arguments.length-1],i=aw(h),j=O.utc.apply(null,g);return i&&!O.isMoment(a)&&aB(j)&&j.add(i.parse(j),"minutes"),j.tz(h),j}function R(b){return function(){return this._z?this._z.abbr(this):b.call(this)}}function T(b){return function(){return this._z=null,b.apply(this,arguments)}}if(void 0!==O.tz){return aC("Moment Timezone "+O.tz.version+" was already loaded "+(O.tz.dataVersion?"with data from ":"without any data")+O.tz.dataVersion),O}var V,X="0.5.6",Z={},ab={},ad={},af={},ah=O.version.split("."),aj=+ah[0],al=+ah[1];(aj<2||2===aj&&al<6)&&aC("Moment Timezone requires Moment.js >= 2.6.0. You are using Moment.js "+O.version+". See momentjs.com"),ac.prototype={_set:function(b){this.name=b.name,this.abbrs=b.abbrs,this.untils=b.untils,this.offsets=b.offsets,this.population=b.population},_index:function(e){var f,g=+e,h=this.untils;for(f=0;f<h.length;f++){if(g<h[f]){return f}}},parse:function(j){var k,l,m,n,o=+j,p=this.offsets,q=this.untils,r=q.length-1;for(n=0;n<r;n++){if(k=p[n],l=p[n+1],m=p[n?n-1:n],k<l&&P.moveAmbiguousForward?k=l:k>m&&P.moveInvalidForward&&(k=m),o<q[n]-60000*k){return p[n]}}return p[r]},abbr:function(b){return this.abbrs[this._index(b)]},offset:function(b){return this.offsets[this._index(b)]}},ag.prototype.scoreOffsetAt=function(b){this.offsetScore+=Math.abs(this.zone.offset(b.at)-b.offset),this.zone.abbr(b.at).replace(/[^A-Z]/g,"")!==b.abbr&&this.abbrScore++},P.version=X,P.dataVersion="",P._zones=Z,P._links=ab,P._names=ad,P.add=av,P.link=ay,P.load=az,P.zone=aw,P.zoneExists=aA,P.guess=at,P.names=ax,P.Zone=ac,P.unpack=aa,P.unpackBase60=S,P.needsOffset=aB,P.moveInvalidForward=!0,P.moveAmbiguousForward=!1;var an=O.fn;O.tz=P,O.defaultZone=null,O.updateOffset=function(a,f){var g,h=O.defaultZone;void 0===a._z&&(h&&aB(a)&&!a._isUTC&&(a._d=O.utc(a._a)._d,a.utc().add(h.parse(a),"minutes")),a._z=h),a._z&&(g=a._z.offset(a),Math.abs(g)<16&&(g/=60),void 0!==a.utcOffset?a.utcOffset(-g,f):a.zone(g,f))},an.tz=function(a){return a?(this._z=aw(a),this._z?O.updateOffset(this):aC("Moment Timezone has no data for "+a+". See http://momentjs.com/timezone/docs/#/data-loading/."),this):this._z?this._z.name:void 0},an.zoneName=R(an.zoneName),an.zoneAbbr=R(an.zoneAbbr),an.utc=T(an.utc),O.tz.setDefault=function(a){return(aj<2||2===aj&&al<9)&&aC("Moment Timezone setDefault() requires Moment.js >= 2.9.0. You are using Moment.js "+O.version+"."),O.defaultZone=a?aw(a):null,O};var ap=O.momentProperties;return"[object Array]"===Object.prototype.toString.call(ap)?(ap.push("_z"),ap.push("_a")):ap&&(ap._z=null),az({version:"2016g",zones:["Africa/Abidjan|GMT|0|0||48e5","Africa/Khartoum|EAT|-30|0||51e5","Africa/Algiers|CET|-10|0||26e5","Africa/Lagos|WAT|-10|0||17e6","Africa/Maputo|CAT|-20|0||26e5","Africa/Cairo|EET EEST|-20 -30|010101010|1Cby0 Fb0 c10 8n0 8Nd0 gL0 e10 mn0|15e6","Africa/Casablanca|WET WEST|0 -10|01010101010101010101010101010101010101010|1Cco0 Db0 1zd0 Lz0 1Nf0 wM0 co0 go0 1o00 s00 dA0 vc0 11A0 A00 e00 y00 11A0 uM0 e00 Dc0 11A0 s00 e00 IM0 WM0 mo0 gM0 LA0 WM0 jA0 e00 Rc0 11A0 e00 e00 U00 11A0 8o0 e00 11A0|32e5","Europe/Paris|CET CEST|-10 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|11e6","Africa/Johannesburg|SAST|-20|0||84e5","Africa/Tripoli|EET CET CEST|-20 -10 -20|0120|1IlA0 TA0 1o00|11e5","Africa/Windhoek|WAST WAT|-20 -10|01010101010101010101010|1C1c0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 11B0|32e4","America/Adak|HST HDT|a0 90|01010101010101010101010|1BR00 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|326","America/Anchorage|AKST AKDT|90 80|01010101010101010101010|1BQX0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|30e4","America/Santo_Domingo|AST|40|0||29e5","America/Araguaina|BRT BRST|30 20|010|1IdD0 Lz0|14e4","America/Argentina/Buenos_Aires|ART|30|0|","America/Asuncion|PYST PYT|30 40|01010101010101010101010|1C430 1a10 1fz0 1a10 1fz0 1cN0 17b0 1ip0 17b0 1ip0 17b0 1ip0 19X0 1fB0 19X0 1fB0 19X0 1ip0 17b0 1ip0 17b0 1ip0|28e5","America/Panama|EST|50|0||15e5","America/Bahia|BRT BRST|30 20|010|1FJf0 Rb0|27e5","America/Bahia_Banderas|MST CDT CST|70 50 60|01212121212121212121212|1C1l0 1nW0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0|84e3","America/Fortaleza|BRT|30|0||34e5","America/Managua|CST|60|0||22e5","America/Manaus|AMT|40|0||19e5","America/Bogota|COT|50|0||90e5","America/Denver|MST MDT|70 60|01010101010101010101010|1BQV0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|26e5","America/Campo_Grande|AMST AMT|30 40|01010101010101010101010|1BIr0 1zd0 On0 1zd0 Rb0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10|77e4","America/Cancun|CST CDT EST|60 50 50|010101010102|1C1k0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 Dd0|63e4","America/Caracas|VET VET|4u 40|01|1QMT0|29e5","America/Cayenne|GFT|30|0||58e3","America/Chicago|CST CDT|60 50|01010101010101010101010|1BQU0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|92e5","America/Chihuahua|MST MDT|70 60|01010101010101010101010|1C1l0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0|81e4","America/Phoenix|MST|70|0||42e5","America/Los_Angeles|PST PDT|80 70|01010101010101010101010|1BQW0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|15e6","America/New_York|EST EDT|50 40|01010101010101010101010|1BQT0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|21e6","America/Rio_Branco|AMT ACT|40 50|01|1KLE0|31e4","America/Fort_Nelson|PST PDT MST|80 70 70|010101010102|1BQW0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0|39e2","America/Halifax|AST ADT|40 30|01010101010101010101010|1BQS0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|39e4","America/Godthab|WGT WGST|30 20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|17e3","America/Goose_Bay|AST ADT|40 30|01010101010101010101010|1BQQ1 1zb0 Op0 1zcX Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|76e2","America/Grand_Turk|EST EDT AST|50 40 40|0101010101012|1BQT0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|37e2","America/Guayaquil|ECT|50|0||27e5","America/Guyana|GYT|40|0||80e4","America/Havana|CST CDT|50 40|01010101010101010101010|1BQR0 1wo0 U00 1zc0 U00 1qM0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Rc0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1zc0|21e5","America/La_Paz|BOT|40|0||19e5","America/Lima|PET|50|0||11e6","America/Mexico_City|CST CDT|60 50|01010101010101010101010|1C1k0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0 14p0 1lb0 14p0 1nX0 11B0 1nX0 11B0 1nX0 14p0 1lb0 14p0 1lb0|20e6","America/Metlakatla|PST AKST AKDT|80 90 80|012121212121|1PAa0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|14e2","America/Miquelon|PMST PMDT|30 20|01010101010101010101010|1BQR0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|61e2","America/Montevideo|UYST UYT|20 30|010101010101|1BQQ0 1ld0 14n0 1ld0 14n0 1o10 11z0 1o10 11z0 1o10 11z0|17e5","America/Noronha|FNT|20|0||30e2","America/North_Dakota/Beulah|MST MDT CST CDT|70 60 60 50|01232323232323232323232|1BQV0 1zb0 Oo0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0","America/Paramaribo|SRT|30|0||24e4","America/Port-au-Prince|EST EDT|50 40|010101010|1GI70 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|23e5","America/Santiago|CLST CLT|30 40|010101010101010101010|1C1f0 1fB0 1nX0 G10 1EL0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0|62e5","America/Sao_Paulo|BRST BRT|20 30|01010101010101010101010|1BIq0 1zd0 On0 1zd0 Rb0 1zd0 Lz0 1C10 Lz0 1C10 On0 1zd0 On0 1zd0 On0 1zd0 On0 1C10 Lz0 1C10 Lz0 1C10|20e6","America/Scoresbysund|EGT EGST|10 0|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|452","America/St_Johns|NST NDT|3u 2u|01010101010101010101010|1BQPv 1zb0 Op0 1zcX Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Rd0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0 Op0 1zb0|11e4","Antarctica/Casey|+11 +08|-b0 -80|0101|1BN30 40P0 KL0|10","Antarctica/Davis|+05 +07|-50 -70|0101|1BPw0 3Wn0 KN0|70","Antarctica/DumontDUrville|+10|-a0|0||80","Antarctica/Macquarie|AEDT MIST|-b0 -b0|01|1C140|1","Asia/Tashkent|+05|-50|0||23e5","Pacific/Auckland|NZDT NZST|-d0 -c0|01010101010101010101010|1C120 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00|14e5","Antarctica/Rothera|-03|30|0||130","Antarctica/Syowa|+03|-30|0||20","Antarctica/Troll|+00 +02|0 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|40","Asia/Almaty|+06|-60|0||15e5","Asia/Baghdad|AST|-30|0||66e5","Asia/Amman|EET EEST|-20 -30|010101010101010101010|1BVy0 1qM0 11A0 1o00 11A0 4bX0 Dd0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0|25e5","Asia/Kamchatka|+12 +11|-c0 -b0|010|1Dp30 WM0|18e4","Asia/Baku|+04 +05|-40 -50|0101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00|27e5","Asia/Bangkok|ICT|-70|0||15e6","Asia/Barnaul|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 3rd0","Asia/Beirut|EET EEST|-20 -30|01010101010101010101010|1BWm0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0|22e5","Asia/Brunei|BNT|-80|0||42e4","Asia/Kolkata|IST|-5u|0||15e6","Asia/Chita|+09 +10 +08|-90 -a0 -80|010120|1BWh0 1qM0 WM0 8Hz0 3re0|33e4","Asia/Choibalsan|CHOT CHOST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|38e3","Asia/Shanghai|CST|-80|0||23e6","Asia/Dhaka|BDT|-60|0||16e6","Asia/Damascus|EET EEST|-20 -30|01010101010101010101010|1C0m0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0 WN0 1qL0 WN0 1qL0 11B0 1nX0 11B0 1nX0 11B0 1nX0 11B0 1qL0|26e5","Asia/Dili|TLT|-90|0||19e4","Asia/Dubai|GST|-40|0||39e5","Asia/Gaza|EET EEST|-20 -30|01010101010101010101010|1BVW1 SKX 1xd1 MKX 1AN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1ny0 1220 1qm0 1220 1ny0 1220 1ny0 1220 1ny0|18e5","Asia/Hebron|EET EEST|-20 -30|0101010101010101010101010|1BVy0 Tb0 1xd1 MKX bB0 cn0 1cN0 1a00 1fA0 1cL0 1cN0 1nX0 1210 1nz0 1220 1ny0 1220 1qm0 1220 1ny0 1220 1ny0 1220 1ny0|25e4","Asia/Hong_Kong|HKT|-80|0||73e5","Asia/Hovd|HOVT HOVST|-70 -80|0101010101010|1O8H0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|81e3","Asia/Irkutsk|+08 +09|-80 -90|01010|1BWi0 1qM0 WM0 8Hz0|60e4","Europe/Istanbul|EET EEST +03|-20 -30 -30|010101010101012|1BWp0 1qM0 Xc0 1qo0 WM0 1qM0 11A0 1o00 1200 1nA0 11A0 1tA0 U00 15w0|13e6","Asia/Jakarta|WIB|-70|0||31e6","Asia/Jayapura|WIT|-90|0||26e4","Asia/Jerusalem|IST IDT|-20 -30|01010101010101010101010|1BVA0 17X0 1kp0 1dz0 1c10 1aL0 1eN0 1oL0 10N0 1oL0 10N0 1oL0 10N0 1rz0 W10 1rz0 W10 1rz0 10N0 1oL0 10N0 1oL0|81e4","Asia/Kabul|AFT|-4u|0||46e5","Asia/Karachi|PKT|-50|0||24e6","Asia/Urumqi|XJT|-60|0||32e5","Asia/Kathmandu|NPT|-5J|0||12e5","Asia/Khandyga|+10 +11 +09|-a0 -b0 -90|010102|1BWg0 1qM0 WM0 17V0 7zD0|66e2","Asia/Krasnoyarsk|+07 +08|-70 -80|01010|1BWj0 1qM0 WM0 8Hz0|10e5","Asia/Kuala_Lumpur|MYT|-80|0||71e5","Asia/Magadan|+11 +12 +10|-b0 -c0 -a0|010120|1BWf0 1qM0 WM0 8Hz0 3Cq0|95e3","Asia/Makassar|WITA|-80|0||15e5","Asia/Manila|PHT|-80|0||24e6","Europe/Athens|EET EEST|-20 -30|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|35e5","Asia/Novokuznetsk|+07 +06|-70 -60|010|1Dp80 WM0|55e4","Asia/Novosibirsk|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 4eN0|15e5","Asia/Omsk|+06 +07|-60 -70|01010|1BWk0 1qM0 WM0 8Hz0|12e5","Asia/Pyongyang|KST KST|-90 -8u|01|1P4D0|29e5","Asia/Rangoon|MMT|-6u|0||48e5","Asia/Sakhalin|+10 +11|-a0 -b0|010101|1BWg0 1qM0 WM0 8Hz0 3rd0|58e4","Asia/Seoul|KST|-90|0||23e6","Asia/Singapore|SGT|-80|0||56e5","Asia/Srednekolymsk|+11 +12|-b0 -c0|01010|1BWf0 1qM0 WM0 8Hz0|35e2","Asia/Tbilisi|+04|-40|0||11e5","Asia/Tehran|IRST IRDT|-3u -4u|01010101010101010101010|1BTUu 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0 1cN0 1dz0 1cp0 1dz0 1cp0 1dz0 1cp0 1dz0|14e6","Asia/Thimphu|BTT|-60|0||79e3","Asia/Tokyo|JST|-90|0||38e6","Asia/Tomsk|+06 +07|-60 -70|010101|1BWk0 1qM0 WM0 8Hz0 3Qp0|10e5","Asia/Ulaanbaatar|ULAT ULAST|-80 -90|0101010101010|1O8G0 1cJ0 1cP0 1cJ0 1cP0 1fx0 1cP0 1cJ0 1cP0 1cJ0 1cP0 1cJ0|12e5","Asia/Ust-Nera|+11 +12 +10|-b0 -c0 -a0|010102|1BWf0 1qM0 WM0 17V0 7zD0|65e2","Asia/Vladivostok|+10 +11|-a0 -b0|01010|1BWg0 1qM0 WM0 8Hz0|60e4","Asia/Yakutsk|+09 +10|-90 -a0|01010|1BWh0 1qM0 WM0 8Hz0|28e4","Asia/Yekaterinburg|+05 +06|-50 -60|01010|1BWl0 1qM0 WM0 8Hz0|14e5","Asia/Yerevan|+04 +05|-40 -50|01010|1BWm0 1qM0 WM0 1qM0|13e5","Atlantic/Azores|AZOT AZOST|10 0|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|25e4","Europe/Lisbon|WET WEST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|27e5","Atlantic/Cape_Verde|CVT|10|0||50e4","Atlantic/South_Georgia|GST|20|0||30","Atlantic/Stanley|FKST FKT|30 40|010|1C6R0 U10|21e2","Australia/Sydney|AEDT AEST|-b0 -a0|01010101010101010101010|1C140 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0|40e5","Australia/Adelaide|ACDT ACST|-au -9u|01010101010101010101010|1C14u 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0|11e5","Australia/Brisbane|AEST|-a0|0||20e5","Australia/Darwin|ACST|-9u|0||12e4","Australia/Eucla|ACWST|-8J|0||368","Australia/Lord_Howe|LHDT LHST|-b0 -au|01010101010101010101010|1C130 1cMu 1cLu 1cMu 1cLu 1fAu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1cMu 1cLu 1fAu 1cLu 1cMu 1cLu 1cMu|347","Australia/Perth|AWST|-80|0||18e5","Pacific/Easter|EASST EAST|50 60|010101010101010101010|1C1f0 1fB0 1nX0 G10 1EL0 Op0 1zb0 Rd0 1wn0 Rd0 46n0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0 1Nb0 Ap0|30e2","Europe/Dublin|GMT IST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|12e5","Etc/GMT+1|-01|10|0|","Etc/GMT+10|-10|a0|0|","Etc/GMT+11|-11|b0|0|","Etc/GMT+12|-12|c0|0|","Etc/GMT+2|-02|20|0|","Etc/GMT+4|-04|40|0|","Etc/GMT+5|-05|50|0|","Etc/GMT+6|-06|60|0|","Etc/GMT+7|-07|70|0|","Etc/GMT+8|-08|80|0|","Etc/GMT+9|-09|90|0|","Etc/GMT-1|+01|-10|0|","Etc/GMT-11|+11|-b0|0|","Etc/GMT-12|+12|-c0|0|","Etc/GMT-13|+13|-d0|0|","Etc/GMT-14|+14|-e0|0|","Etc/GMT-2|+02|-20|0|","Etc/GMT-7|+07|-70|0|","Etc/GMT-8|+08|-80|0|","Etc/GMT-9|+09|-90|0|","Etc/UCT|UCT|0|0|","Etc/UTC|UTC|0|0|","Europe/Astrakhan|+03 +04|-30 -40|010101|1BWn0 1qM0 WM0 8Hz0 3rd0","Europe/London|GMT BST|0 -10|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|10e6","Europe/Chisinau|EET EEST|-20 -30|01010101010101010101010|1BWo0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|67e4","Europe/Kaliningrad|EET EEST +03|-20 -30 -30|01020|1BWo0 1qM0 WM0 8Hz0|44e4","Europe/Volgograd|+03 +04|-30 -40|01010|1BWn0 1qM0 WM0 8Hz0|10e5","Europe/Minsk|EET EEST +03|-20 -30 -30|0102|1BWo0 1qM0 WM0|19e5","Europe/Moscow|MSK MSD MSK|-30 -40 -40|01020|1BWn0 1qM0 WM0 8Hz0|16e6","Europe/Samara|+04 +03|-40 -30|010|1Dpb0 WM0|12e5","Europe/Simferopol|EET EEST MSK MSK|-20 -30 -40 -30|01010101023|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11z0 1nW0|33e4","Pacific/Honolulu|HST|a0|0||37e4","Indian/Chagos|IOT|-60|0||30e2","Indian/Christmas|CXT|-70|0||21e2","Indian/Cocos|CCT|-6u|0||596","Indian/Mahe|SCT|-40|0||79e3","Indian/Maldives|MVT|-50|0||35e4","Indian/Mauritius|MUT|-40|0||15e4","Indian/Reunion|RET|-40|0||84e4","Pacific/Majuro|MHT|-c0|0||28e3","MET|MET MEST|-10 -20|01010101010101010101010|1BWp0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00","Pacific/Chatham|CHADT CHAST|-dJ -cJ|01010101010101010101010|1C120 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00|600","Pacific/Apia|SST SDT WSDT WSST|b0 a0 -e0 -d0|01012323232323232323232|1Dbn0 1ff0 1a00 CI0 AQ0 1cM0 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1a00 1fA0 1cM0 1fA0 1a00 1fA0 1a00|37e3","Pacific/Bougainville|PGT BST|-a0 -b0|01|1NwE0|18e4","Pacific/Chuuk|CHUT|-a0|0||49e3","Pacific/Efate|VUT|-b0|0||66e3","Pacific/Enderbury|PHOT|-d0|0||1","Pacific/Fakaofo|TKT TKT|b0 -d0|01|1Gfn0|483","Pacific/Fiji|FJST FJT|-d0 -c0|01010101010101010101010|1BWe0 1o00 Rc0 1wo0 Ao0 1Nc0 Ao0 1Q00 xz0 1SN0 uM0 1SM0 uM0 1VA0 s00 1VA0 uM0 1SM0 uM0 1SM0 uM0 1SM0|88e4","Pacific/Funafuti|TVT|-c0|0||45e2","Pacific/Galapagos|GALT|60|0||25e3","Pacific/Gambier|GAMT|90|0||125","Pacific/Guadalcanal|SBT|-b0|0||11e4","Pacific/Guam|ChST|-a0|0||17e4","Pacific/Kiritimati|LINT|-e0|0||51e2","Pacific/Kosrae|KOST|-b0|0||66e2","Pacific/Marquesas|MART|9u|0||86e2","Pacific/Pago_Pago|SST|b0|0||37e2","Pacific/Nauru|NRT|-c0|0||10e3","Pacific/Niue|NUT|b0|0||12e2","Pacific/Norfolk|NFT NFT|-bu -b0|01|1PoCu|25e4","Pacific/Noumea|NCT|-b0|0||98e3","Pacific/Palau|PWT|-90|0||21e3","Pacific/Pitcairn|PST|80|0||56","Pacific/Pohnpei|PONT|-b0|0||34e3","Pacific/Port_Moresby|PGT|-a0|0||25e4","Pacific/Rarotonga|CKT|a0|0||13e3","Pacific/Tahiti|TAHT|a0|0||18e4","Pacific/Tarawa|GILT|-c0|0||29e3","Pacific/Tongatapu|TOT|-d0|0||75e3","Pacific/Wake|WAKT|-c0|0||16e3","Pacific/Wallis|WFT|-c0|0||94"],links:["Africa/Abidjan|Africa/Accra","Africa/Abidjan|Africa/Bamako","Africa/Abidjan|Africa/Banjul","Africa/Abidjan|Africa/Bissau","Africa/Abidjan|Africa/Conakry","Africa/Abidjan|Africa/Dakar","Africa/Abidjan|Africa/Freetown","Africa/Abidjan|Africa/Lome","Africa/Abidjan|Africa/Monrovia","Africa/Abidjan|Africa/Nouakchott","Africa/Abidjan|Africa/Ouagadougou","Africa/Abidjan|Africa/Sao_Tome","Africa/Abidjan|Africa/Timbuktu","Africa/Abidjan|America/Danmarkshavn","Africa/Abidjan|Atlantic/Reykjavik","Africa/Abidjan|Atlantic/St_Helena","Africa/Abidjan|Etc/GMT","Africa/Abidjan|Etc/GMT+0","Africa/Abidjan|Etc/GMT-0","Africa/Abidjan|Etc/GMT0","Africa/Abidjan|Etc/Greenwich","Africa/Abidjan|GMT","Africa/Abidjan|GMT+0","Africa/Abidjan|GMT-0","Africa/Abidjan|GMT0","Africa/Abidjan|Greenwich","Africa/Abidjan|Iceland","Africa/Algiers|Africa/Tunis","Africa/Cairo|Egypt","Africa/Casablanca|Africa/El_Aaiun","Africa/Johannesburg|Africa/Maseru","Africa/Johannesburg|Africa/Mbabane","Africa/Khartoum|Africa/Addis_Ababa","Africa/Khartoum|Africa/Asmara","Africa/Khartoum|Africa/Asmera","Africa/Khartoum|Africa/Dar_es_Salaam","Africa/Khartoum|Africa/Djibouti","Africa/Khartoum|Africa/Juba","Africa/Khartoum|Africa/Kampala","Africa/Khartoum|Africa/Mogadishu","Africa/Khartoum|Africa/Nairobi","Africa/Khartoum|Indian/Antananarivo","Africa/Khartoum|Indian/Comoro","Africa/Khartoum|Indian/Mayotte","Africa/Lagos|Africa/Bangui","Africa/Lagos|Africa/Brazzaville","Africa/Lagos|Africa/Douala","Africa/Lagos|Africa/Kinshasa","Africa/Lagos|Africa/Libreville","Africa/Lagos|Africa/Luanda","Africa/Lagos|Africa/Malabo","Africa/Lagos|Africa/Ndjamena","Africa/Lagos|Africa/Niamey","Africa/Lagos|Africa/Porto-Novo","Africa/Maputo|Africa/Blantyre","Africa/Maputo|Africa/Bujumbura","Africa/Maputo|Africa/Gaborone","Africa/Maputo|Africa/Harare","Africa/Maputo|Africa/Kigali","Africa/Maputo|Africa/Lubumbashi","Africa/Maputo|Africa/Lusaka","Africa/Tripoli|Libya","America/Adak|America/Atka","America/Adak|US/Aleutian","America/Anchorage|America/Juneau","America/Anchorage|America/Nome","America/Anchorage|America/Sitka","America/Anchorage|America/Yakutat","America/Anchorage|US/Alaska","America/Argentina/Buenos_Aires|America/Argentina/Catamarca","America/Argentina/Buenos_Aires|America/Argentina/ComodRivadavia","America/Argentina/Buenos_Aires|America/Argentina/Cordoba","America/Argentina/Buenos_Aires|America/Argentina/Jujuy","America/Argentina/Buenos_Aires|America/Argentina/La_Rioja","America/Argentina/Buenos_Aires|America/Argentina/Mendoza","America/Argentina/Buenos_Aires|America/Argentina/Rio_Gallegos","America/Argentina/Buenos_Aires|America/Argentina/Salta","America/Argentina/Buenos_Aires|America/Argentina/San_Juan","America/Argentina/Buenos_Aires|America/Argentina/San_Luis","America/Argentina/Buenos_Aires|America/Argentina/Tucuman","America/Argentina/Buenos_Aires|America/Argentina/Ushuaia","America/Argentina/Buenos_Aires|America/Buenos_Aires","America/Argentina/Buenos_Aires|America/Catamarca","America/Argentina/Buenos_Aires|America/Cordoba","America/Argentina/Buenos_Aires|America/Jujuy","America/Argentina/Buenos_Aires|America/Mendoza","America/Argentina/Buenos_Aires|America/Rosario","America/Campo_Grande|America/Cuiaba","America/Chicago|America/Indiana/Knox","America/Chicago|America/Indiana/Tell_City","America/Chicago|America/Knox_IN","America/Chicago|America/Matamoros","America/Chicago|America/Menominee","America/Chicago|America/North_Dakota/Center","America/Chicago|America/North_Dakota/New_Salem","America/Chicago|America/Rainy_River","America/Chicago|America/Rankin_Inlet","America/Chicago|America/Resolute","America/Chicago|America/Winnipeg","America/Chicago|CST6CDT","America/Chicago|Canada/Central","America/Chicago|US/Central","America/Chicago|US/Indiana-Starke","America/Chihuahua|America/Mazatlan","America/Chihuahua|Mexico/BajaSur","America/Denver|America/Boise","America/Denver|America/Cambridge_Bay","America/Denver|America/Edmonton","America/Denver|America/Inuvik","America/Denver|America/Ojinaga","America/Denver|America/Shiprock","America/Denver|America/Yellowknife","America/Denver|Canada/Mountain","America/Denver|MST7MDT","America/Denver|Navajo","America/Denver|US/Mountain","America/Fortaleza|America/Belem","America/Fortaleza|America/Maceio","America/Fortaleza|America/Recife","America/Fortaleza|America/Santarem","America/Halifax|America/Glace_Bay","America/Halifax|America/Moncton","America/Halifax|America/Thule","America/Halifax|Atlantic/Bermuda","America/Halifax|Canada/Atlantic","America/Havana|Cuba","America/Los_Angeles|America/Dawson","America/Los_Angeles|America/Ensenada","America/Los_Angeles|America/Santa_Isabel","America/Los_Angeles|America/Tijuana","America/Los_Angeles|America/Vancouver","America/Los_Angeles|America/Whitehorse","America/Los_Angeles|Canada/Pacific","America/Los_Angeles|Canada/Yukon","America/Los_Angeles|Mexico/BajaNorte","America/Los_Angeles|PST8PDT","America/Los_Angeles|US/Pacific","America/Los_Angeles|US/Pacific-New","America/Managua|America/Belize","America/Managua|America/Costa_Rica","America/Managua|America/El_Salvador","America/Managua|America/Guatemala","America/Managua|America/Regina","America/Managua|America/Swift_Current","America/Managua|America/Tegucigalpa","America/Managua|Canada/East-Saskatchewan","America/Managua|Canada/Saskatchewan","America/Manaus|America/Boa_Vista","America/Manaus|America/Porto_Velho","America/Manaus|Brazil/West","America/Mexico_City|America/Merida","America/Mexico_City|America/Monterrey","America/Mexico_City|Mexico/General","America/New_York|America/Detroit","America/New_York|America/Fort_Wayne","America/New_York|America/Indiana/Indianapolis","America/New_York|America/Indiana/Marengo","America/New_York|America/Indiana/Petersburg","America/New_York|America/Indiana/Vevay","America/New_York|America/Indiana/Vincennes","America/New_York|America/Indiana/Winamac","America/New_York|America/Indianapolis","America/New_York|America/Iqaluit","America/New_York|America/Kentucky/Louisville","America/New_York|America/Kentucky/Monticello","America/New_York|America/Louisville","America/New_York|America/Montreal","America/New_York|America/Nassau","America/New_York|America/Nipigon","America/New_York|America/Pangnirtung","America/New_York|America/Thunder_Bay","America/New_York|America/Toronto","America/New_York|Canada/Eastern","America/New_York|EST5EDT","America/New_York|US/East-Indiana","America/New_York|US/Eastern","America/New_York|US/Michigan","America/Noronha|Brazil/DeNoronha","America/Panama|America/Atikokan","America/Panama|America/Cayman","America/Panama|America/Coral_Harbour","America/Panama|America/Jamaica","America/Panama|EST","America/Panama|Jamaica","America/Phoenix|America/Creston","America/Phoenix|America/Dawson_Creek","America/Phoenix|America/Hermosillo","America/Phoenix|MST","America/Phoenix|US/Arizona","America/Rio_Branco|America/Eirunepe","America/Rio_Branco|America/Porto_Acre","America/Rio_Branco|Brazil/Acre","America/Santiago|Antarctica/Palmer","America/Santiago|Chile/Continental","America/Santo_Domingo|America/Anguilla","America/Santo_Domingo|America/Antigua","America/Santo_Domingo|America/Aruba","America/Santo_Domingo|America/Barbados","America/Santo_Domingo|America/Blanc-Sablon","America/Santo_Domingo|America/Curacao","America/Santo_Domingo|America/Dominica","America/Santo_Domingo|America/Grenada","America/Santo_Domingo|America/Guadeloupe","America/Santo_Domingo|America/Kralendijk","America/Santo_Domingo|America/Lower_Princes","America/Santo_Domingo|America/Marigot","America/Santo_Domingo|America/Martinique","America/Santo_Domingo|America/Montserrat","America/Santo_Domingo|America/Port_of_Spain","America/Santo_Domingo|America/Puerto_Rico","America/Santo_Domingo|America/St_Barthelemy","America/Santo_Domingo|America/St_Kitts","America/Santo_Domingo|America/St_Lucia","America/Santo_Domingo|America/St_Thomas","America/Santo_Domingo|America/St_Vincent","America/Santo_Domingo|America/Tortola","America/Santo_Domingo|America/Virgin","America/Sao_Paulo|Brazil/East","America/St_Johns|Canada/Newfoundland","Antarctica/DumontDUrville|Etc/GMT-10","Antarctica/Rothera|Etc/GMT+3","Antarctica/Syowa|Etc/GMT-3","Asia/Almaty|Antarctica/Vostok","Asia/Almaty|Asia/Bishkek","Asia/Almaty|Asia/Qyzylorda","Asia/Almaty|Etc/GMT-6","Asia/Baghdad|Asia/Aden","Asia/Baghdad|Asia/Bahrain","Asia/Baghdad|Asia/Kuwait","Asia/Baghdad|Asia/Qatar","Asia/Baghdad|Asia/Riyadh","Asia/Bangkok|Asia/Ho_Chi_Minh","Asia/Bangkok|Asia/Phnom_Penh","Asia/Bangkok|Asia/Saigon","Asia/Bangkok|Asia/Vientiane","Asia/Dhaka|Asia/Dacca","Asia/Dubai|Asia/Muscat","Asia/Hong_Kong|Hongkong","Asia/Jakarta|Asia/Pontianak","Asia/Jerusalem|Asia/Tel_Aviv","Asia/Jerusalem|Israel","Asia/Kamchatka|Asia/Anadyr","Asia/Kathmandu|Asia/Katmandu","Asia/Kolkata|Asia/Calcutta","Asia/Kolkata|Asia/Colombo","Asia/Kuala_Lumpur|Asia/Kuching","Asia/Makassar|Asia/Ujung_Pandang","Asia/Rangoon|Asia/Yangon","Asia/Seoul|ROK","Asia/Shanghai|Asia/Chongqing","Asia/Shanghai|Asia/Chungking","Asia/Shanghai|Asia/Harbin","Asia/Shanghai|Asia/Macao","Asia/Shanghai|Asia/Macau","Asia/Shanghai|Asia/Taipei","Asia/Shanghai|PRC","Asia/Shanghai|ROC","Asia/Singapore|Singapore","Asia/Tashkent|Antarctica/Mawson","Asia/Tashkent|Asia/Aqtau","Asia/Tashkent|Asia/Aqtobe","Asia/Tashkent|Asia/Ashgabat","Asia/Tashkent|Asia/Ashkhabad","Asia/Tashkent|Asia/Dushanbe","Asia/Tashkent|Asia/Oral","Asia/Tashkent|Asia/Samarkand","Asia/Tashkent|Etc/GMT-5","Asia/Tashkent|Indian/Kerguelen","Asia/Tbilisi|Etc/GMT-4","Asia/Tehran|Iran","Asia/Thimphu|Asia/Thimbu","Asia/Tokyo|Japan","Asia/Ulaanbaatar|Asia/Ulan_Bator","Asia/Urumqi|Asia/Kashgar","Australia/Adelaide|Australia/Broken_Hill","Australia/Adelaide|Australia/South","Australia/Adelaide|Australia/Yancowinna","Australia/Brisbane|Australia/Lindeman","Australia/Brisbane|Australia/Queensland","Australia/Darwin|Australia/North","Australia/Lord_Howe|Australia/LHI","Australia/Perth|Australia/West","Australia/Sydney|Australia/ACT","Australia/Sydney|Australia/Canberra","Australia/Sydney|Australia/Currie","Australia/Sydney|Australia/Hobart","Australia/Sydney|Australia/Melbourne","Australia/Sydney|Australia/NSW","Australia/Sydney|Australia/Tasmania","Australia/Sydney|Australia/Victoria","Etc/UCT|UCT","Etc/UTC|Etc/Universal","Etc/UTC|Etc/Zulu","Etc/UTC|UTC","Etc/UTC|Universal","Etc/UTC|Zulu","Europe/Astrakhan|Europe/Ulyanovsk","Europe/Athens|Asia/Nicosia","Europe/Athens|EET","Europe/Athens|Europe/Bucharest","Europe/Athens|Europe/Helsinki","Europe/Athens|Europe/Kiev","Europe/Athens|Europe/Mariehamn","Europe/Athens|Europe/Nicosia","Europe/Athens|Europe/Riga","Europe/Athens|Europe/Sofia","Europe/Athens|Europe/Tallinn","Europe/Athens|Europe/Uzhgorod","Europe/Athens|Europe/Vilnius","Europe/Athens|Europe/Zaporozhye","Europe/Chisinau|Europe/Tiraspol","Europe/Dublin|Eire","Europe/Istanbul|Asia/Istanbul","Europe/Istanbul|Turkey","Europe/Lisbon|Atlantic/Canary","Europe/Lisbon|Atlantic/Faeroe","Europe/Lisbon|Atlantic/Faroe","Europe/Lisbon|Atlantic/Madeira","Europe/Lisbon|Portugal","Europe/Lisbon|WET","Europe/London|Europe/Belfast","Europe/London|Europe/Guernsey","Europe/London|Europe/Isle_of_Man","Europe/London|Europe/Jersey","Europe/London|GB","Europe/London|GB-Eire","Europe/Moscow|W-SU","Europe/Paris|Africa/Ceuta","Europe/Paris|Arctic/Longyearbyen","Europe/Paris|Atlantic/Jan_Mayen","Europe/Paris|CET","Europe/Paris|Europe/Amsterdam","Europe/Paris|Europe/Andorra","Europe/Paris|Europe/Belgrade","Europe/Paris|Europe/Berlin","Europe/Paris|Europe/Bratislava","Europe/Paris|Europe/Brussels","Europe/Paris|Europe/Budapest","Europe/Paris|Europe/Busingen","Europe/Paris|Europe/Copenhagen","Europe/Paris|Europe/Gibraltar","Europe/Paris|Europe/Ljubljana","Europe/Paris|Europe/Luxembourg","Europe/Paris|Europe/Madrid","Europe/Paris|Europe/Malta","Europe/Paris|Europe/Monaco","Europe/Paris|Europe/Oslo","Europe/Paris|Europe/Podgorica","Europe/Paris|Europe/Prague","Europe/Paris|Europe/Rome","Europe/Paris|Europe/San_Marino","Europe/Paris|Europe/Sarajevo","Europe/Paris|Europe/Skopje","Europe/Paris|Europe/Stockholm","Europe/Paris|Europe/Tirane","Europe/Paris|Europe/Vaduz","Europe/Paris|Europe/Vatican","Europe/Paris|Europe/Vienna","Europe/Paris|Europe/Warsaw","Europe/Paris|Europe/Zagreb","Europe/Paris|Europe/Zurich","Europe/Paris|Poland","Europe/Volgograd|Europe/Kirov","Pacific/Auckland|Antarctica/McMurdo","Pacific/Auckland|Antarctica/South_Pole","Pacific/Auckland|NZ","Pacific/Chatham|NZ-CHAT","Pacific/Chuuk|Pacific/Truk","Pacific/Chuuk|Pacific/Yap","Pacific/Easter|Chile/EasterIsland","Pacific/Guam|Pacific/Saipan","Pacific/Honolulu|HST","Pacific/Honolulu|Pacific/Johnston","Pacific/Honolulu|US/Hawaii","Pacific/Majuro|Kwajalein","Pacific/Majuro|Pacific/Kwajalein","Pacific/Pago_Pago|Pacific/Midway","Pacific/Pago_Pago|Pacific/Samoa","Pacific/Pago_Pago|US/Samoa","Pacific/Pohnpei|Pacific/Ponape"]}),O});
+/* End /includes/js/jquery/plugins/moment-timezone-with-data-2010-2020.min.js */
+
+/* Start /includes/js/jquery/plugins/jquery.countdown.min.js */
+/*
+ * The Final Countdown for jQuery v2.2.0 (http://hilios.github.io/jQuery.countdown/)
+ * Copyright (c) 2016 Edson Hilios
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+!function(b){"function"==typeof define&&define.amd?define(["jquery"],b):b(jQuery)}(function(k){function l(b){if(b instanceof Date){return b}if(String(b).match(q)){return String(b).match(/^[0-9]*$/)&&(b=Number(b)),String(b).match(/\-/)&&(b=String(b).replace(/\-/g,"/")),new Date(b)}throw new Error("Couldn't cast `"+b+"` to a date object.")}function m(c){var d=c.toString().replace(/([.?*+^$[\]\\(){}|-])/g,"\\$1");return new RegExp(d)}function n(b){return function(a){var c=a.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);if(c){for(var e=0,i=c.length;e<i;++e){var u=c[e].match(/%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/),v=m(u[0]),w=u[1]||"",x=u[3]||"",y=null;u=u[2],s.hasOwnProperty(u)&&(y=s[u],y=Number(b[y])),null!==y&&("!"===w&&(y=o(x,y)),""===w&&y<10&&(y="0"+y.toString()),a=a.replace(v,y.toString()))}}return a=a.replace(/%%/,"%")}}function o(e,f){var g="s",h="";return e&&(e=e.replace(/(:|;|\s)/gi,"").split(/\,/),1===e.length?g=e[0]:(h=e[0],g=e[1])),Math.abs(f)>1?g:h}var p=[],q=[],r={precision:100,elapse:!1,defer:!1};q.push(/^[0-9]*$/.source),q.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source),q.push(/[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source),q=new RegExp(q.join("|"));var s={Y:"years",m:"months",n:"daysToMonth",d:"daysToWeek",w:"weeks",W:"weeksToMonth",H:"hours",M:"minutes",S:"seconds",D:"totalDays",I:"totalHours",N:"totalMinutes",T:"totalSeconds"},t=function(a,e,f){this.el=a,this.$el=k(a),this.interval=null,this.offset={},this.options=k.extend({},r),this.instanceNumber=p.length,p.push(this),this.$el.data("countdown-instance",this.instanceNumber),f&&("function"==typeof f?(this.$el.on("update.countdown",f),this.$el.on("stoped.countdown",f),this.$el.on("finish.countdown",f)):this.options=k.extend({},r,f)),this.setFinalDate(e),this.options.defer===!1&&this.start()};k.extend(t.prototype,{start:function(){null!==this.interval&&clearInterval(this.interval);var b=this;this.update(),this.interval=setInterval(function(){b.update.call(b)},this.options.precision)},stop:function(){clearInterval(this.interval),this.interval=null,this.dispatchEvent("stoped")},toggle:function(){this.interval?this.stop():this.start()},pause:function(){this.stop()},resume:function(){this.start()},remove:function(){this.stop.call(this),p[this.instanceNumber]=null,delete this.$el.data().countdownInstance},setFinalDate:function(b){this.finalDate=l(b)},update:function(){if(0===this.$el.closest("html").length){return void this.remove()}var a,e=void 0!==k._data(this.el,"events"),f=new Date;a=this.finalDate.getTime()-f.getTime(),a=Math.ceil(a/1000),a=!this.options.elapse&&a<0?0:Math.abs(a),this.totalSecsLeft!==a&&e&&(this.totalSecsLeft=a,this.elapsed=f>=this.finalDate,this.offset={seconds:this.totalSecsLeft%60,minutes:Math.floor(this.totalSecsLeft/60)%60,hours:Math.floor(this.totalSecsLeft/60/60)%24,days:Math.floor(this.totalSecsLeft/60/60/24)%7,daysToWeek:Math.floor(this.totalSecsLeft/60/60/24)%7,daysToMonth:Math.floor(this.totalSecsLeft/60/60/24%30.4368),weeks:Math.floor(this.totalSecsLeft/60/60/24/7),weeksToMonth:Math.floor(this.totalSecsLeft/60/60/24/7)%4,months:Math.floor(this.totalSecsLeft/60/60/24/30.4368),years:Math.abs(this.finalDate.getFullYear()-f.getFullYear()),totalDays:Math.floor(this.totalSecsLeft/60/60/24),totalHours:Math.floor(this.totalSecsLeft/60/60),totalMinutes:Math.floor(this.totalSecsLeft/60),totalSeconds:this.totalSecsLeft},this.options.elapse||0!==this.totalSecsLeft?this.dispatchEvent("update"):(this.stop(),this.dispatchEvent("finish")))},dispatchEvent:function(a){var d=k.Event(a+".countdown");d.finalDate=this.finalDate,d.elapsed=this.elapsed,d.offset=k.extend({},this.offset),d.strftime=n(this.offset),this.$el.trigger(d)}}),k.fn.countdown=function(){var a=Array.prototype.slice.call(arguments,0);return this.each(function(){var b=k(this).data("countdown-instance");if(void 0!==b){var f=p[b],g=a[0];t.prototype.hasOwnProperty(g)?f[g].apply(f,a.slice(1)):null===String(g).match(/^[$A-Z_][0-9A-Z_$]*$/i)?(f.setFinalDate.call(f,g),f.start()):k.error("Method %s does not exist on jQuery.countdown".replace(/\%s/gi,g))}else{new t(this,a[0],a[1])}})}});
+/* End /includes/js/jquery/plugins/jquery.countdown.min.js */
+</script>
+{%if template == 'product.v2' %}
+<script>
+  if (!$('#stockmanufacture').hasClass("nochange")) {
+  var dayofweek = moment().isoWeekday();
+  var hourofday = moment().hour();
+  var timezone = moment.tz.guess();
+  if (timezone == "America/New_York"){
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 11) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 11) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 11) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 11) {
+      $('#stockmanufacture').countdown(moment().startOf('date').add(11, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+        if (event.elapsed) {
+          $("div.shippingTimerContainer").hide();
+        }
+      });
+    }
+    else {
+      $('#stockmanufacture').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Chicago") {
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 10) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 10) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 10) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 10) {
+      $('#stockmanufacture').countdown(moment().startOf('date').add(10, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+        if (event.elapsed) {
+          
+        }
+      });
+    }
+    else {
+      $('#stockmanufacture').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + '<span>Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Denver"){
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 9) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 9) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 9) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 9) {
+      $('#stockmanufacture').countdown(moment().startOf('date').add(9, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+        if (event.elapsed) {
+        }
+      });
+    }
+    else {
+      $('#stockmanufacture').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Los_Angeles") {
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 8) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 8) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 8) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 8) {
+      $('#stockmanufacture').countdown(moment().startOf('date').add(8, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+        if (event.elapsed) {
+        }
+      });
+    }
+    else {
+      $('#stockmanufacture').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        } else {
+          $('#stockmanufacture').addClass("ship_countdown");
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+        }
+        if (event.elapsed) {
+        }
+        
+      });
+    }
+  }
+  else {
+  };
+  };
+</script>
+{% elsif template == 'cart' %}
+<script>
+  var dayofweek = moment().isoWeekday();
+  var hourofday = moment().hour();
+  var timezone = moment.tz.guess();
+  if (timezone == "America/New_York"){
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 11) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 11) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 11) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 11) {
+      $('.cartship').countdown(moment().startOf('date').add(11, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+        if (event.elapsed) {
+          $("div.shippingTimerContainer").hide();
+        }
+      });
+    }
+    else {
+      $('.cartship').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Chicago") {
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 10) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 10) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 10) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 10) {
+      $('.cartship').countdown(moment().startOf('date').add(10, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+        if (event.elapsed) {
+          
+        }
+      });
+    }
+    else {
+      $('.cartship').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Denver"){
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 9) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 9) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 9) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 9) {
+      $('.cartship').countdown(moment().startOf('date').add(9, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+        if (event.elapsed) {
+        }
+      });
+    }
+    else {
+      $('.cartship').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Los_Angeles") {
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 8) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 8) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 8) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 8) {
+      $('.cartship').countdown(moment().startOf('date').add(8, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+        if (event.elapsed) {
+        }
+      });
+    }
+    else {
+      $('.cartship').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships <strong>FREE ' + daydescriptor +'</strong>.'));
+          $( ".cartship" ).show();	
+        }
+        if (event.elapsed) {
+        }
+        
+      });
+    }
+  }
+  else {
+  };
+</script>
+{% else%}
+<script>
+  var dayofweek = moment().isoWeekday();
+  var hourofday = moment().hour();
+  var timezone = moment.tz.guess();
+  if (timezone == "America/New_York"){
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 11) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 11) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 11) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 11) {
+      $('.headerShip').countdown(moment().startOf('date').add(11, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+        if (event.elapsed) {
+          $("div.shippingTimerContainer").hide();
+        }
+      });
+    }
+    else {
+      $('.headerShip').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Chicago") {
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 10) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 10) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 10) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 10) {
+      $('.headerShip').countdown(moment().startOf('date').add(10, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+        if (event.elapsed) {
+          
+        }
+      });
+    }
+    else {
+      $('.headerShip').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Denver"){
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 9) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 9) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 9) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 9) {
+      $('.headerShip').countdown(moment().startOf('date').add(9, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+        if (event.elapsed) {
+          
+        }
+      });
+    }
+    else {
+      $('.headerShip').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+      });
+    }
+  }
+  else if (timezone == "America/Los_Angeles") {
+    if(dayofweek >= 1 && dayofweek <= 4) {
+      if (hourofday < 8) {
+        daydescriptor ="Tuesday";
+      }
+      else {
+        daydescriptor = "Tuesday";
+      };
+    }
+    else if (dayofweek == 5 && hourofday < 8) {
+      daydescriptor ="today";
+    }
+    else if (dayofweek == 5 && hourofday >= 8) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 6) {
+      daydescriptor ="Tuesday";
+    }
+    else if (dayofweek == 7) {
+      daydescriptor ="Tuesday";
+    }
+    else {};
+    if (moment().hour() < 8) {
+      $('.headerShip').countdown(moment().startOf('date').add(8, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+        if (event.elapsed) {
+        }
+      });
+    }
+    else {
+      $('.headerShip').countdown(moment().endOf('date').add(0, 'h').toDate(), function(event) {
+        if (event.offset.hours < 1) {
+          var $this = $(this).html(event.strftime('' + 'Order within <strong>%-M min</strong> ' + '<strong>%S sec</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        } else {
+          var $this = $(this).html(event.strftime('' + 'Order within ' + '<strong>%-H hr</strong> ' + '<strong>%-M min</strong> ' + 'and it ships FREE ' + daydescriptor +'.'));
+          $( ".headerShip" ).show();
+        }
+        if (event.elapsed) {
+        }
+        
+      });
+    }
+  }
+  else {
+  };
+</script>
+{% endif %}

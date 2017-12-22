@@ -1,0 +1,643 @@
+
+
+<section class="collection-display columns accessories-upsell-cart">
+  <style>
+    .qty-select {
+      -webkit-appearance: none;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 100%;
+    max-width: 50px;
+      padding-top:13px;
+      padding-bottom:12px;
+    }
+    .upsell__product {
+      width: calc(32% - 14px);
+      display: inline-block;
+      margin-right: 1.3%;
+      margin-bottom: 28px;
+      vertical-align:top;
+    }
+    .upsell__product img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    .upsell__product .uppercopy {
+      border-bottom: 3px solid #e5e5e5;
+      padding-bottom: 5px;
+      margin-top:10px;
+      min-height:25px;
+      
+    }
+    .upsell__product h3 {
+      color: #386cb0;
+      font-weight: 800;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    .upsell__product .price {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 7px 0;
+      margin: 5px 0 10px;
+      font-size: 15px;
+      color:#202020;
+      font-weight:bold;
+    }
+    .upsell__product p {
+      font-size:12px;
+    }
+    .upsell__product .s-hidden {
+      visibility:hidden;
+    }
+    .upsell__product h4 {
+      
+      color: #202020;
+      font-weight: bold;
+    }
+    .upsell__product .form {
+      margin-top:10px;
+    }
+    .upsell__product .topcopy {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 7px 0;
+      margin: 5px 0 10px; 
+      min-height:22px;
+    }
+    .upsell__product .lowercopy {
+      margin-bottom:10px;
+      min-height:90px;
+    }
+    .upsell__product .added-to-cart {
+      background:#454545;
+    }
+    .upsell__product .added-to-cart:hover {
+      color:#fff;
+      background:#454545;
+      border: 3px solid transparent;
+     
+    }  
+    .hideupsell {
+      display:none !important ;
+      visibility:hidden;
+    }
+    .options {
+      max-height: 366px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    .landing-page #content .collection-display.columns .collection-display__product .collection-display__image img{
+      margin-top:25px;
+    }
+    @media (max-width: 1300px) {
+      .upsell__product {
+        width: calc(32% - 14px);
+        display: inline-block;
+      }
+    }
+    @media (max-width: 900px) {
+      .upsell__product {
+        width: calc(49% - 14px);
+        display: inline-block;
+      }
+    }
+    @media (max-width: 600px) {
+      .upsell__product {
+        width: calc(100% - 14px);
+        display: inline-block;
+        margin-right:0;
+      }
+	  .landing-page #content .collection-display__heading {
+		  font-size:26px;
+	  }
+	  .landing-page #content .collection-display__subheading {
+		  font-size:26px;
+	  }
+    }
+	@media (max-width: 500px) {
+			  .landing-page #content .collection-display__heading {
+		  font-size:20px;
+	  }
+	  .landing-page #content .collection-display__subheading {
+		  font-size:20px;
+	  }
+	  .product-accessories #content .upsell {
+		  float:none;
+		  margin:0;
+	  }
+	  .product-accessories #content .collection-display__headings p {
+		  font-size:14px;
+        width:100%
+	  }
+	  .collection-display__headings {
+		  margin-top:20px;
+	  }
+      .upsell-container {
+        padding-top:25px;
+      }
+		
+	}
+    .upsell_heading {
+      font-family:'Open Sans', arial;
+      font-weight:800;
+      border-bottom:solid 1px #386cb0;
+      margin-bottom:10px;
+      font-size:20px;
+    }
+    .upsell_subheading {
+      font-weight:normal;
+    }
+    .upsell-display__subheading {
+      font-family:'Open Sans', arial;
+      font-weight:normal;
+      font-size:20px;
+    }
+    .collection-display__product-copy img {
+  object-fit: cover;
+  height:275px;
+}
+    .upsell-qty-message {
+      text-align:center;
+      font-style:italic;
+      font-size:14px;
+      float:none;
+      clear:both
+    }
+    .upsell-qty-container {
+      text-align:center;
+      padding:0px;
+      float:left;
+      width:90px;
+      
+    }
+    .upsell-add {
+      overflow:hidden;
+    }
+    .upsell-qty-label {
+      font-size:12px;
+    }
+    .svs-buy {
+      margin-bottom:10px;
+      margin-top:0px
+    }
+  </style>
+  <div class="wrap">
+    <a href="/cart" class="upsell" onclick="ga('send', 'event', 'Upsell', 'Click', 'Continue to Cart - Top');">Continue to Cart</a>
+    <div class="collection-display__headings">
+      <h2 class="upsell_heading"><span id="cart-item-name"></span> <span class="upsell_subheading">Has Been Added to Your Cart</span></h2>
+      <p>You’re one step closer to enhancing your home audio system with SVS. Click continue to add shipping and payment details, provide delivery instructions and to ask any final questions you might have about your order. </p>
+      <h4 class="upsell-display__subheading">Need cables or other accessories to complete your system?</h4>
+      <p>SVS audio accessories unleash your system’s full potential with uncompromising design and performance at a remarkable value.</p>
+    </div>
+    
+    <div class="upsell-container">
+      
+      <div class="upsell__product hideupsell" id="soundpathrcasub">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-rca-audio-interconnect-cable" onclick="ga('send', 'event', 'Upsell', 'Click', 'Subwoofer RCA Cable Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Pristine Subwoofer Connections</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_rca_single.jpg?v=1475248789" alt="SoundPath RCA Audio Interconnect Cable">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath RCA Audio Interconnect Cable</h3>
+                  </div>
+                  <div class="price">$24.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Unleash your system’s full potential by ensuring absolute purity of the signal transfer between subwoofers and an AV receiver or preamplifier.</p>
+              <div class="form">
+              <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                    <option value="11658765318" data-price="24.99">1 Meter ($24.99)</option>
+                   	<option value="11658762822" data-price="29.99">2 Meter ($29.99)</option>
+                   	<option value="11658765702" data-price="34.99">3 Meter ($34.99)</option>
+                    <option value="11658765190" data-price="39.99">5 Meter ($39.99)</option>
+                 	<option value="11658765510" data-price="44.99">8 Meter ($44.99)</option>
+                    <option value="11658762630" data-price="49.99">12 Meter ($49.99)</option>
+                   	<option value="11658765830" data-price="59.99">15 Meter ($59.99)</option>
+                </select>
+              </div>
+              </div>
+
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+              <div class="upsell-add"><a href="#" data-product-id="11658765318" class="svs-buy add-upsell">Add to Cart</a></div>
+
+              <div class="upsell-qty-message"></div>
+        </div>
+      </div>
+      
+      <div class="upsell__product hideupsell" id="soundpathiso4">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-subwoofer-isolation-system?variant=9569949443" onclick="ga('send', 'event', 'Upsell', 'Click', 'SoundPath Isolation System Link (4ft)');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Reduce Room Rattle and Improve Bass</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/iso_feet_installed_alt_2.jpg?v=1452545338" alt="SoundPath Subwoofer Isolation System">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath Subwoofer Isolation System</h3>
+                  </div>
+                  <div class="price">$49.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>The SVS SoundPath Subwoofer Isolation System works with nearly every subwoofer brand and model to improve bass performance while reducing floor and wall vibrations, noise artifacts and complaints from neighbors or roommates.</p>
+              <div class="form">
+              <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                <option value="10670912515" data-price="49.99" selected="selected">Default Title</option>
+              </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="10670912515" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+      <div class="upsell__product hideupsell" id="sublink">
+            <div class="collection-display__product-copy">
+                <a href="/products/dayton-audio-wave-link">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Wirelessly Connect Your Subwoofer</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/300-594_HR_0.jpg" alt="Wireless Subwoofer System by Dayton (Sub-Link 2.4 GHz)">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>Wireless Subwoofer System from Dayton</h3>
+                  </div>
+                  <div class="price">$89.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>2.4 GHZ transmitter/receiver system for wirelessly connecting any powered subwoofer to any source with line-level audio output such as an A/V receiver or HDTV.</p>
+              <div class="form">
+              <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                <option value="38583791436" data-price="89.99" selected="selected">Default Title</option>
+              </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="38583791436" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div> 
+      
+      <div class="upsell__product hideupsell" id="soundpathiso6">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-subwoofer-isolation-system?variant=9569949443" onclick="ga('send', 'event', 'Upsell', 'Click', 'SoundPath Isolation System Link (6ft)');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Reduce Room Rattle and Improve Bass</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/iso_feet_installed_alt_2.jpg?v=1452545338" alt="SoundPath Subwoofer Isolation System">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath Subwoofer Isolation System</h3>
+                  </div>
+                  <div class="price">$69.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>The SVS SoundPath Subwoofer Isolation System works with nearly every subwoofer brand and model to improve bass performance while reducing floor and wall vibrations, noise artifacts and complaints from neighbors or roommates.</p>
+              <div class="form">
+              <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                <option value="10670941891" data-price="49.99" selected="selected">Default Title</option>
+              </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="10670941891" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+     
+      
+      
+      
+      <div class="upsell__product hideupsell" id="rcay">
+            <div class="collection-display__product-copy">
+                <a href="/products/gold-rca-y-adapter" onclick="ga('send', 'event', 'Upsell', 'Click', 'RCA Y Adapter Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Connect 2 RCA Cables to 1 RCA Input</h4>
+                  </div>
+                  <img src="//cdn.shopify.com/s/files/1/0921/3560/products/RCASplitterAdditional1ZOOM.jpg?v=1445983079" alt="Gold RCA Y Adapter">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>Gold RCA Y Adapter</h3>
+                  </div>
+                  <div class="price">$12.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Premium gold plated RCA splitter lets you connect two RCA cables into a single RCA output jack. Great for running dual subwoofers when AV receiver only has 1 subwoofer input.</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                    <option value="9228206339" data-price="12.99">Default Title</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="9228206339" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+
+   <!--   <div class="upsell__product hideupsell" id="soundpathrcaspeak">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-rca-audio-interconnect-cable">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Pristine AV Component Connections</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_rca_single.jpg?v=1475248789" alt="SoundPath RCA Audio Interconnect Cable">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath RCA Audio Interconnect Cable</h3>
+                  </div>
+                  <div class="price">$24.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Unleash your system’s full potential by ensuring absolute purity of the signal transfer between audio and home theater system components.</p>
+              <div class="form">
+              <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                    <option value="11658765318" data-price="24.99">1 Meter ($24.99)</option>
+                    <option value="11658762822" data-price="29.99">2 Meter ($29.99)</option>
+                    <option value="11658765702" data-price="34.99">3 Meter ($34.99)</option>
+                    <option value="11658765190" data-price="39.99">5 Meter ($39.99)</option>
+                    <option value="11658765510" data-price="44.99">8 Meter ($44.99)</option>
+                    <option value="11658762630" data-price="49.99">12 Meter ($49.99)</option>
+                    <option value="11658765830" data-price="59.99">15 Meter ($59.99)</option>
+                </select>
+              </div>
+              </div>
+              <a href="#" data-product-id="11658765318" class="svs-buy add-upsell">Add to Cart</a>
+        </div>
+      </div> -->
+     
+      <div class="upsell__product hideupsell" id="soundpathultracable">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-ultra-speaker-cable" onclick="ga('send', 'event', 'Upsell', 'Click', 'Ultra Speaker Cable Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Custom Audiophile-Grade Speaker Cable</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_ultra_complete.jpg?v=1448914805" alt="SoundPath Ultra Speaker Cable">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath Ultra Speaker Cable</h3>
+                  </div>
+                  <div class="price">$43.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Hand-soldered by our craftsmen to any length you desire with custom terminations, SoundPath Ultra Speaker cables pass the full power of any AV receiver or amplifier with high fidelity while rejecting all interference.</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                  <option value="11468152838" data-price="43.99">4 Feet Banana ($43.99)</option>
+                  <option value="11468152902" data-price="43.99">4 Feet Spade ($43.99)</option>
+                  <option value="11468152966" data-price="43.99">4 Feet Banana/Spade Mix ($43.99)</option>
+                  <option value="11468153030" data-price="45.99">6 Feet Banana ($45.99)</option>
+                  <option value="11468153094" data-price="45.99">6 Feet Spade ($45.99)</option>
+                  <option value="11468153158" data-price="45.99">6 Feet Banana/Spade Mix ($45.99)</option>
+                  <option value="11497537030" data-price="47.99">8 Feet Banana ($47.99)</option>
+                  <option value="11497714758" data-price="47.99">8 Feet Spade ($47.99)</option>
+                  <option value="11497790342" data-price="47.99">8 Feet Banana/Spade Mix ($47.99)</option>
+                  <option value="11497546502" data-price="49.99">10 Feet Banana ($49.99)</option>
+                  <option value="11497729030" data-price="49.99">10 Feet Spade ($49.99)</option>
+                  <option value="11497793926" data-price="49.99">10 Feet Banana/Spade Mix ($49.99)</option>
+                  <option value="11497551430" data-price="54.99">12 Feet Banana ($54.99)</option>
+                  <option value="11497734598" data-price="54.99">12 Feet Spade ($54.99)</option>
+                  <option value="11500171846" data-price="54.99">12 Feet Banana/Spade Mix ($54.99)</option>
+                  <option value="11497559622" data-price="59.99">15 Feet Banana ($59.99)</option>
+                  <option value="11497740102" data-price="59.99">15 Feet Spade ($59.99)</option>
+                  <option value="11497794886" data-price="59.99">15 Feet Banana/Spade Mix ($59.99)</option>
+                  <option value="11497573958" data-price="64.99">20 Feet Banana ($64.99)</option>
+                  <option value="11497753222" data-price="64.99">20 Feet Spade ($64.99)</option>
+                  <option value="11497800774" data-price="64.99">20 Feet Banana/Spade Mix ($64.99)</option>
+                  <option value="11497580742" data-price="69.99">25 Feet Banana ($69.99)</option>
+                  <option value="11497761478" data-price="69.99">25 Feet Spade ($69.99)</option>
+                  <option value="11497803846" data-price="69.99">25 Feet Banana/Spade Mix ($69.99)</option>
+                  <option value="11497590214" data-price="74.99">30 Feet Banana ($74.99)</option>
+                  <option value="11497764742" data-price="74.99">30 Feet Spade ($74.99)</option>
+                  <option value="11497807302" data-price="74.99">30 Feet Banana/Spade Mix ($74.99)</option>
+                  <option value="11497596998" data-price="79.99">35 Feet Banana ($79.99)</option>
+                  <option value="11497767878" data-price="79.99">35 Feet Spade ($79.99)</option>
+                  <option value="11497812742" data-price="79.99">35 Feet Banana/Spade Mix ($79.99)</option>
+                  <option value="11497604614" data-price="84.99">40 Feet Banana ($84.99)</option>
+                  <option value="11497770374" data-price="84.99">40 Feet Spade ($84.99)</option>
+                  <option value="11497775430" data-price="84.99">40 Feet Banana/Spade Mix ($84.99)</option>
+                  <option value="11497626566" data-price="90.99">45 Feet Banana ($90.99)</option>
+                  <option value="11497775430" data-price="90.99">45 Feet Spade ($90.99)</option>
+                  <option value="11497844230" data-price="90.99">45 Feet Banana/Spade Mix ($90.99)</option>
+                  <option value="11497636806" data-price="94.99">50 Feet Banana ($94.99)</option>
+                  <option value="11497781062" data-price="94.99">50 Feet Spade ($94.99)</option>
+                  <option value="11497919558" data-price="94.99">50 Feet Banana/Spade Mix ($94.99)</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="3934422086" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+      <div class="upsell__product hideupsell" id="soundpathonecable">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-one-speaker-cable" onclick="ga('send', 'event', 'Upsell', 'Click', 'SoundPath One Speaker Cable Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Premium Bulk Speaker Wire</h4>
+                  </div>
+
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_one_spool.png?v=1449693373" alt="SoundPath One Speaker Cable">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath One Speaker Cable</h3>
+                  </div>
+                  <div class="price">$29.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>High grade 14-gauge cables come in 50 or 100 foot spools and feature electromagnetic shielding for noise isolation and premium build quality that outclasses anything anywhere near their price range.</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                  <option value="11647071558" data-price="29.99">50 Foot Spool ($29.99)</option>
+                  <option value="11647071430" data-price="54.99">100 Foot Spool ($54.99)</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row"> 
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="3970896134" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <div class="upsell__product hideupsell" id="soundpathcableterm">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-speaker-cable-terminals" onclick="ga('send', 'event', 'Upsell', 'Click', 'SoundPath Cable Terminals Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Secure and Stable Speaker Connections</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/Spade.jpg?v=1449503019" alt="SoundPath Speaker Cable Terminals">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath Speaker Cable Terminals</h3>
+                  </div>
+                  <div class="price">$9.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Maintain strong and steady electrical connection between speaker cables and binding posts, AV receivers and multi-channel amplifiers.</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                    <option value="11643725702" data-price="9.99">Spade ($9.99)</option>
+                    <option value="11643725766" data-price="9.99">Banana ($9.99)</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="3970764614" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+      <div class="upsell__product hideupsell" id="ubsf26">
+            <div class="collection-display__product-copy">
+                <a href="/products/ultra-bookshelf-stand" onclick="ga('send', 'event', 'Upsell', 'Click', 'Ultra Bookshelf Stand Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Premium Multi-Channel Speaker Stands</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0962/5374/products/UltraBookshelfStandZOOM.jpeg?v=1447433089" alt="Premium Bookshelf Speaker Stands by Sanus (UB-SF26)">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>Speaker Stands by Sanus</h3>
+                  </div>
+                  <div class="price">$149.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Rugged, well-designed speakers stands for bookshelf speaker models</p>
+              <div class="form">
+              <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                    <option value="9229350339" data-price="149.99">Default Title</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="9229350339" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+      <div class="upsell__product hideupsell" id="ucsfc18">
+            <div class="collection-display__product-copy">
+                <a href="/products/ultra-center-stand" onclick="ga('send', 'event', 'Upsell', 'Click', 'Ultra Center Stand Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Premium Multi-Channel Speaker Stands</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/UltraCenterStandZOOM.jpg?v=1445983113" alt="Premium Center Speaker Stands by Sanus (UC-SFC18)">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>Speaker Stands by Sanus</h3>
+                  </div>
+                  <div class="price">$129.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Rugged, well-designed speakers stands for center channel speaker models</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                  <option value="9229361347" data-price="129.99">Default Title</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="9229361347" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+   <!--   <div class="upsell__product hideupsell" id="soundpathbracket">
+            <div class="collection-display__product-copy">
+                <a href="/products/soundpath-pivoting-wall-ceiling-bracket" onclick="ga('send', 'event', 'Upsell', 'Click', 'SoundPath Pivoting Wall Bracket Link');">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Easy and Flexible Speaker Mounting</h4>
+                  </div>
+                  <img src="//cdn.shopify.com/s/files/1/0921/3560/products/soundpath_pivoting_bracket_productshot.jpg?v=1465925508" alt="SoundPath One Speaker Cable">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>SoundPath Pivoting Wall/Ceiling Bracket</h3>
+                  </div>
+                  <div class="price">$39.99<span> pair</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>The most flexible, convenient and reliable way to hang speakers from a wall or ceiling, the bracket’s unique, omnidirectional design allows speakers to be precisely positioned for direct radiation.</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                  <option value="10286171331" data-price="39.99">Default Title</option>
+                </select>
+              </div>
+              </div>
+              <a href="#" data-product-id="3537991491" class="svs-buy add-upsell">Add to Cart</a>
+        </div>
+      </div>  -->       
+      
+      <div class="upsell__product hideupsell" id="efsatb">
+            <div class="collection-display__product-copy">
+                <a href="/products/prime-satellite-stand">
+                  <div class="topcopy" data-match-height="group-name1">
+                  <h4>Premium Multi-Channel Speaker Stands</h4>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0921/3560/products/PrimeSatelliteStandZOOM.jpg?v=1445983139" alt="Premium Satellite Speaker Stands by Sanus (EF-SATB)">
+                  <div class="uppercopy" data-match-height="group-name2">
+                  <h3>Speaker Stands by Sanus</h3>
+                  </div>
+                  <div class="price">$79.99<span> EA</span></div>
+              </a>
+              <div class="lowercopy" data-match-height="group-name3">
+              <p>Rugged, well-designed speakers stands for satellite speaker models</p>
+              <div class="form">
+                <select name="variants" class="selected-variant s-hidden" id="product_variants">
+                    <option value="9230943235" data-price="79.99">Default Title</option>
+                </select>
+              </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+              <div class="upsell-qty-container"><span class="upsell-qty-label">Qty: </span><input class="qty-select" type="number" value="1" onchange="clearMessage()" min="1"></div>
+                  <div class="upsell-add"><a href="#" data-product-id="9230943235" class="svs-buy add-upsell">Add to Cart</a></div>
+              <div class="upsell-qty-message"></div>
+                </div>
+              </div>
+        </div>
+      </div> 
+      
+
+    </div>
+    
+    <a href="/cart" class="learn-more bottom-btn" onclick="ga('send', 'event', 'Upsell', 'Click', 'Continue to Cart - Bottom');">Continue to Cart</a>
+
+  </div>
+</section>
+
+<script>
+  function clearMessage() {
+$(event.target).closest('.upsell__product').find('.upsell-qty-message').hide()
+
+
+  }
+</script>

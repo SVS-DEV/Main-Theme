@@ -1,0 +1,160 @@
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.description %}
+
+<section class="full-column first-section">
+	<div class="wrap gift-guide-intro">
+
+  	<h2 class="full-column__heading"> An Honorary Degree in Immersive Sound  </h2>
+
+		<p>
+			Graduation gifts celebrate the knowledge and maturity imparted from school and should be symbolic of your graduate’s future journey. For music, movie and video game lovers, a serious audio system can be a completely unexpected gift that keeps giving through their professional life while honoring the step towards adulthood.
+		</p>
+		<p> Struggling with gift ideas for your graduate? Below are some recommendations worthy of throwing your cap in the air. </p>
+	</div>
+</section>
+
+<!--
+<section class="full-column bg-grey">
+	<div class="wrap">
+		<h5 class="heading-with-underline"> NEW! SVS SoundPath Audio Accessories </h5>
+		<img src="{{ 'soundpath_accessories.jpg' | asset_url }}">
+
+		<p> Perfect Stocking Stuffers for Audio Buffs  – <strong>NEW! SoundPath Accessories</strong> </p>
+		<p class="gg-margin-bot"> <strong>Ideal for:</strong> Anyone who desires high end audio performance but doesn’t want to overpay or put the integrity of their system at risk. </p>
+		<p class="sp-price"> From $9.99 </p>
+		<a href="/pages/soundpath" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - SoundPath Audio Accessories Link');" class="learn-more">Learn More</a>
+	</div>
+</section>
+-->
+
+<section class="two-up white-bg">
+	<div class="wrap">
+		<div class="column">
+			<a href="/products/prime-satellite-5-1" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Prime 5.1 Image Link');"><img src="{{ 'prime_sat_five_one_gloss.png' | asset_url }}" alt="" class="float-right gg-prime-5-1"></a>
+		</div>
+
+		<div class="column">
+			<h5 class="two-up__subheading"> The “Surrounded by Greatness” </h5>
+			<p>
+				The Prime Satellite 5.1 Speaker System delivers an astonishingly realistic and immersive listening experience from a super compact package. Authoritative bass, amazingly accurate surround effects, crystal clear dialogue and cinema caliber dynamics make this the perfect system for anyone who’s ready to take on the world.
+			</p>
+			<p class="sp-price"> From $999.99 </p>
+			<a href="/products/prime-satellite-5-1" class="learn-more grey" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Prime 2.1 Learn More Link');">Learn More</a>
+			<form method="post" name="addtocart" action="/cart/add">
+    		<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        <a href='#' class="learn-more" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+  		</form>
+
+		</div>
+
+	</div>
+</section>
+
+<section class="two-up">
+	<div class="wrap">
+		<div class="column">
+			<h5 class="two-up__subheading"> The “Aspiring Audiophile” - Ultra Bookshelf Speakers </h5>
+			<p>
+				The Ultra Bookshelf Speakers bring every nuance and detail of music to life and offer an expansive soundstage with effortless output from the deepest lows to sparkling highs. Easy to set-up in a music or home theater system, they’re perfect for the graduate who’s discovered vinyl or just always seems to be listening to music.
+			</p>
+			<p class="sp-price"> From $499.99 </p>
+			<a href="/products/ultra-bookshelf" class="learn-more grey" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Ultra Bookshelf Learn More Link');">Learn More</a>
+			<form method="post" name="addtocart" action="/cart/add">
+				<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+				<a href='#' class="learn-more " onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+			</form>
+		</div>
+
+		<div class="column">
+			<a href="/products/ultra-bookshelf" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Ultra Bookshelf Image Link');"><img src="{{ 'grad-guide-ultra-book.jpg' | asset_url }}" alt="" class="gg-prime-book"></a>
+		</div>
+	</div>
+</section>
+
+<section class="two-up white-bg">
+	<div class="wrap">
+		<div class="column">
+			<a href="/products/prime-tower" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Prime Tower Image Link');"><img src="//cdn.shopify.com/s/files/1/0921/3560/t/30/assets/looking-for-more-prime.jpg?13923418329151065152" alt="" class="float-right gg-prime-5-1"></a>
+		</div>
+
+		<div class="column">
+			<h5 class="two-up__subheading"> The “Over-Achiever” – Prime Tower Speakers  </h5>
+			<p>
+				A sonic achievement that stands up to the best speakers in the world, the Prime Tower Speakers deliver a truly high end listening experience with incredible dynamics, detail and low-frequency extension, at a fraction of the cost of competitive floorstanding speakers. Ideal for anyone who can appreciate class-leading sound quality and value.
+			</p>
+			<p class="sp-price"> From $499.99 </p>
+			<a href="/products/prime-tower" class="learn-more grey" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Prime Tower Learn More Link');">Learn More</a>
+			<form method="post" name="addtocart" action="/cart/add">
+				<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+				<a href='#' class="learn-more" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+			</form>
+		</div>
+
+	</div>
+</section>
+
+<section class="two-up">
+	<div class="wrap">
+		<div class="column">
+			<h5 class="two-up__subheading"> The “Master’s Degree in Bass” - 2000 Series Subwoofers </h5>
+			<p>
+				The top-selling SB-2000 Subwoofer brings out the very best in any audio system by laying a foundation of deep, accurate, detailed, and effortlessly powerful bass, at an unbeatable price. Compact enough for nearly any room, the SB-2000 is perfect for the someone who’s taken an interest in speakers but has yet to experience a truly immersive audio system.
+			</p>
+
+			<p class="sp-price"> From $699.99 </p>
+			<a href="/products/sb-2000" class="learn-more grey" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - SB-2000 Learn More Link');">Learn More</a>
+			<form method="post" name="addtocart" action="/cart/add">
+				<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+				<a href='#' class="learn-more" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+			</form>
+		</div>
+
+		<div class="column">
+			<a href="/products/sb-2000" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - SB-2000 Image Link');"><img src="//cdn.shopify.com/s/files/1/0921/3560/t/30/assets/homepage_sb-2000_tower.jpg?13923418329151065152" alt="" class="gg-prime-tower"></a>
+		</div>
+
+	</div>
+</section>
+
+<section class="two-up white-bg">
+	<div class="wrap">
+		<div class="column">
+			<a href="/products/sb13-ultra" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - SB13-Ultra Image Link');"><img src="{{ 'grad-guide-ultra13.jpg' | asset_url }}" alt="" class="gg-sb13 float-right"></a>
+		</div>
+
+		<div class="column">
+			<h5 class="two-up__subheading"> The “PhD in Bass” - SB13-Ultra Subwoofer </h5>
+			<p>
+				The most reviewed and awarded subwoofer on the planet, and THE chosen one among serious home theater and music fans for its astonishing speed, pinpoint accuracy, deep, distortion-free bass, and hair-raising low frequency effects, the SB13-Ultra subwoofer is the ultimate gift for a graduate whose next step is sonic greatness.
+			</p>
+			<p class="sp-price"> From $1,599.99 </p>
+			<a href="/products/sb13-ultra" class="learn-more grey" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - SB13-Ultra Learn More Link');">Learn More</a>
+			<form method="post" name="addtocart" action="/cart/add">
+				<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+				<a href='#' class="learn-more" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+			</form>
+		</div>
+
+	</div>
+</section>
+
+<section class="two-up">
+	<div class="wrap">
+		<div class="column">
+			<h5 class="two-up__subheading"> The “Valedictorian” - Ultra Tower Surround System </h5>
+			<p>
+				A system that will bring decades of listening fun and play the soundtrack for life’s future milestones, the SVS Ultra Tower package delivers a deeply immersive and entertaining surround sound experience that outclasses the local cinema and concert venue. Ideal for those not satisfied with anything but the best.
+			</p>
+			<p class="sp-price"> From $3,699.99 </p>
+			<a href="/products/ultra-tower-surround-package" class="learn-more grey" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Ultra Tower Surround System Learn More Link');">Learn More</a>
+			<form method="post" name="addtocart" action="/cart/add">
+				<input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+				<a href='#' class="learn-more" onclick="$(this).closest('form').submit(); ga('send', 'event', 'Collection', 'Click', 'Buy Now - {{ product.title }}'); return false; ">Add to Cart</a>
+			</form>
+		</div>
+
+		<div class="column">
+			<a href="/products/ultra-tower-surround-package" onClick="ga('send', 'event', 'Grad', 'Click', 'Gift Guide - Ultra Tower Surround System Image Link');"><img src="{{ '130825_UltraTowerSurround_06_flat.png' | asset_url }}" alt="" class="gg-sb13"></a>
+		</div>
+
+	</div>
+</section>

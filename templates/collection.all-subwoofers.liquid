@@ -1,0 +1,131 @@
+{% assign specs_setting = false %}
+{% assign 1000_collection = '1000-series' %}
+{% assign 2000_collection = '2000-series' %}
+{% assign plus_collection = 'plus-series' %}
+{% assign ultra_collectionsub = 'ultra-series-subwoofers' %}
+{% assign prime_collection = 'prime-series' %}
+{% assign ultra_collection = 'ultra-series' %}
+{% assign svs_accessories = 'accessories' %}
+{% assign prime_packages = 'prime-packages' %}
+{% assign ultra_packages = 'ultra-systems' %}
+{% assign dual_subwoofers_1000 = '1000-series-dual-subwoofers' %}
+{% assign dual_subwoofers_2000 = '2000-series-dual-subwoofers' %}
+{% assign dual_subwoofers_plus = 'plus-series-dual-subwoofers' %}
+{% assign dual_subwoofers_ultra = 'ultra-series-dual-subwoofers' %}
+
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , second_heading: collection.metafields.header.second_heading , description_heading: collection.metafields.header.description_heading, main_description: collection.description %}
+
+{% if collection.handle contains 'dual' %}
+  
+  <section class="subwoofers-subpage__summary">
+    <div class="wrap">
+      <ul>
+       {{ collection.metafields.global.special_summary }}
+      </ul>
+    </div>
+  </section>
+
+  {% assign 1000_collection = '1000-series-dual-subwoofers' %}	
+  {% assign 2000_collection = '2000-series-dual-subwoofers' %}
+  {% assign plus_collection = 'plus-series-dual-subwoofers' %}
+{% assign ultra_collectionsub = 'ultra-series-dual-subwoofers' %}
+
+{% endif %}
+  
+
+<section class="collection grid">
+
+  <div class="wrap">
+    <h2 class="collection__subheading">1000 Series Subwoofers</h2>
+	<div>
+    {% for product in collections[1000_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    </div>
+    
+     <h2 class="collection__subheading">2000 Series Subwoofers</h2>
+	<div>
+    {% for product in collections[2000_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    </div>
+    
+     <h2 class="collection__subheading">Plus Series Subwoofers</h2>
+	<div>
+    {% for product in collections[plus_collection].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    </div>
+    
+    <h2 class="collection__subheading">Ultra Series Subwoofers</h2>
+	
+    <div>
+    {% for product in collections[ultra_collectionsub].products %}
+      {% include 'product-loop' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+    </div>
+
+
+  
+  </div>
+  
+  <!--{% include 'bill-of-rights' %} -->
+
+
+</section>
+<div class="wk_compare_products_block"></div>
+<script>
+function comparedeny(){
+  var nocomparelist = "";
+  var $checkbox = $(this);
+$.each($('.wk_title'), function () { 
+  
+  if($(this).is(':contains("Prime Tower")'))  {
+	  nocomparelist += 'Prime Tower <br>'
+			}
+			else if($(this).is(':contains("Prime Bookshelf")')) {
+				nocomparelist += 'Prime Bookshelf <br>'
+				}
+				else if($(this).is(':contains("Prime Center")')) {
+					nocomparelist += 'Prime Center <br>'
+					}
+					else if($(this).is(':contains("Prime Satellite")')) {
+						nocomparelist += 'Prime Satellite <br>'
+						}
+						else if($(this).is(':contains("Ultra Tower")')) {
+							nocomparelist += 'Ultra Tower <br>'
+							}
+							else if($(this).is(':contains("Ultra Bookshelf")')) {
+								nocomparelist += 'Ultra Bookshelf <br>'
+								}
+								else if($(this).is(':contains("Ultra Center")')) {
+									nocomparelist += 'Ultra Center <br>'
+									}
+									else if($(this).is(':contains("Ultra Surround")')) {
+										nocomparelist += 'Ultra Surround <br>'
+										}
+										else if($(this).is(':contains("Prime Elevation")')) {
+											nocomparelist += 'Prime Elevation <br>'
+											}
+
+});
+  if (nocomparelist !=""){
+    WK_PC.showPopup('Oops! We’re not able to compare speakers and subwoofers','Please remove:<br><br>' + nocomparelist);
+    setTimeout(function() {
+      $checkbox.removeAttr('checked');
+    }, 0);
+    event.preventDefault();
+    event.stopPropagation();
+	}
+};
+	var checkExist = setInterval(function() {
+		if ($(".wk_product_comparison input[type='checkbox']").length) {
+			
+			$(".wk_product_comparison input[type='checkbox']").click(function(){ comparedeny(); });
+			clearInterval(checkExist);
+			}
+			}, 500); // check every 100ms
+  
+  $( ".wk_image" ).before( "<span class='clearall' onclick='wkErase()' id='clearall' style='color:#ff4500;cursor:pointer'>Remove all products</span>" );
+			
+</script>

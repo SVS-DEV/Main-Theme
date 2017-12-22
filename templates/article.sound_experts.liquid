@@ -1,0 +1,127 @@
+<style>
+  .featured-systems__posts {
+    margin-top:30px
+  }
+  .featured-systems__posts img {
+    min-width: 550px;
+    float: none !important;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+  .featured-systems__posts a {
+    overflow:hidden;
+  }
+</style>
+{% assign blog-title = article.metafields.global.header-title %}
+
+<div class="blog-post-view__header"{% if article.image %} style="background-image: url('{{ article | img_url: 'master' }}');"{% endif %}>
+    <div class="blog-post-view__header-copy">
+          	{% if blog-title != blank %}
+            	
+        <h1>{{ blog-title }}</h1>
+          	{% else %}
+          		
+        <h1>{{ article.title }}</h1>
+          	{% endif %}
+		
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="grid-2">
+        <section class="blog-post-view sound-advice col-md-9 col-sm-12">
+            <div class="blog-post-view__content">
+
+                  {{ article.content }}
+              <div class="featured-systems__posts cf">
+            <h2>Other Sound Expert Articles</h2>
+        <div class="container-fluid">
+          
+
+
+    
+
+          <div class="row">
+{% assign thisproduct = article.title %}
+                    {% for article in blog.articles %}
+
+    {% if article.title <> thisproduct %}
+
+                        {% if article.metafields.global.recommended_image  != blank %}
+                            {% assign blog-header = article.metafields.global.recommended_image %}
+                        {% else %}
+                            {% assign blog-header = article.image | img_url: 'large' %}
+                        {% endif %}
+                    <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if forloop.index > 7 %}bloghide{% endif %}">
+                        <a href="{{ article.url }}">
+                            <img src="{{ blog-header }}" alt="{{ article.title }}">
+                            <h2>{{ article.title }}</h2>
+                        </a>
+                    </div>
+            {% endif %}
+                    {% endfor %}
+          </div>
+        </div>
+            <div class="showmore" onclick="$('.bloghide').show(); $(this).hide()">Show All</div>
+
+                </div>
+              
+              	<!--  {% include 'article-pagination' %} -->
+
+                  
+                <div class="center-text" style="clear: both;">
+                    <h5>Looking for system optimization tips? Check out these additional articles from SVS.</h5>
+                    <p>
+                        <a href="http://www.svsound.com/blogs/svs/75358787-intro-to-dolby-atmos">Introduction to Dolby Atmos</a> | 
+                        <a href="http://www.svsound.com/blogs/svs/75040195-why-go-dual">Why go Dual?</a> | 
+                        <a href="http://www.svsound.com/blogs/svs/74790851-the-art-of-speaker-placement">The Art of Speaker Placement</a> | 
+                        <a href="http://www.svsound.com/blogs/svs/75366339-digital-bass-management-a-primer">Digital Bass Management</a>
+                    </p>
+                </div>
+              
+                
+            </div>
+
+              {% if blog.handle contains "featured-systems" %}
+              
+            <div class="gallery-modal-wrapper" data-remodal-id="gallery-modal">
+                <button data-remodal-action="close" class="remodal-close"></button>
+                <img src="" alt="">
+                </div>
+              {% endif %}
+
+          
+            </section>
+      
+      	{% include 'blog-sidebar_V2' %}
+      {% include 'disqus' %}
+      
+        </div>
+    </div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5445bf84544be1bf"></script>
+
+<script>
+  // Begin SVS Visitor Analytics
+  
+  $( document ).ready(function() {
+if(document.referrer.split('/')[2]!=location.hostname){
+    document.cookie = "FromExtDomain=ToBlog";
+}else{
+}
+
+var domaincookie=getCookie("FromExtDomain");
+    if (domaincookie!="") {
+    } else {
+      if(document.referrer.split('/')[2]!=location.hostname){
+}else{
+  ga('send', 'event', 'SVS Visitor', 'Click', 'Not Blog Entry - SVS Sound Expert Tips',{'nonInteraction': 1});
+	
+} 
+    }
+    });
+    
+// End SVS Visitor Analytics
+</script>

@@ -1,0 +1,32 @@
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.description %}
+
+<section class="reviews-landing">
+	<div class="wrap">
+
+		<div class="blog-excerpts">
+
+			<h2>Recent Press</h2>
+
+			{% for post in blogs["news"].articles limit:3%}
+				<div class="post">
+					<p class="post__full-date">{{ post.published_at | date: "%m/%d/%Y" }}</p>
+					<h4><a href="{{ post.content | strip_html }}" target="_blank">{{ post.title }}</a></h4>
+				</div>
+			{% endfor %}
+			
+			<a href="{{ blogs['news'].url }}" class="learn-more">See All SVS News</a>
+
+		</div>
+
+		<div class="blog-excerpts">
+
+			<h2>SVS Product Reviews</h2>
+
+			{% include 'blog--product_reviews_excerpts', blog_name: 'product-reviews', excerpts: 3 %}
+
+			<a href="{{ blogs['press-reviews'].url }}" class="learn-more">More SVS Product Reviews</a>
+			
+		</div>
+
+	</div>
+</section>

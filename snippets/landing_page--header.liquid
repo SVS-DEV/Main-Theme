@@ -1,0 +1,31 @@
+{% unless page.metafields.global.header_image == blank %}
+{% assign header_image = page.metafields.global.header_image %}
+{% else %}
+{% assign header_image = collection.metafields.global.header_image %}
+{% endunless %}
+
+<section class="collection-header">
+	<div class="wrap">
+	  <div class="collection-header__main" style="background-image: url({{ header_image | asset_url }})">
+	      <div class="collection-header__copy">
+
+	      	{% unless first_heading == blank %}
+	        <h1>{{ first_heading }}</h1>
+	        {% endunless %}
+
+	        <h2>{{ second_heading }}</h2>
+
+	      </div>
+	  </div>
+	</div>
+</section>
+
+<section class="header-description">
+{% unless description_heading ==  blank %}
+  <div class="wrap">
+    <h3>{{ description_heading }}</h3>
+    <p>{{ main_description }}</p>
+  </div>
+  {% endunless %}
+</section>
+

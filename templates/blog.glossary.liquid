@@ -1,0 +1,316 @@
+<style>
+  .cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+  
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  width: 90%;
+  max-width: 768px;
+  margin: 2em auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+
+
+.alphanav {
+  font-size:26px;
+  margin-bottom:10px;
+}
+  .alphanav a {
+    color:#386cb0;
+  }
+.cd-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  white-space: nowrap;
+  background: rgba(255, 69, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+  z-index:999;
+  padding:10px;
+  color:#fff;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+
+  .glossary-group__name {
+    float: left;
+    width: 8.333333333333333%;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 52px;
+    text-align: center;
+  }
+  .glossary-group__container{
+    float:left;
+    list-style:none;
+    list-style-image:none;
+    width: 91.66666666666667%;
+  }
+  .cont {
+    margin-bottom:25px;
+    padding: 25px 0;
+  }
+  .cont:nth-child(odd) {
+    background: rgba(226, 226, 226, 0.68);
+}
+  .cont:last-child {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .glossary-group__container li {
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  .glossary-group__container a {
+    color:#386cb0;
+  }
+  @media only screen and (max-width: 768px) {
+    .alphanav {
+      font-size:24px;
+    }
+    
+  .cd-top {
+    left: 20px;
+    bottom: 20px;
+  }
+  .glossary-group__container {
+    float:none;
+  }
+    
+  .glossary-group__name {
+    float:none;
+  }
+}
+
+  .alphanav .inactive {
+    cursor:arrow;
+    color:#e5e5e5
+  }
+  .blog-post .blog-post-view__content h2 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+   padding-top:20px;
+   margin-top:20px;
+    text-transform: normal;
+  }
+  {
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 187px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+  .blog .glossary-post-view__header 
+  {
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 187px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    margin-top: 25px;
+  }
+  .blog .glossary-post-view__header-copy 
+  {
+    margin-left: 50px;
+    position: absolute;
+    bottom: 10%;
+    max-width: 70%;
+    color: #fff;
+  }
+  .blog .glossary-post-view__header h1
+  {
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 36px;
+    line-height: .875;
+    font-weight: 900;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  .blog .glossary-post-view__header h2
+  {
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 36px;
+    line-height: .875;
+    font-weight: 300;
+    letter-spacing: 0px;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom:10px;
+  }
+  .blog .glossary-post-view__header h1 span 
+  {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 0;
+  display: block;
+  }
+.wrap {
+  padding: 50px 50px 0 50px; 
+}
+</style>
+<div class="glossary-post-view__header" style="background-image: url('https://cdn.shopify.com/s/files/1/0921/3560/files/glossary-header.png?14303640703166423522');">
+  <div class="glossary-post-view__header-copy">
+    <h2><i class="fa fa-book" aria-hidden="true"></i> SVS Home Audio Glossary</h2>
+  </div>
+</div>
+<div class="wrap">
+		<div class="grid-2">
+          <section class="blog-list-view sound-advice col-3-4">
+
+              <div class="blog-list-view__header">
+                  <h1>{{ blog.title }}</h1>
+                  <p>Whether you’re looking to perfect your setup or find the best way to clean your new speakers, our educational blog has you covered. Get immediate answers to some of the most popular topics and keep following for more insights every month!</p>
+              </div>
+            <div class="alphanav">
+              <a href="#glossnum">#</a>
+              <a href="#A">A</a>
+              <a href="#B">B</a>
+              <a href="#C">C</a>
+              <a href="#D">D</a>
+              <a href="#E">E</a>
+              <a href="#F">F</a>
+              <a href="#" class="inactive" onclick="return false;">G</a>
+              <a href="#H">H</a>
+              <a href="#I">I</a>
+              <a href="#" class="inactive" onclick="return false;">J</a>
+              <a href="#" class="inactive" onclick="return false;">K</a>
+              <a href="#L">L</a>
+              <a href="#M">M</a>
+              <a href="#N">N</a>
+              <a href="#" class="inactive" onclick="return false;">O</a>
+              <a href="#P">P</a>
+              <a href="#" class="inactive" onclick="return false;">Q</a>
+              <a href="#" class="inactive" onclick="return false;">R</a>
+              <a href="#S">S</a>
+              <a href="#" class="inactive" onclick="return false;">T</a>
+              <a href="#" class="inactive" onclick="return false;">U</a>
+              <a href="#" class="inactive" onclick="return false;">V</a>
+              <a href="#" class="inactive" onclick="return false;">W</a>
+              <a href="#" class="inactive" onclick="return false;">X</a>
+              <a href="#" class="inactive" onclick="return false;">Y</a>
+              <a href="#" class="inactive" onclick="return false;">Z</a>
+            </div>
+            <div class="glossary__posts">
+              {% assign article_list = blog.articles | sort: "id" %}              
+              {% for article in article_list %}
+
+                  <li><a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}">{{ article.title }}</a></li>
+
+              {% endfor %}               
+            </div>
+          </section>
+          {% include 'blog-sidebar_V2' %}
+      </div>
+</div>
+<a href="#0" class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+
+<script>
+  $('.glossary__posts li').each(function () {
+  var letter = $('a', this).text().charAt(0);
+  if(Math.floor(letter) == letter && $.isNumeric(letter)) {
+    if (!$(this).parent().find('[data-letter="#"]').length) {
+    $(this).parent().append('<div class="cont cf"><span class="glossary-group__name" id="glossnum">#</span><ul data-letter="#" class="glossary-group__container cf"></ul></div>');
+  }
+  $(this).parent().find('[data-letter="#"]').append(this);
+  }
+    else{
+  if (!$(this).parent().find('[data-letter="'+ letter +'"]').length) {
+    $(this).parent().append('<div class="cont cf"><span class="glossary-group__name" id="'+ letter+'">'+ letter +'</span><ul data-letter="'+ letter+'" class="glossary-group__container cf"></ul></div>');
+  }
+  $(this).parent().find('[data-letter="'+ letter +'"]').append(this);
+    };
+});
+  
+  
+  jQuery(document).ready(function($){
+	// browser window scroll (in pixels) after which the "back to top" link is shown
+	var offset = 300,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1200,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700,
+		//grab the "back to top" link
+		$back_to_top = $('.cd-top');
+
+	//hide or show the "back to top" link
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) { 
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	//smooth scroll to top
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
+
+});
+  
+  //browser window scroll (in pixels) after which the "back to top" link is shown
+var offset = 300,
+	//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+	offset_opacity = 1200,
+	//duration of the top scrolling animation (in ms)
+	scroll_top_duration = 700;
+</script>
+

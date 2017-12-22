@@ -1,0 +1,191 @@
+
+<noscript>
+<style>
+.ui-tabs-panel {display:block !important}
+#category-tabs .col-1-6 { display:none}
+.col-3-4 {
+		width:100%;
+		border-left:none !important;
+	}
+  
+
+</style>
+</noscript>
+
+{% include 'landing_page--header', first_heading: page.metafields.header.first_heading , second_heading: page.metafields.header.second_heading , description_heading: page.metafields.header.description_heading, main_description: page.description %}
+<section>
+  <div class="wrap padtopnone">
+
+    <h1>
+      One Subwoofer to Rule Them All.
+      <span>SVS Obliterates Expectations. Nothing Else Comes Close. </span>
+    </h1>
+    <h2> Engineered to produce deep, accurate, and effortless bass for music, home theater and more, SVS subwoofers have earned a place among the finest audio products in the world. </h2>
+
+    <div id="category-tabs" class="grid-2 category-tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+         <ul class="col-1-6 ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', '1000-series tab');" class="ui-state-default ui-corner-top " role="tab" tabindex="0" aria-controls="tab-1" aria-labelledby="ui-id-1" ><a href="#1000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1"><span class="subtabname">1000 Series</span><span class="subtabprice"> from $499.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', '2000-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-2" aria-labelledby="ui-id-2" aria-selected="false"><a href="#2000-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span class="subtabname">2000 Series</span> <span class="subtabprice"> from $699.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', 'plus-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-3" aria-labelledby="ui-id-3" aria-selected="false"><a href="#plus-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span class="subtabname">Plus Series</span> <span class="subtabprice"> from $1,199.99</span></a></li>
+           <li onclick="heightsEqualizer('.js-equal-height');ga('send', 'event', 'Subwoofer Category Page', 'Click', 'ultra-series tab');" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-4" aria-labelledby="ui-id-4" aria-selected="false"><a href="#ultra-series" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span class="subtabname">Ultra Series</span> <span class="subtabprice"> from $1,599.99</span></a></li>
+         </ul>
+         <div class="col-5-6">
+           <div id="1000-series" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="true" aria-hidden="false">
+             <h3> <span>1000 Series</span> </h3>
+              <p>
+                The SVS 1000 Series changed the game by bringing legitimate, world-class subwoofer performance to a new level of affordability. Compact and commanding with astonishing power, the 1000 Series outperform subwoofers twice the price and are well-equipped to serve as the sonic foundation of any music or home theater system.
+              </p>
+              <div class="products cf">
+  {% for product in collections["1000-series"].products %}
+    {% include 'product-loop-grid' with "1000-series" %}
+{% endfor %}
+</div>
+  </div>
+
+
+           <div id="2000-series" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>2000 Series</span> </h3>
+             <p>
+               Featuring award-winning technology from the Ultra Series, the 2000 Series subwoofers are the best-selling SVS models for their rare combination of effortless power, quickness, intelligent processing, and innovative driver design, all at a price that is within reach of any audio enthusiast. This potent recipe is redefining expectations for subwoofers in every class.
+             </p>
+             <div class="products cf">
+  {% for product in collections["2000-series"].products %}
+    {% include 'product-loop-grid' with "2000-series" %}
+{% endfor %}
+</div>
+           </div>
+
+           <div id="plus-series" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Plus Series</span> </h3>
+             <p>
+               A favorite among home theater fans and serious audiophiles as well, the Plus Series build quality and performance approaches the Ultra Series and is on par with the best subwoofers in the world. Designed to handle the most demanding low frequency content with ease, SVS Plus Series Subwoofers are engineered to exceed expectations.
+             </p>
+             <div class="products cf">
+  {% for product in collections["plus-series"].products %}
+    {% include 'product-loop-grid' with "plus-series" %}
+{% endfor %}
+</div>
+           </div>
+
+           <div id="ultra-series" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom cf" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+             <h3> <span>Ultra Series</span> </h3>
+             <p>
+               The pinnacle of SVS Subwoofer design, the Ultra Series set the standard for performance at any price and are the most awarded and reviewed subwoofers in existence. SVS Ultra represents the perfect fusion of award-winning technology and an obsessive passion for bass excellence that pushes every performance boundary.
+             </p>
+             <div class="products cf">
+  {% for product in collections["ultra-series-subwoofers"].products %}
+    {% include 'product-loop-grid' with "ultra-series-subwoofers" %}
+{% endfor %}
+</div>
+           </div>
+         </div>
+      </div>
+
+  </div>
+</section>
+
+<section class="">
+  <div class="wrap">
+    <h5> The SVS Subwoofer Difference </h5>
+    <p>
+      The essence of our design philosophy is driven by five key performance objectives that elevate SVS Subwoofers above all others. This essence is revealed with every visceral and emotionally charged moment that only SVS can deliver. From startlingly realistic high impact movie sound effects to the subtlest musical details, it’s like hearing everything for the first time.
+    </p>
+    <img src="{{ 'subwoofer-callouts.jpg' | asset_url }}" class="sub-callout">
+  </div>
+</section>
+
+<section class="bg-grey">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="col-1-2 bor">
+        <div class="col-1-4">
+          <img src="{{ 'sub-cat-45.png' | asset_url }}">
+          <img src="{{ 'sub-cat-5yr.png' | asset_url }}">
+        </div>
+        <div class="col-3-4">
+          <h4> SVS Customer Bill of Rights </h4>
+          <p> We stand behind our products with the industry’s most comprehensive policies and guarantees that make it easy, risk-free and rewarding to be a lifelong listener. Some of these rights include: </p>
+          <ul>
+            <li> <a href="/pages/bill-of-rights"> <strong> 45 Day Risk-Free In-Home Trial, Fast & Free Shipping and Returns </strong> </a> </li>
+            <li> <a href="/pages/bill-of-rights"> <strong> 5-Year Unconditional Warranty </strong> </a> </li>
+            <li> <a href="/pages/bill-of-rights"> 60-Day Guaranteed Price Protection </a> </li>
+            <li> <a href="/pages/bill-of-rights"> Pre & Post-Purchase SVS Sound Experts Advice and Support </a> </li>
+            <li> <a href="/pages/bill-of-rights"> 1-Year Trade-Up Policy </a> </li>
+            <li> <a href="/pages/bill-of-rights"> 1-Year Performance Upgrade </a> </li>
+            <li> <a href="/pages/bill-of-rights"> Review Full SVS Customer Bill of Rights </a> </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="col-1-2 cs">
+        <div class="cf">
+          <div class="col-1-4">
+            <img src="{{ 'sub-cat-lifetime.png' | asset_url }}">
+          </div>
+          <div class="col-3-4">
+          <h4> Lifetime SVS Sound Experts Support </h4>
+            <p>
+              Need a hand with AV system set-up, troubleshooting, or calibration? Our SVS Sound Experts want to hear from you and are available seven days a week via <a data-remodal-target="contact__modal" style="color:#ff4500">chat, phone, or email</a> to assist with all your home theater or audio system needs.
+            </p>
+          </div>
+        </div>
+        <ul class="clear">
+          <li> <a href="/blogs/svs/75347907-choosing-the-best-subwoofer-for-your-home-theater"> What is the perfect subwoofer for me? </a> </li>
+          <li> <a href="/blogs/svs/75367747-sealed-vs-ported "> What is the difference between a sealed and ported subwoofer? </a> </li>
+          <li> <a href="/blogs/svs/75365187-the-art-of-subwoofer-placement "> Where should I place my subwoofer for optimal performance? </a> </li>
+          <li> <a href="/blogs/svs/75366339-digital-bass-management-a-primer "> What are all the features of my subwoofer? </a> </li>
+          <li> <a href="/blogs/svs/75366339-digital-bass-management-a-primer   "> How can I optimize the sound and output to blend with my speakers? </a> </li>
+          <li> <a href="/products/soundpath-subwoofer-isolation-system "> It sounds awesome, but my floors and windows are vibrating, anything I can do about that? </a> </li>
+          <li> <a href="/blogs/svs/75040195-why-go-dual "> What are the benefits of going with dual subwoofers? </a> </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+  function heightsEqualizer(selector) {
+    var elements = document.querySelectorAll(selector),
+        max_height = 0,
+        len = 0,
+        i;
+ 
+    if ( (elements) && (elements.length > 0) ) {
+        len = elements.length;
+ 
+        for (i = 0; i < len; i++) { // get max height
+			elements[i].style.height = ''; // reset height attr
+            if (elements[i].clientHeight > max_height) {
+                max_height = elements[i].clientHeight;
+            }
+        }
+ 
+        for (i = 0; i < len; i++) { // set max height to all elements
+            elements[i].style.height = max_height + 'px';
+        }
+    }
+}
+ 
+if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', function() {
+        heightsEqualizer('.js-equal-height');
+    });
+	window.addEventListener('resize', function(){
+		heightsEqualizer('.js-equal-height');
+	});
+}
+ 
+setTimeout(function () { // set 1 second timeout for having all fonts loaded
+	heightsEqualizer('.js-equal-height');
+}, 1000);
+</script>
+<script type="text/javascript">
+      $.getScript("//code.jquery.com/ui/1.10.4/jquery-ui.js", function(){
+      $(function() {
+            $( "#category-tabs" ).tabs();
+         });
+      });
+  	</script>

@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/png" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <title>{{ shop.name }} - {{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    {{ 'svs__cart.min.css' | asset_url | stylesheet_tag }}
+    
+    {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+    {% include 'plus_func' %}
+    {% include 'plus_skip_shipping_step' with settings.enable_skip_shipping %}
+    {{ 'bootstrap-grid.css' | asset_url | stylesheet_tag }}
+<style>
+  .review-block a[href*=shipping_method] {
+    display:none;
+  }
+  .section__text {
+        font-style:italic
+      }
+      [class*='col-'] {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .sidebar-wrap {
+        font-size: 14px;
+        padding: 25px;
+        color: white;
+        background: #262626;
+        margin-top:30px;
+        margin-bottom:50px;
+  }
+  .sidebar-wrap p a {
+    color:#ff4500;
+    text-decoration:none;
+  }
+  .sidebar-wrap h3 {
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .sidebar-wrap h3 img {
+    max-width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+  .sidebar-wrap h3 img.moreheight {
+    max-width:94%
+  }
+  .sidebar-wrap p {
+	font-size: 14px;
+    line-height: 20px
+  }
+  .sidebar-wrap ul {
+    list-style: none;
+    margin-bottom: 12px
+  }
+
+  .sidebar-wrap ul li {
+    padding-left: 12px;
+    font-style: italic;
+    margin-bottom: 5px
+  }
+  .sidebar-wrap ul li:before {
+    font-family: FontAwesome;
+    content: "\f101";
+    margin-right: 5px;
+    margin-left: -12px
+  }
+  .bor-img-wrap img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+      @media (min-width:1000px) {
+    .order-summary__sections {
+      height:auto !important;
+    }
+  }
+      @media (max-width: 992px) {
+      }
+  @media (min-width:1000px) {
+    .order-summary__sections {
+      height:auto !important;
+    }
+  }
+  .section__text {
+        font-style:italic
+      }
+    </style>
+  </head>
+  <body class="checkout{% if settings.enable_skip_shipping %} is-hidden{% endif %}" >
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="sidebar">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            <h2 style="font-size:1.28571em;margin-bottom:10px">Please review your order.<span style="display:block;font-size:14px;font-style:italic;margin-top:6px;">Click <a href="/cart" style="color:#ff4500" onclick="ga('send', 'event', 'Checkout', 'Click', 'Cart Link');">here</a> to edit cart.</span></h2>
+            {{ content_for_order_summary }}
+
+            <div class="checkout__info-wrapper">
+              <div class="trust-icons" style="text-align:right">
+        <a href="//www.shopify.com/pci-compliant/?utm_source=secure&amp;utm_medium=shop" title="This online store is secured by Shopify" target="_blank" onclick= "ga('send', 'event', 'Checkout', 'Click', 'Secured by Shopify');"><img src="//cdn.shopify.com/s/images/badges/shopify-secure-badge-dark-shadow.png" alt="Shopify secure badge" /></a>
+                <a href="https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security" target="_blank" onclick= "ga('send', 'event', 'Checkout', 'Click', 'Secured by Shopify');"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/trust_icon_secured-by-paypal.jpg?713966553671134308" style="max-height:44px;margin-left:10px"></a>
+      </div>
+
+              <div class="checkout__shipping">
+                <h4>Free Shipping</h4>
+                <p>{{ settings.checkout_shipping-copy }}</p>
+                <div class="shipping-note">
+                  {{ settings.checkout_shipping-note }}
+                </div>
+              </div>
+
+              <div class="checkout__help">
+                <h4>Need Help?</h4>
+                {{ settings.checkout_help-markup }}
+              </div>
+
+              <div class="checkout__tax">
+                <h4>Why Am I Paying Tax?</h4>
+                <p>{{ settings.checkout_tax-copy }}</p>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </div>
+          <div class="main__content">
+
+            {{ content_for_layout }}
+
+            <div class="shipping-help">
+              {{ settings.checkout_no-shipping }}
+            </div>
+
+          </div>
+          <div class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="wrap">
+    <div class="container-fluid sidebar-wrap">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="sidebar-bor-wrap">
+                          <h3 data-match-height="cart-sidebar-header"> <img src="//cdn.shopify.com/s/files/1/0921/3560/t/62/assets/bor-footer-logo.png?9668091507872987512"> </h3>
+                          <p>
+                            We stand behind our speakers, subwoofers and accessories with the industry’s best guarantees and consumer protection policies. It’s easy, risk-free and rewarding to be a lifelong SVS listener.
+                          </p>
+                          <div class="col-md-12">
+                            <div class="bor-img-wrap">
+                              <div class="col-xs-4"><img src="{{ 'pp-bor-warranty-filled.png' | asset_url }}"></div>
+                              <div class="col-xs-4"><img src="{{ 'pp-bor-trial-filled.png' | asset_url }}"></div>
+                              <div class="col-xs-4"><img src="{{ 'pp-bor-guarantee-filled.png' | asset_url }}"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="support-sidebar-wrap">
+                          <h3 data-match-height="cart-sidebar-header"> <img src="//cdn.shopify.com/s/files/1/0921/3560/t/62/assets/sound-experts-footer-logo.png?9668091507872987512" class="moreheight"> </h3>
+                          <p>
+                            There’s no AV question too small and no home theater issue too big for our Youngstown, Ohio based team. If you need help with choosing the best subwoofer or speakers, AV receiver settings, speaker placement, subwoofer settings, SVS customer policies or anything else, we’re standing by to assist.
+                          </p>
+                          <p style="text-align:center">877.626.5623 | <a href="/pages/customer-service#contact__modal" target="_blank" onclick="ga('send', 'event', 'Checkout', 'Click', 'Email');" >EMAIL</a> | <a href="#" onclick="OpenLHNChat();return false;" class="sub-footer-cta"><span onclick="ga('send', 'event', 'Checkout', 'Click', 'Chat');">LIVE CHAT</span></a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+    </section>
+    
+  
+    <script src="{{ 'svs.min.js' | asset_url }}"></script>
+    
+    <script>
+      $( document ).ready(function() {
+      var SVS = SVS || {};
+          SVS.checkout.startingProvince = '{{ checkout.shipping_address.province }}';
+
+      if ($('.blank-slate').length === 1){
+        $('.shipping-help').show();
+      }else{
+        $('.shipping-help').hide();
+      }
+      });
+    </script>
+
+
+    
+    {{ tracking_code }}
+    
+    <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJCXDF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJCXDF');</script>
+<!-- End Google Tag Manager -->
+    
+    
+      <!-- BEGIN: Google Trusted Stores -->
+<script type="text/javascript">
+  var gts = gts || [];
+
+  gts.push(["id", "693242"]);
+  gts.push(["badge_position", "BOTTOM_RIGHT"]);
+  gts.push(["locale", "en_US"]);
+  gts.push(["google_base_subaccount_id", "7889866"]);
+
+  (function() {
+    var gts = document.createElement("script");
+    gts.type = "text/javascript";
+    gts.async = true;
+    gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(gts, s);
+  })();
+</script>
+<!-- END: Google Trusted Stores -->
+    
+      <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '321780327991918');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=321780327991918&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+    
+    <!--SteelHouse Tracking Pixel-->
+<!-- INSTALL ON ALL PAGES OF SITE-->
+<script type="text/javascript">
+(function(){"use strict";var e=null,b="4.0.0",
+n="12307",
+additional="",
+t,r,i;try{t=top.document.referer!==""?encodeURIComponent(top.document.referrer.substring(0,2048)):""}catch(o){t=document.referrer!==null?document.referrer.toString().substring(0,2048):""}try{r=window&&window.top&&document.location&&window.top.location===document.location?document.location:window&&window.top&&window.top.location&&""!==window.top.location?window.top.location:document.location}catch(u){r=document.location}try{i=parent.location.href!==""?encodeURIComponent(parent.location.href.toString().substring(0,2048)):""}catch(a){try{i=r!==null?encodeURIComponent(r.toString().substring(0,2048)):""}catch(f){i=""}}var l,c=document.createElement("script"),h=null,p=document.getElementsByTagName("script"),d=Number(p.length)-1,v=document.getElementsByTagName("script")[d];if(typeof l==="undefined"){l=Math.floor(Math.random()*1e17)}h="dx.steelhousemedia.com/spx?"+"dxver="+b+"&shaid="+n+"&tdr="+t+"&plh="+i+"&cb="+l+additional;c.type="text/javascript";c.src=("https:"===document.location.protocol?"https://":"http://")+h;v.parentNode.insertBefore(c,v)})()
+</script>
+    
+    <!-- Begin Payment Method for Analytics 7/14/2016 -->
+    <script>
+	$( document ).ready(function() {
+      	if (Shopify.Checkout.step == 'payment_method') {
+          $(".step__footer__continue-btn").click(function(){
+              if(document.getElementById('checkout_payment_gateway_42207171').checked) {
+                  ga('send', 'event', 'Payment Method', 'Click', 'Checkout - Credit Card Selected');
+                  }
+                  else if(document.getElementById('checkout_payment_gateway_37955523').checked) {
+                      ga('send', 'event', 'Payment Method', 'Click', 'Checkout - Paypal Selected');
+                      }
+                      else if(document.getElementById('checkout_payment_gateway_54786246').checked) {
+                          ga('send', 'event', 'Payment Method', 'Click', 'Checkout - Amazon Selected');
+                          }
+                          else if(document.getElementById('checkout_payment_gateway_80084998').checked) {
+                              ga('send', 'event', 'Payment Method', 'Click', 'Checkout - Affirm Selected');
+                              }
+          });
+      	}
+      
+      var discount_elem = jQuery('.applied-reduction-code__information');
+      if(discount_elem.html() != 'fe64077c-8314-414a-aca5-0f5f4099f4a4'){
+        discount_elem.show()
+      }
+	});
+    </script>
+    <!--End Payment Method for Analytics 7/14/2016 -->
+    <script>
+      if (document.cookie.indexOf('systembuilder=')== -1 && $('.applied-reduction-code__information').text()=='FE64077C-8314-414A-ACA5-0F5F4099F4A4') {
+      jQuery('.applied-reduction-code__clear-button').click();
+        ga('send', 'event', 'Checkout', 'Click', 'System Builder Discount Removed Automatically',{'nonInteraction': 1});
+      }
+    </script>
+    
+   <!--JAVASCRIPT PIXEL CODE START-->
+<script type="text/javascript" >
+setTimeout(function(){
+var head = document.getElementsByTagName("head")[0];
+var s = document.createElement("script");
+s.src = "http://acuityplatform.com/Adserver/pxlj/7477236331819655172?";
+s.async = true;
+head.appendChild(s);
+},10000);
+</script><!--JAVASCRIPT PIXEL CODE END-->
+
+    
+     
+  <!-- Listrak Analytics – Javascript Framework -->
+<script type="text/javascript">
+        var biJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+        (function (d, s, id, tid, vid) {
+          var js, ljs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+          js.src = biJsHost + "cdn.listrakbi.com/scripts/script.js?m=" + tid + "&v=" + vid;
+          ljs.parentNode.insertBefore(js, ljs);
+        })(document, 'script', 'ltkSDK', 'LmYUR5mzRQMy', '1');
+  
+  (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d);        else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) {
+        if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+            /********** Begin Custom Code **********/
+
+
+
+            /********** End Custom Code **********/
+  });
+
+</script>
+  </body>
+</html>

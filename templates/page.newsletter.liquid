@@ -1,0 +1,65 @@
+
+<section>
+		<div class="wrap">
+			<h1><span>SVS</span> Newsletter</h1>
+			<p class="tagline">Want more SVS? Pick your favorite way to stay connected. We'll make sure you're the first to know about new products, special offers and more.</p>
+			<div class="newsletter__contact-method">
+				<h3><span>Sign up</span> and be the first to know</h3>
+				<p>Get product updates, email-only offers and more from Gary, our President. We send email about once a month and never share your address.</p>
+				<div class="listrak-container">
+    <form method="post"  action="https://customers.listrak.com/q/WkI-vcFVbNcBYFeQ9KQ9GBN09c-fKPCuqo" accept-charset="UTF-8" class="listrak-form" onsubmit="listrakSUBMIT(); return false;"  >
+      <input type="hidden" name="crvs" value="Wn_yJB4d3_xJRiIQPcJO66Ph9MKFYCLkUOKQ6v2YxHZ7UNfp7fX3qk32Fnu0NaL1VAlX89earTiA-txfuoP7LA"/>
+      <input id="listrak-fname" type="text" name="fname" size="40" maxlength="100" value="" placeholder="First Name"/>
+      <input id="listrak-lname" type="text" name="lname" size="40" maxlength="100" value="" placeholder="Last Name"/>
+      <input id="listrak-email" type="text" name="email" size="40" maxlength="100" value="" placeholder="Email Address"/>
+      <!-- These next 3 fields are for system use, please do not remove -->
+      <input type="text" name="NameF" size="10" maxlength="10" value="" tabindex="-1" autocomplete="off" style="float: left !important; position:absolute !important; left:-9000px !important; top: -9000px !important;"/>
+      <input type="text" name="NameL" size="10" maxlength="10" value="" tabindex="-1" autocomplete="off" style="float: left !important; position:absolute !important; left:-9000px !important; top: -9000px !important;"/>
+      <input type="text" name="Comment" size="10" maxlength="10" value="" tabindex="-1" autocomplete="off" style="float: left !important; position:absolute !important; left:-9000px !important; top: -9000px !important;"/>
+      <input type="submit" id="submit" value="Sign Up" />
+      <span id="listrak-error" style="display:none"></span>
+    </form>
+  </div>
+			</div>
+			<div class="newsletter__contact-method">
+			    <h3>Follow SVS on Social...</h3>
+				<p>Join our community of home theater and audio loving fans to be among the first to hear about new SVS products, contests, featured owner systems, reviews and other exclusive content.</p>
+				<ul class="social-list">
+					<li><a href="https://www.facebook.com/SVSound"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://twitter.com/#!/SVS_SOUND"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="https://www.youtube.com/c/SVS_Sound"><i class="fa fa-youtube"></i></a></li>
+                  <li><a href="https://www.instagram.com/svs_sound/"><i class="fa fa-instagram" aria-hidden="true" style="background-color:#eb1717"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+<section>
+  
+</section>
+
+<script>
+  function ValidateEmail(email) {
+    var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    return expr.test(email);
+  };
+  function listrakSUBMIT() {
+    if (!ValidateEmail($("#listrak-email").val())) {
+      $("#listrak-error").html('Please enter a valid email address');
+      $("#listrak-error").css("display","block");
+      $("#listrak-email").focus();
+    }
+    else {
+      /********** Begin Custom Code **********/
+      _ltk.Subscriber.List = "blogsignup";
+      _ltk.Subscriber.Email = $('#listrak-email').val();
+      _ltk.Subscriber.Profile.Add("Source.Signup Location", "stay-connected");
+      _ltk.Subscriber.Profile.Add("Contact Info.First Name", $('#listrak-fname').val());
+      _ltk.Subscriber.Profile.Add("Contact Info.Last Name", $('#listrak-lname').val());
+      _ltk.Subscriber.Submit();
+      $(".listrak-container").html('<center>Thank You!<br> Your email address has been confirmed and you are now subscribed to the SVS newsletter.</center>');
+      /********** End Custom Code **********/
+    }
+  };
+
+</script>

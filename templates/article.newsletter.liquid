@@ -1,0 +1,79 @@
+	{% assign blog-title = article.metafields.global.header-title %}
+
+	
+
+	<div class="wrap">
+		
+		<section class="blog-post-view sound-advice">
+
+			<div class="newsletter-post-view__content">
+				
+				{{ article.content }}
+
+				<div class="center-text" style="clear: both;text-align:center;margin-top:30px">
+
+					<h5>Looking for system optimization tips? Check out these additional articles from SVS.</h5>
+					<p><a href="http://www.svsound.com/blogs/svs/75358787-intro-to-dolby-atmos">Introduction to Dolby Atmos</a> | <a href="http://www.svsound.com/blogs/svs/75040195-why-go-dual">Why go Dual?</a> | <a href="http://www.svsound.com/blogs/svs/74790851-the-art-of-speaker-placement">The Art of Speaker Placement</a> | <a href="http://www.svsound.com/blogs/svs/75366339-digital-bass-management-a-primer">Digital Bass Management</a></p>
+					
+				</div>
+
+				<div class="discussion">
+					<h2>Share Your Thoughts</h2>
+					<p style="text-align: center; color: red;">
+                  
+                  <div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = 'http://www.svsound.com/blogs/{{ article.metafields.global.blogid }}';
+this.page.identifier = '{{ article.metafields.global.blogid }}';
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//svsound.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     
+				</div>
+
+			</div>
+
+			{% if blog.handle contains "featured-systems" %}
+			<div class="gallery-modal-wrapper" data-remodal-id="gallery-modal">
+			  <button data-remodal-action="close" class="remodal-close"></button>
+			  <img src="" alt="">
+			</div>
+			{% endif %}
+
+		</section>
+
+	</div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5445bf84544be1bf"></script>
+
+<script>
+  // Begin SVS Visitor Analytics
+  
+  $( document ).ready(function() {
+if(document.referrer.split('/')[2]!=location.hostname){
+    document.cookie = "FromExtDomain=ToBlog";
+}else{
+}
+
+var domaincookie=getCookie("FromExtDomain");
+    if (domaincookie!="") {
+    } else {
+      if(document.referrer.split('/')[2]!=location.hostname){
+}else{
+  ga('send', 'event', 'SVS Visitor', 'Click', 'Not Blog Entry - Newsletter Archive',{'nonInteraction': 1});
+	
+} 
+    }
+    });
+    
+// End SVS Visitor Analytics
+</script>

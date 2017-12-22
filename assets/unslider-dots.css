@@ -1,0 +1,87 @@
+/**
+ *   Here's where everything gets included. You don't need
+ *   to change anything here, and doing so might break
+ *   stuff. Here be dragons and all that.
+ */
+/**
+ *   Default variables
+ *
+ *   While these can be set with JavaScript, it's probably
+ *   better and faster to just set them here, compile to
+ *   CSS and include that instead to use some of that
+ *   hardware-accelerated goodness.
+ */
+.unslider-nav ol {
+  list-style: none;
+  text-align: center;
+}
+.unslider-nav ol li {
+  display: inline-block;
+    float: none;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px;
+    padding: 3px;
+    background: transparent;
+    border-radius: 8px !important;
+    overflow: hidden;
+    text-indent: -999em;
+    border: 2px solid #000;
+    cursor: pointer;
+    opacity: .4;
+}
+.unslider-nav ol li.unslider-active {
+  border: 2px solid #ff4500 !important;
+    background: #fff;
+    cursor: default;
+    opacity: 1;
+}
+.unslider-arrow {
+    display: block;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    /* right: -50px; */
+    left: auto;
+    margin-top: -16px;
+    overflow: hidden;
+    background: rgba(0,0,0,.2) no-repeat 50% 50%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0921/3560/files/slider-arrow.png?5695708192408529176);
+    background-size: 7px 11px;
+    border-radius: 32px;
+    text-indent: -999em;
+    opacity: .6;
+    transition: opacity .2s;
+}
+.unslider-arrow.next {
+    right: 0;
+}
+.unslider-arrow.prev {
+    /* left: -50px; */
+    right: auto;
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.unslider-nav ol li {
+    display: inline-block;
+    float: none;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px;
+    padding: 3px;
+    background: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    text-indent: -999em;
+    border: 2px solid #000;
+    cursor: pointer;
+    opacity: .4;
+}
+.unslider-nav ol li.unslider-active {
+    background: #fff;
+    cursor: default;
+    opacity: 1;
+}
+.unslider {
+    position: relative;
+}

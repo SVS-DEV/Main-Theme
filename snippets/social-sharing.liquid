@@ -1,0 +1,30 @@
+{% comment %}
+
+  This snippet is used to showcase each collection during the loop,
+  'for product in collection.products' in list-collections.liquid.
+
+  Use with theme settings:
+  {% if settings.social_sharing_blog or settings.social_sharing_products %}
+    {% include 'social-sharing' %}
+  {% endif %}
+
+{% endcomment %}
+{% if template contains 'article' or template contains 'blog' %}
+  {% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
+  {% capture shareTitle %}{{ article.title }}{% endcapture %}
+
+{% elsif template contains 'product' %}
+  {% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
+  {% capture shareTitle %}{{ product.title }}{% endcapture %}
+
+{% endif %}
+
+{% assign shareButtonStyle = settings.social_sharing_style %}
+
+<section class="product-share" data-permalink="{{ permalinkURL }}">
+    <p>Share this product on:</p>
+ 	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}"><i class="fa fa-facebook-square"></i></a>
+    <a target="_blank" href="https://instagram.com/svs_sound/?ref=badge"><i class="fa fa-instagram"></i></a>
+    <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}&amp;text={{ shareTitle | url_param_escape }}"><i class="fa fa-twitter-square"></i></a>
+  	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{{ product.featured_image | product_img_url: '1024x1024' }}&amp;description={{ shareTitle | url_param_escape }}"><i class="fa fa-pinterest-square"></i></a>
+</section>

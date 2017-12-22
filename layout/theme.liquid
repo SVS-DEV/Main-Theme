@@ -1,0 +1,586 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head> 
+  {{ content_for_header }}
+  
+  <!-- Google Tag Manager -->
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJCXDF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJCXDF');
+  </script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Begin Affirm Code -->
+  <script>
+  var _affirm_config = {
+    public_api_key:  "D14SUXY2PKEA6DRK",
+    script:          "https://cdn1-sandbox.affirm.com/js/v2/affirm.js"
+  };
+  (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+</script>
+  <!-- End Affirm Code -->
+
+  {% if template == 'product' %}
+  <meta property="og:type" content="product"/>
+  <meta property="og:url" content="{{ shop.url }}{{ product.url }}" />
+  <meta property="og:image" content="{{ product.featured_image | product_img_url: 'compact' }}" />
+  <meta property="og:email" content="{{ shop.email }}" />
+  {% endif %}
+  
+  {% if template == 'blog' %}
+  <meta property="og:type" content="blog"/>
+  <meta property="og:url" content="{{ shop.url }}{{ article.url }}" />
+  <meta property="og:image" content="{{ article.image }}" />
+  <meta property="og:email" content="{{ shop.email }}" />
+  {% endif %}
+  
+  {% if template == 'template-page-april_fools' %}
+  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0921/3560/files/deadJ.jpg?12306884063856888698"/>
+  <meta property="og:image:secure_url" content="https://cdn.shopify.com/s/files/1/0921/3560/files/deadJ.jpg?12306884063856888698" />
+  {% endif %}
+  
+  {{ 'html5shiv.js' | asset_url | script_tag }}
+  {{ 'tweaks.js' | asset_url | script_tag }}
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0921/3560/files/jquery-ui.min_f89c0728-6c04-407f-bcd6-8966477f5dde.js?13811596104501428121"></script>
+  
+  {{ 'pym.v1.min.js' | asset_url | script_tag }}
+  {{ 'jquery-migrate-1.2.0.min.js' | asset_url | script_tag }}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}  
+
+  <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0921/3560/files/favicon.ico?3746534416961416435" type="image/png" />
+<script src="https://cdn.shopify.com/s/files/1/0921/3560/files/matchHeights.js?7678110020812926284" type="text/javascript"></script>
+
+  
+
+  <meta charset="utf-8" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+  <title>
+  {{ page_title }}{% if current_tags %} &ndash; {{ 'general.meta.tagged' | t }} "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t }} {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  {% if template.name == 'list-collections' %} 
+  {% else %}
+  <meta name="description" content="{{ page_description }}" />
+  {% endif %}
+  {% endif %}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  <!-- Canonical Tagging BEGIN -->
+  {% if template contains 'google__' %}
+  
+  {% elsif template contains 'product-page' %}
+  <link rel="canonical" href="/products{{ product.handle }}" />
+  {% elsif template contains 'blog.product_reviews' %}
+  <link rel="canonical" href="https://www.svsound.com/blogs/press-reviews" />
+  {% elsif template contains 'customer-service' %}
+  <link rel="canonical" href="https://www.svsound.com/pages/customer-service" />
+  {% else %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+  {% endif %}
+
+  
+  <!-- Canonical Tagging END -->  
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+  <!-- Favicons -->
+  <!-- Fonts -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <!-- Stylesheets -->
+  
+  {{ 'svs.min.css' | asset_url | stylesheet_tag }}
+  {{ 'tweaks.css' | asset_url | stylesheet_tag }}
+  
+  
+  {% if page.handle  == 'merlin' %}
+	<link rel="stylesheet" href="//www2.svsound.com/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="//www2.svsound.com/css/bootstrap-select.min.css">
+	<link rel="stylesheet" type="text/css" href="//www2.svsound.com/css/general.css">
+	<link rel="stylesheet" type="text/css" href="//www2.svsound.com/css/generalFb.css">
+  {% endif %}
+  
+  
+  {% if page.handle  == 'system-builder' %}
+  	<meta property="og:url"                content="https://www.svsound.com/pages/system-builder" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title" 			   content="Check out my custom audio system from Jeeves, the SVS speaker and subwoofer system builder. " />
+	<meta property="og:description" 	   content="Jeeves is your personal SVS home audio speaker and subwoofer system builder and a fun, interactive way to create the perfect SVS home theater." />
+    <meta property="og:image"              content="https://www2.svsound.com/app_builder/img/jeeves_shared_image_fc.jpg" />
+  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="//www2.svsound.com/app_builder/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//www2.svsound.com/app_builder/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="//www2.svsound.com/app_builder/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="//www2.svsound.com/app_builder/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="//www2.svsound.com/app_builder/css/main.css">
+    <link rel="stylesheet" type="text/css" href="//www2.svsound.com/app_builder/css/animate.min.css">
+  {% elsif page.handle  == 'system-builder-dev' %}
+  	<meta property="og:url"                content="https://www.svsound.com/pages/system-builder-dev" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title" 			   content="Check out my custom audio system from Jeeves, the SVS speaker and subwoofer system builder. " />
+	<meta property="og:description" 	   content="Jeeves is your personal SVS home audio speaker and subwoofer system builder and a fun, interactive way to create the perfect SVS home theater." />
+    <meta property="og:image"              content="http://merlin.evo.sitiosverdes.com/app_builder/img/jeeves_shared_image_fc.jpg" />
+    
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="//svsound.val.evo.sitiosverdes.com/app_builder/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//svsound.val.evo.sitiosverdes.com/app_builder/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="//svsound.val.evo.sitiosverdes.com/app_builder/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="//svsound.val.evo.sitiosverdes.com/app_builder/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="//svsound.val.evo.sitiosverdes.com/app_builder/css/main.css">
+    <link rel="stylesheet" type="text/css" href="//svsound.val.evo.sitiosverdes.com/app_builder/css/animate.min.css">
+  {% else %}
+  	{% include 'fb-open-graph-tags' %}
+  {% endif %}
+  
+  
+  {% include 'twitter-card' %}
+  
+  <script type="text/javascript" src="https://cdn.shopify.com/s/files/1/0921/3560/files/slick.min.js?326390107715924882"></script>
+  
+  
+  {% if template contains 'test' %}
+  	{{ 'test.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+  
+  <meta name="google-site-verification" content="2kqIBH0rkB8_fkvXplAT82YhuMqq3c78YkGywXj9NHw" />
+  {{ 'bootstrap-grid.css' | asset_url | stylesheet_tag }}
+  {% include 'magiczoomplus.headers' %}
+  
+  {% if handle contains 'how-to-build-the-ultimate-home-theater' or handle contains 'subwoofer-matching-and-why-a-big-subwoofer-isnt-always-better' or handle contains 'best-uses-for-satellite-speakers' or handle contains 'choosing-between-bookshelf-and-tower-speakers' or handle contains 'test' or handle contains 'backup' or handle contains 'transfer' or handle contains 'replacement' or handle contains 'warranty' or product.type == 'Speaker Outlet' or product.type == 'Subwoofer Outlet' or product.type == 'Test Product' %}
+  <meta name="robots" content="noindex">
+  {% endif %}
+  
+  <script>
+    jQuery.ajax( {
+      url: '//freegeoip.net/json/',
+      type: 'POST',
+      dataType: 'jsonp',
+      success: function(location) {
+        if (location.country_code != 'US') {
+          $('head').append('<link rel="stylesheet" href="{{ 'flavor_russia.css' | asset_url }}" type="text/css" />');
+          document.cookie = "countrylocation=hide";
+        }
+      }
+    });
+    if (document.cookie.indexOf('countrylocation=')!= -1) {
+      $('head').append('<link rel="stylesheet" href="{{ 'flavor_russia.css' | asset_url }}" type="text/css" />');
+  };
+</script>
+  <script src="https://cdn.shopify.com/s/files/1/0921/3560/files/unslider-min.js?6172266332845276164"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0921/3560/files/jquery.event.move.js?12085337442359192570"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0921/3560/files/jquery.event.swipe.js?12085337442359192570"></script>
+  {{ 'unslider.css' | asset_url | stylesheet_tag }}
+  {{ 'unslider-dots.css' | asset_url | stylesheet_tag }}
+  <script type="text/javascript">
+(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script>
+  <meta name="google-site-verification" content="2kqIBH0rkB8_fkvXplAT82YhuMqq3c78YkGywXj9NHw" />
+</head>
+
+
+{% assign body_classes="" %}
+
+{% assign cur_page = page_title | handle %}
+
+{% if template contains 'index' %}
+  {% assign body_classes="home" %}
+{% elsif template == 'product' %}
+  {% assign body_classes="product-page" %}
+{% elsif template contains 'collection'%}
+  {% assign body_classes="collection" %}
+<!--
+  {% if collection.handle contains 'subwoofer' %}
+      {% assign body_classes = body_classes | append: ' subwoofers-subpage' %}
+  {% endif %}
+-->
+{% elsif template contains 'series' or template contains 'speakers' or template contains 'subwoofers' or template contains 'upsell' %}
+  {% assign body_classes="landing-page " | append: cur_page %}
+{% elsif template contains 'systems'%}
+  {% assign body_classes="landing-page systems " | append: cur_page %}
+{% elsif template contains 'faqs'%}
+  {% assign body_classes="faqs updated-basic" %}
+{% elsif template contains 'terms-and-conditions'%}
+  {% assign body_classes="terms-and-conditions updated-basic" %}
+{% elsif template contains 'bill-of-rights'%}
+  {% assign body_classes="bill-of-rights updated-basic" %}
+{% elsif template contains 'about'%}
+  {% assign body_classes="about updated-basic" %}
+{% elsif template contains 'privacy-policy'%}
+  {% assign body_classes="privacy-policy updated-basic" %}
+{% elsif template contains 'rules'%}
+  {% assign body_classes="rules updated-basic" %}
+{% elsif template contains 'document-library'%}
+  {% assign body_classes="document-library updated-basic" %}
+{% elsif template contains 'customer-service'%}
+  {% assign body_classes="customer-service updated-basic" %}
+{% elsif template contains 'newsletter'%}
+  {% assign body_classes="newsletter updated-basic" %}
+{% elsif template contains 'blog' or template contains 'page.reviews' or contains 'featured' %}
+  {% assign body_classes="blog" %}
+{% elsif template contains 'article' or template contains 'sound_experts'%}
+  {% assign body_classes="blog blog-post" %}
+{% elsif template contains 'press-reviews'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'us-dealers'%}
+  {% assign body_classes="dealers us-dealers" %}
+{% elsif template contains 'gift_ideas'%}
+{% assign body_classes="soundpath-main landing-page template-page-2016_holiday_gift_guide " %}
+{% elsif template contains 'international-dealers'%}
+  {% assign body_classes="dealers international-dealers" %}
+{% elsif template contains 'register'%}
+  {% assign body_classes="updated-basic register" %}
+{% elsif template contains 'login'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'activate_account'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'reset_password'%}
+  {% assign body_classes="updated-basic" %}
+{% elsif template contains 'customer'%}
+  {% assign body_classes='account-page' %}
+{% elsif template contains '404'%}
+  {% assign body_classes='updated-basic' %}
+{% elsif template contains 'soundpath' or template contains 'ultra-cat-v2' %}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'prime-cat-v2' %}
+  {% assign body_classes='soundpath-main landing-page prime-cat' %}
+{% elsif template contains 'gift_guide' or template contains 'grad-gift-guide' or template contains 'father-gift-guide' or template contains '2017-fathers-day-gg' %}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'calendar'%}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'big-game-guide' %}
+  {% assign body_classes='soundpath-main landing-page' %}
+{% elsif template contains 'landing-page-subwoofer' %}
+  {% assign body_classes='lp-subwoofers landing-page' %}
+{% elsif template contains 'white-gloss-landing' %}
+  {% assign body_classes='landing-page landing-page template-page-2016_holiday_gift_guide template-page-gift_ideas' %}
+{% elsif template contains 'all-products' %}
+  {% assign body_classes='collection-all' %}
+{% elsif template contains 'lp-gen-2016-' or template contains 'lp-gen-speaker-2016-' or template contains 'lp-sub' or template contains 'lp-speaker' or template contains 'lp-bookshelf' or template contains 'lp-tower' or template contains 'lp-atmos' %}
+  {% assign body_classes='lp-gen-2016' %}
+{% endif %}
+
+
+
+<body class="{{ body_classes }} template-{{ template | handleize }}{% if template == "product" %} {{ product.handle }}{% endif %} {% if template contains "article" %} {{ cur_page }}{% endif %} holiday">
+
+
+
+  
+  <!-- Begin footer -->
+    {% include 'header' %}
+  <!-- End footer -->
+
+  <!-- Begin wrapper -->
+     
+
+      <!-- Begin content-->
+      <section id="content" class="clearfix">
+        {{ content_for_layout }}
+      </section>
+      <!-- End content-->
+
+  <!-- End wrapper -->
+
+  <!-- Begin footer -->
+  {% include 'modal' %}
+  {% include 'footer' %}
+  
+  <!-- End footer -->
+
+  <!-- Scripts -->
+  
+   <script>
+
+     var SVS = SVS ? SVS : {};
+       SVS.currentSite = '{{ shop.domain }}';
+
+  </script>
+  
+  {% raw %}
+  <script id="redirect_bar" type="x-tmpl-mustache">
+      <div class="redirectbar"><p>Looks like you're in {{ user_location }}, so we sent you to {{ site_url }}. You can visit  <a href="http://{{ site_one }}">{{ site_one }}</a> and  <a href="http://{{ site_two }}">{{ site_two }}</a> any time.</p></div>
+  </script>
+  {% endraw %}
+  
+  {{ 'mustache.min.js' | asset_url | script_tag }}
+  <script src="{{ 'svs.min.js' | asset_url }}"></script>
+  
+  
+  {% assign staging = false %}
+  
+  {% if staging == true %}
+    {{ 'staging--mauney.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'staging--mauney.js' | shopify_asset_url | script_tag }}
+    
+    {{ 'staging--coble.css' | asset_url | stylesheet_tag }}
+    {{ 'staging--coble.js' | asset_url | script_tag }}
+
+  
+    {{ 'staging-breneman.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+  {% if template contains 'product' %}
+    {{ 'bundler.js' | asset_url | script_tag }}
+  {% endif %}
+
+
+<input type="hidden" name="_pc_params" value="{{ shop.permanent_domain }}:{{ customer.id }}" />
+  
+
+  <div class="mobilechatsub-outer">
+    <a href="#" class="bottomchat" onclick="OpenLHNChat();ga('send', 'event', 'Subscribe/Chat Box', 'Click', 'Chat Click'); return false" class="mobilechat">Chat Now</a>
+    <a href="#" class="bottomcontest" onclick="modal.style.display = 'block';ga('send', 'event', 'Subscribe/Chat Box', 'Click', 'Subscribe Click 3-16-2017');setCookie('svspop', 'noshow', 100);" class="mobilesub">Win a PB-1000 Subwoofer <i class="fa fa-angle-double-up" style="font-size:25px;padding-left:8px"></i></a>
+  </div>
+  {% include 'newsletter_modal' %}
+  <script>
+    // Popup Subscribe Functionality BEGIN 
+    function subscribechat() {
+      var modalcookie=getCookie("svspop");
+      if (modalcookie!="") {
+      $( ".bottomcontest" ).hide();
+       $( ".bottomchat" ).show();
+       ga('send', 'event', 'Subscribe/Chat Box', 'Click', 'Chat Shown',{'nonInteraction': 1});
+      }
+     else {
+        $( ".bottomcontest" ).show();
+        ga('send', 'event', 'Subscribe/Chat Box', 'Click', 'Subscribe Shown',{'nonInteraction': 1});
+      }
+    };
+    subscribechat();
+    // Popup Subscribe Functionality END
+    
+    
+   
+    
+  </script>
+  
+
+  {% if template == 'product' %}
+  <!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+var google_tag_params = {
+dynx_itemid: {{product.id}},
+dynx_pagetype: "offerdetail",
+dynx_totalvalue: {{product.price | money_without_currency | remove: ','  }},
+};
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1011718176;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1011718176/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+ {% endif %}
+  
+  <!-- Google Knowledge Panel Begin -->
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name" : "SVS",
+  "url": "https://www.svsound.com",
+  "sameAs" : [
+  "https://www.facebook.com/svsound",
+  "https://www.instagram.com/svs_sound",
+  "https://www.linkedin.com/company/svsound"
+  ] }
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "name" : "SVS",
+  "url": "https://www.svsound.com",
+  "logo": "https://cdn.shopify.com/s/files/1/0921/3560/t/62/assets/logo-desktop.svg?6379596352121062231",
+  "image": "https://cdn.shopify.com/s/files/1/0921/3560/t/62/assets/logo-desktop.svg?6379596352121062231",
+  "description": "At SVS, we believe world-class audio experiences should be within everyone’s reach. Our speakers, subwoofers and SoundPath audio accessories refute the notion that exceptional sound quality has to be ridiculously expensive. The SVS design approach involves a fusion of leading edge technology, precision engineering, exhaustive lab and real-world testing, as well as, a deep personal passion for audio excellence, all brought to life by our acoustic engineers. With every new product, we strive to redefine audio performance for the price.",
+  "telephone": "+1 (877) 626-5623",
+  "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Youngstown",
+  "addressRegion": "OH",
+  "postalCode": "44515"
+  },
+  "openingHours": [
+  "Mon-Fri 9:00AM - 9:00PM ET, Sat 12 – 6PM ET, Sun 12 – 4PM ET"
+  ] }
+  [/raw]
+	</script>
+  <!-- Google Knowledge Panel End -->
+  
+  <!-- Category Upsell Script Begin -->
+  <script>
+  if ( $( ".cart-addon" ).length ) {
+  $(document).on('click', '.cart-addon', function(event) {
+    event.preventDefault(); 
+    var productId = $(this).attr("data-product-id");
+    var productType = $(this).attr("data-product-type");
+    var productNAME = $(this).attr("data-product-title");
+    var variantId = $(this).attr("data-product-variant-id"),
+        quantity = 1
+    sessionStorage.setItem('productNAME', productNAME);
+    sessionStorage.setItem('productTYPE', productType);
+    window.location.href = 'https://www.svsound.com/pages/accessories-cart?product_id=' + productId + '&variant_id=' + variantId + '&quantity=' + quantity +'&title=' + productNAME;
+    return false;
+  });
+  }
+</script>
+  <!-- Category Upsell Script End -->
+  
+  {% if template contains 'index' %}
+  {% else %}
+  <!--JAVASCRIPT PIXEL CODE START-->
+<script type="text/javascript" >
+setTimeout(function(){
+var head = document.getElementsByTagName("head")[0];
+var s = document.createElement("script");
+s.src = "http://acuityplatform.com/Adserver/pxlj/7477236331819655172?";
+s.async = true;
+head.appendChild(s);
+},10000);
+</script><!--JAVASCRIPT PIXEL CODE END-->
+
+  {% endif %}
+  
+  
+  <!-- Listrak Analytics – Javascript Framework -->
+<script type="text/javascript">
+        var biJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+        (function (d, s, id, tid, vid) {
+          var js, ljs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+          js.src = biJsHost + "cdn.listrakbi.com/scripts/script.js?m=" + tid + "&v=" + vid;
+          ljs.parentNode.insertBefore(js, ljs);
+        })(document, 'script', 'ltkSDK', 'LmYUR5mzRQMy', '1');
+  
+  (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d);        else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) {
+        if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+            /********** Begin Custom Code **********/
+_ltk.SCA.CaptureEmail('listrak-email');
+    _ltk.SCA.CaptureEmail('input_4');
+    _ltk.SCA.CaptureEmail('email');
+
+
+            /********** End Custom Code **********/
+        });
+
+</script>
+<!-- BEGIN: _GUARANTEE Seal -->
+<span id="_GUARANTEE_SealSpan"></span>
+<img style="display:none;" src="//nsg.symantec.com/Web/Seal/AltSealInfo.aspx?S=Large&T=M&Elem=ImgTagSeal&HASH=fBPkQwBjMPvMIX44X%2Fm9P6mTsLnsJN%2BN1WWE9oSVEkigWayJdt8XXrlobHLJyRmwX07yIheprjHqr1ViXVDiyg%3D%3D&CBF=AB&AB=1&DP=fn=;src=ImgTagSeal;grt=true" />
+<script type="text/javascript" src="//nsg.symantec.com/Web/Seal/gjs.aspx?SN=962605364"></script>
+<script type="text/javascript">
+if (window._GUARANTEE && _GUARANTEE.Loaded) {
+_GUARANTEE.Hash = "fBPkQwBjMPvMIX44X%2Fm9P6mTsLnsJN%2BN1WWE9oSVEkigWayJdt8XXrlobHLJyRmwX07yIheprjHqr1ViXVDiyg%3D%3D";
+_GUARANTEE.WriteSeal("_GUARANTEE_SealSpan", "GuaranteedSeal");
+}
+</script>
+<!-- END: _GUARANTEE Seal -->
+</body>
+</html>
+
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "SVS",
+  "url" : "https://www.svsound.com",
+  "sameAs" : [ "https://www.facebook.com/svsound",
+      "https://www.instagram.com/svs_sound",
+      "https://www.youtube.com/c/SVS_Sound",
+      "https://www.linkedin.com/company/svsound"] 
+},
+"": "",
+</script>
+
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "LocalBusiness",
+  "name" : "SVS",
+  "url" : "https://www.svsound.com",
+  "logo": "https://cdn.shopify.com/s/files/1/0921/3560/t/62/assets/logo-desktop.svg?6379596352121062231",
+  "image": "https://cdn.shopify.com/s/files/1/0921/3560/t/62/assets/logo-desktop.svg?6379596352121062231",
+  "description": "At SVS, we believe world-class audio experiences should be within everyone’s reach. Our speakers, subwoofers and SoundPath audio accessories refute the notion that exceptional sound quality has to be ridiculously expensive. The SVS design approach involves a fusion of leading edge technology, precision engineering, exhaustive lab and real-world testing, as well as, a deep personal passion for audio excellence, all brought to life by our acoustic engineers. With every new product, we strive to redefine audio performance for the price.",
+  "telephone": "+1 (877) 626-5623",
+  "address": {
+  "@type": "PostalAddress",
+"addressLocality": "Youngstown",
+"addressRegion": "OH",
+"postalCode": "44515"
+  },
+  "openingHours": [
+  "Mon-Fri 9:00AM - 9:00PM ET, Sat 12 – 6PM ET, Sun 12 – 4PM ET"
+  ]
+}
+</script>
+
+<script>
+
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://img.youtube.com/vi/ID/maxresdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+        var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+        this.parentNode.replaceChild(iframe, this);
+    }
+
+</script>
+{% include 'shipping_countdown' %}
+
+

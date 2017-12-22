@@ -1,0 +1,92 @@
+{% unless template contains 'blog' or template contains 'lp' %}
+
+<!-- Begin breadcrumb -->
+  <div class="header__breadcrumbs">
+    <ul>
+
+      <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">{{ 'general.breadcrumbs.home' | t }}</span></a></li>
+      {% if product.tags %}
+
+
+        {% for tag in product.tags %}
+          {% if tag contains 'crumb' %}
+
+          {% if tag contains 'systems' %}
+
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/systems" title="SVS Systems" itemprop="url"><span itemprop="title">Systems</span></a></li>
+
+            {% if tag contains 'prime' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/prime-systems" title="SVS Prime Systems" itemprop="url"><span itemprop="title">Prime Systems</span></a></li>
+            {% else %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/ultra-systems" title="SVS Ultra Systems" itemprop="url"><span itemprop="title">Ultra Systems</span></a></li>
+            {% endif %}
+
+          {% elsif tag contains 'speakers' %}
+
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/speakers" title="SVS Speakers" itemprop="url"><span itemprop="title">Speakers</span></a></li>
+
+            {% if tag contains 'prime' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/speakers#prime-series" title="SVS Prime Speakers" itemprop="url"><span itemprop="title">Prime Series</span></a></li>
+            {% else %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/speakers#ultra-series" title="SVS Ultra Speakers" itemprop="url"><span itemprop="title">Ultra Series</span></a></li>
+            {% endif %}
+
+          {% elsif tag contains 'subs' %}
+
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/subwoofers" title="SVS Subwoofers" itemprop="url"><span itemprop="title">Subwoofers</span></a></li>
+            
+            {% if tag contains 'dual' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/collections/dual-subwoofers" title="SVS Dual Subwoofers" itemprop="url"><span itemprop="title">Dual Subwoofers</span></a></li>
+            {% elsif tag contains '1000' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/subwoofers#1000-series" title="SVS 1000 Series Subwoofers" itemprop="url"><span itemprop="title">1000 Series</span></a></li>
+            {% elsif tag contains '2000'  %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/subwoofers#2000-series" title="SVS 2000 Series Subwoofers" itemprop="url"><span itemprop="title">2000 Series</span></a></li>
+            {% elsif tag contains 'plus' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/subwoofers#plus-series" title="SVS Plus Series Subwoofers" itemprop="url"><span itemprop="title">Plus Series</span></a></li>
+              {% elsif tag contains 'ultra' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/subwoofers#ultra-series" title="SVS Ultra Series Subwoofers" itemprop="url"><span itemprop="title">Ultra Series</span></a></li>
+            {% endif %}
+
+          {% elsif tag contains 'specials' %}
+
+             <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/pages/specials" title="SVS Specials" itemprop="url"><span itemprop="title">Specials</span></a></li>
+
+             <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/collections/outlet-specials" title="SVS Outlet Specials" itemprop="url"><span itemprop="title">Outlet Specials</span></a></li>
+
+          {% elsif tag contains 'accessories' %}
+
+            {% if tag contains 'sub' %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/collections/subwoofer-accessories" title="SVS Subwoofer Accessories" itemprop="url"><span itemprop="title">Subwoofer Accessories</span></a></li>
+            {% else %}
+              <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}/collections/speaker-accessories" title="SVS Speaker Accessories" itemprop="url"><span itemprop="title">Speaker Accessories</span></a></li>
+            {% endif %}
+
+          {% endif %}
+
+          <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}{{ product.url }}" title="{{ product.title }}" itemprop="url" class="product-link active"><span itemprop="title">{{ product.title }}</span></a></li>
+          
+        {% endif %}
+        {% endfor %}
+
+      {% else %}
+
+        {% unless collection.title == blank %}
+          {% assign crumb_title = collection.title %}
+          {% assign crumb_url = collection.url %}
+        {% else %}
+          {% assign crumb_title = page.title %}
+          {% assign crumb_url = page.url %}
+        {% endunless %}
+
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}{{ crumb_url }}" title="crumb_title" itemprop="url" class="product-link active"><span itemprop="title">{{ crumb_title }}</span></a></li>
+
+        
+      {% endif %}
+
+
+
+    </ul>
+
+  </div>
+<!-- End breadcrumb -->
+{% endunless %}

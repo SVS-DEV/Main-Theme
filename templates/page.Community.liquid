@@ -1,0 +1,15 @@
+{% if page.title contains 'Merlin' %}
+
+	{% assign title = '' %}
+{% else %}
+	{% assign title = page.title %}
+{% endif %}
+<section>
+<div class="wrap">
+  
+  <div class="community">
+    {{ page.content }}
+  </div>
+  
+</div>
+</section>

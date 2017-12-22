@@ -1,0 +1,31 @@
+<div class="article-pagination cf">
+  {% assign current_found = false %}
+  {% assign done = false %}
+  {% for a in blog.articles %}
+      {% if current_found and done == false %}
+          {% assign next_article = a %}
+          {% assign done = true %}
+      {% endif %}
+      {% unless done %}
+          {% if a.id == article.id %}
+              {% assign current_found = true %}
+          {% else %}
+              {% assign prev_article = a %}
+          {% endif %}
+      {% endunless %}
+  {% endfor %}
+
+  {% if prev_article %}
+      <a href="{{ prev_article.url }}" class="prev-article" onclick= "ga('send', 'event', 'Blogs', 'Click', 'Previous Button');">
+      Next Post: 
+      {{ prev_article.title }}
+    </a>
+  {% endif %}
+
+  {% if next_article %}
+      <a href="{{ next_article.url }}" class="next-article" onclick= "ga('send', 'event', 'Blogs', 'Click', 'Next Button');">
+        Previous Post: 
+      {{ next_article.title }}
+    </a>
+  {% endif %}
+</div>

@@ -1,0 +1,24 @@
+{% comment %}
+created by Josh Highland and NewLeafLabs.com as part of SEO Meta Manager
+purpose: gather all tags used in a collection
+usage: /search?view=SEOMetaManagerTags&q=collection-slug
+version: 1.0
+{% endcomment %}
+
+{% layout none %}
+{% assign output = "" %}
+
+{% for collection in collections %}
+	{% if collection.handle == search.terms %}
+		{% if collection.all_tags.size > 0 %}
+    	{% for tag in collection.all_tags %}
+    		{% if output contains tag %}
+    		{% else %}
+          {% capture output %}{{ output }},{{tag}}{% endcapture %}
+	      {% endif %}
+			{% endfor %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{{ output | strip_newlines | remove_first: "," }}

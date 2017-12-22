@@ -1,0 +1,630 @@
+<style>
+  .affirmholder{
+    line-height:18px;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  #stockmanufacture{
+    margin-top:0px;
+  }
+#learn-more {
+  font-size:15px;
+  color:#386cb0;
+  text-decoration:none;
+  font-style:italic;
+}
+  #learn-more span{
+    font-weight:700
+  }
+  #affirmholder img {
+    height:3em !important;
+    margin:0 auto !important;
+    margin-top:4px !important;
+    margin-bottom:4px !important;
+    
+  }
+  .ratingsnippet{font-size:10px;font-family:'Open Sans',arial;line-height:10px; margin-right:20px;display:block;clear:both;float:none; color:#fff !important}
+  .ratingsnippet span {font-size:10px;font-family:'Open Sans',arial; line-height:10px; color:#fff !important}
+</style>
+<div id="productType" style="display:none">{{product.type}}</div>
+<div id="{{ product.handle }}" data-product-id="{{ product.id }}" class="product">
+
+  <div class="wrap">
+      
+      <section class="product-header" id="product-anchor" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+        	{% assign yotpoid = product.metafields.global.reviewid %}
+            {% if yotpoid == blank %}
+                {% assign yotpoid = 1111 %}
+            {% endif %}
+        <h1 class="product-header__name" itemprop="itemReviewed">{{ product.title }} {% if product.type == 'Speaker' %}Speaker{% elsif product.type == 'Subwoofer' %}Subwoofer{% endif %}</h1>
+        <h6 class="product-header__brief-desc">{{ product.description }}</h6>
+        <div class="product-header__review-wrap">
+          <div class="yotpo bottomLine"
+            data-appkey="HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs"
+            data-product-id="{{ yotpoid }}"
+            data-product-models="{{ yotpoid }}"
+            data-name="{{ product.title | escape }}"
+            data-url="http://www.svsound.com{{ product.url }}"
+            data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+            data-description="{{ product.description | escape }}"
+            data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+         <div class="ratingsnippet">
+         <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> based on 
+	     <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews
+            </div>
+          </div>
+          <span>or <a href="#reviews-anchor" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Write a Review');">Write a review</a></span>
+        </div>
+      </section>
+    
+     
+
+      <section class="product-slider">
+        <table class="magictable">
+          <tbody>
+            <tr>
+              <td>
+        <div class="magiczoombuttons"><a href="#" class="magiczoomprev" onclick="MagicZoom.prev('zoom{{ product.id }}'); return false;"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></div>
+              </td>
+              <td>
+        {% include 'magiczoomplus' %}
+              </td>
+              <td>
+        <div class="magiczoombuttons"><a href="#" class="magiczoomnext" onclick="MagicZoom.next('zoom{{ product.id }}'); return false;"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          </section>
+      
+    <!-- End product photos -->
+
+    <section class="product-details">
+      <div class="product-details__variants-price">
+      {% if product.title == "SoundPath Ultra Speaker Cable" %}
+        <style>
+          .product-details__price-wrap {position:absolute !important; top:20px !important}
+        </style>
+        <div class="optionsdropdown">
+      <!-- Option Value = Banana Variant ID, Spade Variant ID, Mix Variant ID -->
+      <span class="cableoptiontitle">LENGTH:</span>
+        <select id="lengthselect" class="cableoptionselect" name="length" onchange="sendobject();">
+        <option value="11468152838,11468152902,11468152966" selected="selected">4 Feet</option>
+        <option value="11468153030,11468153094,11468153158">6 Feet</option>
+        <option value="11497537030,11497714758,11497790342">8 Feet</option>
+        <option value="11497546502,11497729030,11497793926">10 Feet</option>
+        <option value="11497551430,11497734598,11500171846">12 Feet</option>
+        <option value="11497559622,11497740102,11497794886">15 Feet</option>
+        <option value="11497573958,11497753222,11497800774">20 Feet</option>
+        <option value="11497580742,11497761478,11497803846">25 Feet</option>
+        <option value="11497590214,11497764742,11497807302">30 Feet</option>
+        <option value="11497596998,11497767878,11497812742">35 Feet</option>
+        <option value="11497604614,11497770374,11497837894">40 Feet</option>
+        <option value="11497626566,11497775430,11497844230">45 Feet</option>
+        <option value="11497636806,11497781062,11497919558">50 Feet</option>       
+      </select>
+      <span class="cableoptiontitle">CONNECTOR OPTIONS:</span>
+    <select id="terminalselect" class="cableoptionselect"  name="terminal" onchange="sendid();">
+        <option value="11468152838" selected="selected">Banana Connectors (2 pairs)</option>
+        <option value="11468152902">Spade Connectors (2 pairs)</option>
+        <option value="11468152966">Spade &amp; Banana Connectors (1 pair each)</option>
+      </select>
+      <span class="cableoptiontitle">Quantity:</span>
+    <select id="quantityselect" class="cableoptionselect"  name="quantity" onchange="sendquantity();">
+        <option value="1" selected="selected">Single Cable</option>
+        <option value="2">Pair</option>
+      </select>
+        </div>
+        <div style="font-size:13px">
+          Need a Custom Length? <a data-remodal-target ="contact__modal" style="color:#e05819">Contact Our Sound Experts</a>
+        </div>
+<script>
+
+  function sendobject(){
+    var ele = document.getElementById("lengthselect");
+    var selectedValue = ele.options[ele.selectedIndex].value;
+	var selectedvalueraw = document.getElementById('lengthselect').value;
+	var valuearray = selectedvalueraw.split(',');
+	document.getElementById('terminalselect')[0].value = valuearray[0];
+	document.getElementById('terminalselect')[1].value = valuearray[1];
+	document.getElementById('terminalselect')[2].value = valuearray[2];
+    document.getElementById('id').value = document.getElementById('terminalselect').value;
+    if(selectedValue=="11468152838,11468152902,11468152966"){
+       document.getElementById('price').innerHTML = 43.99 * document.getElementById('quantityselect').value;;
+    }
+    else if(selectedValue=="11468153030,11468153094,11468153158"){
+       document.getElementById('price').innerHTML = 45.99 * document.getElementById('quantityselect').value;
+    }
+    else if(selectedValue=="11497537030,11497714758,11497790342"){
+       document.getElementById('price').innerHTML = 47.99 * document.getElementById('quantityselect').value;
+    }
+    else if(selectedValue=="11497546502,11497729030,11497793926"){
+       document.getElementById('price').innerHTML = 49.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497551430,11497734598,11500171846"){
+       document.getElementById('price').innerHTML = 54.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497559622,11497740102,11497794886"){
+       document.getElementById('price').innerHTML = 59.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497573958,11497753222,11497800774"){
+       document.getElementById('price').innerHTML = 64.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497580742,11497761478,11497803846"){
+       document.getElementById('price').innerHTML = 69.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497590214,11497764742,11497807302"){
+       document.getElementById('price').innerHTML = 74.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497596998,11497767878,11497812742"){
+       document.getElementById('price').innerHTML = 79.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497604614,11497770374,11497837894"){
+       document.getElementById('price').innerHTML = 84.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497626566,11497775430,11497844230"){
+       document.getElementById('price').innerHTML = 90.99 * document.getElementById('quantityselect').value;
+    }
+	else if(selectedValue=="11497636806,11497781062,11497919558"){
+       document.getElementById('price').innerHTML = 94.99 * document.getElementById('quantityselect').value;
+    }
+  
+}
+
+function sendid(){
+    document.getElementById('id').value = document.getElementById('terminalselect').value;
+	
+}
+function sendquantity() {
+	document.getElementById('quantity').value = document.getElementById('quantityselect').value;
+	if (document.getElementById('quantityselect').value == "1"){
+		document.getElementById('price').innerHTML = document.getElementById('price').innerHTML / 2;
+		document.getElementById('eachspan').innerHTML = " / each";
+	}
+	else{
+	document.getElementById('price').innerHTML = document.getElementById('price').innerHTML * document.getElementById('quantityselect').value;
+	document.getElementById('eachspan').innerHTML = " / pair";
+	}
+}
+</script>
+
+        
+        
+        
+        
+        {% endif %}
+        {% if product.title == "SoundPath RCA Audio Interconnect Cable" %}
+        <style>
+          .product-details__price-wrap {position:absolute !important; top:20px !important}
+        </style>
+        <div class="optionsdropdown">
+        <span class="cableoptiontitle">LENGTH:</span>
+        <select id="lengthselect" class="cableoptionselect" name="length" onchange="sendobject();">
+        <option value="11658765318,24.99">1 Meter</option>
+       	<option value="11658762822,29.99">2 Meters</option>
+       	<option value="11658765702,34.99">3 Meters</option>
+        <option value="11658765190,39.99">5 Meters</option>
+        <option value="11658765510,44.99">8 Meters</option>
+        <option value="11658762630,49.99">12 Meters</option>
+        <option value="11658765830,59.99">15 Meters</option>
+      </select>
+        
+        <span class="cableoptiontitle">Quantity:</span>
+        <select id="quantityselect" class="cableoptionselect"  name="quantity" onchange="sendquantity();">
+        <option value="1">Single Cable</option>
+        <option value="2">Pair</option>
+      </select>
+        </div>
+       <script>
+         
+         function sendobject() {
+           var variantID = ""
+           var variantPrice = ""
+           var ele = document.getElementById("lengthselect");
+    var selectedValue = ele.options[ele.selectedIndex].value;
+	var selectedvalueraw = document.getElementById('lengthselect').value;
+	var valuearray = selectedvalueraw.split(',');
+           variantID = valuearray[0];
+           variantPrice = valuearray[1];
+           if (document.getElementById('quantityselect').value == "1"){
+		document.getElementById('price').innerHTML = variantPrice;
+        document.getElementById('id').value = variantID;
+	}
+	else{
+	document.getElementById('price').innerHTML = variantPrice * document.getElementById('quantityselect').value;
+	document.getElementById('eachspan').innerHTML = " / pair";
+    document.getElementById('id').value = variantID;
+	}
+           
+         }
+         
+         function sendquantity() {
+	document.getElementById('quantity').value = document.getElementById('quantityselect').value;
+	if (document.getElementById('quantityselect').value == "1"){
+		document.getElementById('price').innerHTML = document.getElementById('price').innerHTML / 2;
+		document.getElementById('eachspan').innerHTML = " / each";
+	}
+	else{
+	document.getElementById('price').innerHTML = document.getElementById('price').innerHTML * document.getElementById('quantityselect').value;
+	document.getElementById('eachspan').innerHTML = " / pair";
+	}
+}
+
+        </script>
+        
+        {% endif %}
+        
+        {% if product.variants.size > 0 and product.title != "SoundPath Ultra Speaker Cable" and product.title != "SoundPath RCA Audio Interconnect Cable"%}
+          <div class="product-details__variants{% if product.tags contains 'accessories-crumb' %} single-variant-image{% endif %}" {% if product.variants.size <= 1 %}style="display: none;"{% endif %}>
+            {% unless product.tags contains 'accessories-crumb' %}
+            <h4>Finish:<span class="product-details__finish">{{ product.variants.first.title }}</span></h4>
+            {% else %}
+            <h4>{{ product.options.first }}:<span class="product-details__finish">{{ product.variants.first.title }}</span></h4>
+            {% endunless %}
+            
+            {% for variant in product.variants %}
+            {% if product.metafields.swatches.swatch-1 != blank %}
+            {% if forloop.index == 1 %}
+            <img src="{{product.metafields.swatches.swatch-1}}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant selected ">
+            {% endif %}
+            {% if forloop.index == 2 %}
+            <img src="{{product.metafields.swatches.swatch-2}}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant">
+            {% endif %}
+            {% if forloop.index == 3 %}
+            <img src="{{product.metafields.swatches.swatch-3}}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant">
+            {% endif %}
+            {% else %}
+            <img src="{{ variant.image.src | product_img_url }}" data-id="{{ variant.id }}" data-sku="{{ variant.sku }}" data-variant-name="{{ variant.title }}" data-variant-pricenodec="{{ variant.price }}"  data-variant-price="{{ variant.price | money_without_currency }}" class="product-details__variant{% if forloop.index < 2 %} selected{% endif %}">
+            {% endif %}
+            {% endfor %}
+            {% if product.title == "Prime Elevation" %}
+            <span class="bracketAddtitle">Ceiling Mount Option: <a href="#mountlink">[Learn More]</a></span>
+            <select onchange="bracketAdd()" id="bracketAdd">
+              <option value="no" selected="selected">No Ceiling Mount Required</option>
+              <option value="yes">Ceiling Mount Required</option>
+            </select>
+            {% endif %}
+            
+          </div>
+        {% endif %}
+        <div class="product-details__price-wrap{% if product.variants.size < 2 %} no-variant{% endif %} hideRU">
+          <div class="product-details__price-holder">
+            <div class="product-details__price">
+              
+              <h3>{% if product.compare_at_price > 0 %}
+              <span class="pricebefore">{{ product.compare_at_price | money_without_currency }}</span>
+              {% endif %}  
+                <strong id="price">{{ product.price | money_without_currency }}</strong>
+                <span id="eachspan" style="display:inline-block">
+                {% if product.type == "Speaker" %}each speaker
+                {% else %}
+                each{% if product.title == "SoundPath Speaker Cable Terminals" %} set{% endif %}
+                {% endif %}
+                </span> 
+                <div class="affirmholder" onclick= "ga('send', 'event', 'Affirm', 'Click', 'Product Page Snippet');">
+    <a id="learn-more" style="visibility:hidden" href="#"></a>
+    </div>
+                <span id="stockmanufacture" class="stockmanufacture">In stock &amp; Ships in one business day </span>{% if product.title == "SoundPath Ultra Speaker Cable" %}<br><span class="terminalspan">Includes Terminals.<br>Custom Terminated in Ohio.</span>{% endif %}
+              </h3>
+              {% if product.tags contains 'show-qty' %}
+              <label for="qty_update">Quantity:</label>
+              <input id="qty_update" class="qty-select" type="number" value="1">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} ROCKET CODE - BUNDLER APP {% endcomment %}
+      {% comment %}
+      The data structure
+
+      - We store all of the bundled products, base products and addon products in a collection.
+      This collection can be accessed using "collections.bundled-products".
+      - We loop through all products within the bundled collection checking for a meta field value
+      that matches the current product.
+      - We get the metafield value of serialized addon product data(so far this is product id and quantity).
+      To unserialize within Shopify's liquid we split the metafield value first by "," to separate multiple products.
+      The second step is getting each product's data split out we do this be splitting by "|".
+      The first iteration of this array is the handle of the product.
+      The second is the quantity of product.
+      {% endcomment %}
+
+      {% assign hasBundles = false %}
+      {% assign bundle_selection_type = '' %}
+      {% assign bundle_collection_handle = 'bundled-products' %}
+      
+      {% for product_bundle in collections[bundle_collection_handle].products %}
+        {% if product_bundle.metafields.bundle.base_product_handle == product.handle %}
+          {% assign hasBundles = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if hasBundles %}
+      <!-- bundle selection -->
+      {% assign addon_products = '' %}
+      {% assign bundled_products_collection = collections.bundled-products %}
+      <div class="product-details__offer-wrap hideRU">
+        {% include 'bundle-selection' %}
+      </div>
+      {% endif %}
+      {% comment %} END ROCKET CODE {% endcomment %}
+    </section>
+
+
+
+    <!-- Begin description -->
+	
+      <section class="product-addtocart">
+        <p class="ppageborp">
+          <span class="ppagebormain">45 Day Risk-Free In-Home Trial | Fast &amp; Free Shipping and Returns</span>
+          <span class="ppageborsecondary">5-Year Unconditional Warranty</span>
+        </p>
+        <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+
+          <input id="quantity" type="hidden" name="quantity" value="1" class="tc item-quantity" />
+          <input id="id" type="hidden" name="id" value="{{ product.variants.first.id }}">
+
+          <!-- Begin product options -->
+          <div class="product-options {% if hide_default_title %}no-options {% endif %}">
+
+            <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
+              <div class="purchase">
+                {% unless product.available %}
+                <button id="product-addtocart" class="soldout" onclick="event.preventDefault(); false;">{{ 'products.product.sold_out_html' | t }}</button>
+                {% else %}
+                <button type="submit" id="product-addtocart" class="pp-addtocart hideRU"><span><strong>{{ 'products.product.add_to_cart' | t }}</strong> <i class="fa fa-angle-double-right"></i></span></button>
+                <div id="cart-animation" style="display:none">1</div>
+                {% endunless %}
+                {% if product.title == "SB12-NSD" %}
+                <button id="product-addtocart" style="display:block !important" class="soldout" onclick="event.preventDefault(); false;">{{ 'products.product.sold_out_html' | t }}</button>
+                <style>
+                  #product-addtocart {
+                    display:none !important
+                  }
+                </style>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <!-- End product options -->
+
+        </form>
+        <a class="dealer svs-buy showRU" href="https://www.svsound.com/pages/international-dealers" target="_blank">Find a Dealer</a>
+      
+        <p class="product-addtocart__phone hideRU"><i class="fa fa-phone"></i> Order by Phone: <strong>1.877.626.5623</strong></p>
+        
+
+      </section>
+    	
+
+      <section class="product-promise hideRU">
+        <img src="{{ 'product-promise__1.png' | asset_url }}">
+        <img src="{{ 'product-promise__2.png' | asset_url }}">
+        <img src="{{ 'product-promise__3.png' | asset_url }}">
+        <p>All this and more on every SVS order.</p>
+        <a href="/pages/bill-of-rights" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Bill of Rights');">See the bill of rights</a>
+      </section>
+
+      <section class="product-paypal hideRU">
+        <table style="margin: 0 auto">
+          <tr>
+            <td style="vertical-align:middle" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Paypal Credit Link');">
+        <script type="text/javascript" data-pp-pubid="12c1c618d2" data-pp-placementtype="234x60"> (function (d, t) {
+"use strict";
+var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
+n.src = "//paypal.adtag.where.com/merchant.js";
+s.parentNode.insertBefore(n, s);
+}(document, "script"));
+</script>
+            </td>
+            <td style="width:30px"></td>
+            <td style="vertical-align:middle">
+        <img class="amazon-payments-logo" src="{{ 'amazon-payments-logo-black.png' | asset_url }}" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Amazon Payments Link');">
+            </td>
+            <td style="width:30px">
+            </td>
+            <td>
+              <div>
+                <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/affirmlogoWhite.png?5032948012052495542" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Affirm Link');">
+                <div id="affirmholder" style="display:none">
+                     </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+
+    <!-- End description -->
+  <div class="span12"><div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div></div>
+  </div>
+
+  <!-- Begin related product -->
+  {% if settings.show_related_products %}
+    {% include 'related-products' %}
+  {% endif %}
+
+</div>
+
+
+<div style="display:none" id="preloading">
+{% for image in product.images offset: 1 %}
+{{ image | product_img_url: '1024x1024' | img_tag }}
+{% endfor %}
+</div>
+
+  <script>
+
+var ProductOptions = {{ product | json }};
+function variantUpdate(variantId) {
+  var selector = jQuery('.MagicToolboxSelectorsContainer img[alt="'+variantId+'"]').closest('a');
+  MagicZoom.update(jQuery('.MagicZoomPlus').attr('id'),selector.attr('href'),selector.attr('data-image') )  ;
+}
+    
+    var selectCallback = function(variant, selector) {
+    
+    if (variant && variant.featured_image) {
+      var newImage = variant.featured_image; // New image object.
+      var mainImageDomEl = jQuery('.mz-active img')[0]; // DOM element of main image we need to swap.
+      Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+    }
+    if (variant && variant.available) {
+      jQuery('#add-to-cart').removeAttr('disabled').removeClass('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+      if(variant.price < variant.compare_at_price){
+        jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}") + " <del>" + Shopify.formatMoney(variant.compare_at_price, "{{ shop.money_format }}") + "</del>");
+      } else {
+        jQuery('#price-preview').html(Shopify.formatMoney(variant.price, "{{ shop.money_format }}"));
+      }
+    } else {
+      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled'); // set add-to-cart button to unavailable class and disable button
+      var message = variant ? {{ 'products.product.sold_out_html' | t | json }} : {{ 'products.product.unavailable_html' | t | json }};
+      jQuery('#price-preview').html(message);
+    }
+                                      
+                                
+
+  };
+
+  </script>
+    <script>
+	var lastWidth = $(window).width();
+
+$(window).resize(function(){
+   if($(window).width()!=lastWidth){
+      setHeight();
+      lastWidth = $(window).width();
+   };
+});
+
+window.onload = setHeight();
+function setHeight() {
+	var maxHeight = 0;
+$('.product-pr-slide').each(function(){
+   maxHeight = $(this).height() > maxHeight ? $(this).height() : maxHeight;
+});
+$('.product-pressreviews-slider').css("height", maxHeight + 50); 
+}
+	</script>
+<!--
+{% if product.title == "SB12-NSD"%}
+<script>
+  $('.product-details__variants-price').html('<span style="font-style:italic">We’re sold out of SVS SB12-NSD but you can still get this sizzling $399 subwoofer deal through our partners at Amazon while supplies last!</span><span style="display:block;margin-top:5px"><a style="color:#386cb0;text-decoration:none" href="https://www.amazon.com/dp/B009F8Y7SO" onclick="ga(&quot;send&quot;, &quot;event&quot;, &quot;Product Page&quot;, &quot;Click&quot;, &quot;SB12-NSD Amazon Link&quot;);">https://www.amazon.com/dp/B009F8Y7SO</a></span>');
+</script>
+{% endif %}
+-->
+
+{% if product.title == "SoundPath One Speaker Cable"%}
+<!--<style>
+  .product-details__variant:nth-child(3) {
+    display:none;
+}
+</style>-->
+      {% endif %}
+
+
+{% if product.title == "PB-2000"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Shipping will resume August 25th. </p>'</script>
+      {% endif %}
+{% if product.title == "Dual PB-2000"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Shipping will resume August 25th.</p>' </script>
+      {% endif %}
+{% if product.title == "Dual SB13-Ultra"%}
+<!-- Went up 8-10-2017 -->
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano Gloss will resume shipping September 8th.</p>'</script>
+      {% endif %}
+{% if product.title == "SB13-Ultra"%}
+<!-- Went up 8-10-2017 -->
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano Gloss will resume shipping September 8th.</p>'</script>
+      {% endif %}
+
+<!--
+{% if product.title == "Ultra Bookshelf"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano gloss will resume shipping April 5th.</p>'</script>
+      {% endif %}
+
+{% if product.title == "Ultra Bookshelf Surround System"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px">Piano gloss will resume shipping April 5th.</p>'</script>
+      {% endif %}
+
+{% if product.title == "Prime Elevation"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">White Gloss will resume shipping January 6th.</p>'</script>
+      {% endif %}
+{% if product.title == "Prime Satellite"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">White Gloss will resume shipping January 6th.</p>'</script>
+      {% endif %}
+
+
+{% if product.title == "Ultra Surround"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano gloss will resume shipping January 6th.</p>'</script>
+      {% endif %}
+
+{% if product.title == "PB16-Ultra"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano Gloss will resume shipping June 9th.</p>'</script>
+      {% endif %}
+{% if product.title == "Dual PB16-Ultra"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano Gloss will resume shipping June 9th.</p>'</script>
+      {% endif %}
+
+{% if product.title == "SB13-Ultra"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano Gloss will resume shipping August 8th.</p>'</script>
+      {% endif %}
+{% if product.title == "SB13-Ultra"%}
+      <script>document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px; padding-left:10px">Piano Gloss will resume shipping August 8th.</p>'</script>
+      {% endif %}
+
+-->
+
+
+
+<script>
+   affirm.ui.ready( function() { updateAffirmAsLowAs( {{product.price}} ) } );
+  function updateAffirmAsLowAs( amount ){
+    // Only display as low as for items over $50 and less than $17500  
+    if ( ( amount == null ) || ( amount > 1750000 ) || (amount < 5000) ) { return; }
+
+    // Define payment estimate options
+    var options = {
+      apr: "0.10", // percentage assumed APR for loan
+      months: 12, // can be 3, 6, or 12
+      amount: amount // USD cents
+    }
+    
+    function handleEstimateResponse (payment_estimate) {
+      var dollars = payment_estimate.payment_string;
+      var a = document.getElementById('learn-more');
+      var b = document.getElementById('affirmholder');
+      
+      // Black logo
+      // var logo = '<img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzEuNjQgMTY2LjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzIzMWYyMDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ290eXBlX2JsazwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjk4LjM5LTEuOTJBMTcuNTcsMTcuNTcsMCwxLDAsMzE2LDE1LjY1LDE3LjU5LDE3LjU5LDAsMCwwLDI5OC4zOS0xLjkyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxLjkyKSIvPjxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iMjgzLjMiIHk9IjQ2LjY4IiB3aWR0aD0iMjkuOTkiIGhlaWdodD0iMTE5LjMxIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDAzLjQ3LDQxLjY5Yy0xNSwwLTMyLjI1LDEwLjgtMzcuOTMsMjQuMzRWNDQuNzZIMzM3LjA5VjE2NC4wOGgzMFYxMDguNjdjMC0yMy40NSw5LTM2LjU0LDI4LjYxLTM2LjkxbDE2Ljc1LTI5LjM4QTY0LjE3LDY0LjE3LDAsMCwwLDQwMy40Nyw0MS42OVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMS45MikiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01MjQsNDEuNzdjLTEyLjg3LDAtMjQuNDEsNC44NC0zMi41LDEzLjYybC0wLjQyLjQ1LTAuNDEtLjQ1Yy04LTguNzgtMTkuNDgtMTMuNjItMzIuMzYtMTMuNjItMjcuNTgsMC00Ny42LDIwLjExLTQ3LjYsNDcuODF2NzQuNTNoMjkuNTJWODguOTRjMC0xMS42Myw3LjEtMTkuMTQsMTguMDgtMTkuMTRzMTguMDksNy41MSwxOC4wOSwxOS4xNHY3NS4xN0g1MDZWODguOTRjMC0xMS42Myw3LjEtMTkuMTQsMTguMDktMTkuMTRzMTguMDksNy41MSwxOC4wOSwxOS4xNHY3NS4xN2gyOS41MVY4OS41OEM1NzEuNjQsNjEuODgsNTUxLjYyLDQxLjc3LDUyNCw0MS43N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMS45MikiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNDcsMzMuNzdjMC0zLjk0LjUzLTguNjUsMy45LTExLjI0LDMuNjktMi44Nyw5LjA5LTIuMzQsMTMuNDYtMi4xMmw1LjgyLTIxLjcyLTMuMTEtLjE2Yy0xMi41Mi0uNjctMjUuNjktMS42LTM2LjY3LDUuNjYtOS4zMSw2LjE1LTEzLjQ1LDE2Ljc0LTEzLjQ1LDI3LjYxdjEzSDE4MS4xOHYtMTFjMC0zLjkyLjUyLTguNTgsMy44Mi0xMS4yLDMuNjktMi45Myw5LjE2LTIuMzgsMTMuNTMtMi4xNmw1LjgyLTIxLjcyLTMuMTEtLjE2Yy0xMi42Mi0uNjgtMjUuOTItMS42LTM2LjkxLDUuODYtOS4xMiw2LjE4LTEzLjE2LDE2LjY4LTEzLjE2LDI3LjQydjEzSDEzNy42NVY2Ni40NWgxMy41M3Y5Ny42M2gzMFY2Ni40NWgzNS43NnY5Ny42M2gzMFY2Ni40NWgyMC43N1Y0NC43NkgyNDd2LTExWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxLjkyKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyMi40MywxNjQuMDlsMC0xMDUuMzZhMTcuMzIsMTcuMzIsMCwwLDAtMTUuMzItMTdjLTUuNzMtLjM3LTExLjgyLDEuNzMtMTUuNDEsNi4zOEwwLDE2NC4wOEgyMi42YzksMCwxNi4xOC00LjY5LDIxLjYxLTExLjdMOTUsODguMTV2NzUuOTRoMjcuNDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDEuOTIpIi8+PC9zdmc+" style="height:1em; margin:0 .3em .15em;vertical-align:bottom;">';
+        
+      // Blue Logo
+      var logo = '<img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzEuNjQgMTY2LjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzJiYzJkZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ290eXBlX2JsdWU8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI5OC4zOSwwQTE3LjU3LDE3LjU3LDAsMSwwLDMxNiwxNy41NywxNy41OSwxNy41OSwwLDAsMCwyOTguMzksMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiLz48cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjI4My4zIiB5PSI0Ni42OCIgd2lkdGg9IjI5Ljk5IiBoZWlnaHQ9IjExOS4zMSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQwMy40Nyw0My42MWMtMTUsMC0zMi4yNSwxMC44LTM3LjkzLDI0LjM0VjQ2LjY4SDMzNy4wOVYxNjZoMzBWMTEwLjU5YzAtMjMuNDUsOS0zNi41NCwyOC42MS0zNi45MUw0MTIuNDQsNDQuM0E2NC4xNyw2NC4xNywwLDAsMCw0MDMuNDcsNDMuNjFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTI0LDQzLjY5Yy0xMi44NywwLTI0LjQxLDQuODQtMzIuNSwxMy42MmwtMC40Mi40NS0wLjQxLS40NWMtOC04Ljc4LTE5LjQ4LTEzLjYyLTMyLjM2LTEzLjYyLTI3LjU4LDAtNDcuNiwyMC4xMS00Ny42LDQ3LjgxVjE2NmgyOS41MlY5MC44NmMwLTExLjYzLDcuMS0xOS4xNCwxOC4wOC0xOS4xNHMxOC4wOSw3LjUxLDE4LjA5LDE5LjE0VjE2Nkg1MDZWOTAuODZjMC0xMS42Myw3LjEtMTkuMTQsMTguMDktMTkuMTRzMTguMDksNy41MSwxOC4wOSwxOS4xNFYxNjZoMjkuNTFWOTEuNUM1NzEuNjQsNjMuOCw1NTEuNjIsNDMuNjksNTI0LDQzLjY5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwKSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0NywzNS42OWMwLTMuOTQuNTMtOC42NSwzLjktMTEuMjQsMy42OS0yLjg3LDkuMDktMi4zNCwxMy40Ni0yLjEybDUuODItMjEuNzItMy4xMS0uMTZjLTEyLjUyLS42Ny0yNS42OS0xLjYtMzYuNjcsNS42Ni05LjMxLDYuMTUtMTMuNDUsMTYuNzQtMTMuNDUsMjcuNjF2MTNIMTgxLjE4di0xMWMwLTMuOTIuNTItOC41OCwzLjgyLTExLjIsMy42OS0yLjkzLDkuMTYtMi4zOCwxMy41My0yLjE2bDUuODItMjEuNzItMy4xMS0uMTZjLTEyLjYyLS42OC0yNS45Mi0xLjYtMzYuOTEsNS44Ni05LjEyLDYuMTgtMTMuMTYsMTYuNjgtMTMuMTYsMjcuNDJ2MTNIMTM3LjY1VjY4LjM3aDEzLjUzVjE2NmgzMFY2OC4zN2gzNS43NlYxNjZoMzBWNjguMzdoMjAuNzdWNDYuNjhIMjQ3di0xMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjIuNDMsMTY2bDAtMTA1LjM2YTE3LjMyLDE3LjMyLDAsMCwwLTE1LjMyLTE3Yy01LjczLS4zNy0xMS44MiwxLjczLTE1LjQxLDYuMzhMMCwxNjZIMjIuNmM5LDAsMTYuMTgtNC42OSwyMS42MS0xMS43TDk1LDkwLjA3VjE2NmgyNy40NVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiLz48L3N2Zz4=" style="height:1em; margin:0 .3em .15em;vertical-align:bottom;">';
+      
+      // Define the text surrounding the monthly payment price
+      var content = "Starting at $" + dollars + " a month with Affirm. <br><span>Learn More</span>";
+      
+      a.innerHTML = content;
+      b.innerHTML = logo;
+      a.onclick = payment_estimate.open_modal;
+      a.style.visibility = "visible";
+      
+    };
+    affirm.ui.payments.get_estimate(options, handleEstimateResponse);
+  }
+
+</script>
+{% if product.title == "SoundPath Pivoting Wall/Ceiling Bracket" %}
+<script>
+document.getElementById("eachspan").innerHTML="pair";
+</script>
+{% endif %}
+<script>
+  if (document.cookie.indexOf('country=')!= -1) {
+    if($('.product-details__variants:visible').length == 0) {
+      $( ".product-details__variants-price" ).addClass( "hideRU" );
+    }
+}
+</script>
+
+

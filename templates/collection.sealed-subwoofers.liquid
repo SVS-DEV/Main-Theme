@@ -1,0 +1,82 @@
+<style>
+  .product.col-1-3 {
+  margin-top:30px;
+}
+.product .product__handle {
+  color: #000;
+  font-weight: 800;
+  font-size: 34px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  line-height: 1;
+}
+.product .product__link {
+  color: #346CB1;
+  -webkit-transition: color 0.2s ease;
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+.product img {
+  width: 100% !important;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.product .yotpo .pull-left a {
+  color: #ff4500 !important;
+}
+.product .ratings {
+  padding-bottom:7px;
+}
+.product .price {
+  font-size: 20px !important;
+  margin-bottom: 7px !important;
+  font-style: italic;
+  font-weight: normal;
+}
+.product .product__price-ratings {
+  border-bottom: 3px solid #000 !important;
+  padding: 7px 0 !important;
+  margin: 5px 0 10px !important;
+}
+.product .product__description {
+  font-size: 15px;
+  font-weight: 200;
+  min-height: 60px;
+}
+</style>
+{% assign specs_setting = false %}
+
+{% include 'landing_page--header', first_heading: collection.metafields.header.first_heading , second_heading: collection.metafields.header.second_heading , description_heading: collection.metafields.header.description_heading, main_description: collection.description %}
+
+{% if collection.handle contains 'subwoofer' %}
+  
+  
+  <section class="subwoofers-subpage__summary">
+    <div class="wrap">
+      <ul>
+       {{ collection.metafields.global.special_summary }}
+      </ul>
+    </div>
+  </section>
+
+{% endif %}
+  
+
+<section class="collection grid">
+
+  <div class="wrap">
+
+    {% for product in collection.products %}
+      {% include 'product-loop-grid' with collection.handle, specs: specs_setting %}
+    {% endfor %}
+
+  </div>
+  
+  <!--{% include 'collection--footer' %}
+  {% include 'bill-of-rights' %}-->
+
+
+</section>

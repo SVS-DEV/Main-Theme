@@ -1,0 +1,1010 @@
+{%if product.title contains "PB-4000" or product.title contains "SB-4000" or product.title contains "PC-4000"%}
+<style>
+  h5 {
+    font-size:15px !important;
+    font-weight:bold !important;
+  }
+  .product-page-v2-wrap .tab-content-area .app-stores {
+    border-top:none !important;
+  }
+  #tab-4 {display:none;}
+
+</style>
+{% endif %}
+<style>
+  .spl-graph small {
+  display: block;
+  margin: 18px auto 24px auto;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+  .newfinish {
+    float:none;
+    clear:both;
+    font-size:12px;
+    padding:5px;
+    border:solid thin #dbad26;
+    margin-top:15px; 
+    text-align:center;
+    position:relative; 
+    color:#dbad26
+  }
+  .newfinish span {
+    position:absolute;
+    top:-17px;
+    left:115px;
+    color:#dbad26
+  }  
+  .price {white-space:nowrap}
+  .pricebefore {
+    content: '$';
+    vertical-align: baseline;
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-weight: 700;
+    font-size: 33px;
+    position: relative;
+    color: #ae0200;
+    text-decoration: line-through;
+    white-space:nowrap;
+    margin-right:15px;
+}
+
+  .owner-systems-wrap .fa-instagram {margin-right:15px}
+   .affirmholder {
+    margin-top:15px;
+  }
+#learn-more2 {
+  color: #366bb0;
+    font-weight: 700;
+    font-style: italic;
+}
+  .bor-title-wrap.mobile {
+    display:none;
+  }
+  .bor-title-wrap.mobile a {
+    color:#ff4500;
+    text-decoration:none
+  }
+  .svspay-icons {
+    text-align:center;
+    margin-top:15px;
+    display:none
+  }
+  .svspay-icons img {
+    max-width:80px;
+    max-height:34px;
+    margin-left:3%;
+    margin-right:3%;
+    display:inline;
+    
+  }
+  .svs-dealer {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 15px 0;
+    background-color: #386cb0;
+    border: 3px solid transparent;
+    margin: 0 auto;
+    line-height: 1;
+    height: auto;
+  }
+  .svs-dealer:hover {
+    border: 3px solid #386cb0;
+    color: #386cb0;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 992px) {
+    .sidebar-wrap {
+      display:none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .pricing-wrap .affirmholder {
+      display:none;
+    }
+    .bor-title-wrap.mobile {
+      display:block
+    }
+    .svspay-icons {
+      display:block;
+      border-top:solid thin #c2c2c2;
+      padding-top:15px;
+    }
+    .product-page-v2-wrap .buy-box .phone-cta {
+      margin-top:15px;
+    }
+    .bor-title-wrap {
+      display:none;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .sidebar-wrap {
+      display:none;
+    }
+  }
+   
+</style>
+{% if product.title contains "Replacement" %}
+<style>
+  .product-content-area {
+    display:none
+  }
+  .social-rec {
+    display:none
+  }
+</style>
+{% endif %}
+{% if product.title contains "Outlet" %}
+<style>
+  .finishes {display:none}
+</style>
+{% endif %}
+
+{{ 'product-page.css' | asset_url | stylesheet_tag }}
+<div id="productType" style="display:none">{{product.type}}</div>
+<div class="product-header__name" style="display:none">{{ product.title }}</div>
+<div class="upsellProductID" style="display:none">{{ product.variants.first.id }}</div>
+<div id="{{ product.handle }}" data-product-id="{{ product.id }}" class="product"></div>
+
+<div class="product-page-v2-wrap">
+    <section class="">
+        <div class="wrap purchase-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="visible-xs-block visible-sm-block">
+                        <h1> {{ product.title }} {% if product.type == 'Speaker' %}Speaker{% elsif product.type == 'Subwoofer'%}Subwoofer{% endif %}</h1>
+                    </div>
+                    <div class="col-md-5 product-images">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="magictable">
+                                    <div class="magiczoombuttons">
+                                        <a href="#" class="magiczoomprev" onclick="MagicZoom.prev('zoom{{ product.id }}'); return false;"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    {% include 'magiczoomplusv2' %}
+
+                                    <div class="magiczoombuttons"><a href="#" class="magiczoomnext" onclick="MagicZoom.next('zoom{{ product.id }}'); return false;"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--{% if product.type == "Subwoofer" or product.title == "Prime Elevation" %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#tab-6" class="view-all-videos-link" onclick="$('#tab-6').addClass('active').siblings().removeClass('active');$('a[href$=&quot;tab-6&quot;]').addClass('active').parent().siblings().find('a').removeClass('active');"> View all Videos <i class="fa fa-angle-double-down"></i> </a>
+                            </div>
+                        </div> {% endif %}-->
+
+                        <div class="row bor-info hidden-xs hidden-sm">
+                            <div class="col-md-12">
+                                <div class="bor-img-wrap">
+                                    <img src="{{ 'pp-bor-trial.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-shipping.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-warranty.png' | asset_url }}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="bor-title-wrap">
+                                    <h4> 45 Day Risk-Free In-Home Trial. Fast & Free Shipping and Returns. </h4>
+                                    <h4> 5-Year Unconditional Warranty </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 product-cart-area">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-discription-header">
+                                    <div class="hidden-xs hidden-sm"> <h1> {{ product.title }} {% if product.type == 'Speaker' %}Speaker{% elsif product.type == 'Subwoofer' %}Subwoofer{% endif %} </h1> </div>
+                                    <p class="short-description">
+                                        {{ product.description }}
+                                        <a href="#tab-1" class="" onclick="$('#tab-1').addClass('active').siblings().removeClass('active');$('a[href$=&quot;tab-1&quot;]').addClass('active').parent().siblings().find('a').removeClass('active');ga('send', 'event', 'Product Page', 'Click', 'Read More');clearhash()"> Read More <i class="fa fa-angle-double-down"></i> </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="rating-review cf">
+                                    {% include 'product-page-yotpo-rating' %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row finishquantity">
+                            <div class="{% if product.type == "Subwoofer" or product.type == "Dual Subwoofer" %} col-xs-12 col-sm-6 col-md-12 col-lg-5 {% else %}col-xs-8 col-sm-3 col-md-6 col-lg-3{% endif %} finishes">
+                                <div class="finish-wrap cf" data-match-height="cart-col-1">
+                                  {% include 'finish-options' %}
+                                  {% if product.title == "SB-2000" or product.title == "Ultra Bookshelf"%}<div class="newfinish">New! <strong>Limited Edition</strong> Piano Gloss White<span>|</span></div> {% endif %}
+                              </div>
+                            </div>
+                          {% unless product.type == "Subwoofer" or product.type == "Dual Subwoofer"%}
+                            <div class="col-xs-4 col-sm-3 col-md-6 col-lg-2 quantities hideRU">
+                                <div class="quantity-wrap cf" data-match-height="cart-col-1">
+                                    <h3> Quantity: </h3>
+                                  {%if product.title == "SoundPath Ultra Speaker Cable"%}
+                                  	<select id="quantityselect" class="cableoptionselect"  name="quantity" onchange="sendquantity();">
+        								<option value="1" selected="selected">Single Cable</option>
+        								<option value="2">Pair</option>
+        							</select>
+                                  {% elsif product.title == "SoundPath RCA Audio Interconnect Cable" %}
+                                  <select id="quantityselect" class="cableoptionselect"  name="quantity" onchange="sendquantity();">
+                                    <option value="1">Single Cable</option>
+                                    <option value="2">Pair</option>
+                                  </select>
+{% elsif product.title contains "Outlet" %}
+                                  {% if product.variants.first.inventory_quantity == 1 %}
+                                  <p>1 Available</p>
+                                  <input id="qty_update" class="qty-select" type="number" value="1"  max="{{product.variants.first.inventory_quantity}}" style="display:none">
+                                  {% elsif product.variants.first.inventory_quantity > 1 %}
+                                  <input id="qty_update" class="qty-select" type="number" value="1"  max="{{product.variants.first.inventory_quantity}}">
+                                  <script>
+                                    $('#qty_update').on('keydown keyup', function(e){
+                                      if ($(this).val() > {{product.variants.first.inventory_quantity}}
+                                          && e.keyCode != 46 // delete
+                                          && e.keyCode != 8 // backspace
+                                         ) {
+                                        e.preventDefault();
+                                        $(this).val({{product.variants.first.inventory_quantity}});
+                                      }
+                                    });
+                                  </script>
+                                  {% endif %}
+
+                                  {% else %}
+                                    <input id="qty_update" class="qty-select" type="number" value="1">
+                                  {% endif %}
+                                </div>
+                            </div>
+                          {% else %}
+                          <input id="qty_update" class="qty-select" type="number" value="1" style="display:none">
+                          {% endunless %}
+
+                            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-7 hideRU">
+                                <div class="pricing-wrap" data-match-height="cart-col-1">
+                                  {% if product.compare_at_price > 0 %}
+              <span class="pricebefore"> ${{ product.compare_at_price | money_without_currency }}</span>
+              {% endif %}
+                                    <span class="price" id="price">  {{ product.price | money_without_currency }}</span>
+
+                                    <span id="stockmanufacture" class="stock-notification stockmanufacture">
+                                        In stock &amp; ships in one business day
+                                    </span>
+                                    {% if product.title == "SoundPath Ultra Speaker Cable" %}
+                                        <br><span class="terminalspan">Includes Terminals. <br>Custom Terminated in Ohio.</span>
+                                    {% endif %}
+                                  <div class="affirmholder">
+                                        <a id="learn-more" style="visibility:hidden" href="#" onclick= "ga('send', 'event', 'Affirm', 'Click', 'Product Page Snippet');"></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12"> <div class="bs-bottom-border-fix"></div> </div>
+                            {% if product.title == "Prime Elevation" %}
+                            <div class="bracketadd-container">
+                              <span class="bracketAddtitle">Ceiling Mount Option: <a href="#" onclick="$('#tab-2').addClass('active').siblings().removeClass('active');$('a[href$=&quot;tab-2&quot;]').addClass('active').parent().siblings().find('a').removeClass('active');location.href ='#trans-tabs';return false;">[Learn More]</a></span>
+                                        <select onchange="bracketAdd()" id="bracketAdd">
+                                          <option value="no" selected="selected">No Ceiling Mount Required</option>
+                                          <option value="yes">Ceiling Mount Required</option>
+                                        </select>
+                            </div>
+                            <div class="col-xs-12"> <div class="bs-bottom-border-fix"></div> </div>
+                              <script>
+                            function bracketAdd() {
+                                if ($("#bracketAdd").val() == "yes") {
+                                  $('.product-details__variant:nth-child(1)').attr('data-id', 37996253772);
+                                  $('.product-details__variant:nth-child(2)').attr('data-id', 37997484300);
+                                  $('.product-details__variant:nth-child(3)').attr('data-id', 37997489292);
+                                  var elevationid = $('.selected').attr('data-id');
+                                  $('#id').attr('value', elevationid);
+                                }
+                                else {
+                                  /* Not Checked */
+
+                                  var elevationid = $('.selected').attr('data-id');
+                                  $('#id').attr('value', elevationid);
+                                }
+                              }
+                              $('select').prop('selectedIndex', function () {
+                                    var selected = $(this).children('[selected]').index();
+                                    return selected != -1 ? selected : 0;
+                                });
+                              bracketAdd()
+                            </script>
+                            {% endif %}
+
+                            <div class="cf bundle-wrap-area">
+                                {% assign hasBundles = false %}
+                                {% assign bundle_selection_type = '' %}
+                                {% assign bundle_collection_handle = 'bundled-products' %}
+
+                                {% for product_bundle in collections[bundle_collection_handle].products %}
+                                {% if product_bundle.metafields.bundle.base_product_handle == product.handle %}
+                                {% assign hasBundles = true %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% if hasBundles %}
+                                <!-- bundle selection -->
+                                {% assign addon_products = '' %}
+                                {% assign bundled_products_collection = collections.bundled-products %}
+                                <div class="product-details__offer-wrap hideRU">
+                                    {% include 'bundle-selection' %}
+                                    <div class="col-xs-12"> <div class="bs-bottom-border-fix"></div> </div>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="row buy-box">
+                            <div class="col-sm-5 hidden-xs hidden-sm hideRU phonerow">
+                                <p class="phone-cta"> <i class="fa fa-phone"></i> <strong>Order by Phone</strong> <span class="phone-number">877.626.5623</span> </p>
+                            </div>
+
+                            <div class="col-sm-7">
+                                <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+                                  <input id="quantity" type="hidden" name="quantity" value="1" class="tc item-quantity" />
+                                  <input id="id" type="hidden" name="id" value="{{ product.variants.first.id }}">
+
+                                  <!-- Begin product options -->
+                                  <div class="product-options {% if hide_default_title %}no-options {% endif %}">
+
+                                    <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
+                                      <div class="purchase">
+                                        {% unless product.available %}
+                                        <button id="product-addtocart" class="soldout" onclick="event.preventDefault(); false;">{{ 'products.product.sold_out_html' | t }}</button>
+                                        {% else %}
+                                        <button type="submit" id="product-addtocart" class="hideRU pp-addtocart"><span><strong>{{ 'products.product.add_to_cart' | t }}</strong> <i class="fa fa-angle-double-right"></i></span></button>
+                                        <div id="cart-animation" style="display:none">1</div>
+                                        {% endunless %}
+                                        {% if product.title == "PB12-NSD"%}
+                <button id="product-addtocart" style="display:block !important" class="soldout" onclick="event.preventDefault(); return false;">{{ 'products.product.sold_out_html' | t }}</button>
+                <style>
+                  #product-addtocart {
+                    display:none !important
+                  }
+                  .phonerow {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                    display:none !important
+                  }
+                  .finishquantity {
+                    padding-left:15px;padding-right:15px;padding-bottom:10px;font-style:italic
+                  }
+                  .other-payment-options {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                  }
+                </style>
+                                        <script>
+                                          $(".finishquantity").html("We’re sold out of SVS PB12-NSD, but you can still get our sizzling $499.99 PB12-NSD subwoofer deal through our partners at Amazon while supplies last. <a href='https://www.amazon.com/dp/B009H66M46' style= 'text-decoration:none;color:#e05819' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"PB12-NSD Out of Stock - PB12-NSD Amazon Link\");'>https://www.amazon.com/dp/B009H66M46</a>.");
+                                        </script>
+                                        {% endif %}
+                                        
+                                        {% if product.title == "SB12-NSD"%}
+                <button id="product-addtocart" style="display:block !important" class="soldout" onclick="event.preventDefault(); return false;">{{ 'products.product.sold_out_html' | t }}</button>
+                <style>
+                  #product-addtocart {
+                    display:none !important
+                  }
+                  .phonerow {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                    display:none !important
+                  }
+                  .finishquantity {
+                    padding-left:15px;padding-right:15px;padding-bottom:10px;font-style:italic
+                  }
+                  .other-payment-options {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                  }
+                </style>
+                                        <script>
+                                          $(".finishquantity").html("We’re sold out of SVS SB12-NSD, but you can still get our sizzling $399.99 SB12-NSD subwoofer deal through our partners at Amazon while supplies last. <a href='https://www.amazon.com/SVS-SB12-NSD-400-watt-Controlled-Subwoofer/dp/B009F8Y7SO/ref=sr_1_1?ie=UTF8&qid=1513176066&sr=8-1&keywords=sb12-nsd' style= 'text-decoration:none;color:#e05819' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"SB12-NSD Out of Stock - SB12-NSD Amazon Link\");'>https://www.amazon.com/dp/B009H66M46</a>.");
+                                        </script>
+                                        {% endif %}
+
+                                        {% if product.title == "SB13-Ultra" or product.title == "Dual SB13-Ultra" %}
+                                        <button id="product-addtocart" style="display:block !important" class="soldout" onclick="event.preventDefault(); return false;">{{ 'products.product.sold_out_html' | t }}</button>
+                <style>
+                  #product-addtocart {
+                    display:none !important
+                  }
+                  .phonerow {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                    display:none !important
+                  }
+                  .finishquantity {
+                    padding-left:15px;padding-right:15px;padding-bottom:10px;font-style:italic
+                  }
+                  .other-payment-options {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                  }
+                </style>
+                                        <script>
+                                          $(".finishquantity").html("Product is no longer in stock. For comparable performance, check out the SVS <a href='/products/sb-4000' style='color:#eb1717;text-decoration:none;' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"SB13-Ultra Out of Stock - SB-4000 Link\");'>SB-4000</a> and <a href='/products/sb16-ultra' style='color:#eb1717;text-decoration:none;' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"SB13-Ultra Out of Stock - SB16-Ultra Link\");'>SB16-Ultra</a> subwoofers or browse the <a href='/collections/outlet-specials' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"SB13-Ultra Out of Stock - Outlet Link\");'>SVS Outlet store</a> for the best prices you’ll find on all SVS subwoofers.");
+                                        </script>
+                                        {% endif %}
+                                        {% if product.title == "PB13-Ultra" or product.title == "Dual PB13-Ultra" %}
+                                        <button id="product-addtocart" style="display:block !important" class="soldout" onclick="event.preventDefault(); return false;">{{ 'products.product.sold_out_html' | t }}</button>
+                <style>
+                  #product-addtocart {
+                    display:none !important
+                  }
+                  .phonerow {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                    display:none !important
+                  }
+                  .finishquantity {
+                    padding-left:15px;padding-right:15px;padding-bottom:10px;font-style:italic
+                  }
+                  .other-payment-options {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                  }
+                </style>
+                                        <script>
+                                          $(".finishquantity").html("Product is no longer in stock. For comparable performance, check out the SVS <a href='/products/pb-4000' style='color:#eb1717;text-decoration:none;' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"PB13-Ultra Out of Stock - PB-4000 Link\");'>PB-4000</a> and <a href='/products/pb16-ultra' style='color:#eb1717;text-decoration:none;' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"PB13-Ultra Out of Stock - PB16-Ultra Link\");'>PB16-Ultra</a> subwoofers or browse the <a href='/collections/outlet-specials' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"PB13-Ultra Out of Stock - Outlet Link\");'>SVS Outlet store</a> for the best prices you’ll find on all SVS subwoofers.");
+                                        </script>
+                                        {% endif %}
+                                        {% if product.title == "PC13-Ultra" or product.title == "Dual PC13-Ultra" %}
+                                        <button id="product-addtocart" style="display:block !important" class="soldout" onclick="event.preventDefault(); return false;">{{ 'products.product.sold_out_html' | t }}</button>
+                <style>
+                  #product-addtocart {
+                    display:none !important
+                  }
+                  .phonerow {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                    display:none !important
+                  }
+                  .finishquantity {
+                    padding-left:15px;padding-right:15px;padding-bottom:10px;font-style:italic
+                  }
+                  .other-payment-options {
+                    display:none;
+                  }
+                  .phonerow-mobile {
+                  }
+                </style>
+                                        <script>
+                                          $(".finishquantity").html("Product is no longer in stock. For comparable performance, check out the SVS <a href='/products/pc-4000' style='color:#eb1717;text-decoration:none;'>PC-4000</a> and <a href='/products/pb16-ultra' style='color:#eb1717;text-decoration:none;' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"PC13-Ultra Out of Stock - PC-2000 Link\");'>PC-2000</a> subwoofers or browse the <a href='/collections/outlet-specials' onclick='ga(\"send\", \"event\", \"Product Page\", \"Click\", \"PC13-Ultra Out of Stock - Outlet Link\");'>SVS Outlet store</a> for the best prices you’ll find on all SVS subwoofers.");
+                                        </script>
+                                        {% endif %}
+                                        
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- End product options -->
+                                </form>
+                              <a class="dealer svs-dealer showRU" href="https://www.svsound.com/pages/international-dealers" target="_blank">Find a Dealer</a>
+                            </div>
+
+                            <div class="col-sm-5 visible-xs-block visible-sm-block phonerow-mobile">
+                                <p class="phone-cta"> <i class="fa fa-phone"></i> <strong>Order by Phone</strong> <span class="phone-number"><a href="tel:+18776265623" style="color:#000;font-weight:bold;text-decoration:underline">877.626.5623</a></span> </p>
+                            </div>
+                          <div class="svspay-icons cf">
+                            <center>
+                              <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/svs_icon-paypal.png?12156618317776426299" title="PayPal">
+                              <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/svs-paypal2-logo.png?10508930925034777074" title="Amazon Pay">
+                              <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/svs_icon-apple-pay.png?12156618317776426299" title="Apple Pay">
+                              <!--<img src="https://cdn-assets.affirm.com/images/buttons/42x205-white.svg" style="max-width:167px !important" title="Affirm Payments">-->
+                               <div class="affirmholder2">
+                                        <a id="learn-more2" style="visibility:hidden" href="#" onclick= "ga('send', 'event', 'Affirm - Mobile', 'Click', 'Product Page Snippet');"></a>
+                                    </div>
+                            </center>
+                          </div>
+
+                        </div>
+
+                        <div class="row bor-info visible-xs-block visible-sm-block">
+                            <div class="col-md-12">
+                                <div class="bor-img-wrap">
+                                    <img src="{{ 'pp-bor-trial.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-shipping.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-warranty.png' | asset_url }}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="bor-title-wrap">
+                                    <h4> 45 Day Risk-Free In-Home Trial. Fast & Free Shipping and Returns. </h4>
+                                    <h4> 5-Year Unconditional Warranty </h4>
+                                </div>
+                              <div class="bor-title-wrap mobile">
+                                <a href="/pages/bill-of-rights">View My SVS Bill of Rights</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row hidden-xs">
+                            <div class="other-payment-options cf">
+                                <div class="col-sm-4" onclick="ga('send', 'event', 'Product Page', 'Click', 'Paypal Credit Link');">
+                                    <script type="text/javascript" data-pp-pubid="12c1c618d2" data-pp-placementtype="234x60"> (function (d, t) {
+                                        "use strict";
+                                        var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
+                                        n.src = "//paypal.adtag.where.com/merchant.js";
+                                        s.parentNode.insertBefore(n, s);
+                                        }(document, "script"));
+                                    </script>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href="https://www.affirm.com/buy-with-affirm/" target="_blank">
+                                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/affirmlogoWhite.png?5032948012052495542" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Affirm Link');">
+                                        <div id="affirmholder" style="display:none"></div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href="https://pay.amazon.com/us/shopper" target="_blank">
+                                        <img class="amazon-payments-logo" src="{{ 'amazon-payments-logo-black.png' | asset_url }}" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Amazon Payments Link');">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12"> <div class="bottom-border-seperation"></div> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-content-area">
+        <div class="wrap">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div id="responsiveTabs">
+                                    <ul>
+                                        {% if product.metafields.custom_sections.section-1 != blank %}
+                                            <li><a href="#tab-1" class="" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Intro');clearhash()"> Intro</a></li>
+                                        {% endif %}
+                                        {% if product.metafields.custom_sections.section-3 != blank %}
+                                            <li><a href="#tab-2" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Description');clearhash()"> Description</a></li>
+                                        {% endif %}
+                                        {% if product.metafields.custom_sections.section-6 != blank %}
+                                            <li><a href="#tab-3" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Tech Info');clearhash()"> Tech info</a></li>
+                                        {% endif %}
+                                            {% unless product.title == "PB-4000" or product.title =="SB-4000" or product.title == "PC-4000" %}<li> <a href="#tab-4" id="tab4" onclick="$('.slider-press')[0].slick.refresh();ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Press Reviews');clearhash()"> Press Reviews</a></li>{% endunless %}
+                                            <li onclick="location.href = '#ownerreviews';ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Owner Reviews');clearhash()"> Owner Reviews</li>
+                                        {% if product.type == "Subwoofer" or product.title == "Prime Elevation" %}
+                                            <li><a href="#tab-6" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Videos');clearhash()"> Videos</a></li>
+                                        {% endif %}
+                                        {% if product.metafields.custom_sections.product-manuals != blank %}
+                                            <li><a href="#tab-5" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Manuals');clearhash()"> Manuals</a></li>
+                                        {% endif %}
+                                    </ul>
+
+                                    {% if product.metafields.custom_sections.section-1 != blank %}
+                                      <div id="tab-1" class="tab-content-area">
+                                          <h2> {{ product.title }} {% if product.type == 'Speaker' %}Speaker{% elsif product.type == 'Subwoofer' %}Subwoofer{% endif %} </h2>
+                                          {{ product.metafields.custom_sections.section-1 }}
+
+                                          {% if product.metafields.custom_sections.quick-specs != blank %}
+                                              <div class="quick-specs cf">
+                                                  <h3><i class="fa fa-gears"></i> Quick Specs </h3>
+                                                  {{ product.metafields.custom_sections.quick-specs }}
+                                                  <div class="view-wrap">
+                                                      <a href="#tab-3" style="" class="tech-info-link" onclick="ga('send', 'event', 'Product Page', 'Click', 'View All Tech Info');clearhash()"> View all Tech Info <i class="fa fa-angle-double-right"></i> </a>
+                                                  </div>
+                                                <script>
+                                                  function clearhash(){
+                                                  setTimeout(function() {   //calls click event after a certain time
+                                                    history.pushState("", document.title, window.location.pathname);
+                                                  }, 2000);
+                                                  }
+                                                  clearhash()
+                                                </script>
+                                              </div>
+                                          {% endif %}
+                                      </div>
+                                    {% endif %}
+
+                                    {% if product.metafields.custom_sections.section-3 != blank %}
+                                      <div id="tab-2" class="tab-content-area">
+                                          {{ product.metafields.custom_sections.section-3 }}
+
+                                          <div class="hidden-xs clear cf">
+                                              {% if product.type == "Subwoofer" %}
+                                                  <h3 class="subwoofer-callouts">
+                                                      SVS Subwoofer Design Philosophy
+                                                      <img src="{{ 'subwoofer-callout-v3.jpg' | asset_url }}">
+                                                  </h3>
+
+                                              {% elsif product.type == "Speaker" %}
+                                                  <h3 class="subwoofer-callouts">
+                                                      SVS Speaker Design Philosophy
+                                                      <img src="{{ 'speaker-callout-v3-short.jpg' | asset_url }}">
+                                                  </h3>
+
+                                              {% endif %}
+                                          </div>
+                                      </div>
+                                    {% endif %}
+
+                                    {% if product.metafields.custom_sections.section-6 != blank %}
+                                      <div id="tab-3" class="tab-content-area">
+                                          {{ product.metafields.custom_sections.section-6 }}
+                                      </div>
+                                    {% endif %}
+
+                                      <div id="tab-4" class="tab-content-area">
+                                          <div class="slider-press">
+                                            {% if product.title contains "Outlet" %}
+                                            {% assign prblog = product.metafields.global.base_product %}
+                                            {% else %}
+                                            {% assign prblog = product.handle | replace: 'dual-', '' %}
+                                            {% endif %}
+  											{% assign blog = blogs['press-reviews'] %}
+  											{% paginate blog.articles by 500 %}
+                                              {% for article in blog.articles %}
+                                              {% for tag in article.tags %}
+                                                  {% if tag == prblog %}
+                                                      <div class="press-quote">
+                                                          <blockquote> {{ article.content | strip_html }} </blockquote>
+                                                          <p> {{ article.title }} </p>
+                                                          <img src="{{ article.image | img_url }}">
+                                                      </div>
+                                                  {% endif %}
+                                              {% endfor %}
+                                              {% endfor %}
+  											{% endpaginate %}
+                                          </div>
+                                      </div>
+
+                                      {% if product.type == "Subwoofer" or product.title == "Prime Elevation" %}
+                                          <div id="tab-6" class="tab-content-area">
+                                              <div class="row">
+                                                  {% assign videos = product.title | handleize %}
+                                                  {% assign productCat = product.type | downcase %}
+
+                                                  {% for article in blogs['videos'].articles %}
+                                                  {% for tag in article.tags %}
+                                                      {% if tag == videos or tag == productCat %}
+                                                          <div class="col-sm-6 video-wrap">
+                                                              <h4 data-match-height="video-titles"> {{ article.title }} </h4>
+                                                              <div class="video-embed-wrap"> {{ article.content }} </div>
+                                                          </div>
+                                                      {% endif %}
+                                                  {% endfor %}
+                                                  {% endfor %}
+                                              </div>
+                                          </div>
+                                      {% endif %}
+                                    {% if product.metafields.custom_sections.product-manuals != blank %}
+                                      <div id="tab-5" class="tab-content-area product-manuals">
+                                            <div class="row">
+                                              <div class="col-md-12">
+                                              {{ product.metafields.custom_sections.product-manuals }}
+                                              </div>
+                                            </div>
+                                      </div>
+                                    {% endif %}
+                                </div> <!-- end tabs -->
+
+                            </div>
+
+                        </div>
+{% unless product.title == "PB-4000" or product.title="SB-4000" or product.title="PC-4000" %}
+                        <div class="row">
+                            <div class="static-press cf">
+                                {% if product.metafields.custom_sections.product-awards != blank %}
+                                    <div class="col-xs-12 award-row">
+                                        <div class="awards-wrap">
+                                            {{ product.metafields.custom_sections.product-awards }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if product.metafields.custom_sections.static_reviews != blank %}
+                                    <div class="static-press-inner-wrap cf">
+                                        {{ product.metafields.custom_sections.static_reviews }}
+
+                                        <div class="view-wrap col-sm-12">
+                                            <a href="/blogs/press-reviews/tagged/{{ product.handle }}" onclick="ga('send', 'event', 'Product Page', 'Click', 'View all Press Reviews');"> View all Press Reviews <i class="fa fa-angle-double-right"></i> </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                      {% endunless %}
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- NEED SIDEBARS FOR SUBWOOFERS AND ACCESSORIES -->
+                        {% include 'product-sidebar' %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-rec">
+        <div class="wrap">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-6 owner-systems-wrap">
+                        <h2> <i class="fa fa-instagram"></i> @SVS_Sound </h2>
+                        <div class="covet-pics-gallery" data-id="{{ product.metafields.global.instagramid }}"></div>
+                        <p class="social-rec-p">
+                            SVS owner shots shared via Instagram. Click on pics for captions and submit your own by tagging <a href="https://www.instagram.com/svs_sound/">@SVS_Sound</a> or #soundrevolution.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 recommended-slider-wrap">
+                        <h2> You May Also Like... </h2>
+                        <div class="rec-slider">
+                            {{ product.metafields.custom_sections.recommendations }}
+                        </div>
+                        <p class="social-rec-p"> The above products are often considered when someone is evaluating the {{ product.title }}. </p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <p class="social">
+                            <span>Find us on:</span>
+                            <a href="https://www.facebook.com/SVSound/" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Facebook');"><i class="fa fa-facebook-official"></i></a>
+                            <a href="https://twitter.com/SVS_Sound" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Twitter');"><i class="fa fa-twitter-square"></i></a>
+                            <a href="https://www.instagram.com/svs_sound/" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Instagram');"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/c/SVS_Sound" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on YouTube');"><i class="fa fa-youtube-square"></i></a>
+                            <a href="https://www.pinterest.com/svsound/" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Pinterest');"><i class="fa fa-pinterest-square"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="owner-reviews" id="ownerreviews">
+        <div class="wrap">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        {% assign yotpoid = product.metafields.global.reviewid %}
+                        {% if yotpoid == blank %}
+                            {% assign yotpoid = 1111 %}
+                        {% endif %}
+
+                        <h2> <i class="fa fa-group"></i> Owner Ratings & Reviews </h2>
+                        <div class="yotpo yotpo-main-widget"
+                            data-product-id="{{ yotpoid }}"
+                            data-name="{{ product.title | escape }}"
+                            data-url="http://www.svsound.com{{ product.url }}"
+                            data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+                            data-description="{{ product.description | escape }}">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ***** CALLING ALL SCRIPTS *****  -->
+{% include 'product_scripts' %}
+
+<script>
+    $('#responsiveTabs').responsiveTabs({
+        startCollapsed: 'false',
+        animation: 'slide',
+        scrollToAccordion: true,
+        scrollToAccordionOffset: 40,
+    });
+  $('.rec-slider').slick({
+    adaptiveHeight: true,
+    slidesToShow: 2,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 1
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 650,
+            settings: {
+                slidesToShow: 1
+            }
+        },
+   ]
+  });
+
+   $('.slider-press').slick({
+       slidesToShow: 2,
+       //draggable: false,
+       responsive: [
+           {
+               breakpoint: 1450,
+               settings: {
+                   slidesToShow: 2
+               }
+           },
+           {
+               breakpoint: 650,
+               settings: {
+                   slidesToShow: 1
+               }
+           },
+      ]
+   });
+
+
+
+  $('a:contains("Press Reviews")').filter(function(index)
+{
+    $(this).click(function(){ $('.slider-press')[0].slick.refresh() });
+});
+
+
+
+
+</script>
+
+<!-- PRODUCT SPECIFIC CONDITIONS BEGIN -->
+
+
+{% if product.title == "PB-4000"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash shipping now, Piano gloss will resume shipping December 29th.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-28-2017 -->
+{% if product.title == "Dual PB-4000"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash shipping now, Piano gloss will resume shipping December 29th.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-28-2017 -->
+{% if product.title == "PC-4000"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Pre-order now, PC-4000 starts shipping January 15.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-28-2017 -->
+{% if product.title == "Dual PC-4000"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Pre-order now, PC-4000 starts shipping January 15.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-28-2017 -->
+
+{% if product.title == "SB-1000"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th. Piano Gloss White will resume shipping January 26th.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-14-2017 -->
+{% if product.title == "Dual SB-1000"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th. Piano Gloss White will resume shipping January 26th.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-14-2017 -->
+
+{% if product.title == "Prime Center"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-27-2017 -->
+
+{% if product.title == "Prime Satellite 5.1 System"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th. Piano Gloss White will resume shipping January 26th.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-27-2017 -->
+{% if product.title == "Prime Satellite 2.1 System"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th. Piano Gloss White will resume shipping January 26th.</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-27-2017 -->
+{% if product.title == "Prime Tower Surround System"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-27-2017 -->
+{% if product.title == "Prime Bookshelf Surround System"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-27-2017 -->
+{% if product.title == "Prime Satellite 2.1 System"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-27-2017 -->
+
+{% if product.title == "Prime Elevation"%}
+      <script>
+        document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th</p>';
+        $( "#stockmanufacture" ).addClass( "nochange" );
+</script>
+      {% endif %}
+<!-- Went up 11-22-2017 -->
+
+{% if product.title == "Replacement SoundPath Ultra Speaker Cable Terminal Tip - Banana" or product.title == "Replacement SoundPath Ultra Speaker Cable Terminal Tip - Spade"%}
+<style>
+  .product-page-v2-wrap .pricing-wrap .price:after {
+    content: 'pair' !important;
+    font-size: 14px;
+    font-style: italic;
+    color: black;
+    font-weight: 400;
+  }
+</style>
+{% endif %}
+{% if product.title == "Ultra Bookshelf"%}
+<style>
+  @media (max-width:1449px) and (min-width:1200px) {
+    .newfinish span {
+      left:20px;
+    }
+  }  
+  @media (max-width:915px) and (min-width:767px) {
+    .newfinish span {
+      left:20px;
+    }
+  }   
+  @media (max-width:364px) and (min-width:300px) {
+    .newfinish span {
+      left:20px;
+    }
+  }   
+</style>
+{% endif %}
+<!-- PRODUCT SPECIFIC CONDITIONS END -->
+

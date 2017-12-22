@@ -1,0 +1,390 @@
+{% if shop.metafields.4dx_seo.charset %}
+<meta charset="{{ shop.metafields.4dx_seo.charset }}" />
+{% else %}
+<meta charset="utf-8" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo_bulk.bulk_entire == 1 %}
+
+	<meta name="robots" content="noindex, nofollow" />
+	
+{% else %}
+
+	{% if template contains 'page' %}
+		{% if shop.metafields.4dx_seo_bulk.bulk_pages == 1 %}
+			<meta name="robots" content="noindex, nofollow" />
+		{% else %}
+          {% if page.metafields.4dx_seo.no_index == 1 %}
+              <meta name="robots" content="noindex" />
+          {% endif %}
+          
+          {% if page.metafields.4dx_seo.no_follow == 1 %}
+              <meta name="robots" content="nofollow" />
+          {% endif %}
+		{% endif %}
+	{% endif %}
+	
+	
+	{% if template contains 'product' %}
+		{% if shop.metafields.4dx_seo_bulk.bulk_products == 1 %}
+			<meta name="robots" content="noindex, nofollow" />
+		{% else %}
+          {% if product.metafields.4dx_seo.no_index == 1 %}
+              <meta name="robots" content="noindex" />
+          {% endif %}
+          
+          {% if product.metafields.4dx_seo.no_follow == 1 %}
+              <meta name="robots" content="nofollow" />
+          {% endif %}
+		{% endif %}
+	{% endif %}
+	
+	
+	{% if template contains 'article' or template contains 'blog' %}
+		{% if shop.metafields.4dx_seo_bulk.bulk_blog == 1 %}
+			<meta name="robots" content="noindex, nofollow" />
+		{% else %}
+          {% if article.metafields.4dx_seo.no_index == 1 %}
+              <meta name="robots" content="noindex" />
+          {% endif %}
+          
+          {% if article.metafields.4dx_seo.no_follow == 1 %}
+              <meta name="robots" content="nofollow" />
+          {% endif %}
+
+          {% if current_tags %}
+            {% if shop.metafields.4dx_seo_tags.tags_blog == 1 %}
+                <meta name="robots" content="noindex" />
+            {% endif %}
+          {% endif %}
+		{% endif %}
+	{% endif %}
+	
+	
+	{% if template contains 'collection' %}
+		{% if shop.metafields.4dx_seo_bulk.bulk_collections == 1 %}
+			<meta name="robots" content="noindex, nofollow" />
+		{% else %}
+          {% if collection.metafields.4dx_seo.no_index == 1 %}
+              <meta name="robots" content="noindex" />
+          {% endif %}
+          
+          {% if collection.metafields.4dx_seo.no_follow == 1 %}
+              <meta name="robots" content="nofollow" />
+          {% endif %}
+
+          {% if current_tags %}
+            {% if shop.metafields.4dx_seo_tags.tags_collections == 1 %}
+                <meta name="robots" content="noindex" />
+            {% endif %}
+          {% endif %}
+
+          {% if collection.current_vendor %}
+            {% if shop.metafields.4dx_seo_bulk.bulk_collection_vendors == 1 %}
+                <meta name="robots" content="noindex" />
+            {% endif %}
+          {% endif %}
+		{% endif %}
+	{% endif %}
+
+	{% if template contains 'search' %}
+		{% if shop.metafields.4dx_seo_bulk.bulk_search == 1 %}
+			<meta name="robots" content="noindex" />
+		{% endif %}
+	{% endif %}
+	
+{% endif %}
+
+
+{% if template contains 'page' or template == 'index' or template == '404' %}
+
+  {% if page.metafields.4dx_seo.meta_title != null %}
+  	<title>{{ page.metafields.4dx_seo.meta_title }}</title>
+  	{% else %}
+  	<title>{% if template == '404' %}Page Not Found{% else %}{{ page_title }} &ndash; {{ shop.name }}{% endif %}</title>
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.meta_description != null %}
+    <meta name="description" content="{{ page.metafields.4dx_seo.meta_description }}" />
+    {% else %}
+    <meta name="description" content="{{ page_description }}" />
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.og_title != null %}
+	<meta property="og:title" content="{{ page.metafields.4dx_seo.og_title }}" />
+    {% else %}
+    <meta property="og:title" content="{% if template == '404' %}Page Not Found{% elsif page_title contains shop.name %}{{ page_title }}{% else %}{{ page_title }} &ndash; {{ shop.name }}{% endif %}  - {{ shop.name }}" />
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.og_description != null %}
+	<meta property="og:description" content="{{ page.metafields.4dx_seo.og_description }}" />
+    {% else %}
+    <meta property="og:description" content="{{ page_description | strip_html | escape }}" />
+  {% endif %}
+
+	<meta property="og:type" content="website" />
+
+  {% if page.metafields.4dx_seo.schema_name != null %}
+	<meta itemprop="name" content="{{ page.metafields.4dx_seo.schema_name }}" />
+    {% else %}
+	<meta itemprop="name" content="{% if template == '404' %}Page Not Found{% elsif page_title contains shop.name %}{{ page_title }}{% else %}{{ page_title }} &ndash; {{ shop.name }}{% endif %} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.schema_description != null %}
+	<meta itemprop="description" content="{{ page.metafields.4dx_seo.schema_description }}" />
+    {% else %}
+	<meta itemprop="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.twitter_title != null %}
+	<meta property="twitter:title" content="{{ page.metafields.4dx_seo.twitter_title }}" />
+    {% else %}
+	<meta property="twitter:title" content="{% if template == '404' %}Page Not Found{% elsif page_title contains shop.name %}{{ page_title }}{% else %}{{ page_title }} &ndash; {{ shop.name }}{% endif %} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.twitter_description != null %}
+	<meta property="twitter:description" content="{{ page.metafields.4dx_seo.twitter_description }}" />
+    {% else %}
+	<meta property="twitter:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if page.metafields.4dx_seo.twitter_image != null %}
+	<meta property="twitter:image" content="{{ page.metafields.4dx_seo.twitter_image }}" />
+    {% else %}
+	<meta property="twitter:image" content="http:{{ 'logo.png' | asset_url }}" />
+  {% endif %}
+  
+  {% if page.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ page.metafields.4dx_seo.author }}"/>
+    {% elsif shop.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ shop.metafields.4dx_seo.author }}"/>
+  {% endif %}
+{% endif %}
+
+{% if template contains 'product' %}
+
+  {% if product.metafields.4dx_seo.meta_title != null %}
+  	<title>{{ product.metafields.4dx_seo.meta_title }}</title>
+  	{% else %}
+  	<title>{% if template == 'index' %}{% if product.title contains 'Welcome' %}{{ shop.name }} &ndash; Welcome{% else %}{{ product.title | strip_html | escape }}{% endif %}{% elsif template == '404' %}product Not Found{% elsif product.title contains shop.name %}{{ product.title }}{% else %}{{ product.title | strip_html | escape }} &ndash; {{ shop.name }}{% endif %}</title>
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.meta_description != null %}
+    <meta name="description" content="{{ product.metafields.4dx_seo.meta_description }}" />
+    {% else %}
+    <meta name="description" content="{{ page_description | strip_html | escape }}" />
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.og_title != null %}
+	<meta property="og:title" content="{{ product.metafields.4dx_seo.og_title }}" />
+    {% else %}
+    <meta property="og:title" content="{{ product.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.og_description != null %}
+	<meta property="og:description" content="{{ product.metafields.4dx_seo.og_description }}" />
+    {% else %}
+    <meta property="og:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+	<meta property="og:type" content="website" />
+
+  {% if product.metafields.4dx_seo.schema_name != null %}
+	<meta itemprop="name" content="{{ product.metafields.4dx_seo.schema_name }}" />
+    {% else %}
+	<meta itemprop="name" content="{{ product.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.schema_description != null %}
+	<meta itemprop="description" content="{{ product.metafields.4dx_seo.schema_description }}" />
+    {% else %}
+	<meta itemprop="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.twitter_title != null %}
+	<meta property="twitter:title" content="{{ product.metafields.4dx_seo.twitter_title }}" />
+    {% else %}
+	<meta property="twitter:title" content="{{ product.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.twitter_description != null %}
+	<meta property="twitter:description" content="{{ product.metafields.4dx_seo.twitter_description }}" />
+    {% else %}
+	<meta property="twitter:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if product.metafields.4dx_seo.twitter_image != null %}
+	<meta property="twitter:image" content="{{ product.metafields.4dx_seo.twitter_image }}" />
+
+    {% else %}
+	<meta property="twitter:image" content="http:{{ 'logo.png' | asset_url }}" />
+  {% endif %}
+  
+  {% if product.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ product.metafields.4dx_seo.author }}"/>
+    {% elsif shop.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ shop.metafields.4dx_seo.author }}"/>
+  {% endif %}
+{% endif %}
+
+{% if template contains 'article' %}
+
+  {% if article.metafields.4dx_seo.meta_title != null %}
+  	<title>{{ article.metafields.4dx_seo.meta_title }}</title>
+  	{% else %}
+  	<title>{% if template == 'index' %}{% if article.title contains 'Welcome' %}{{ shop.name }} &ndash; Welcome{% else %}{{ article.title }}{% endif %}{% elsif template == '404' %}article Not Found{% elsif article.title contains shop.name %}{{ article.title }}{% else %}{{ article.title }} &ndash; {{ shop.name }}{% endif %}</title>
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.meta_description != null %}
+    <meta name="description" content="{{ article.metafields.4dx_seo.meta_description }}" />
+    {% else %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.og_title != null %}
+	<meta property="og:title" content="{{ article.metafields.4dx_seo.og_title }}" />
+    {% else %}
+    <meta property="og:title" content="{{ article.title | strip_html | escape }}  - {{ shop.name }}" />
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.og_description != null %}
+	<meta property="og:description" content="{{ article.metafields.4dx_seo.og_description }}" />
+    {% else %}
+    <meta property="og:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+	<meta property="og:type" content="article" />
+
+  {% if article.metafields.4dx_seo.schema_name != null %}
+	<meta itemprop="name" content="{{ article.metafields.4dx_seo.schema_name }}" />
+    {% else %}
+	<meta itemprop="name" content="{{ article.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.schema_description != null %}
+	<meta itemprop="description" content="{{ article.metafields.4dx_seo.schema_description }}" />
+    {% else %}
+	<meta itemprop="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.twitter_title != null %}
+	<meta property="twitter:title" content="{{ article.metafields.4dx_seo.twitter_title }}" />
+    {% else %}
+	<meta property="twitter:title" content="{{ article.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.twitter_description != null %}
+	<meta property="twitter:description" content="{{ article.metafields.4dx_seo.twitter_description }}" />
+    {% else %}
+	<meta property="twitter:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if article.metafields.4dx_seo.twitter_image != null %}
+	<meta property="twitter:image" content="{{ article.metafields.4dx_seo.twitter_image }}" />
+    {% else %}
+	<meta property="twitter:image" content="http:{{ 'logo.png' | asset_url }}" />
+  {% endif %}
+  
+  {% if article.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ article.metafields.4dx_seo.author }}"/>
+    {% elsif shop.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ shop.metafields.4dx_seo.author }}"/>
+  {% endif %}
+  
+{% endif %}
+
+{% if template contains 'collection' %}
+
+  {% if collection.metafields.4dx_seo.meta_title != null %}
+  	<title>{{ collection.metafields.4dx_seo.meta_title }}</title>
+  	{% else %}
+  	<title>{% if template == 'index' %}{% if collection.title contains 'Welcome' %}{{ shop.name }} &ndash; Welcome{% else %}{{ collection.title }}{% endif %}{% elsif template == '404' %}collection Not Found{% elsif collection.title contains shop.name %}{{ collection.title }}{% else %}{{ collection.title }} &ndash; {{ shop.name }}{% endif %}</title>
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.meta_description != null %}
+    <meta name="description" content="{{ collection.metafields.4dx_seo.meta_description }}" />
+    {% else %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.og_title != null %}
+	<meta property="og:title" content="{{ collection.metafields.4dx_seo.og_title }}" />
+    {% else %}
+    <meta property="og:title" content="{{ collection.title | strip_html | escape }}  - {{ shop.name }}" />
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.og_description != null %}
+	<meta property="og:description" content="{{ collection.metafields.4dx_seo.og_description }}" />
+    {% else %}
+    <meta property="og:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+	<meta property="og:type" content="website" />
+
+  {% if collection.metafields.4dx_seo.schema_name != null %}
+	<meta itemprop="name" content="{{ collection.metafields.4dx_seo.schema_name }}" />
+    {% else %}
+	<meta itemprop="name" content="{{ collection.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.schema_description != null %}
+	<meta itemprop="description" content="{{ collection.metafields.4dx_seo.schema_description }}" />
+    {% else %}
+	<meta itemprop="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.twitter_title != null %}
+	<meta property="twitter:title" content="{{ collection.metafields.4dx_seo.twitter_title }}" />
+    {% else %}
+	<meta property="twitter:title" content="{{ collection.title | strip_html | escape }} - {{ shop.name }}" />
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.twitter_description != null %}
+	<meta property="twitter:description" content="{{ collection.metafields.4dx_seo.twitter_description }}" />
+    {% else %}
+	<meta property="twitter:description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% if collection.metafields.4dx_seo.twitter_image != null %}
+	<meta property="twitter:image" content="{{ collection.metafields.4dx_seo.twitter_image }}" />
+    {% else %}
+	<meta property="twitter:image" content="http:{{ 'logo.png' | asset_url }}" />
+  {% endif %}
+  
+  {% if collection.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ collection.metafields.4dx_seo.author }}"/>
+    {% elsif shop.metafields.4dx_seo.author != null %}
+    <link rel="author" href="{{ shop.metafields.4dx_seo.author }}"/>
+  {% endif %}
+{% endif %}
+
+<meta property="og:url" content="{{ canonical_url }}" />
+<meta property="og:site_name" content="{{ shop.name }}" />
+
+{% if shop.metafields.4dx_seo.google_verify %}
+<meta name="google-site-verification" content="{{ shop.metafields.4dx_seo.google_verify }}" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo.bing_verify %}
+<meta name="msvalidate.01" content="{{ shop.metafields.4dx_seo.bing_verify }}" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo.pinterest_verify %}
+<meta name="p:domain_verify" content="{{ shop.metafields.4dx_seo.pinterest_verify }}" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo.fb_admins %}
+<meta property="fb:admins" content="{{ shop.metafields.4dx_seo.fb_admins }}" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo.fb_app_id %}
+<meta property="fb:app_id" content="{{ shop.metafields.4dx_seo.fb_app_id }}" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo.noodp %}
+<meta name="robots" content="NOODP" />
+{% endif %}
+
+{% if shop.metafields.4dx_seo.noydir %}
+<meta name="robots" content="NOYDIR" />
+{% endif %}

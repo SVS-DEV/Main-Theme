@@ -1,0 +1,32 @@
+{% assign blog-title = article.metafields.global.header-title %}
+
+<div class="wrap">
+  <h1>{{ article.title }}</h1>
+    <div class="grid-2">
+        <section class="blog-post-view sound-advice col-3-4">
+            <div class="blog-post-view__content">
+
+                  {{ article.content }}
+              
+              	  {% include 'article-pagination' %}
+
+                  
+                <div class="center-text" style="clear: both;">
+                    <h5>Looking for system optimization tips? Check out these additional articles from SVS.</h5>
+                    <p>
+                        <a onclick="ga('send', 'event', 'Blogs', 'Click', 'Recommended - Intro to Dolby Atmos');" href="http://www.svsound.com/blogs/svs/75358787-intro-to-dolby-atmos">Introduction to Dolby Atmos</a> | 
+                        <a onclick="ga('send', 'event', 'Blogs', 'Click', 'Recommended - Why go Dual');" href="http://www.svsound.com/blogs/svs/75040195-why-go-dual">Why go Dual?</a> | 
+                        <a onclick="ga('send', 'event', 'Blogs', 'Click', 'Recommended - The Art of Speaker Placement');" href="http://www.svsound.com/blogs/svs/74790851-the-art-of-speaker-placement">The Art of Speaker Placement</a> | 
+                        <a onclick="ga('send', 'event', 'Blogs', 'Click', 'Recommended - Digital Bass Management');" href="http://www.svsound.com/blogs/svs/75366339-digital-bass-management-a-primer">Digital Bass Management</a>
+                    </p>
+                </div>
+            </div>
+            </section>
+      
+      	{% include 'blog-sidebar' %}
+      
+        </div>
+    </div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5445bf84544be1bf"></script>
+

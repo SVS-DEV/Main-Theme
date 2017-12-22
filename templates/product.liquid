@@ -1,0 +1,83 @@
+{% include 'product--stickynav' %}
+{% include 'product' %}
+<style>
+  .ownersystems h2 i {
+        color: #262626;
+    font-size: 24px;
+    width: 46px;
+    height: 46px;
+    border: 3px solid #262626;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 44px;
+    vertical-align: middle;
+  }
+  .ownersystems h2 {
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+    border-bottom: 3px solid #e5e5e5;
+  }
+  .ownersystems p {
+    text-align:center;
+  }
+  .covet-pics-gallery {
+    margin-top:15px;
+  }
+  .covet-pics-gallery {
+    margin-top:15px;
+  }
+  
+  
+</style>
+<div class="custom-sections">
+
+	{{ product.metafields.custom_sections.section-1 }}
+  {% if product.metafields.global.instagramid != blank %}
+    <section class="ownersystems">
+    <div class="wrap">
+       <h2 style="text-align:center"> <i class="fa fa-instagram"></i> SVS Owner Systems</h2>
+      <p>SVS owner shots shared via Instagram. Click on pics for captions and submit your own by tagging @SVS_Sound or #soundrevolution.</p>
+      <div class="covet-pics-gallery" data-id="{{ product.metafields.global.instagramid }}"></div>
+    </div>
+      </section>
+  {% endif %}
+  	{{ product.metafields.custom_sections.section-2 }}
+  
+  	{% assign yotpoid = product.metafields.global.reviewid %}
+	{% if yotpoid == blank %}
+	{% assign yotpoid = 1111 %}
+	{% endif %}
+
+<section class="product-customerreviews" id="reviews-anchor">
+	<div class="wrap">
+      <h2> <i class="fa fa-users"></i> Owner Ratings &amp; Reviews </h2>
+		<div class="yotpo yotpo-main-widget"
+	      data-product-id="{{ yotpoid }}"
+	      data-name="{{ product.title | escape }}"
+	      data-url="http://www.svsound.com{{ product.url }}"
+	      data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+	      data-description="{{ product.description | escape }}">
+	  	</div>
+  	</div>
+</section>
+  
+  	{{ product.metafields.custom_sections.section-3 }}
+  	{{ product.metafields.custom_sections.section-4 }}
+  	{{ product.metafields.custom_sections.section-5 }}
+    {{ product.metafields.custom_sections.section-7 }}
+  	{{ product.metafields.custom_sections.section-6 }}
+
+
+
+
+{% assign img_src = 'test' | asset_url %}
+{% assign img_src = img_src | split: 'test' %}
+  
+</div>
+
+{{ product.metafields.footer_sections.section-1 }}
+
+

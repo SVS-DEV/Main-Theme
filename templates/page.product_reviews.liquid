@@ -1,0 +1,19 @@
+{% if page.title contains 'Merlin' %}
+
+	{% assign title = '' %}
+{% else %}
+	{% assign title = page.title %}
+{% endif %}
+
+<section class="product-customerreviews" id="reviews-anchor">
+	<div class="wrap">
+      <h2> <i class="fa fa-users"></i> User Ratings &amp; Reviews </h2>
+		<div class="yotpo yotpo-main-widget"
+	      data-product-id="{{ page.metafields.global.yotpoid }}"
+	      data-name="{{ page.metafields.global.yotponame }}"
+	      data-url="http://www.svsound.com{{ page.metafields.global.yotpourl }}"
+	      data-image-url="{{ page.metafields.global.yotpoimgurl }}"
+	      data-description="{{ page.metafields.global.yotpodescription }}">
+	  	</div>
+  	</div>
+</section>

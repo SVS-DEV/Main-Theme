@@ -1,0 +1,553 @@
+<style>
+  .svs-dealer {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 15px 0;
+    background-color: #386cb0;
+    border: 3px solid transparent;
+    margin: 0 auto;
+    line-height: 1;
+    height: auto;
+  }
+  .svs-dealer:hover {
+    border: 3px solid #386cb0;
+    color: #386cb0;
+    background-color: transparent;
+    text-decoration: none;
+  }
+</style>
+{{ 'product-page.css' | asset_url | stylesheet_tag }}
+<div id="productType" style="display:none">{{all_products['prime-satellite-5-1'].type}}</div>
+<div class="product-header__name" style="display:none">{{ all_products['prime-satellite-5-1'].title }} - Piano Gloss White</div>
+<div class="upsellProductID" style="display:none">{{ all_products['prime-satellite-5-1'].variants.first.id }}</div>
+<div id="{{ all_products['prime-satellite-5-1'].handle }}" data-product-id="{{ all_products['prime-satellite-5-1'].id }}" class="product"></div>
+
+<div class="product-page-v2-wrap">
+    <section class="">
+        <div class="wrap purchase-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="visible-xs-block visible-sm-block">
+                        <h1> {{ all_products['prime-satellite-5-1'].title }} - Piano Gloss White </h1>
+                    </div>
+                    <div class="col-md-5 product-images">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="magictable">
+          <tbody>
+            <tr>
+              <td>
+        <div class="magiczoombuttons"><a href="#" class="magiczoomprev" onclick="MagicZoom.prev('zoom{{ all_products['prime-satellite-5-1'].id }}'); return false;"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></div>
+              </td>
+              <td>
+        {% assign MagicToolboxSirvID = '' %}
+                {% assign MagicToolboxSirvSpinsPath = 'products/{product-id}/{product-id}.spin' %}
+                {% assign MagicToolboxShowMessage = 'Yes' %}
+                {% assign MagicToolboxMessage = 'Move your mouse over image or click to enlarge' %}
+                {% assign MagicToolboxBigImageSize = 'master' %}
+                {% assign MagicToolboxThumbnailImageSize = 'large' %}
+                {% assign MagicToolboxSelectorImageSize = 'small' %}
+                {% assign MagicToolboxUseCustomWidth = 'No' %}
+                {% assign MagicToolboxThumbnailImageWidth = '480' %}
+                {% if MagicToolboxUseCustomWidth == 'Yes' %}
+                <style type="text/css">.MagicZoomPlus > figure > img { max-width: {{ MagicToolboxThumbnailImageWidth }}px !important; }</style>
+                {% endif %}
+                <div class="MagicToolboxContainer">
+                  <a href="{{ all_products['prime-satellite-5-1'].images[2] | product_img_url: MagicToolboxBigImageSize }}" class="MagicZoomPlus" id="zoom{{ all_products['prime-satellite-5-1'].id }}" title="{{ product.images[2].alt | escape }}"><img itemprop="image" src="{{ all_products['prime-satellite-5-1'].images[2] | product_img_url: MagicToolboxThumbnailImageSize }}" alt="{{ all_products['prime-satellite-5-1'].images[2].alt | escape }}" /></a>
+                  {% if MagicToolboxShowMessage == 'Yes' %}
+                  <div class="MagicToolboxMessage">{{ MagicToolboxMessage }}</div>
+                  {% endif %}
+                  <div class="MagicToolboxSelectorsContainer {% if all_products['prime-satellite-5-1'].images.size >= 6 %}MagicScroll{% endif %}" data-options="items:6;" {% if all_products['prime-satellite-5-1'].images.size < 2 %}style="display:none"{% endif %}>
+                    {% for image in all_products['prime-satellite-5-1'].images %}
+                    {% unless image contains 'swatch' %}
+                    <a href="{{ image | product_img_url: MagicToolboxBigImageSize }}" data-zoom-id="zoom{{ all_products['prime-satellite-5-1'].id }}" data-image="{{ image | product_img_url: MagicToolboxThumbnailImageSize }}" title="{{ image.alt | escape }}"><img src="{{ image | product_img_url: MagicToolboxSelectorImageSize }}" alt="{{ image.alt | escape }}" /></a>
+                    {% endunless %}
+                    {% endfor %}
+                  </div>
+                </div>
+                <script>
+                  var SirvID = '{{ MagicToolboxSirvID }}';
+                  var SirvSpinsPath = '{{ MagicToolboxSirvSpinsPath }}';
+                  var SirvProductID = {{ all_products['prime-satellite-5-1'].id }};
+                  var SirvIconURL = '{{ 'SirvIcon.png' | asset_url }}';
+                </script>
+              </td>
+              <td>
+        <div class="magiczoombuttons"><a href="#" class="magiczoomnext" onclick="MagicZoom.next('zoom{{ all_products['prime-satellite-5-1'].id }}'); return false;"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+                            </div>
+                        </div>
+
+                        <div class="row bor-info hidden-xs hidden-sm">
+                            <div class="col-md-12">
+                                <div class="bor-img-wrap">
+                                    <img src="{{ 'pp-bor-trial.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-shipping.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-warranty.png' | asset_url }}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="bor-title-wrap">
+                                    <h4> 45 Day Risk-Free In-Home Trial. Fast & Free Shipping and Returns. </h4>
+                                    <h4> 5-Year Unconditional Warranty </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 product-cart-area">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-discription-header">
+                                    <div class="hidden-xs hidden-sm"> <h1> {{ all_products['prime-satellite-5-1'].title }} - Piano Gloss White </h1> </div>
+                                    <p class="short-description">
+                                        {{ all_products['prime-satellite-5-1'].description }}
+                                        <a href="#tab-1" class="" onclick="$('#tab-1').addClass('active').siblings().removeClass('active');$('a[href$=&quot;tab-1&quot;]').addClass('active').parent().siblings().find('a').removeClass('active');ga('send', 'event', 'Product Page', 'Click', 'Read More');"> Read More <i class="fa fa-angle-double-down"></i> </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="rating-review cf">
+                                    {% assign yotpoid = all_products['prime-satellite-5-1'].metafields.global.reviewid %}
+            {% if yotpoid == blank %}
+                {% assign yotpoid = 1111 %}
+            {% endif %}
+<div class="yotpo bottomLine"
+     data-appkey="HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs"
+     data-product-id="{{ yotpoid }}"
+     data-product-models="{{ yotpoid }}"
+     data-name="{{ all_products['prime-satellite-5-1'].title | escape }}"
+     data-url="http://www.svsound.com{{ all_products['prime-satellite-5-1'].url }}"
+     data-image-url="{{ all_products['prime-satellite-5-1'].featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+     data-description="{{ all_products['prime-satellite-5-1'].description | escape }}"
+     data-bread-crumbs="{% for tag in all_products['prime-satellite-5-1'].tags %}{{ tag | escape }};{% endfor %}">
+  <div class="ratingsnippet">
+
+
+    <span itemprop="ratingValue">{{ all_products['prime-satellite-5-1'].metafields.yotpo.reviews_average }}</span> based on
+    <span itemprop="ratingCount">{{ all_products['prime-satellite-5-1'].metafields.yotpo.reviews_count }}</span> reviews
+  </div>
+</div>
+<div class="write-review">or <a href="#reviews-anchor" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Write a Review');">Write a review</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-3 col-md-6 col-lg-3">
+                                <div class="finish-wrap cf" data-match-height="cart-col-1">
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  <div class="finish-options">
+
+  <h3> Select Finish: </h3>
+  <p class="finish-name"> Piano Gloss White </p>
+  <div class="product-details__variants{% if all_products['prime-satellite-5-1'].tags contains 'accessories-crumb' %} single-variant-image{% endif %}" {% if product.variants.size <= 1 %}style="display: none;"{% endif %}>
+    <a href="https://www.svsound.com/products/prime-satellite-5-1?variant=9569601347"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/swatches_black-ash.jpg?18223879995287955523" data-id="9569601347" data-sku="2635" data-variant-name="Premium Black Ash" data-variant-pricenodec="99999"  data-variant-price="999.99" class="product-details__variant"></a>
+			<a href="https://www.svsound.com/products/prime-satellite-5-1?variant=9569601283"><img src="https://cdn.shopify.com/s/files/1/0921/3560/files/swatches_piano-gloss-black.jpg?18223879995287955523" data-id="9569601283" data-sku="2636" data-variant-name="Piano Gloss Black" data-variant-pricenodec="119999"  data-variant-price="1,199.99" class="product-details__variant"></a>
+          <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/swatches_piano-gloss-white.jpg?18223879995287955523" data-id="13611889926" data-sku="2750" data-variant-name="Piano Gloss White" data-variant-pricenodec="119999"  data-variant-price="1,199.99" class="product-details__variant selected">
+  </div>
+</div>
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-3 col-md-6 col-lg-3 hideRU">
+                                <div class="quantity-wrap cf" data-match-height="cart-col-1">
+                                    <h3> Quantity: </h3>
+                                    <input id="qty_update" class="qty-select" type="number" value="1">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 hideRU">
+                                <div class="pricing-wrap" data-match-height="cart-col-1">
+                                    <p class="price" id="price">1199.99</p>
+
+                                    <div class="affirmholder">
+                                        <a id="learn-more" style="visibility:hidden" href="#" onclick= "ga('send', 'event', 'Affirm', 'Click', 'Product Page Snippet');"></a>
+                                    </div>
+
+                                    <span id="stockmanufacture" class="stock-notification stockmanufacture">
+                                        In stock &amp; ships in one business day
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12"> <div class="bs-bottom-border-fix"></div> </div>
+                        </div>
+
+                        <div class="row buy-box">
+                            <div class="col-sm-5 hidden-xs hidden-sm hideRU">
+                                <p class="phone-cta"> <i class="fa fa-phone"></i> <strong>Order by Phone</strong> <span class="phone-number">877.626.5623</span> </p>
+                            </div>
+
+                            <div class="col-sm-7">
+                                <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+                                  <input id="quantity" type="hidden" name="quantity" value="1" class="tc item-quantity" />
+                                  <input id="id" type="hidden" name="id" value="{{ all_products['prime-satellite-5-1'].variants.first.id }}">
+
+                                  <!-- Begin product options -->
+                                  <div class="product-options {% if hide_default_title %}no-options {% endif %}">
+
+                                    <div class="purchase-section{% if all_products['prime-satellite-5-1'].variants.size > 1 %} multiple{% endif %}">
+                                      <div class="purchase">
+                                        <form method="post" name="addtocart" action="/cart/add" class="hideRU">
+    <input type="hidden" name="id" value="13611889926" />
+        <button type="submit" id="product-addtocart" class="hideRU pp-addtocart" onclick="$(this).closest('form').submit();"><span><strong>Add to Cart</strong> <i class="fa fa-angle-double-right"></i></span></button>
+  </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- End product options -->
+                                </form>
+                              <a class="dealer svs-dealer showRU" href="https://www.svsound.com/pages/international-dealers" target="_blank">Find a Dealer</a>
+                            </div>
+
+                            <div class="col-sm-5 visible-xs-block visible-sm-block">
+                                <p class="phone-cta"> <i class="fa fa-phone"></i> <strong>Order by Phone</strong> <span class="phone-number">877.626.5623</span> </p>
+                            </div>
+
+                        </div>
+
+                        <div class="row bor-info visible-xs-block visible-sm-block">
+                            <div class="col-md-12">
+                                <div class="bor-img-wrap">
+                                    <img src="{{ 'pp-bor-trial.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-shipping.png' | asset_url }}">
+                                    <img src="{{ 'pp-bor-warranty.png' | asset_url }}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="bor-title-wrap">
+                                    <h4> 45 Day Risk-Free In-Home Trial. Fast & Free Shipping and Returns. </h4>
+                                    <h4> 5-Year Unconditional Warranty </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row hidden-xs">
+                            <div class="other-payment-options cf">
+                                <div class="col-sm-4" onclick="ga('send', 'event', 'Product Page', 'Click', 'Paypal Credit Link');">
+                                    <script type="text/javascript" data-pp-pubid="12c1c618d2" data-pp-placementtype="234x60"> (function (d, t) {
+                                        "use strict";
+                                        var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
+                                        n.src = "//paypal.adtag.where.com/merchant.js";
+                                        s.parentNode.insertBefore(n, s);
+                                        }(document, "script"));
+                                    </script>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href="https://www.affirm.com/buy-with-affirm/" target="_blank">
+                                        <img src="https://cdn.shopify.com/s/files/1/0921/3560/files/affirmlogoWhite.png?5032948012052495542" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Affirm Link');">
+                                        <div id="affirmholder" style="display:none"></div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href="https://pay.amazon.com/us/shopper" target="_blank">
+                                        <img class="amazon-payments-logo" src="{{ 'amazon-payments-logo-black.png' | asset_url }}" onclick= "ga('send', 'event', 'Product Page', 'Click', 'Amazon Payments Link');">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12"> <div class="bottom-border-seperation"></div> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-content-area">
+        <div class="wrap">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div id="responsiveTabs">
+                                    <ul>
+                                        {% if all_products['prime-satellite-5-1'].metafields.custom_sections.section-1 != blank %}
+                                            <li><a href="#tab-1" class="" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Intro');clearhash()"> Intro</a></li>
+                                        {% endif %}
+                                        {% if all_products['prime-satellite-5-1'].metafields.custom_sections.section-3 != blank %}
+                                            <li><a href="#tab-2" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Description');clearhash()"> Description</a></li>
+                                        {% endif %}
+                                        {% if all_products['prime-satellite-5-1'].metafields.custom_sections.section-6 != blank %}
+                                            <li><a href="#tab-3" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Tech Info');clearhash()"> Tech info</a></li>
+                                        {% endif %}
+                                            <li> <a href="#tab-4" id="tab4" onclick="$('.slider-press')[0].slick.refresh();ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Press Reviews');clearhash()"> Press Reviews</a></li>
+                                            <li onclick="location.href = '#ownerreviews';ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Owner Reviews');clearhash()"> Owner Reviews</li>
+                                            <li><a href="#tab-6" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Videos');clearhash()"> Videos</a></li>
+                                        {% if all_products['prime-satellite-5-1'].metafields.custom_sections.product-manuals != blank %}
+                                            <li><a href="#tab-5" onclick="ga('send', 'event', 'Product Page', 'Click', 'Subnavigation - Manuals');clearhash()"> Manuals</a></li>
+                                        {% endif %}
+                                    </ul>
+
+                                    {% if all_products['prime-satellite-5-1'].metafields.custom_sections.section-1 != blank %}
+                                      <div id="tab-1" class="tab-content-area">
+                                          <h2> {{ all_products['prime-satellite-5-1'].title }} Speaker </h2>
+                                          {{ all_products['prime-satellite-5-1'].metafields.custom_sections.section-1 }}
+
+                                          {% if all_products['prime-satellite-5-1'].metafields.custom_sections.quick-specs != blank %}
+                                              <div class="quick-specs cf">
+                                                  <h3><i class="fa fa-gears"></i> Quick Specs </h3>
+                                                  {{ all_products['prime-satellite-5-1'].metafields.custom_sections.quick-specs }}
+                                                  <div class="view-wrap">
+                                                      <a href="#tab-3" style="" class="tech-info-link" onclick="ga('send', 'event', 'Product Page', 'Click', 'View All Tech Info');clearhash()"> View all Tech Info <i class="fa fa-angle-double-right"></i> </a>
+                                                  </div>
+                                                <script>
+                                                  function clearhash(){
+                                                  setTimeout(function() {   //calls click event after a certain time
+                                                    history.pushState("", document.title, window.location.pathname);
+                                                  }, 2000);
+                                                  }
+                                                  clearhash()
+                                                </script>
+                                              </div>
+                                          {% endif %}
+                                      </div>
+                                    {% endif %}
+
+                                    {% if all_products['prime-satellite-5-1'].metafields.custom_sections.section-3 != blank %}
+                                      <div id="tab-2" class="tab-content-area">
+                                          {{ all_products['prime-satellite-5-1'].metafields.custom_sections.section-3 }}
+
+                                          <div class="hidden-xs clear cf">
+                                                  <h3 class="subwoofer-callouts">
+                                                      SVS Speaker Design Philosophy
+                                                      <img src="{{ 'speaker-callout-v3-short.jpg' | asset_url }}">
+                                                  </h3>
+                                          </div>
+                                      </div>
+                                    {% endif %}
+
+                                    {% if all_products['prime-satellite-5-1'].metafields.custom_sections.section-6 != blank %}
+                                      <div id="tab-3" class="tab-content-area">
+                                          {{ all_products['prime-satellite-5-1'].metafields.custom_sections.section-6 }}
+                                      </div>
+                                    {% endif %}
+
+                                      <div id="tab-4" class="tab-content-area">
+                                          <div class="slider-press">
+                                            {% assign prblog = all_products['prime-satellite-5-1'].handle | replace: 'dual-', '' %}
+
+  											{% assign blog = blogs['press-reviews'] %}
+  											{% paginate blog.articles by 500 %}
+                                              {% for article in blog.articles %}
+                                              {% for tag in article.tags %}
+                                                  {% if tag == prblog %}
+                                                      <div class="press-quote">
+                                                          <blockquote> {{ article.content | strip_html }} </blockquote>
+                                                          <p> {{ article.title }} </p>
+                                                          <img src="{{ article.image | img_url }}">
+                                                      </div>
+                                                  {% endif %}
+                                              {% endfor %}
+                                              {% endfor %}
+  											{% endpaginate %}
+                                          </div>
+                                      </div>
+
+                                          <div id="tab-6" class="tab-content-area">
+                                              <div class="row">
+                                                  {% assign videos = all_products['prime-satellite-5-1'].title | handleize %}
+                                                  {% assign productCat = all_products['prime-satellite-5-1'].type | downcase %}
+
+                                                  {% for article in blogs['videos'].articles %}
+                                                  {% for tag in article.tags %}
+                                                      {% if tag == videos or tag == productCat %}
+                                                          <div class="col-sm-6 video-wrap">
+                                                              <h4 data-match-height="video-titles"> {{ article.title }} </h4>
+                                                              <div class="video-embed-wrap"> {{ article.content }} </div>
+                                                          </div>
+                                                      {% endif %}
+                                                  {% endfor %}
+                                                  {% endfor %}
+                                              </div>
+                                          </div>
+                                    {% if all_products['prime-satellite-5-1'].metafields.custom_sections.product-manuals != blank %}
+                                      <div id="tab-5" class="tab-content-area product-manuals">
+                                            <div class="row">
+                                              <div class="col-md-12">
+                                              {{ all_products['prime-satellite-5-1'].metafields.custom_sections.product-manuals }}
+                                              </div>
+                                            </div>
+                                      </div>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="static-press cf">
+                                {% if all_products['prime-satellite-5-1'].metafields.custom_sections.product-awards != blank %}
+                                    <div class="col-xs-12 award-row">
+                                        <div class="awards-wrap">
+                                            {{ all_products['prime-satellite-5-1'].metafields.custom_sections.product-awards }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if all_products['prime-satellite-5-1'].metafields.custom_sections.static_reviews != blank %}
+                                    <div class="static-press-inner-wrap cf">
+                                        {{ all_products['prime-satellite-5-1'].metafields.custom_sections.static_reviews }}
+
+                                        <div class="view-wrap col-sm-12">
+                                            <a href="/blogs/press-reviews/tagged/{{ all_products['prime-satellite-5-1'].handle }}" onclick="ga('send', 'event', 'Product Page', 'Click', 'View all Press Reviews');"> View all Press Reviews <i class="fa fa-angle-double-right"></i> </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- NEED SIDEBARS FOR SUBWOOFERS AND ACCESSORIES -->
+                        {% include 'product-sidebar' %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-rec">
+        <div class="wrap">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-6 owner-systems-wrap">
+                        <h2> <i class="fa fa-instagram"></i> SVS Owner Systems </h2>
+                        <div class="covet-pics-gallery" data-id="{{ all_products['prime-satellite-5-1'].metafields.global.instagramid }}"></div>
+                        <p class="social-rec-p">
+                            SVS owner shots shared via Instagram. Click on pics for captions and submit your own by tagging <a href="https://www.instagram.com/svs_sound/">@SVS_Sound</a> or #soundrevolution.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 recommended-slider-wrap">
+                        <h2> You May Also Like... </h2>
+                        <div class="rec-slider">
+                            {{ all_products['prime-satellite-5-1'].metafields.custom_sections.recommendations }}
+                        </div>
+                        <p class="social-rec-p"> The above products are often considered when someone is evaluating the {{ product.title }}. </p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <p class="social">
+                            <span>Find us on:</span>
+                            <a href="https://www.facebook.com/SVSound/" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Facebook');"><i class="fa fa-facebook-official"></i></a>
+                            <a href="https://twitter.com/SVS_Sound" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Twitter');"><i class="fa fa-twitter-square"></i></a>
+                            <a href="https://www.instagram.com/svs_sound/" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Instagram');"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/c/SVS_Sound" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on YouTube');"><i class="fa fa-youtube-square"></i></a>
+                            <a href="https://www.pinterest.com/svsound/" onclick="ga('send', 'event', 'Product Page', 'Click', 'Find us on Pinterest');"><i class="fa fa-pinterest-square"></i></a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="owner-reviews">
+        <div class="wrap">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        {% assign yotpoid = all_products['prime-satellite-5-1'].metafields.global.reviewid %}
+                        {% if yotpoid == blank %}
+                            {% assign yotpoid = 1111 %}
+                        {% endif %}
+
+                        <h2> <i class="fa fa-group"></i> Owner Ratings & Reviews </h2>
+                        <div class="yotpo yotpo-main-widget"
+                            data-product-id="{{ yotpoid }}"
+                            data-name="{{ all_products['prime-satellite-5-1'].title | escape }}"
+                            data-url="http://www.svsound.com{{ all_products['prime-satellite-5-1'].url }}"
+                            data-image-url="{{ all_products['prime-satellite-5-1'].featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+                            data-description="{{ all_products['prime-satellite-5-1'].description | escape }}">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ***** CALLING ALL SCRIPTS *****  -->
+{% include 'product_scripts' %}
+
+<script>
+$('#responsiveTabs').responsiveTabs({
+        startCollapsed: 'false',
+        animation: 'slide',
+        scrollToAccordion: true,
+        scrollToAccordionOffset: 40,
+    });
+  $('.rec-slider').slick({
+    adaptiveHeight: true,
+    slidesToShow: 2,
+    responsive: [
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 1
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2
+            }
+        },
+        {
+            breakpoint: 650,
+            settings: {
+                slidesToShow: 1
+            }
+        },
+   ]
+  });
+
+   $('.slider-press').slick({
+       slidesToShow: 2,
+       //draggable: false,
+       responsive: [
+           {
+               breakpoint: 1450,
+               settings: {
+                   slidesToShow: 2
+               }
+           },
+           {
+               breakpoint: 650,
+               settings: {
+                   slidesToShow: 1
+               }
+           },
+      ]
+   });
+
+</script>
+

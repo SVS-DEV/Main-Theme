@@ -1,0 +1,1274 @@
+
+<style>
+  .yotpo .write-review .yotpo-header .yotpo-header-title {
+    font-weight:bold;
+  }
+
+  .mobileyo {
+    display:none;
+    margin-bottom:25px !important;
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 32px;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+    border-bottom: 3px solid #e5e5e5;    
+    padding-bottom:15px;
+  }
+  .desktopyo {
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 32px;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+    border-bottom: 3px solid #e5e5e5;    
+    padding-bottom:15px;
+    margin-bottom:15px;
+  }
+  #mobiledropdown {
+    text-align:center;
+    padding:10px;
+  }
+  .buttonholder {
+    display:table;
+    margin:0 auto;
+    width:50%
+    
+  }
+  .product-selector-mobile {
+    display:none;
+    margin-top:10px;
+  }
+  .readareviewholder {
+    display:none;
+    text-align:center;
+  }
+  .curprod {font-size:11px;
+    display:block;
+    margin-top:5px;
+  }
+  .yotpo div, .yotpo span, .yotpo p, .yotpo a, .yotpo img, .yotpo i, .yotpo strong, .yotpo sup, .yotpo ul, .yotpo li, .yotpo form, .yotpo label {
+    font-size:16px;
+    color:#000;
+  }
+  .yotpo .y-label, .yotpo label.y-label {
+    font-size:16px;
+    color:#000;
+  }
+  .write-question-button {
+    background:#006cb4 !important;
+  }
+  .write-review-button {
+    background: #454545 !important;
+    font-family:'Open Sans',arial;
+
+  }
+  .currentproduct {
+    border-bottom:3px solid #e5e5e5;
+    display:none;
+    padding-bottom:10px;
+
+  }
+  .currentproduct img {
+    width:100%
+  }
+
+  #productselector {
+    padding:10px;
+  }
+  .writeareviewholder {
+    display:none;
+    text-align:center;
+  }
+  .writeareview {
+    display:none;
+    max-width: 100%;
+    color: #fff;
+    font-size: 14px;
+    background: #454545;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid transparent;
+    transition: all 0.1s ease-in;
+    cursor:pointer;
+  }
+  .writeareview:hover {
+    border: 3px solid #454545;
+    background: none;
+    color: #454545;
+    text-decoration: none;
+  }
+  .readareviewbutton {
+    max-width: 100%;
+    color: #fff;
+    font-size: 14px;
+    background: #006cb4;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid transparent;
+    transition: all 0.1s ease-in;
+    cursor:pointer;
+  }
+  .readareviewbutton:hover {
+    border: 3px solid #006cb4;
+    background: none;
+    color: #006cb4;
+    text-decoration: none;
+  }
+  .writeareviewproducts {
+    display:none;
+    margin-top:10px;
+  }
+  .open {
+    display:block !important;
+  }
+  .active {
+    font-weight:bold
+  }
+  #content h2 {
+    font-family: "Open Sans", sans-serif, Helvetica, Arial;
+    font-size: 32px;
+    line-height: 32px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+    border-bottom: 3px solid #e5e5e5;    
+    padding-bottom:15px;
+    margin-bottom:15px;
+
+  
+  } 
+  #producttitle {
+    color: #000;
+    font-weight: 800;
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 1;
+    display:block;
+  }
+  .productselect a {
+    color:#ff4500;
+    text-decoration:none;
+    display:block;
+    margin-left:10px;
+  }
+  .currentproduct a {
+    margin:0px;
+  }
+  .productselect a:hover {
+    font-weight:bold;
+  }
+  .productselect h3 {
+    font-size:18px;
+    margin-top:15px;
+    margin-bottom:5px;
+  }
+  .productselect {
+    float:left;
+    width:18%;
+    margin-right:2%;
+    padding-right:1%;
+    border-right:solid 2px #e5e5e5;
+    padding-bottom:20px;
+  }
+  #yotpoholder {
+    float:right;
+    width:78%
+  }
+  @media (max-width: 578px) {
+    .yotpo .y-label, .yotpo label.y-label {
+      color:#fff;
+    }
+    .yotpo-dropdown-wrapper .yotpo-icon {
+      color:#fff;
+    }
+    
+  }
+  @media (max-width: 830px) {
+    .mobileyo {
+      display:block;
+    }
+    .desktopyo {
+      display:none;
+    }
+    .currentproduct {
+      text-align:center;
+    }
+    .currentproduct img {width:50%}
+    .productselect-desktop {display:none}
+    
+    .readareviewholder {
+      display:table-cell;
+      width:50%;
+    }
+    .readareviewbutton {
+      display:block;
+    }
+    .writeareviewholder {
+      width:50%;
+    }
+    #content h2 {
+      float:none;
+      width:100%;
+      
+    }
+    .productselect a {
+      color:#ff4500;
+      text-decoration:none;
+      display:inline-block;
+    }
+    .productselect h3 {
+      font-size:18px;
+      margin-top:15px;
+      margin-bottom:5px;
+    }
+    .productselect {
+      float:none;
+      width:100%;
+      border-right:none;
+    }
+    #yotpoholder {
+      float:none;
+      width:100%;
+    }
+    .buttonholder {
+    width:100%;
+  }
+    .buttonholder h3 {
+      width:100%;
+    }
+    .buttonholder select {
+      width:100%
+    }
+  }
+  .styledSelect {
+    display:none;
+  }
+  .options {
+    display:none;
+  }
+  
+</style>
+
+
+
+<section class="cf">
+  <div class="wrap">
+    <h1 class="mobileyo"><i class="fa fa-users"></i> User Ratings &amp; Reviews </h1>
+    <div class="productselect">
+      <div class="currentproduct">
+        <a href="" class="productlink"><img src="" id="productimage"></a>
+        <span class="curprod">Current Product: <br/><a href="" class="productlink"><span id="producttitle"></span></a></span>
+      </div>
+      <div class="productselect-desktop">
+        <a href="https://www.svsound.com/pages/review" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'All Products Sort - Desktop');" class="all">All Products</a>
+      <h3>Subwoofers</h3>
+      <a href="https://www.svsound.com/pages/review#pb-1000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB-1000 Sort - Desktop');location.reload();" class="pb-1000">PB-1000</a>
+      <a href="https://www.svsound.com/pages/review#pb-2000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB-2000 Sort - Desktop');location.reload();" class="pb-2000">PB-2000</a>
+      <a href="https://www.svsound.com/pages/review#pb12-plus" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB12-Plus Sort - Desktop');location.reload();" class="pb12-plus">PB12-Plus</a>
+      <a href="https://www.svsound.com/pages/review#pb13-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB13-Ultra Sort - Desktop');location.reload();" class="pb13-ultra">PB13-Ultra</a>
+      <a href="https://www.svsound.com/pages/review#pb16-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB16-Ultra Sort - Desktop');location.reload();" class="pb16-ultra">PB16-Ultra</a>
+      <a href="https://www.svsound.com/pages/review#pc-2000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PC-2000 Sort - Desktop');location.reload();" class="pc-2000">PC-2000</a>
+      <a href="https://www.svsound.com/pages/review#pc12-plus" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PC12-Plus Sort - Desktop');location.reload();" class="pc12-plus">PC12-Plus</a>
+      <a href="https://www.svsound.com/pages/review#pc13-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PC13-Ultra Sort - Desktop');location.reload();" class="pc13-ultra">PC13-Ultra</a>
+      <a href="https://www.svsound.com/pages/review#sb-1000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB-1000 Sort - Desktop');location.reload();" class="sb-1000">SB-1000</a>
+      <a href="https://www.svsound.com/pages/review#sb-2000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB-2000 Sort - Desktop');location.reload();" class="sb-2000">SB-2000</a>
+      <a href="https://www.svsound.com/pages/review#sb12-nsd" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB12-NSD Sort - Desktop');location.reload();" class="sb12-nsd">SB12-NSD</a>
+      <a href="https://www.svsound.com/pages/review#sb13-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB13-Ultra Sort - Desktop');location.reload();" class="sb13-ultra">SB13-Ultra</a>
+      <a href="https://www.svsound.com/pages/review#sb16-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB16-Ultra Sort - Desktop');location.reload();" class="sb16-ultra">SB16-Ultra</a>
+      <h3>Speakers</h3>
+      <a href="https://www.svsound.com/pages/review#prime-bookshelf" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Bookshelf Sort - Desktop');location.reload();" class="prime-bookshelf">Prime Bookshelf</a>
+      <a href="https://www.svsound.com/pages/review#prime-center" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Center Sort - Desktop');location.reload();" class="prime-center">Prime Center</a>
+      <a href="https://www.svsound.com/pages/review#prime-elevation" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Elevation Sort - Desktop');location.reload();" class="prime-elevation">Prime Elevation</a>
+      <a href="https://www.svsound.com/pages/review#prime-satellite" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Satellite Sort - Desktop');location.reload();" class="prime-satellite">Prime Satellite</a>
+      <a href="https://www.svsound.com/pages/review#prime-tower" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Tower Sort - Desktop');location.reload();" class="prime-tower">Prime Tower</a>
+      <a href="https://www.svsound.com/pages/review#ultra-bookshelf" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Bookshelf Sort - Desktop');location.reload();" class="ultra-bookshelf">Ultra Bookshelf</a>
+      <a href="https://www.svsound.com/pages/review#ultra-center" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Center Sort - Desktop');location.reload();" class="ultra-center">Ultra Center</a>
+      <a href="https://www.svsound.com/pages/review#ultra-surround" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Surround Sort - Desktop');location.reload();" class="ultra-surround">Ultra Surround</a>
+      <a href="https://www.svsound.com/pages/review#ultra-tower" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Tower Sort - Desktop');location.reload();" class="ultra-tower">Ultra Tower</a>
+      <h3>Systems</h3>
+      <a href="https://www.svsound.com/pages/review#prime-satellite-2-1" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Satellite 2.1 Sort - Desktop');location.reload();" class="prime-satellite-2-1">Prime Satellite 2.1</a>
+      <a href="https://www.svsound.com/pages/review#prime-satellite-5-1" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Satellite 5.1 Sort - Desktop');location.reload();" class="prime-satellite-5-1">Prime Satellite 5.1</a>
+      <a href="https://www.svsound.com/pages/review#prime-bookshelf-surround-system" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Bookshelf Surround Sort - Desktop');location.reload();" class="prime-bookshelf-surround-system">Prime Bookshelf Surround</a>
+      <a href="https://www.svsound.com/pages/review#prime-tower-surround-system" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Tower Surround Sort - Desktop');location.reload();" class="prime-tower-surround-system">Prime Tower Surround</a>
+      <a href="https://www.svsound.com/pages/review#ultra-bookshelf-surround-package" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Bookshelf Surround Sort - Desktop');location.reload();" class="ultra-bookshelf-surround-package">Ultra Bookshelf Surround</a>
+      <a href="https://www.svsound.com/pages/review#ultra-tower-surround-package" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Tower Surround Sort - Desktop');location.reload();" class="ultra-tower-surround-package">Ultra Tower Surround</a>
+      <h3>Accessories</h3>
+      <a href="https://www.svsound.com/pages/review#soundpath-subwoofer-isolation-system" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Subwoofer Isolation System Sort - Desktop');location.reload();" class="soundpath-subwoofer-isolation-system">SoundPath Subwoofer Isolation System</a>
+      <a href="https://www.svsound.com/pages/review#soundpath-rca-audio-interconnect-cable" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath RCA Audio Interconnect Cable Sort - Desktop');location.reload();" class="soundpath-rca-audio-interconnect-cable">SoundPath RCA Audio Interconnect Cable</a>
+      <a href="https://www.svsound.com/pages/review#soundpath-pivoting-wall-ceiling-bracket" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Pivoting Wall/Ceiling Bracket Sort - Desktop');location.reload();" class="soundpath-pivoting-wall-ceiling-bracket">SoundPath Pivoting Wall/Ceiling Bracket</a>
+      <a href="https://www.svsound.com/pages/review#soundpath-ultra-speaker-cable" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Ultra Speaker Cable Sort - Desktop');location.reload();" class="soundpath-ultra-speaker-cable">SoundPath Ultra Speaker Cable</a>
+      <a href="https://www.svsound.com/pages/review#soundpath-one-speaker-cable" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath One Speaker Cable Sort - Desktop');location.reload();" class="soundpath-one-speaker-cable">SoundPath One Speaker Cable</a>
+      <a href="https://www.svsound.com/pages/review#soundpath-speaker-cable-terminals" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Speaker Cable Terminals Sort - Desktop');location.reload();" class="soundpath-speaker-cable-terminals">SoundPath Speaker Cable Terminals</a>
+      <a href="https://www.svsound.com/pages/review#ultra-bookshelf-stand" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Premium Bookshelf Speaker Stands Sort - Desktop');location.reload();" class="ultra-bookshelf-stand">Premium Bookshelf Speaker Stands</a>
+      <a href="https://www.svsound.com/pages/review#ultra-center-stand" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Premium Center Speaker Stands Sort - Desktop');location.reload();" class="ultra-center-stand">Premium Center Speaker Stands</a>
+      <a href="https://www.svsound.com/pages/review#prime-satellite-stand" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Premium Satellite Speaker Stands Sort - Desktop');location.reload();" class="prime-satellite-stand">Premium Satellite Speaker Stands</a>
+      <a href="https://www.svsound.com/pages/review#svs-sound-revolution-t-shirt" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SVS T-Shirt Sort - Desktop');location.reload();" class="svs-sound-revolution-t-shirt">SVS T-Shirt</a>
+      <a href="https://www.svsound.com/pages/review#gold-rca-y-adapter" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Gold RCA Y Adapter Sort - Desktop');location.reload();" class="gold-rca-y-adapter">Gold RCA Y Adapter</a>
+
+    </div>
+    </div>
+    
+    
+    <div id="yotpoholder">
+      <h1 class="desktopyo"><i class="fa fa-users"></i> User Ratings &amp; Reviews </h1>
+      <div class="buttonholder">    
+              <div class="readareviewholder">
+                <span class="readareviewbutton" id="readareview" onclick="document.getElementById('productselectormobile').style.display = 'block';">SELECT PRODUCT REVIEWS</span>
+                <div class="product-selector-mobile" id="productselectormobile">
+                  <select id="mobiledropdown" onchange="hashselect();">
+                    <option value=""></option>
+                    <optgroup label="Subwoofers">
+                      <option value="pb-1000">PB-1000</option>
+                      <option value="pb-2000">PB-2000</option>
+                      <option value="pb12-plus">PB12-Plus</option>
+                      <option value="pb13-ultra">PB13-Ultra</option>
+                      <option value="pb16-ultra">PB16-Ultra</option>
+                      <option value="pc-2000">PC-2000</option>
+                      <option value="pc12-plus">PC12-Plus</option>
+                      <option value="pc13-ultra">PC13-Ultra</option>
+                      <option value="sb-1000">SB-1000</option>
+                      <option value="sb-2000">SB-2000</option>
+                      <option value="sb12-nsd">SB12-NSD</option>
+                      <option value="sb13-ultra">SB13-Ultra</option>
+                      <option value="sb16-ultra">SB16-Ultra</option>
+                    </optgroup>
+                    <optgroup label="Speakers">
+                      <option value="prime-bookshelf">Prime Bookshelf</option>
+                      <option value="prime-center">Prime Center</option>
+                      <option value="prime-elevation">Prime Elevation</option>
+                      <option value="prime-satellite">Prime Satellite</option>
+                      <option value="prime-tower">Prime Tower</option>
+                      <option value="ultra-bookshelf">Ultra Bookshelf</option>
+                      <option value="ultra-center">Ultra Center</option>
+                      <option value="ultra-surround">Ultra Surround</option>
+                      <option value="ultra-tower">Ultra Tower</option>
+                    </optgroup>
+                    <optgroup label="Packages">
+                      <option value="prime-satellite-2-1">Prime Satellite 2.1</option>
+                      <option value="prime-satellite-5-1">Prime Satellite 5.1</option>
+                      <option value="prime-bookshelf-surround-system">Prime Bookshelf Surround</option>
+                      <option value="prime-tower-surround-system">Prime Tower Surround</option>
+                      <option value="ultra-bookshelf-surround-package">Ultra Bookshelf Surround</option>
+                      <option value="Ultra Tower Surround">Ultra Tower Surround</option>
+                    </optgroup>
+                    <optgroup label="Accessories">
+                      <option value="soundpath-subwoofer-isolation-system">SoundPath Subwoofer Isolation System</option>
+                      <option value="soundpath-rca-audio-interconnect-cable">SoundPath RCA Audio Interconnect Cable</option>
+                      <option value="SoundPath Pivoting Wall/Ceiling Bracket">SoundPath Pivoting Wall/Ceiling Bracket</option>
+                      <option value="SoundPath Ultra Speaker Cable">SoundPath Ultra Speaker Cable</option>
+                      <option value="SoundPath One Speaker Cable">SoundPath One Speaker Cable</option>
+                      <option value="SoundPath Speaker Cable Terminals">SoundPath Speaker Cable Terminals</option>
+                      <option value="ultra-bookshelf-stand">Premium Bookshelf Speaker Stands</option>
+                      <option value="ultra-center-stand">Premium Center Speaker Stands</option>
+                      <option value="prime-satellite-stand">Premium Satellite Speaker Stands</option>
+                      <option value="svs-sound-revolution-t-shirt">SVS T-Shirt</option>
+                      <option value="gold-rca-y-adapter">Gold RCA Y Adapter</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+        <div style="display:table-cell; width:1%"></div>
+
+      
+            <div class="writeareviewholder" id="writeareviewholder">
+              <span class="writeareview svsreviewbutton" id="writeareview" onclick="document.getElementById('writeareviewproducts').style.display = 'block';">WRITE A REVIEW</span>
+              <div class="writeareviewproducts" id="writeareviewproducts">
+                <select id="productselector" onchange="productSelect()">
+                  <option value="" disabled selected>Select a Product</option>
+                  <optgroup label="Subwoofers">
+                    <option value="pb-1000">PB-1000</option>
+                    <option value="pb-2000">PB-2000</option>
+                    <option value="pb12-plus">PB12-Plus</option>
+                    <option value="pb13-ultra">PB13-Ultra</option>
+                    <option value="pb16-ultra">PB16-Ultra</option>
+                    <option value="pc-2000">PC-2000</option>
+                    <option value="pc12-plus">PC12-Plus</option>
+                    <option value="pc13-ultra">PC13-Ultra</option>
+                    <option value="sb-1000">SB-1000</option>
+                    <option value="sb-2000">SB-2000</option>
+                    <option value="sb12-nsd">SB12-NSD</option>
+                    <option value="sb13-ultra">SB13-Ultra</option>
+                    <option value="sb16-ultra">SB16-Ultra</option>
+                  </optgroup>
+                  <optgroup label="Speakers">
+                    <option value="prime-bookshelf">Prime Bookshelf</option>
+                    <option value="prime-center">Prime Center</option>
+                    <option value="prime-elevation">Prime Elevation</option>
+                    <option value="prime-satellite">Prime Satellite</option>
+                    <option value="prime-tower">Prime Tower</option>
+                    <option value="ultra-bookshelf">Ultra Bookshelf</option>
+                    <option value="ultra-center">Ultra Center</option>
+                    <option value="ultra-surround">Ultra Surround</option>
+                    <option value="ultra-tower">Ultra Tower</option>
+                  </optgroup>
+                  <optgroup label="Packages">
+                    <option value="prime-satellite-2-1">Prime Satellite 2.1</option>
+                    <option value="prime-satellite-5-1">Prime Satellite 5.1</option>
+                    <option value="prime-bookshelf-surround-system">Prime Bookshelf Surround</option>
+                    <option value="prime-tower-surround-system">Prime Tower Surround</option>
+                    <option value="ultra-bookshelf-surround-package">Ultra Bookshelf Surround</option>
+                    <option value="Ultra Tower Surround">Ultra Tower Surround</option>
+                  </optgroup>
+                  <optgroup label="Accessories">
+                    <option value="soundpath-subwoofer-isolation-system">SoundPath Subwoofer Isolation System</option>
+                    <option value="soundpath-rca-audio-interconnect-cable">SoundPath RCA Audio Interconnect Cable</option>
+                    <option value="SoundPath Pivoting Wall/Ceiling Bracket">SoundPath Pivoting Wall/Ceiling Bracket</option>
+                    <option value="SoundPath Ultra Speaker Cable">SoundPath Ultra Speaker Cable</option>
+                    <option value="SoundPath One Speaker Cable">SoundPath One Speaker Cable</option>
+                    <option value="SoundPath Speaker Cable Terminals">SoundPath Speaker Cable Terminals</option>
+                    <option value="ultra-bookshelf-stand">Premium Bookshelf Speaker Stands</option>
+                    <option value="ultra-center-stand">Premium Center Speaker Stands</option>
+                    <option value="prime-satellite-stand">Premium Satellite Speaker Stands</option>
+                    <option value="svs-sound-revolution-t-shirt">SVS T-Shirt</option>
+                    <option value="gold-rca-y-adapter">Gold RCA Y Adapter</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+   
+    </div>
+  </div>
+  </div>
+</section>
+<script>
+
+</script>
+
+  
+  <script>
+    if(window.location.hash) {
+      $( "#yotpoholder" ).append( "<div class='yotpo yotpo-main-widget'data-product-id=''data-name='{{ product.title | escape }}'data-url='http://www.svsound.com{{ product.url }}'data-image-url='{{ product.featured_image | product_img_url: \'large\' |replace: \'?\', \'%3F\' | replace: \'&\',\'%26\'}}'data-description='{{ product.description | escape }}'></div>" );
+    }
+    else {
+      $( "#yotpoholder" ).append( "<div id='yotpo-testimonials-custom-tab'></div>" );
+    }
+  </script>
+
+<script type="text/javascript"> (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0, e.src="//staticw2.yotpo.com/HdJCHwgGKWTR3bjV3wLXBWXZPqevq08IVff2bQGs/widget.js";var t=document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,t)})(); </script>
+
+<script>
+  function hashselect() {
+    var hashtitle= $('#mobiledropdown option:selected').text();
+    var hash= $('#mobiledropdown option:selected').val();
+    ga('send', 'event', 'All Product Reviews Page', hashtitle + ' Sort - Mobile');
+    window.location.hash = '#'+hash;
+    location.reload();
+    
+  }
+  if (window.location.hash) {
+    var hash = window.location.hash;
+    $(".currentproduct").css("display", "block");
+    $(".buttonholder").css("width", "50%");
+    if(hash == "#pb-1000") { 
+      $('.yotpo').attr('data-product-id','3180639491');
+      $( ".pb-1000" ).addClass( "active" );
+      $("#producttitle").html("PB-1000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB-1000_main_large.jpg?v=1473790997');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb-1000");
+      
+    }
+    else if(hash == "#pb-1000-write") {
+      $('.yotpo').attr('data-product-id','3180639491');
+      $( ".pb-1000" ).addClass( "active" );
+      $("#producttitle").html("PB-1000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB-1000_main_large.jpg?v=1473790997');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb-1000");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pb-2000") {
+      $('.yotpo').attr('data-product-id','3180012611');
+      $( ".pb-2000" ).addClass( "active" );
+      $("#producttitle").html("PB-2000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB-2000_ISO_large.jpg?v=1473790859');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb-2000");
+    }
+    else if(hash == "#pb-2000-write") {
+      $('.yotpo').attr('data-product-id','3180012611');
+      $( ".pb-2000" ).addClass( "active" );
+      $("#producttitle").html("PB-2000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB-2000_ISO_large.jpg?v=1473790859');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb-2000");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pb12-plus") {
+      $('.yotpo').attr('data-product-id','3281005443');
+      $( ".pb12-plus" ).addClass( "active" );
+      $("#producttitle").html("PB12-Plus");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB12P-gloss-nogrille_large.jpg?v=1474985854');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb12-plus");
+    }
+    else if(hash == "#pb12-plus-write") {
+      $('.yotpo').attr('data-product-id','3281005443');
+      $( ".pb12-plus" ).addClass( "active" );
+      $("#producttitle").html("PB12-Plus");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB12P-gloss-nogrille_large.jpg?v=1474985854');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb12-plus");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pb13-ultra") {
+      $('.yotpo').attr('data-product-id','3280980675');
+      $( ".pb13-ultra" ).addClass( "active" );
+      $("#producttitle").html("PB13-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB13U-Gls-Blk-ISO-no-grill-on-white-IMG_0035_2---800-x-707_grille_cups_large.jpg?v=1474985898');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb13-ultra");
+    }
+    else if(hash == "#pb13-ultra-write") {
+      $('.yotpo').attr('data-product-id','3280980675');
+      $( ".pb13-ultra" ).addClass( "active" );
+      $("#producttitle").html("PB13-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB13U-Gls-Blk-ISO-no-grill-on-white-IMG_0035_2---800-x-707_grille_cups_large.jpg?v=1474985898');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb13-ultra");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pb16-ultra") {
+      $('.yotpo').attr('data-product-id','8651014988');
+      $( ".pb16-ultra" ).addClass( "active" );
+      $("#producttitle").html("PB16-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/pb16-ultra-main-pg_large.jpg?v=1475757431');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb16-ultra");
+    }
+    else if(hash == "#pb16-ultra-write") {
+      $('.yotpo').attr('data-product-id','8651014988');
+      $( ".pb16-ultra" ).addClass( "active" );
+      $("#producttitle").html("PB16-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/pb16-ultra-main-pg_large.jpg?v=1475757431');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pb16-ultra");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pc-2000") {
+      $('.yotpo').attr('data-product-id','3289418371');
+      $( ".pc-2000" ).addClass( "active" );
+      $("#producttitle").html("PC-2000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/pc-2000_BA_ISO_large.jpg?v=1474986040');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pc-2000");
+    }
+    else if(hash == "#pc-2000-write") {
+      $('.yotpo').attr('data-product-id','3289418371');
+      $( ".pc-2000" ).addClass( "active" );
+      $("#producttitle").html("PC-2000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/pc-2000_BA_ISO_large.jpg?v=1474986040');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pc-2000");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pc12-plus") {
+      $('.yotpo').attr('data-product-id','3180281795');
+      $( ".pc12-plus" ).addClass( "active" );
+      $("#producttitle").html("PC12-Plus");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PC12-Plus_front_1024_large.jpg?v=1447349971');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pc12-plus");
+    }
+    else if(hash == "#pc12-plus-write") {
+      $('.yotpo').attr('data-product-id','3180281795');
+      $( ".pc12-plus" ).addClass( "active" );
+      $("#producttitle").html("PC12-Plus");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PC12-Plus_front_1024_large.jpg?v=1447349971');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pc12-plus");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#pc13-ultra") {
+      $('.yotpo').attr('data-product-id','3180301315');
+      $( ".pc13-ultra" ).addClass( "active" );
+      $("#producttitle").html("PC13-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PC13-Ultra_front_fullres_large.jpg?v=1446061363');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pc13-ultra");
+    }
+    else if(hash == "#pc13-ultra-write") {
+      $('.yotpo').attr('data-product-id','3180301315');
+      $( ".pc13-ultra" ).addClass( "active" );
+      $("#producttitle").html("PC13-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PC13-Ultra_front_fullres_large.jpg?v=1446061363');
+      $(".productlink").attr("href", "https://www.svsound.com/products/pc13-ultra");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#sb-1000") {
+      $('.yotpo').attr('data-product-id','3281006275');
+      $( ".sb-1000" ).addClass( "active" );
+      $("#producttitle").html("SB-1000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB-1000_ISO_nogrille_large.jpg?v=1474985670');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb-1000");
+    }
+    else if(hash == "#sb-1000-write") {
+      $('.yotpo').attr('data-product-id','3281006275');
+      $( ".sb-1000" ).addClass( "active" );
+      $("#producttitle").html("SB-1000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB-1000_ISO_nogrille_large.jpg?v=1474985670');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb-1000");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#sb-2000") {
+      $('.yotpo').attr('data-product-id','3281028739');
+      $( ".sb-2000" ).addClass( "active" );
+      $("#producttitle").html("SB-2000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB-2000_ISO_2277784a-7d11-46a9-8b2e-5b34ba39af7c_large.jpg?v=1474985745');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb-2000");
+    }
+    else if(hash == "#sb-2000-write") {
+      $('.yotpo').attr('data-product-id','3281028739');
+      $( ".sb-2000" ).addClass( "active" );
+      $("#producttitle").html("SB-2000");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB-2000_ISO_2277784a-7d11-46a9-8b2e-5b34ba39af7c_large.jpg?v=1474985745');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb-2000");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#sb12-nsd") {
+      $('.yotpo').attr('data-product-id','3474794499');
+      $( ".sb12-nsd" ).addClass( "active" );
+      $("#producttitle").html("SB12-NSD");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/sb12-nsd_BA_ISO_large.jpg?v=1479482490');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb12-nsd");
+    }
+    else if(hash == "#sb12-nsd-write") {
+      $('.yotpo').attr('data-product-id','3474794499');
+      $( ".sb12-nsd" ).addClass( "active" );
+      $("#producttitle").html("SB12-NSD");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/sb12-nsd_BA_ISO_large.jpg?v=1479482490');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb12-nsd");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#sb13-ultra") {
+      $('.yotpo').attr('data-product-id','3280941891');
+      $( ".sb13-ultra" ).addClass( "active" );
+      $("#producttitle").html("SB13-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB13-Ultra_main_large.jpg?v=1474985784');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb13-ultra");
+    }
+    else if(hash == "#sb13-ultra-write") {
+      $('.yotpo').attr('data-product-id','3280941891');
+      $( ".sb13-ultra" ).addClass( "active" );
+      $("#producttitle").html("SB13-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB13-Ultra_main_large.jpg?v=1474985784');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb13-ultra");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#sb16-ultra") {
+      $('.yotpo').attr('data-product-id','8650180492');
+      $( ".sb16-ultra" ).addClass( "active" );
+      $("#producttitle").html("SB16-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/sb16-ultra-main-pg_large.jpg?v=1475711236');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb16-ultra");
+    }
+    else if(hash == "#sb16-ultra-write") {
+      $('.yotpo').attr('data-product-id','8650180492');
+      $( ".sb16-ultra" ).addClass( "active" );
+      $("#producttitle").html("SB16-Ultra");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/sb16-ultra-main-pg_large.jpg?v=1475711236');
+      $(".productlink").attr("href", "https://www.svsound.com/products/sb16-ultra");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-tower") {
+      $('.yotpo').attr('data-product-id','3281030403');
+      $( ".prime-tower" ).addClass( "active" );
+      $("#producttitle").html("Prime Tower");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_tower_BA_pair_large.jpg?v=1474986140');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-tower");
+    }
+    else if(hash == "#prime-tower-write") {
+      $('.yotpo').attr('data-product-id','3281030403');
+      $( ".prime-tower" ).addClass( "active" );
+      $("#producttitle").html("Prime Tower");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_tower_BA_pair_large.jpg?v=1474986140');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-tower");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-bookshelf") {
+      $('.yotpo').attr('data-product-id','3281356163');
+      $( ".prime-bookshelf" ).addClass( "active" );
+      $("#producttitle").html("Prime Bookshelf");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_bookshelf_BA_pair_large.jpg?v=1474986321');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-bookshelf");
+    }
+    else if(hash == "#prime-bookshelf-write") {
+      $('.yotpo').attr('data-product-id','3281356163');
+      $( ".prime-bookshelf" ).addClass( "active" );
+      $("#producttitle").html("Prime Bookshelf");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_bookshelf_BA_pair_large.jpg?v=1474986321');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-bookshelf");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-center") {
+      $('.yotpo').attr('data-product-id','3281037827');
+      $( ".prime-center" ).addClass( "active" );
+      $("#producttitle").html("Prime Center");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_center_BA_ISO_large.jpg?v=1474986364');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-center");
+    }
+    else if(hash == "#prime-center-write") {
+      $('.yotpo').attr('data-product-id','3281037827');
+      $( ".prime-center" ).addClass( "active" );
+      $("#producttitle").html("Prime Center");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_center_BA_ISO_large.jpg?v=1474986364');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-center");
+      $(".currentproduct").css("display", "block");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-satellite") {
+      $('.yotpo').attr('data-product-id','3281038915');
+      $( ".prime-satellite" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_satellite_BA_pair_large.jpg?v=1474986414');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite");
+    }
+     else if(hash == "#prime-satellite-write") {
+      $('.yotpo').attr('data-product-id','3281038915');
+      $( ".prime-satellite" ).addClass( "active" );
+       $("#producttitle").html("Prime Satellite");
+       $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_satellite_BA_pair_large.jpg?v=1474986414');
+       $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite");
+       var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-elevation") {
+      $('.yotpo').attr('data-product-id','8079259782');
+      $( ".prime-elevation" ).addClass( "active" );
+      $("#producttitle").html("Prime Elevation");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime-elevation-ba_large.jpg?v=1474989265');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-elevation");
+    }
+    else if(hash == "#prime-elevation-write") {
+      $('.yotpo').attr('data-product-id','8079259782');
+      $( ".prime-elevation" ).addClass( "active" );
+      $("#producttitle").html("Prime Elevation");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime-elevation-ba_large.jpg?v=1474989265');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-elevation");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-tower") {
+      $('.yotpo').attr('data-product-id','3281008515');
+      $( ".ultra-tower" ).addClass( "active" );
+      $("#producttitle").html("Ultra Tower");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Ultra_tower_PG_pair_large.jpg?v=1474986882');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-tower");
+    }
+    else if(hash == "#ultra-tower-write") {
+      $('.yotpo').attr('data-product-id','3281008515');
+      $( ".ultra-tower" ).addClass( "active" );
+      $("#producttitle").html("Ultra Tower");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Ultra_tower_PG_pair_large.jpg?v=1474986882');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-tower");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-bookshelf") {
+      $('.yotpo').attr('data-product-id','3281010883');
+      $( ".ultra-bookshelf" ).addClass( "active" );
+      $("#producttitle").html("Ultra Bookshelf");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-bookshelf-pg_large.jpg?v=1474986938');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-bookshelf");
+    }
+    else if(hash == "#ultra-bookshelf-write") {
+      $('.yotpo').attr('data-product-id','3281010883');
+      $( ".ultra-bookshelf" ).addClass( "active" );
+      $("#producttitle").html("Ultra Bookshelf");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-bookshelf-pg_large.jpg?v=1474986938');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-bookshelf");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-center") {
+      $('.yotpo').attr('data-product-id','3280413507');
+      $( ".ultra-center" ).addClass( "active" );
+      $("#producttitle").html("Ultra Center");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/130812_SVS_Center_Straight_flat_large.jpg?v=1474987085');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-center");
+    }
+    else if(hash == "#ultra-center-write") {
+      $('.yotpo').attr('data-product-id','3280413507');
+      $( ".ultra-center" ).addClass( "active" );
+      $("#producttitle").html("Ultra Center");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/130812_SVS_Center_Straight_flat_large.jpg?v=1474987085');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-center");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-surround") {
+      $('.yotpo').attr('data-product-id','3281009219');
+      $( ".ultra-surround" ).addClass( "active" );
+      $("#producttitle").html("Ultra Surround");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Ultra_surround_pair_large.jpg?v=1474987135');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-surround");
+    }
+    else if(hash == "#ultra-surround-write") {
+      $('.yotpo').attr('data-product-id','3281009219');
+      $( ".ultra-surround" ).addClass( "active" );
+      $("#producttitle").html("Ultra Surround");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Ultra_surround_pair_large.jpg?v=1474987135');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-surround");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-satellite-2-1") {
+      $('.yotpo').attr('data-product-id','3291105987');
+      $( ".prime-satellite-2-1" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite 2.1 System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime-satellite-2-1_large.jpg?v=1474986474');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite-2-1");
+    }
+    else if(hash == "#prime-satellite-2-1-write") {
+      $('.yotpo').attr('data-product-id','3291105987');
+      $( ".prime-satellite-2-1" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite 2.1 System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime-satellite-2-1_large.jpg?v=1474986474');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite-2-1");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-satellite-5-1") {
+      $('.yotpo').attr('data-product-id','3291216259');
+      $( ".prime-satellite-5-1" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite 5.1 System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Satellite-5-1_main_large.jpg?v=1474986682');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite-5-1");
+    }
+    else if(hash == "#prime-satellite-5-1-write") {
+      $('.yotpo').attr('data-product-id','3291216259');
+      $( ".prime-satellite-5-1" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite 5.1 System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Satellite-5-1_main_large.jpg?v=1474986682');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite-5-1");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-bookshelf-surround-system") {
+      $('.yotpo').attr('data-product-id','3291478787');
+      $( ".prime-bookshelf-surround-system" ).addClass( "active" );
+      $("#producttitle").html("Prime Bookshelf Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Bookshelf-Surround_main_large.jpg?v=1474986780');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-bookshelf-surround-system");
+    }
+    else if(hash == "#prime-bookshelf-surround-system-write") {
+      $('.yotpo').attr('data-product-id','3291478787');
+      $( ".prime-bookshelf-surround-system" ).addClass( "active" );
+      $("#producttitle").html("Prime Bookshelf Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Bookshelf-Surround_main_large.jpg?v=1474986780');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-bookshelf-surround-system");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-tower-surround-system") {
+      $('.yotpo').attr('data-product-id','3291480899');
+      $( ".prime-tower-surround-system" ).addClass( "active" );
+      $("#producttitle").html("Prime Tower Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Tower-Surround_main_large.jpg?v=1474986734');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-tower-surround-system");
+    }
+    else if(hash == "#prime-tower-surround-system-write") {
+      $('.yotpo').attr('data-product-id','3291480899');
+      $( ".prime-tower-surround-system" ).addClass( "active" );
+      $("#producttitle").html("Prime Tower Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Tower-Surround_main_large.jpg?v=1474986734');
+      $(".productlink").attr("href", "https://www.svsound.com/products/prime-tower-surround-system");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-bookshelf-surround-package") {
+      $('.yotpo').attr('data-product-id','3290765379');
+      $( ".ultra-bookshelf-surround-package" ).addClass( "active" );
+      $("#producttitle").html("Ultra Bookshelf Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-bookshelf-surround-system_large.jpg?v=1474987225');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-bookshelf-surround-package");
+    }
+    else if(hash == "#ultra-bookshelf-surround-package-write") {
+      $('.yotpo').attr('data-product-id','3290765379');
+      $( ".ultra-bookshelf-surround-package" ).addClass( "active" );
+      $("#producttitle").html("Ultra Bookshelf Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-bookshelf-surround-system_large.jpg?v=1474987225');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-bookshelf-surround-package");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-tower-surround-package") {
+      $('.yotpo').attr('data-product-id','3302432387');
+      $( ".ultra-tower-surround-package" ).addClass( "active" );
+      $("#producttitle").html("Ultra Tower Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-tower-surround-system_large.jpg?v=1474987180');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-tower-surround-package");
+    }
+    else if(hash == "#ultra-tower-surround-package-write") {
+      $('.yotpo').attr('data-product-id','3302432387');
+      $( ".ultra-tower-surround-package" ).addClass( "active" );
+      $("#producttitle").html("Ultra Tower Surround System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-tower-surround-system_large.jpg?v=1474987180');
+      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-tower-surround-package");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#soundpath-subwoofer-isolation-system") {
+      $('.yotpo').attr('data-product-id','3291267971');
+      $( ".soundpath-subwoofer-isolation-system" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Subwoofer Isolation System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/iso_feet_installed_alt_2_large.jpg?v=1452545338');
+      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-subwoofer-isolation-system");
+    }
+    else if(hash == "#soundpath-subwoofer-isolation-system-write") {
+      $('.yotpo').attr('data-product-id','3291267971');
+      $( ".soundpath-subwoofer-isolation-system" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Subwoofer Isolation System");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/iso_feet_installed_alt_2_large.jpg?v=1452545338');
+      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-subwoofer-isolation-system");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#soundpath-rca-audio-interconnect-cable") {
+      $('.yotpo').attr('data-product-id','3971557766');
+      $( ".soundpath-rca-audio-interconnect-cable" ).addClass( "active" );
+      $("#producttitle").html("SoundPath RCA Audio Interconnect Cable");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_rca_single_large.jpg?v=1475248789');
+      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-rca-audio-interconnect-cable");
+    }
+    else if(hash == "#soundpath-rca-audio-interconnect-cable-write") {
+      $('.yotpo').attr('data-product-id','3971557766');
+      $( ".soundpath-rca-audio-interconnect-cable" ).addClass( "active" );
+      $("#producttitle").html("SoundPath RCA Audio Interconnect Cable");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_rca_single_large.jpg?v=1475248789');
+      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-rca-audio-interconnect-cable");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#soundpath-pivoting-wall-ceiling-bracket") {
+      $('.yotpo').attr('data-product-id','3537991491');
+      $( ".soundpath-pivoting-wall-ceiling-bracket" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Pivoting Wall/Ceiling Bracket");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_pivoting_bracket_productshot_large.jpg?v=1465925508');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-pivoting-wall-ceiling-bracket");
+    }
+    else if(hash == "#soundpath-pivoting-wall-ceiling-bracket-write") {
+      $('.yotpo').attr('data-product-id','3537991491');
+      $( ".soundpath-pivoting-wall-ceiling-bracket" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Pivoting Wall/Ceiling Bracket");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_pivoting_bracket_productshot_large.jpg?v=1465925508');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-pivoting-wall-ceiling-bracket");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#soundpath-ultra-speaker-cable") {
+      $('.yotpo').attr('data-product-id','3934422086');
+      $( ".soundpath-ultra-speaker-cable" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Ultra Speaker Cable");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_ultra_complete.jpg?v=1448914805');
+      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-ultra-speaker-cable");
+    }
+    else if(hash == "#soundpath-ultra-speaker-cable-write") {
+      $('.yotpo').attr('data-product-id','3934422086');
+      $( ".soundpath-ultra-speaker-cable" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Ultra Speaker Cable");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_ultra_complete.jpg?v=1448914805');
+      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-ultra-speaker-cable");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#soundpath-one-speaker-cable") {
+      $('.yotpo').attr('data-product-id','3970896134');
+      $( ".soundpath-one-speaker-cable" ).addClass( "active" );
+      $("#producttitle").html("SoundPath One Speaker Cable");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_one_spool_large.png?v=1449693373');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-one-speaker-cable");
+    }
+    else if(hash == "#soundpath-one-speaker-cable-write") {
+      $('.yotpo').attr('data-product-id','3970896134');
+      $( ".soundpath-one-speaker-cable" ).addClass( "active" );
+      $("#producttitle").html("SoundPath One Speaker Cable");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_one_spool_large.png?v=1449693373');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-one-speaker-cable");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#soundpath-speaker-cable-terminals") {
+      $('.yotpo').attr('data-product-id','3970764614');
+      $( ".soundpath-speaker-cable-terminals" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Speaker Cable Terminals");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Spade_large.jpg?v=1449503019');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-speaker-cable-terminals");
+    }
+    else if(hash == "#soundpath-speaker-cable-terminals-write") {
+      $('.yotpo').attr('data-product-id','3970764614');
+      $( ".soundpath-speaker-cable-terminals" ).addClass( "active" );
+      $("#producttitle").html("SoundPath Speaker Cable Terminals");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Spade_large.jpg?v=1449503019');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-speaker-cable-terminals");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-bookshelf-stand") {
+      $('.yotpo').attr('data-product-id','3180774467');
+      $( ".ultra-bookshelf-stand" ).addClass( "active" );
+      $("#producttitle").html("Ultra Bookshelf Stand");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/UltraBookshelfStandZOOM_large.jpg?v=1445983161');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/ultra-bookshelf-stand");
+    }
+    else if(hash == "#ultra-bookshelf-stand-write") {
+      $('.yotpo').attr('data-product-id','3180774467');
+      $( ".ultra-bookshelf-stand" ).addClass( "active" );
+      $("#producttitle").html("Ultra Bookshelf Stand");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/UltraBookshelfStandZOOM_large.jpg?v=1445983161');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/ultra-bookshelf-stand");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#ultra-center-stand") {
+      $('.yotpo').attr('data-product-id','3180777539');
+      $( ".ultra-center-stand" ).addClass( "active" );
+      $("#producttitle").html("Ultra Center Stand");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/UltraCenterStandZOOM_large.jpg?v=1445983113');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/ultra-center-stand");
+    }
+    else if(hash == "#ultra-center-stand-write") {
+      $('.yotpo').attr('data-product-id','3180777539');
+      $( ".ultra-center-stand" ).addClass( "active" );
+      $("#producttitle").html("Ultra Center Stand");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/UltraCenterStandZOOM_large.jpg?v=1445983113');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/ultra-center-stand");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#prime-satellite-stand") {
+      $('.yotpo').attr('data-product-id','3181254403');
+      $( ".prime-satellite-stand" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite Stand");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PrimeSatelliteStandZOOM_large.jpg?v=1445983139');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/prime-satellite-stand");
+    }
+    else if(hash == "#prime-satellite-stand-write") {
+      $('.yotpo').attr('data-product-id','3181254403');
+      $( ".prime-satellite-stand" ).addClass( "active" );
+      $("#producttitle").html("Prime Satellite Stand");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PrimeSatelliteStandZOOM_large.jpg?v=1445983139');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/prime-satellite-stand");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#svs-sound-revolution-t-shirt") {
+      $('.yotpo').attr('data-product-id','3281026435');
+      $( ".svs-sound-revolution-t-shirt" ).addClass( "active" );
+      $("#producttitle").html("SVS Sound|Revolution T-Shirt");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SVST-Shirt_large.jpg?v=1452545169');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/svs-sound-revolution-t-shirt");
+    }
+    else if(hash == "#svs-sound-revolution-t-shirt-write") {
+      $('.yotpo').attr('data-product-id','3281026435');
+      $( ".svs-sound-revolution-t-shirt" ).addClass( "active" );
+      $("#producttitle").html("SVS Sound|Revolution T-Shirt");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SVST-Shirt_large.jpg?v=1452545169');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/svs-sound-revolution-t-shirt");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+    else if(hash == "#gold-rca-y-adapter") {
+      $('.yotpo').attr('data-product-id','3180359171');
+      $( ".gold-rca-y-adapter" ).addClass( "active" );
+      $("#producttitle").html("Gold RCA-Y Adapter");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/RCASplitterAdditional1ZOOM_large.jpg?v=1445983079');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/gold-rca-y-adapter");
+    }
+    else if(hash == "#gold-rca-y-adapter-write") {
+      $('.yotpo').attr('data-product-id','3180359171');
+      $( ".gold-rca-y-adapter" ).addClass( "active" );
+      $("#producttitle").html("Gold RCA-Y Adapter");
+      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/RCASplitterAdditional1ZOOM_large.jpg?v=1445983079');
+      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/gold-rca-y-adapter");
+      var checkExist = setInterval(function() {
+        if ($('.write-review-wrapper').length) {
+          $( ".write-review-wrapper" ).addClass( "open" );
+          clearInterval(checkExist);
+        }
+      }, 100); // check every 100ms
+    }
+
+  }
+  else {
+    document.getElementById('writeareview').style.display = 'block';
+    document.getElementById('writeareviewholder').style.display = 'table-cell';
+    
+  }
+  
+  function productSelect() {
+    var product = document.getElementById('productselector').value;
+    window.location.hash = '#' +product +'-write';
+    location.reload();
+    
+  }
+</script>
+  
+
+
+
+
+
