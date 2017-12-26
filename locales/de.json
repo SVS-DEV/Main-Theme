@@ -16,7 +16,11 @@
     "search": {
       "placeholder": "Durchsuchen Sie unseren Shop",
       "no_results_title": "Keine Suchergebnisse",
+<<<<<<< HEAD
       "no_results_html": "Ihre Suche nach <strong>{{ search }}</strong> hat keine Ergebnisse hervorgebracht. Bitte suchen Sie nach etwas anderem.",
+=======
+      "no_results_html": "Ihre Suche nach <strong>{{ search }}<\/strong> hat keine Ergebnisse hervorgebracht. Bitte suchen Sie nach etwas anderem.",
+>>>>>>> origin/master
       "results_title": "Suchergebnisse"
     },
     "meta": {
@@ -58,7 +62,11 @@
       }
     },
     "product_item": {
+<<<<<<< HEAD
       "from_text_html": "<em>Von</em> {{ price }}"
+=======
+      "from_text_html": "<em>Von<\/em> {{ price }}"
+>>>>>>> origin/master
     },
     "list_collections": {
       "product_collections": "Artikelzusammenstellungen"
@@ -98,17 +106,29 @@
       "example_title": "Beispielhafter Produkttitel"
     },
     "example_product": {
+<<<<<<< HEAD
     "title": "Beispielprodukt",
     "overlay_title": "Dies ist ein Beispiel für eine Produktseite",
     "subtext_html": "Fügen Sie Ihr eigenes Produkt hinzu, um diese Seite in Aktion zu sehen und um den ersten Schritt beim Testen von Bestellungen zu unternehmen. Tipps zum Abfassen effektiver Beschreibungen finden Sie unter <a href=\"http://www.shopify.com/blog/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 einfache Methoden, verkaufsfördernde Produktbeschreibungen zu verfassen.</a>",
     "add_product": "Ein Produkt hinzufügen",
     "description_html": "Hier wird Ihre Produktbeschreibung angezeigt."
+=======
+      "title": "Beispielprodukt",
+      "overlay_title": "Dies ist ein Beispiel für eine Produktseite",
+      "subtext_html": "Fügen Sie Ihr eigenes Produkt hinzu, um diese Seite in Aktion zu sehen und um den ersten Schritt beim Testen von Bestellungen zu unternehmen. Tipps zum Abfassen effektiver Beschreibungen finden Sie unter <a href=\"http:\/\/www.shopify.com\/blog\/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 einfache Methoden, verkaufsfördernde Produktbeschreibungen zu verfassen.<\/a>",
+      "add_product": "Ein Produkt hinzufügen",
+      "description_html": "Hier wird Ihre Produktbeschreibung angezeigt."
+>>>>>>> origin/master
     }
   },
   "blogs": {
     "article": {
       "posted_on_date": "Gepostet am {{ date }}",
+<<<<<<< HEAD
       "comment_meta_html": "<strong>{{ author }}</strong> am {{ date }}"
+=======
+      "comment_meta_html": "<strong>{{ author }}<\/strong> am {{ date }}"
+>>>>>>> origin/master
     },
     "comments": {
       "title": "Kommentare",
@@ -150,11 +170,19 @@
   "home_page": {
     "onboarding": {
       "products_title": "Sie haben noch keine Artikel hinzugefügt",
+<<<<<<< HEAD
       "products_text_html": "Es dauert weniger als eine Minute, um Ihrem Shop <a href=\"/admin/products\">den ersten Artikel hinzuzufügen</a>. Fügen Sie ihn zur <strong>{{ Startseiten }}</strong>-Zusammenstellung hinzu, um ihn auf der Startseite zu sehen.",
       "add_product": "Artikel hinzufügen",
       "view_sample": "Beispielartikel ansehen",
       "collections_title": "Fast geschafft...",
       "collections_text_html": "Fügen Sie jetzt einen Artikel zur <em>{{ Startseiten }}</em>-Zusammenstellung hinzu, um ihn auf der Startseite zu sehen.",
+=======
+      "products_text_html": "Es dauert weniger als eine Minute, um Ihrem Shop <a href=\"\/admin\/products\">den ersten Artikel hinzuzufügen<\/a>. Fügen Sie ihn zur <strong>{{ Startseiten }}<\/strong>-Zusammenstellung hinzu, um ihn auf der Startseite zu sehen.",
+      "add_product": "Artikel hinzufügen",
+      "view_sample": "Beispielartikel ansehen",
+      "collections_title": "Fast geschafft...",
+      "collections_text_html": "Fügen Sie jetzt einen Artikel zur <em>{{ Startseiten }}<\/em>-Zusammenstellung hinzu, um ihn auf der Startseite zu sehen.",
+>>>>>>> origin/master
       "add_collection": "Zur Zusammenstellung hinzufügen",
       "learn_collections": "Erfahren Sie mehr über Zusammenstellungen",
       "example_product_title": "Beispielhaftes ausgewähltes Produkt",
@@ -178,7 +206,11 @@
       "send": "Absenden",
       "post_success": "Danke, dass Sie uns kontaktiert haben. Wir werden uns so schnell wie möglich bei Ihnen melden.",
       "post_error": "Ups, tut uns leid. Ihre Anfrage konnte nicht gesendet werden. Folgendes müssten Sie bitte korrigieren und erneut übermitteln:",
+<<<<<<< HEAD
       "post_field_error_html": "<strong>{{ field }}</strong> {{ error }}"
+=======
+      "post_field_error_html": "<strong>{{ field }}<\/strong> {{ error }}"
+>>>>>>> origin/master
     },
     "placeholder": {
       "name": "Erika Mustermann",
@@ -291,4 +323,8 @@
       "left": "übrig"
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

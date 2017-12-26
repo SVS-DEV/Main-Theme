@@ -16,7 +16,11 @@
     "search": {
       "placeholder": "buscar en nuestra tienda",
       "no_results_title": "Búsqueda sin resultados",
+<<<<<<< HEAD
       "no_results_html": "Su búsqueda de <strong>{{ search }}</strong> no tuvo resultados. Intente buscar otra cosa.",
+=======
+      "no_results_html": "Su búsqueda de <strong>{{ search }}<\/strong> no tuvo resultados. Intente buscar otra cosa.",
+>>>>>>> origin/master
       "results_title": "Resultados de la búsqueda"
     },
     "meta": {
@@ -58,7 +62,11 @@
       }
     },
     "product_item": {
+<<<<<<< HEAD
       "from_text_html": "<em>De</em> {{ price }}"
+=======
+      "from_text_html": "<em>De<\/em> {{ price }}"
+>>>>>>> origin/master
     },
     "list_collections": {
       "product_collections": "Colecciones de productos"
@@ -100,7 +108,11 @@
     "example_product": {
       "title": "Ejemplo de producto",
       "overlay_title": "Esto es un ejemplo de una página de producto",
+<<<<<<< HEAD
       "subtext_html": "Añada su propio producto a fin de ver esta página en acción y dar el primer paso para probar órdenes. Para ver consejos sobre redacción de descripciones efectivas, revise <a href=\"http://www.shopify.com/blog/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 maneras sencillas de escribir descripciones de productos que vendan.</a>",
+=======
+      "subtext_html": "Añada su propio producto a fin de ver esta página en acción y dar el primer paso para probar órdenes. Para ver consejos sobre redacción de descripciones efectivas, revise <a href=\"http:\/\/www.shopify.com\/blog\/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 maneras sencillas de escribir descripciones de productos que vendan.<\/a>",
+>>>>>>> origin/master
       "add_product": "Añadir un producto",
       "description_html": "Aquí es donde se muestra la descripción de su producto."
     }
@@ -108,7 +120,11 @@
   "blogs": {
     "article": {
       "posted_on_date": "Publicado en {{ date }}",
+<<<<<<< HEAD
       "comment_meta_html": "<strong>{{ author }}</strong> en {{ date }}"
+=======
+      "comment_meta_html": "<strong>{{ author }}<\/strong> en {{ date }}"
+>>>>>>> origin/master
     },
     "comments": {
       "title": "Comentarios",
@@ -150,11 +166,19 @@
   "home_page": {
     "onboarding": {
       "products_title": "No ha agregado productos aún",
+<<<<<<< HEAD
       "products_text_html": "Toma menos de un minuto <a href=\"/admin/products\">agregar su primer producto</a> a su tienda. Asegúrese de agregarlo a la colección de <strong>{{ frontpage }}</strong> para verlo en la página de inicio.",
       "add_product": "Agregar un producto",
       "view_sample": "Ver un ejemplo de producto",
       "collections_title": "Casi listo...",
       "collections_text_html": "Ahora agregue un producto a la colección de <em>{{ frontpage }}</em> para verlo en la página de inicio.",
+=======
+      "products_text_html": "Toma menos de un minuto <a href=\"\/admin\/products\">agregar su primer producto<\/a> a su tienda. Asegúrese de agregarlo a la colección de <strong>{{ frontpage }}<\/strong> para verlo en la página de inicio.",
+      "add_product": "Agregar un producto",
+      "view_sample": "Ver un ejemplo de producto",
+      "collections_title": "Casi listo...",
+      "collections_text_html": "Ahora agregue un producto a la colección de <em>{{ frontpage }}<\/em> para verlo en la página de inicio.",
+>>>>>>> origin/master
       "add_collection": "Agregar a colección",
       "learn_collections": "Aprender sobre colecciones",
       "example_product_title": "Ejemplo de producto destacado",
@@ -178,7 +202,11 @@
       "send": "Enviar",
       "post_success": "Gracias por contactarnos. Le responderemos lo antes posible.",
       "post_error": "Ups, lo sentimos. No pudimos enviar su consulta. Por favor corrija lo siguiente y envíe de nuevo:",
+<<<<<<< HEAD
       "post_field_error_html": "El <strong>{{ field }}</strong> {{ error }}"
+=======
+      "post_field_error_html": "El <strong>{{ field }}<\/strong> {{ error }}"
+>>>>>>> origin/master
     },
     "placeholder": {
       "name": "John Doe",
@@ -291,4 +319,8 @@
       "left": "izquierda"
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

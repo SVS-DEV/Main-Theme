@@ -16,7 +16,11 @@
     "search": {
       "placeholder": "Busque em nossa loja",
       "no_results_title": "Não houve resultados",
+<<<<<<< HEAD
       "no_results_html": "Sua busca por <strong>{{ search }}</strong> não gerou resultados. Tente fazer uma outra busca.",
+=======
+      "no_results_html": "Sua busca por <strong>{{ search }}<\/strong> não gerou resultados. Tente fazer uma outra busca.",
+>>>>>>> origin/master
       "results_title": "Resultados da busca"
     },
     "meta": {
@@ -58,7 +62,11 @@
       }
     },
     "product_item": {
+<<<<<<< HEAD
       "from_text_html": "<em>A partir de</em> {{ price }}"
+=======
+      "from_text_html": "<em>A partir de<\/em> {{ price }}"
+>>>>>>> origin/master
     },
     "list_collections": {
       "product_collections": "Coleções de produtos"
@@ -98,9 +106,15 @@
       "example_title": "Exemplo de título de produto"
     },
     "example_product": {
+<<<<<<< HEAD
       "title": "Exemplo de produto", 
       "overlay_title": "Este é um exemplo de uma página de produto",
       "subtext_html": "Adicione seu próprio produto para ver esta página em ação e dar o primeiro passo para testar pedidos. Para obter dicas sobre como escrever descrições eficazes, verifique <a href=\"http://www.shopify.com/blog/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\"> 9 maneiras simples de escrever descrições de produtos que vendem.</a>",
+=======
+      "title": "Exemplo de produto",
+      "overlay_title": "Este é um exemplo de uma página de produto",
+      "subtext_html": "Adicione seu próprio produto para ver esta página em ação e dar o primeiro passo para testar pedidos. Para obter dicas sobre como escrever descrições eficazes, verifique <a href=\"http:\/\/www.shopify.com\/blog\/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\"> 9 maneiras simples de escrever descrições de produtos que vendem.<\/a>",
+>>>>>>> origin/master
       "add_product": "Adicione um produto",
       "description_html": "Este é o lugar onde a descrição do seu produto será exibida."
     }
@@ -108,7 +122,11 @@
   "blogs": {
     "article": {
       "posted_on_date": "Postado em {{ date }}",
+<<<<<<< HEAD
       "comment_meta_html": "<strong>{{ author }}</strong> em {{ date }}"
+=======
+      "comment_meta_html": "<strong>{{ author }}<\/strong> em {{ date }}"
+>>>>>>> origin/master
     },
     "comments": {
       "title": "Comentários",
@@ -150,11 +168,19 @@
   "home_page": {
     "onboarding": {
       "products_title": "Você ainda não adicionou produtos",
+<<<<<<< HEAD
       "products_text_html": "Leva menos de um minuto para <a href=\"/admin/products\">adicionar o primeiro produto</a> à sua loja. Não se esqueça de adicioná-lo à coleção <strong>{{ frontpage }}</strong> para vê-lo na página inicial.",
       "add_product": "Adicionar um produto",
       "view_sample": "Ver uma amostra de produto",
       "collections_title": "Quase lá...",
       "collections_text_html": "Agora, adicione um produto à coleção <em>{{ frontpage }}</em> para vê-lo na página inicial.",
+=======
+      "products_text_html": "Leva menos de um minuto para <a href=\"\/admin\/products\">adicionar o primeiro produto<\/a> à sua loja. Não se esqueça de adicioná-lo à coleção <strong>{{ frontpage }}<\/strong> para vê-lo na página inicial.",
+      "add_product": "Adicionar um produto",
+      "view_sample": "Ver uma amostra de produto",
+      "collections_title": "Quase lá...",
+      "collections_text_html": "Agora, adicione um produto à coleção <em>{{ frontpage }}<\/em> para vê-lo na página inicial.",
+>>>>>>> origin/master
       "add_collection": "Adicionar a uma coleção",
       "learn_collections": "Aprender sobre as coleções",
       "example_product_title": "Exemplo de produto em destaque",
@@ -178,7 +204,11 @@
       "send": "Enviar",
       "post_success": "Obrigado por entrar em contato. Nós lhe retornaremos assim que possível.",
       "post_error": "Ops... Desculpe. Não foi possível enviar a sua consulta. Por favor, corrija os itens a seguir e envie novamente:",
+<<<<<<< HEAD
       "post_field_error_html": "O campo <strong>{{ field }}</strong> {{ error }}"
+=======
+      "post_field_error_html": "O campo <strong>{{ field }}<\/strong> {{ error }}"
+>>>>>>> origin/master
     },
     "placeholder": {
       "name": "João Silva",
@@ -291,4 +321,8 @@
       "left": "restantes"
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
