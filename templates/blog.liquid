@@ -1,42 +1,61 @@
-	<div class="wrap">
-		<div class="grid-2">
-          <section class="blog-list-view sound-advice col-3-4">
+{{ 'blog-index.css' | asset_url | stylesheet_tag }}
+<div class="blog-index-wrap">
+    <section>
+        <div class="wrap">
+            <div class="container-fluid">
 
-              <div class="blog-list-view__header">
-                  <h1>{{ blog.title }}</h1>
-                  <p>Whether you’re looking to perfect your setup or find the best way to clean your new speakers, our educational blog has you covered. Get immediate answers to some of the most popular topics and keep following for more insights every month!</p>
-              </div>
+                <div class="col-md-2 filter-wrap">
+                    <h3> Filter Area </h3>
+                    <ul>
+                        <li> Filter 1 </li>
+                        <li> Filter 2 </li>
+                        <li> Filter 3 </li>
+                        <li> Filter 4 </li>
+                    </ul>
 
-              <div class="blog-list-view__posts">
+                    <ul class="other-blogs">
+                        <li> <a href="/blogs/artist-spotlight"> Featured Artist Systems </a> </li>
+                        <li> <a href="/blogs/featured-systems"> Featured Customer Systems </a> </li>
+                        <li> <a href="/pages/svs-videos"> SVS Videos </a> </li>
+                    </ul>
+                </div>
 
-                  {% for article in blog.articles %}
-                  <div class="post">
-                     <!-- <div class="post__date">
-                          <span>{{ article.published_at | date: "%m" }}<br>{{ article.published_at | date: "%y" }}</span>
-                      </div>-->
-                      <div class="post__content" style="margin-left:10px">
-                          <h2><a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a></h2>
-                          <p class="post__excerpt">{{ article.excerpt_or_content | strip_html | truncate: 180 }}</p>
-                      </div>
-                  </div>
-                  {% endfor %}
-              </div>
+                <div class="col-md-7">
 
-              <!--<div class="community-promo">
-                  <h3>Continue the Discussion, Join the SVS Community</h3>
-                  <p>See what other owners are up to. Share your own system. Talk about setup tips &amp; tricks and stay up to date on the latest from SVS on our Facebook community page.</p>
-                  <a href="https://www.facebook.com/SVSound" class="learn-more">Get Connected Now</a>
-              </div>-->
+                    <div class="blog-single-wrap">
+                        <div class="blog-single-heading cf">
+                            <h1 class="col-md-12">
+                                Single Blog Title 1
+                            </h1>
+                            <a class="view-all-blog-posts col-md-12" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                        </div>
 
-          </section>
+                        {% paginate blog.articles by 2 %}
+                        {% for article in blog.articles %}
+                        <div class="blog-post cf">
+                            <div class="col-md-3 blog-thumbnail-wrap" data-match-height="thumb-height">
+                                <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                            </div>
+                            <div class="col-md-9" data-match-height="thumb-height">
+                                <h2>
+                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                </h2>
+                                <p> {{ article.excerpt_or_content | strip_html | truncate: 180 }} </p>
+                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endpaginate %}
 
-          {% include 'blog-sidebar_V2' %}
-<<<<<<< HEAD
+                    </div>
 
-      </div>
-	</div>
-=======
-          
-      </div>
-	</div>
->>>>>>> origin/master
+                </div>
+
+                <div class="social-sidebar">
+                    {% include 'blog-sidebar_V2' %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
