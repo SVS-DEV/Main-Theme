@@ -1,7 +1,46 @@
+@charset "UTF-8";
+.speaker-topic .blog-index-wrap .blog-post:nth-child(3), .subwoofer-topic .blog-index-wrap .blog-post:nth-child(3), .system-set-up .blog-index-wrap .blog-post:nth-child(3), .sound-experts-advice .blog-index-wrap .blog-post:nth-child(3), .audio-byte .blog-index-wrap .blog-post:nth-child(3) {
+  border-bottom: 1px solid #366bb0;
+  margin-bottom: 25px;
+  padding-bottom: 25px; }
+.speaker-topic .blog-index-wrap .blog-single-wrap, .subwoofer-topic .blog-index-wrap .blog-single-wrap, .system-set-up .blog-index-wrap .blog-single-wrap, .sound-experts-advice .blog-index-wrap .blog-single-wrap, .audio-byte .blog-index-wrap .blog-single-wrap {
+  border-bottom: none; }
+.speaker-topic .filter-wrap li a:before, .subwoofer-topic .filter-wrap li a:before, .system-set-up .filter-wrap li a:before, .sound-experts-advice .filter-wrap li a:before, .audio-byte .filter-wrap li a:before {
+  content: "\f1db";
+  font-size: 14px;
+  font-family: FontAwesome; }
+
+.speaker-topic .filter-wrap li:nth-child(1) a {
+  font-weight: 800; }
+  .speaker-topic .filter-wrap li:nth-child(1) a:before {
+    content: ""; }
+
+.subwoofer-topic .filter-wrap li:nth-child(2) a {
+  font-weight: 800; }
+  .subwoofer-topic .filter-wrap li:nth-child(2) a:before {
+    content: ""; }
+
+.system-set-up .filter-wrap li:nth-child(3) a {
+  font-weight: 800; }
+  .system-set-up .filter-wrap li:nth-child(3) a:before {
+    content: ""; }
+
+.sound-experts-advice .filter-wrap li:nth-child(4) a {
+  font-weight: 800; }
+  .sound-experts-advice .filter-wrap li:nth-child(4) a:before {
+    content: ""; }
+
+.audio-byte .filter-wrap li:nth-child(5) a {
+  font-weight: 800; }
+  .audio-byte .filter-wrap li:nth-child(5) a:before {
+    content: ""; }
+
 .blog-index-wrap h1 {
   font-size: 36px;
   font-weight: 800;
-  letter-spacing: -0.5px; }
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  line-height: 1.1; }
 .blog-index-wrap h2 {
   font-size: 24px;
   font-weight: 800;
@@ -20,8 +59,26 @@
   font-weight: 800; }
 .blog-index-wrap .filter-wrap {
   font-size: 14px; }
+  .blog-index-wrap .filter-wrap h3 {
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .blog-index-wrap .filter-wrap h3 {
+        margin-bottom: 25px; } }
   .blog-index-wrap .filter-wrap ul {
     list-style: none; }
+    .blog-index-wrap .filter-wrap ul li {
+      margin-bottom: 5px; }
+    .blog-index-wrap .filter-wrap ul a {
+      color: #366bb0; }
+    .blog-index-wrap .filter-wrap ul a:visited {
+      color: #366bb0; }
+    .blog-index-wrap .filter-wrap ul a:hover {
+      font-weight: 800; }
+  .blog-index-wrap .filter-wrap div.select {
+    margin-bottom: 15px; }
+  .blog-index-wrap .filter-wrap select {
+    width: 100%;
+    padding: 10px; }
   .blog-index-wrap .filter-wrap .other-blogs {
     margin-top: 15px;
     padding-top: 15px;
@@ -29,29 +86,81 @@
     .blog-index-wrap .filter-wrap .other-blogs li {
       color: #366bb0;
       margin-bottom: 5px; }
-      .blog-index-wrap .filter-wrap .other-blogs li:last-child {
-        margin-bottom: 0; }
+      .blog-index-wrap .filter-wrap .other-blogs li a {
+        font-weight: 800; }
+      .blog-index-wrap .filter-wrap .other-blogs li:nth-child(1) a:before {
+        content: none !important; }
+.blog-index-wrap .blog-content-area {
+  padding-right: 50px; }
 .blog-index-wrap .blog-single-wrap {
-  border-bottom: 5px solid rgba(0, 0, 0, 0.2); }
+  border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px;
+  padding-bottom: 20px; }
   .blog-index-wrap .blog-single-wrap .blog-single-heading {
     clear: both; }
   .blog-index-wrap .blog-single-wrap:last-child {
     border-bottom: none; }
   .blog-index-wrap .blog-single-wrap .view-all-blog-posts {
     font-weight: 800;
-    color: #366bb0; }
+    color: #366bb0;
+    font-style: italic;
+    display: block;
+    margin-bottom: 15px; }
 .blog-index-wrap .blog-post {
   border-bottom: 1px solid #366bb0;
-  margin-bottom: 10px;
-  padding-bottom: 10px; }
-  .blog-index-wrap .blog-post:last-child {
-    border-bottom: none; }
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  font-size: 14px; }
+  .blog-index-wrap .blog-post:nth-child(3) {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 5px; }
   .blog-index-wrap .blog-post .blog-thumbnail-wrap {
-    overflow: hidden; }
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0; }
     .blog-index-wrap .blog-post .blog-thumbnail-wrap img {
-      width: auto; }
+      width: auto;
+      float: right; }
+  .blog-index-wrap .blog-post .post-content-wrap {
+    padding: 15px 0 0 0;
+    box-sizing: border-box; }
+    @media (min-width: 768px) {
+      .blog-index-wrap .blog-post .post-content-wrap {
+        padding: 0 0 0 30px; } }
+    .blog-index-wrap .blog-post .post-content-wrap p {
+      margin-bottom: 5px; }
+      @media (min-width: 768px) {
+        .blog-index-wrap .blog-post .post-content-wrap p {
+          margin-bottom: 0; } }
+  .blog-index-wrap .blog-post h2 {
+    margin-bottom: 10px;
+    line-height: 1; }
+    .blog-index-wrap .blog-post h2 a {
+      font-size: 20px; }
   .blog-index-wrap .blog-post .read-more {
     font-style: italic;
     color: #366bb0; }
+.blog-index-wrap .social-sidebar .blog-sidebar {
+  background-image: url(https://cdn.shopify.com/s/files/1/0921/3560/files/geometric-blue-bg.jpg?6425947084382110450);
+  background-position: center;
+  color: white;
+  padding: 25px;
+  font-size: 14px; }
+  .blog-index-wrap .social-sidebar .blog-sidebar h4, .blog-index-wrap .social-sidebar .blog-sidebar h6 {
+    color: white;
+    font-size: 18px;
+    border-bottom: none;
+    font-weight: 800;
+    padding-bottom: 0; }
+  .blog-index-wrap .social-sidebar .blog-sidebar h6 {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: none; }
+  .blog-index-wrap .social-sidebar .blog-sidebar a {
+    color: white;
+    font-size: 14px; }
+  .blog-index-wrap .social-sidebar .blog-sidebar .fb-ico-header:before, .blog-index-wrap .social-sidebar .blog-sidebar .insta-ico-header:before, .blog-index-wrap .social-sidebar .blog-sidebar .tw-ico-header:before {
+    color: white; }
 
 /*# sourceMappingURL=tech-blog-styles.css.map */

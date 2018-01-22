@@ -1,657 +1,189 @@
-<style>
-  .template-blog-product_reviews h3 a {
-    color:#000 !important;
-    text-decoration:underline !important;
-    font-weight:bold !important;
-    margin-left:0px !important;
-  }
-</style>
-<div class="blog-post-view__header featured-systems" style="background-image: url('https://cdn.shopify.com/s/files/1/0921/3560/files/page-header_pressreviews3.jpg?16003286081415883151');">
-		<div class="blog-list-view__header-copy">
-          <h1><span>SVS Press Ratings &amp; Reviews</span></h1>
-		</div>
-	</div>
+{{ 'blog-index.css' | asset_url | stylesheet_tag }}
+<div class="blog-index-wrap">
+    <section>
+        <div class="wrap">
+            <div class="container-fluid">
 
-<div class="wrap">
-		
-		<section class="blog-list-view">
+                <div class="col-md-2 filter-wrap">
+                    <h3> Filter Area </h3>
+                    <ul class="hidden-sm hidden-xs">
+                        <li> <a href="/blogs/svs/tagged/speaker-topic"> Speaker Topics </a> </li>
+                        <li> <a href="/blogs/svs/tagged/subwoofer-topic"> Subwoofer Topics </li>
+                        <li> <a href="/blogs/svs/tagged/system-set-up"> System Set-Up </li>
+                        <li> <a href="/blogs/svs/tagged/sound-experts-advice"> Sound Experts Advice </li>
+                        <li> <a href="/blogs/svs/tagged/audio-byte"> SVS Audio Bytes </li>
+                    </ul>
 
-			<div class="blog-list-view__header">
-				<!-- <h1>{{ blog.title }}</h1> -->
-              <p style="margin-bottom:40px">
-                Browse home audio reviews of SVS speakers, subwoofers, cables, surround sound systems and speaker wire from experts across the world of home theater and hifi.
-              </p>
-				
-			</div>
-          <div class="productselect">
-      <div class="currentproduct">
-        <a href="" class="productlink" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Product Image - Link')"><img src="" id="productimage"></a>
-        <span class="curprod">Current Product: <br/><a href="" class="productlink" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Product Title - Link')"><span id="producttitle"></span></a></span>
-      </div>
-      <div class="productselect-desktop">
-        <h3><a href="/blogs/press-reviews/" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'All Products Sort - Desktop');" class="all">All Products</a></h3>
-        <h3><a href="/blogs/press-reviews/tagged/subwoofer">All Subwoofers</a></h3>
-      <a href="/blogs/press-reviews/tagged/pb-1000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB-1000 Sort - Desktop')" class="pb-1000">PB-1000</a>
-      <a href="/blogs/press-reviews/tagged/pb-2000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB-2000 Sort - Desktop')" class="pb-2000">PB-2000</a>
-      <a href="/blogs/press-reviews/tagged/pb12-plus" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB12-Plus Sort - Desktop')" class="pb12-plus">PB12-Plus</a>
-      <a href="/blogs/press-reviews/tagged/pb13-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB13-Ultra Sort - Desktop')" class="pb13-ultra">PB13-Ultra</a>
-      <a href="/blogs/press-reviews/tagged/pb16-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PB16-Ultra Sort - Desktop')" class="pb16-ultra">PB16-Ultra</a>
-      <a href="/blogs/press-reviews/tagged/pc-2000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PC-2000 Sort - Desktop')" class="pc-2000">PC-2000</a>
-      <a href="/blogs/press-reviews/tagged/pc12-plus" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PC12-Plus Sort - Desktop')" class="pc12-plus">PC12-Plus</a>
-      <a href="/blogs/press-reviews/tagged/pc13-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'PC13-Ultra Sort - Desktop')" class="pc13-ultra">PC13-Ultra</a>
-      <a href="/blogs/press-reviews/tagged/sb-1000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB-1000 Sort - Desktop')" class="sb-1000">SB-1000</a>
-      <a href="/blogs/press-reviews/tagged/sb-2000" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB-2000 Sort - Desktop')" class="sb-2000">SB-2000</a>
-      <a href="/blogs/press-reviews/tagged/sb12-nsd" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB12-NSD Sort - Desktop')" class="sb12-nsd">SB12-NSD</a>
-      <a href="/blogs/press-reviews/tagged/sb13-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB13-Ultra Sort - Desktop')" class="sb13-ultra">SB13-Ultra</a>
-      <a href="/blogs/press-reviews/tagged/sb16-ultra" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SB16-Ultra Sort - Desktop')" class="sb16-ultra">SB16-Ultra</a>
-        <h3><a href="/blogs/press-reviews/tagged/speaker">All Speakers</a></h3>
-      <a href="/blogs/press-reviews/tagged/prime-bookshelf" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Bookshelf Sort - Desktop')" class="prime-bookshelf">Prime Bookshelf</a>
-      <a href="/blogs/press-reviews/tagged/prime-center" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Center Sort - Desktop')" class="prime-center">Prime Center</a>
-      <a href="/blogs/press-reviews/tagged/prime-elevation" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Elevation Sort - Desktop')" class="prime-elevation">Prime Elevation</a>
-      <a href="/blogs/press-reviews/tagged/prime-satellite" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Satellite Sort - Desktop')" class="prime-satellite">Prime Satellite</a>
-      <a href="/blogs/press-reviews/tagged/prime-tower" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Tower Sort - Desktop')" class="prime-tower">Prime Tower</a>
-      <a href="/blogs/press-reviews/tagged/ultra-bookshelf" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Bookshelf Sort - Desktop')" class="ultra-bookshelf">Ultra Bookshelf</a>
-      <a href="/blogs/press-reviews/tagged/ultra-center" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Center Sort - Desktop')" class="ultra-center">Ultra Center</a>
-      <a href="/blogs/press-reviews/tagged/ultra-surround" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Surround Sort - Desktop')" class="ultra-surround">Ultra Surround</a>
-      <a href="/blogs/press-reviews/tagged/ultra-tower" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Tower Sort - Desktop')" class="ultra-tower">Ultra Tower</a>
-        <h3><a href="/blogs/press-reviews/tagged/package">All Systems</a></h3>
-    <!--  <a href="/blogs/press-reviews/tagged/prime-satellite-2-1" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Satellite 2.1 Sort - Desktop')" class="prime-satellite-2-1">Prime Satellite 2.1</a> -->
-      <a href="/blogs/press-reviews/tagged/prime-satellite-5-1" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Satellite 5.1 Sort - Desktop')" class="prime-satellite-5-1">Prime Satellite 5.1</a>
-     <!-- <a href="/blogs/press-reviews/tagged/prime-bookshelf-surround-system" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Bookshelf Surround Sort - Desktop')" class="prime-bookshelf-surround-system">Prime Bookshelf Surround</a>
-      <a href="/blogs/press-reviews/tagged/prime-tower-surround-system" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Prime Tower Surround Sort - Desktop')" class="prime-tower-surround-system">Prime Tower Surround</a> -->
-      <a href="/blogs/press-reviews/tagged/ultra-bookshelf-surround-package" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Bookshelf Surround Sort - Desktop')" class="ultra-bookshelf-surround-package">Ultra Bookshelf Surround</a>
-      <a href="/blogs/press-reviews/tagged/ultra-tower-surround-package" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Ultra Tower Surround Sort - Desktop')" class="ultra-tower-surround-package">Ultra Tower Surround</a>
-        <h3><a href="/blogs/press-reviews/tagged/accessory">All Accessories</a></h3>
-      <a href="/blogs/press-reviews/tagged/soundpath-subwoofer-isolation-system" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Subwoofer Isolation System Sort - Desktop')" class="soundpath-subwoofer-isolation-system">SoundPath Subwoofer Isolation System</a>
-      <a href="/blogs/press-reviews/tagged/soundpath-rca-audio-interconnect-cable" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath RCA Audio Interconnect Cable Sort - Desktop')" class="soundpath-rca-audio-interconnect-cable">SoundPath RCA Audio Interconnect Cable</a>
-     <!-- <a href="/blogs/press-reviews/tagged/soundpath-pivoting-wall-ceiling-bracket" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Pivoting Wall/Ceiling Bracket Sort - Desktop')" class="soundpath-pivoting-wall-ceiling-bracket">SoundPath Pivoting Wall/Ceiling Bracket</a> -->
-      <a href="/blogs/press-reviews/tagged/soundpath-ultra-speaker-cable" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Ultra Speaker Cable Sort - Desktop')" class="soundpath-ultra-speaker-cable">SoundPath Ultra Speaker Cable</a>
-    <!--  <a href="/blogs/press-reviews/tagged/soundpath-one-speaker-cable" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath One Speaker Cable Sort - Desktop')" class="soundpath-one-speaker-cable">SoundPath One Speaker Cable</a> -->
-    <!--  <a href="/blogs/press-reviews/tagged/soundpath-speaker-cable-terminals" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SoundPath Speaker Cable Terminals Sort - Desktop')" class="soundpath-speaker-cable-terminals">SoundPath Speaker Cable Terminals</a> -->
-    <!--  <a href="/blogs/press-reviews/tagged/ultra-bookshelf-stand" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Premium Bookshelf Speaker Stands Sort - Desktop')" class="ultra-bookshelf-stand">Premium Bookshelf Speaker Stands</a> -->
-    <!--  <a href="/blogs/press-reviews/tagged/ultra-center-stand" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Premium Center Speaker Stands Sort - Desktop')" class="ultra-center-stand">Premium Center Speaker Stands</a> -->
-    <!--  <a href="/blogs/press-reviews/tagged/prime-satellite-stand" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Premium Satellite Speaker Stands Sort - Desktop')" class="prime-satellite-stand">Premium Satellite Speaker Stands</a> -->
-    <!--  <a href="/blogs/press-reviews/tagged/svs-sound-revolution-t-shirt" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'SVS T-Shirt Sort - Desktop')" class="svs-sound-revolution-t-shirt">SVS T-Shirt</a> -->
-    <!--  <a href="/blogs/press-reviews/tagged/gold-rca-y-adapter" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'Gold RCA Y Adapter Sort - Desktop')" class="gold-rca-y-adapter">Gold RCA Y Adapter</a> -->
-        <h3>Publications</h3>
-        <a href="/blogs/press-reviews/tagged/about" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'about - Desktop')" class="about">About</a>
-        <a href="/blogs/press-reviews/tagged/areadvd" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'areadvd - Desktop')" class="areadvd">Area DVD</a>
-        <a href="/blogs/press-reviews/tagged/audiohead" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'audiohead - Desktop')" class="audiohead">AudioHead</a>
-        <a href="/blogs/press-reviews/tagged/audiofi" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'audiofi - Desktop')" class="audiofi">Audio FI</a>
-        <a href="/blogs/press-reviews/tagged/audioholics" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'audioholics - Desktop')" class="audioholics">Audioholics</a>
-        <a href="/blogs/press-reviews/tagged/audiophilereview" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'audiophilereview - Desktop')" class="audiophilereview">Audiophile Review</a>
-        <a href="/blogs/press-reviews/tagged/audiovideorevolution" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'audiovideorevolution - Desktop')" class="audiovideorevolution">Audio|Video Revolution</a>
-        <a href="/blogs/press-reviews/tagged/av2day" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'av2day - Desktop')" class="av2day">AV2Day</a>
-        <a href="/blogs/press-reviews/tagged/avforums" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avforums - Desktop')" class="avforums">AV Forums</a>
-        <a href="/blogs/press-reviews/tagged/avproductreviews" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avproductreviews - Desktop')" class="avproductreviews">AV Product Reviews</a>
-        <a href="/blogs/press-reviews/tagged/avnirvana" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avnirvana - Desktop')" class="avproductreviews">AV Nirvana</a>
-        <a href="/blogs/press-reviews/tagged/avrant" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avrant - Desktop')" class="avrant">AV Rant</a>
-        <a href="/blogs/press-reviews/tagged/avtech" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avtech - Desktop')" class="avtech">AV Tech</a>
-        <a href="/blogs/press-reviews/tagged/avtechreviews" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avtechreviews - Desktop')" class="avtechreviews">AV Tech Reviews</a>
-        <a href="/blogs/press-reviews/tagged/avsforum" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'avsforum - Desktop')" class="avsforum">AVS Forum</a>
-        <a href="/blogs/press-reviews/tagged/beststuff" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'beststuff - Desktop')" class="beststuff">Best Stuff</a>
-        <a href="/blogs/press-reviews/tagged/bigpicturebigsound" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'bigpicturebigsound - Desktop')" class="bigpicturebigsound">Big Picture Big Sound</a>
-        <a href="/blogs/press-reviews/tagged/canadafreepress" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'canadafreepress - Desktop')" class="canadafreepress">Canada Free Press</a>
-        <a href="/blogs/press-reviews/tagged/canadahifi" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'canadahifi - Desktop')" class="canadahifi">Canada HiFi</a>
-        <a href="/blogs/press-reviews/tagged/ces" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'ces - Desktop')" class="missingremote">CES</a>
-        <a href="/blogs/press-reviews/tagged/cepro" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'cepro - Desktop')" class="missingremote">CE PRO</a>
-        <a href="/blogs/press-reviews/tagged/cnet" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'cnet - Desktop')" class="cnet">CNET</a>
-        <a href="/blogs/press-reviews/tagged/digitalhippos" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'digitalhippos - Desktop')" class="digitalhippos">Digital Hippos</a>
-        <a href="/blogs/press-reviews/tagged/digitaltrends" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'digitaltrends - Desktop')" class="digitaltrends">Digital Trends</a>
-        <a href="/blogs/press-reviews/tagged/electronichouse" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'electronichouse - Desktop')" class="electronichouse">Electronic House</a>
-        <a href="/blogs/press-reviews/tagged/eisa" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'eisa - Desktop')" class="everythingaudio">European Imaging and Sound Association</a>
-        <a href="/blogs/press-reviews/tagged/everythingaudio" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'everythingaudio - Desktop')" class="everythingaudio">Everything Audio</a>
-        <a href="/blogs/press-reviews/tagged/gadgetreview" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'gadgetreview - Desktop')" class="gadgetreview">Gadget Review</a>
-        <a href="/blogs/press-reviews/tagged/geekanoids" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'geekanoids - Desktop')" class="geekanoids">Geekanoids</a>
-        <a href="/blogs/press-reviews/tagged/hifizine" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hifizine - Desktop')" class="hifizine">HiFiZine</a>
-        <a href="/blogs/press-reviews/tagged/highdefdigest" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'highdefdigest - Desktop')" class="highdefdigest">High Def Digest</a>
-        <a href="/blogs/press-reviews/tagged/hiresaudiocentral" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hiresaudiocentral - Desktop')" class="hiresaudiocentral">HiRes Audio Central</a>
-        <a href="/blogs/press-reviews/tagged/homecinemachoice" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'homecinemachoice - Desktop')" class="homecinemachoice">Home Cinema Choice</a>
-        <a href="/blogs/press-reviews/tagged/hometheater" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hometheater - Desktop')" class="hometheater">Home Theater</a>
-        <a href="/blogs/press-reviews/tagged/hometheaterequipment" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hometheaterequipment - Desktop')" class="hometheaterequipment">Home Theater Equipment</a>
-        <a href="/blogs/press-reviews/tagged/hometheaterforum" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hometheaterforum - Desktop')" class="hometheaterforum">Home Theater Forum</a>
-        <a href="/blogs/press-reviews/tagged/hometheaterreview" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hometheaterreview - Desktop')" class="hometheaterreview">Home Theater Review</a>
-        <a href="/blogs/press-reviews/tagged/hometheatershack" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hometheatershack - Desktop')" class="hometheatershack">Home Theater Shack</a>
-        <a href="/blogs/press-reviews/tagged/hometheatersound" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'hometheatersound - Desktop')" class="hometheatersound">Home Theater Sound</a>
-        <a href="/blogs/press-reviews/tagged/htguys" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'htguys - Desktop')" class="htguys">HT Guys</a>
-        <a href="/blogs/press-reviews/tagged/laaudiofile" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'laaudiofile - Desktop')" class="laaudiofile">LA Audiofile</a>
-        <a href="/blogs/press-reviews/tagged/lifewire" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'lifewire - Desktop')" class="lifewire">Lifewire</a>
-        <a href="/blogs/press-reviews/tagged/magazineaudio" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'magazineaudio - Desktop')" class="magazineaudio">Magazine Audio</a>
-        <a href="/blogs/press-reviews/tagged/mancavecinema" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'mancavecinema - Desktop')" class="mancavecinema">Mancave Cinema</a>
-        <a href="/blogs/press-reviews/tagged/masterswitch" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'masterswitch - Desktop')" class="masterswitch">The Master Switch</a>
-        <a href="/blogs/press-reviews/tagged/missingremote" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'missingremote - Desktop')" class="missingremote">The Missing Remote</a>
-        <a href="/blogs/press-reviews/tagged/newrecordday" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'newrecordday - Desktop')" class="newrecordday">New Record Day</a>
-        <a href="/blogs/press-reviews/tagged/pcworld" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'pcworld - Desktop')" class="pcworld">PC World</a>
-        <a href="/blogs/press-reviews/tagged/pooraudiophile" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'pooraudiophile - Desktop')" class="pooraudiophile">The Poor Audiophile</a>
-        <a href="/blogs/press-reviews/tagged/popzara" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'popzara - Desktop')" class="popzara">Popzara</a>
-        <a href="/blogs/press-reviews/tagged/positivefeedback" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'positivefeedback - Desktop')" class="positivefeedback">Positive Feedback</a>
-        <a href="/blogs/press-reviews/tagged/referencehometheater" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'referencehometheater - Desktop')" class="referencehometheater">Reference Home Theater</a>
-        <a href="/blogs/press-reviews/tagged/residentialsystems" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'residentialsystems - Desktop')" class="residentialsystems">Residential Systems</a>
-        <a href="/blogs/press-reviews/tagged/screenanarchy" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'screenanarchy - Desktop')" class="screenanarchy">Screen Anarchy</a>
-        <a href="/blogs/press-reviews/tagged/secretsofhometheaterandhighfidelity" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'secretsofhometheaterandhighfidelity - Desktop')" class="secretsofhometheaterandhighfidelity">Secrets of Home Theater and High Fidelity</a>
-        <a href="/blogs/press-reviews/tagged/sixmoons" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'sixmoons - Desktop')" class="sixmoons">Six Moons</a>
-        <a href="/blogs/press-reviews/tagged/soundadvice" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'soundadvice - Desktop')" class="soundadvice">Sound Advice</a>
-        <a href="/blogs/press-reviews/tagged/soundandvision" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'soundandvision - Desktop')" class="soundandvision">Sound &amp; Vision</a>
-        <a href="/blogs/press-reviews/tagged/soundstage" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'soundstage - Desktop')" class="soundstage">Soundstage</a>
-        <a href="/blogs/press-reviews/tagged/soundstageglobal" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'soundstageglobal - Desktop')" class="soundstageglobal">SoundStage Global</a>
-        <a href="/blogs/press-reviews/tagged/stereomojo" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'stereomojo - Desktop')" class="stereomojo">Stereo Mojo</a>
-        <a href="/blogs/press-reviews/tagged/stereonet" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'stereonet - Desktop')" class="stereonet">StereoNet</a>
-        <a href="/blogs/press-reviews/tagged/stereophile" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'stereophile - Desktop')" class="stereophile">Stereophile</a>
-        <a href="/blogs/press-reviews/tagged/stereowiseplus" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'stereowiseplus - Desktop')" class="stereowiseplus">Stereowise Plus</a>
-        <a href="/blogs/press-reviews/tagged/technologytell" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'technologytell - Desktop')" class="technologytell">Technology Tell</a>
-        <a href="/blogs/press-reviews/tagged/tekrevue" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'tekrevue - Desktop')" class="tekrevue">Tek Revue</a>
-        <a href="/blogs/press-reviews/tagged/tharbamar" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'tharbamar - Desktop')" class="tharbamar">TharBamar</a>
-        <a href="/blogs/press-reviews/tagged/theabsolutesound" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'theabsolutesound - Desktop')" class="theabsolutesound">The Absolute Sound</a>
-        <a href="/blogs/press-reviews/tagged/toneaudio" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'toneaudio - Desktop')" class="toneaudio">Tone Audio</a>
-        <a href="/blogs/press-reviews/tagged/tu" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'tu - Desktop')" class="tu">Teknisk Ukeblad</a>
-        <a href="/blogs/press-reviews/tagged/widescreenreview" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'widescreenreview - Desktop')" class="widescreenreview">Widescreen Review</a>
-        <a href="/blogs/press-reviews/tagged/zreviews" onclick="ga('send', 'event', 'All Product Reviews Page', 'Click', 'zreviews - Desktop')" class="zreviews">Z Reviews</a>
-        
+                    <ul class="other-blogs hidden-sm hidden-xs">
+                        <li> <a href="/blogs/artist-spotlight"> Featured Artist Systems </a> </li>
+                        <li> <a href="/blogs/featured-systems"> Featured Customer Systems </a> </li>
+                        <li> <a href="/pages/svs-videos"> SVS Videos </a> </li>
+                    </ul>
 
-    </div>
-    </div>
-          <div class="readareviewholder">
-            <span class="readareviewbutton" id="readareview" onclick="document.getElementById('productselectormobile').style.display = 'block';">SELECT PRODUCT REVIEWS</span>
-            <div class="product-selector-mobile" id="productselectormobile">
-              <select id="mobiledropdown" onchange="hashselect();">
-                <option value=""></option>
-                <optgroup label="Subwoofers">
-                <option value="pb-1000">PB-1000</option>
-                <option value="pb-2000">PB-2000</option>
-                <option value="pb12-plus">PB12-Plus</option>
-                <option value="pb13-ultra">PB13-Ultra</option>
-                <option value="pb16-ultra">PB16-Ultra</option>
-                <option value="pc-2000">PC-2000</option>
-                <option value="pc12-plus">PC12-Plus</option>
-                <option value="pc13-ultra">PC13-Ultra</option>
-                <option value="sb-1000">SB-1000</option>
-                <option value="sb-2000">SB-2000</option>
-                <option value="sb12-nsd">SB12-NSD</option>
-                <option value="sb13-ultra">SB13-Ultra</option>
-                <option value="sb16-ultra">SB16-Ultra</option>
-                </optgroup>
-                <optgroup label="Speakers">
-                  <option value="prime-bookshelf">Prime Bookshelf</option>
-                  <option value="prime-center">Prime Center</option>
-                  <option value="prime-elevation">Prime Elevation</option>
-                  <option value="prime-satellite">Prime Satellite</option>
-                  <option value="prime-tower">Prime Tower</option>
-                  <option value="ultra-bookshelf">Ultra Bookshelf</option>
-                  <option value="ultra-center">Ultra Center</option>
-                  <option value="ultra-surround">Ultra Surround</option>
-                  <option value="ultra-tower">Ultra Tower</option>
-                </optgroup>
-                <optgroup label="Systems">
-                <!--  <option value="prime-satellite-2-1">Prime Satellite 2.1</option> -->
-                  <option value="prime-satellite-5-1">Prime Satellite 5.1</option>
-                <!--  <option value="prime-bookshelf-surround-system">Prime Bookshelf Surround</option> -->
-               <!--   <option value="prime-tower-surround-system">Prime Tower Surround</option> -->
-                  <option value="ultra-bookshelf-surround-package">Ultra Bookshelf Surround</option>
-                  <option value="Ultra Tower Surround">Ultra Tower Surround</option>
-                </optgroup>
-                <optgroup label="Accessories">
-                  <option value="soundpath-subwoofer-isolation-system">SoundPath Subwoofer Isolation System</option>
-                  <option value="soundpath-rca-audio-interconnect-cable">SoundPath RCA Audio Interconnect Cable</option>
-                  <option value="SoundPath Pivoting Wall/Ceiling Bracket">SoundPath Pivoting Wall/Ceiling Bracket</option>
-                  <option value="SoundPath Ultra Speaker Cable">SoundPath Ultra Speaker Cable</option>
-                 <!-- <option value="SoundPath One Speaker Cable">SoundPath One Speaker Cable</option>
-                  <option value="SoundPath Speaker Cable Terminals">SoundPath Speaker Cable Terminals</option>
-                  <option value="ultra-bookshelf-stand">Premium Bookshelf Speaker Stands</option>
-                  <option value="ultra-center-stand">Premium Center Speaker Stands</option>
-                  <option value="prime-satellite-stand">Premium Satellite Speaker Stands</option>
-                  <option value="svs-sound-revolution-t-shirt">SVS T-Shirt</option>
-                  <option value="gold-rca-y-adapter">Gold RCA Y Adapter</option> -->
-                </optgroup>
-                <optgroup label="Publications">
-                  <option value="about">About</option>
-                  <option value="areadvd">Area DVD</option>
-                  <option value="audiohead">AudioHead</option>
-                  <option value="audiofi">Audio FI</option>
-                  <option value="audioholics">Audioholics</option>
-                  <option value="audiophilereview">Audiophile Review</option>
-                  <option value="audiovideorevolution">Audio|Video Revolution</option>
-                  <option value="av2day">AV2Day</option>
-                  <option value="avforums">AV Forums</option>
-                  <option value="avnirvana">AV Nirvana</option>
-                  <option value="avproductreviews">AV Product Reviews</option>
-                  <option value="avrant">AV Rant</option>
-                  <option value="avtech">AV Tech</option>
-                  <option value="avtechreviews">AV Tech Reviews</option>
-                  <option value="avsforum">AVS Forum</option>
-                  <option value="beststuff">Best Stuff</option>
-                  <option value="bigpicturebigsound">Big Picture Big Sound</option>
-                  <option value="canadafreepress">Canada Free Press</option>
-                  <option value="canadahifi">Canada HiFi</option>
-                  <option value="ces">CES</option>
-                  <option value="cepro">CE PRO</option>
-                  <option value="cnet">CNET</option>
-                  <option value="digitalhippos">Digital Hippos</option>
-                  <option value="digitaltrends">Digital Trends</option>
-                  <option value="electronichouse">Electronic House</option>
-                  <option value="eisa">European Imaging &amp; Sound Association</option>
-                  <option value="everythingaudio">Everything Audio</option>
-                  <option value="gadgetreview">Gadget Review</option>
-                  <option value="geekanoids">Geekanoids</option>
-                  <option value="hifizine">HiFiZine</option>
-                  <option value="highdefdigest">High Def Digest</option>
-                  <option value="hiresaudiocentral">HiRes Audio Central</option>
-                  <option value="homecinemachoice">Home Cinema Choice</option>
-                  <option value="hometheater">Home Theater</option>
-                  <option value="hometheaterequipment">Home Theater Equipment</option>
-                  <option value="hometheaterforum">Home Theater Forum</option>
-                  <option value="hometheaterreview">Home Theater Review</option>
-                  <option value="hometheatershack">Home Theater Shack</option>
-                  <option value="hometheatersound">Home Theater Sound</option>
-                  <option value="htguys">HT Guys</option>
-                  <option value="laaudiofile">LA Audiofile</option>
-                  <option value="lifewire">Lifewire</option>
-                  <option value="magazineaudio">Magazine Audio</option>
-                  <option value="mancavecinema">Mancave Cinema</option>
-                  <option value="masterswitch">The Master Switch</option>
-                  <option value="missingremote">The Missing Remote</option>
-                  <option value="newrecordday">New Record Day</option>
-                  <option value="pcworld">PC World</option>
-                  <option value="pooraudiophile">The Poor Audiophile</option>
-                  <option value="popzara">Popzara</option>
-                  <option value="positivefeedback">Positive Feedback</option>
-                  <option value="referencehometheater">Reference Home Theater</option>
-                  <option value="residentialsystems">Residential Systems</option>
-                  <option value="screenanarchy">Screen Anarchy</option>
-                  <option value="secretsofhometheaterandhighfidelity">Secrets of Home Theater and High Fidelity</option>
-                  <option value="sixmoons">Six Moons</option>
-                  <option value="soundadvice">Sound Advice</option>
-                  <option value="soundandvision">Sound &amp; Vision</option>
-                  <option value="soundstage">Soundstage</option>
-                  <option value="soundstageglobal">SoundStage Global</option>
-                  <option value="stereomojo">Stereo Mojo</option>
-                  <option value="stereonet">StereoNet</option>
-                  <option value="stereophile">Stereophile</option>
-                  <option value="stereowiseplus">Stereowise Plus</option>
-                  <option value="technologytell">Technology Tell</option>
-                  <option value="tekrevue">Tek Revue</option>
-                  <option value="tharbamar">TharBamar</option>
-                  <option value="theabsolutesound">The Absolute Sound</option>
-                  <option value="toneaudio">Tone Audio</option>
-                  <option value="tu">Teknisk Ukeblad</option>
-                  <option value="widescreenreview">Widescreen Review</option>
-                  <option value="zreviews">Z Reviews</option>
-                  <option value="hifizine">HiFiZine</option>           
-                </optgroup>
-              </select>
-            </div>
-          </div>
-
-			<div class="blog-list-view__posts">
-              {% paginate blog.articles by 10 %}
-              {% for article in blog.articles %}
-				<div class="post">
-			<div class="post__content">		
-				{% if article.image %}
-				<img src="{{ article.image | img_url: "medium" }}" alt="{{ article.title }}">
-				{% endif %}
-				<h3>{{ article.title }}</h3>
-				<p class="post__excerpt">{{ article.content }}</p>
-			</div>
-		</div>
-				{% endfor %}
-              {% include 'pagination' %}
-              {% endpaginate %}
-			</div>
-
-
-		
-
-		</section>
-	<!--
-		<aside class="blog-sidebar">
-			<div class="help-promos">
-				<h4>Need a Hand?</h4>
-				<div class="sidebar-promo">
-					<h6>SVS Faqs</h6>
-					<p>Learn more about choosing the right gear and setting up the perfect system with our frequently asked questions from our audio experts.</p>
-					<a href="{{ shop.url }}/pages/faqs" class="learn-more">Read Now</a>
-				</div>
-				<div class="sidebar-promo">
-					<h6>Expert Tech Support</h6>
-					<p>From your first setup to fine tuning the details, your SVS product is backed by lifetime technical support by our team of audio experts. Whether it’s a question about our products or the AVR they’re connected to, we are here to help.</p>
-					<p>Call: 877.626.5623 | <a data-remodal-target="contact__modal">Email</a> | <a href="#" onclick="OpenLHNChat();return false;">Live Chat</a></p>
-				</div>
-			</div>
-
-		</aside> -->
-	</div>
-<script>
-  
-  if(window.location.href.indexOf("tagged") > -1) { 
-    var hash = window.location.href.substring(window.location.href.lastIndexOf('/') + 1); 
-    $(".buttonholder").css("width", "50%");
-    if(hash == "pb-1000") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180639491');
-      $( ".pb-1000" ).addClass( "active" );
-      $("#producttitle").html("PB-1000");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB-1000_main_large.jpg?v=1473790997');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pb-1000");
-      
-    }
-    else if(hash == "pb-2000") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180012611');
-      $( ".pb-2000" ).addClass( "active" );
-      $("#producttitle").html("PB-2000");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB-2000_ISO_large.jpg?v=1473790859');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pb-2000");
-    }
-    else if(hash == "pb12-plus") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281005443');
-      $( ".pb12-plus" ).addClass( "active" );
-      $("#producttitle").html("PB12-Plus");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB12P-gloss-nogrille_large.jpg?v=1474985854');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pb12-plus");
-    }
-    else if(hash == "pb13-ultra") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3280980675');
-      $( ".pb13-ultra" ).addClass( "active" );
-      $("#producttitle").html("PB13-Ultra");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PB13U-Gls-Blk-ISO-no-grill-on-white-IMG_0035_2---800-x-707_grille_cups_large.jpg?v=1474985898');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pb13-ultra");
-    }
-    else if(hash == "pb16-ultra") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','8651014988');
-      $( ".pb16-ultra" ).addClass( "active" );
-      $("#producttitle").html("PB16-Ultra");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/pb16-ultra-main-pg_large.jpg?v=1475757431');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pb16-ultra");
-    }
-    else if(hash == "pc-2000") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3289418371');
-      $( ".pc-2000" ).addClass( "active" );
-      $("#producttitle").html("PC-2000");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/pc-2000_BA_ISO_large.jpg?v=1474986040');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pc-2000");
-    }
-    else if(hash == "pc12-plus") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180281795');
-      $( ".pc12-plus" ).addClass( "active" );
-      $("#producttitle").html("PC12-Plus");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PC12-Plus_front_1024_large.jpg?v=1447349971');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pc12-plus");
-    }
-    else if(hash == "pc13-ultra") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180301315');
-      $( ".pc13-ultra" ).addClass( "active" );
-      $("#producttitle").html("PC13-Ultra");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PC13-Ultra_front_fullres_large.jpg?v=1446061363');
-      $(".productlink").attr("href", "https://www.svsound.com/products/pc13-ultra");
-    }
-    else if(hash == "sb-1000") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281006275');
-      $( ".sb-1000" ).addClass( "active" );
-      $("#producttitle").html("SB-1000");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB-1000_ISO_nogrille_large.jpg?v=1474985670');
-      $(".productlink").attr("href", "https://www.svsound.com/products/sb-1000");
-    }
-    else if(hash == "sb-2000") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281028739');
-      $( ".sb-2000" ).addClass( "active" );
-      $("#producttitle").html("SB-2000");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB-2000_ISO_2277784a-7d11-46a9-8b2e-5b34ba39af7c_large.jpg?v=1474985745');
-      $(".productlink").attr("href", "https://www.svsound.com/products/sb-2000");
-    }
-    else if(hash == "sb12-nsd") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3474794499');
-      $( ".sb12-nsd" ).addClass( "active" );
-      $("#producttitle").html("SB12-NSD");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/sb12-nsd_BA_ISO_large.jpg?v=1479482490');
-      $(".productlink").attr("href", "https://www.svsound.com/products/sb12-nsd");
-    }
-    else if(hash == "sb13-ultra") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3280941891');
-      $( ".sb13-ultra" ).addClass( "active" );
-      $("#producttitle").html("SB13-Ultra");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SB13-Ultra_main_large.jpg?v=1474985784');
-      $(".productlink").attr("href", "https://www.svsound.com/products/sb13-ultra");
-    }
-    else if(hash == "sb16-ultra") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','8650180492');
-      $( ".sb16-ultra" ).addClass( "active" );
-      $("#producttitle").html("SB16-Ultra");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/sb16-ultra-main-pg_large.jpg?v=1475711236');
-      $(".productlink").attr("href", "https://www.svsound.com/products/sb16-ultra");
-    }
-    else if(hash == "prime-tower") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281030403');
-      $( ".prime-tower" ).addClass( "active" );
-      $("#producttitle").html("Prime Tower");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_tower_BA_pair_large.jpg?v=1474986140');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-tower");
-    }
-    else if(hash == "prime-bookshelf") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281356163');
-      $( ".prime-bookshelf" ).addClass( "active" );
-      $("#producttitle").html("Prime Bookshelf");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_bookshelf_BA_pair_large.jpg?v=1474986321');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-bookshelf");
-    }
-    else if(hash == "prime-center") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281037827');
-      $( ".prime-center" ).addClass( "active" );
-      $("#producttitle").html("Prime Center");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_center_BA_ISO_large.jpg?v=1474986364');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-center");
-    }
-    else if(hash == "prime-satellite") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281038915');
-      $( ".prime-satellite" ).addClass( "active" );
-      $("#producttitle").html("Prime Satellite");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime_satellite_BA_pair_large.jpg?v=1474986414');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite");
-    }
-    else if(hash == "prime-elevation") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','8079259782');
-      $( ".prime-elevation" ).addClass( "active" );
-      $("#producttitle").html("Prime Elevation");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime-elevation-ba_large.jpg?v=1474989265');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-elevation");
-    }
-    else if(hash == "ultra-tower") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281008515');
-      $( ".ultra-tower" ).addClass( "active" );
-      $("#producttitle").html("Ultra Tower");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Ultra_tower_PG_pair_large.jpg?v=1474986882');
-      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-tower");
-    }
-    else if(hash == "ultra-bookshelf") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281010883');
-      $( ".ultra-bookshelf" ).addClass( "active" );
-      $("#producttitle").html("Ultra Bookshelf");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-bookshelf-pg_large.jpg?v=1474986938');
-      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-bookshelf");
-    }
-    else if(hash == "ultra-center") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3280413507');
-      $( ".ultra-center" ).addClass( "active" );
-      $("#producttitle").html("Ultra Center");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/130812_SVS_Center_Straight_flat_large.jpg?v=1474987085');
-      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-center");
-    }
-    else if(hash == "ultra-surround") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281009219');
-      $( ".ultra-surround" ).addClass( "active" );
-      $("#producttitle").html("Ultra Surround");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Ultra_surround_pair_large.jpg?v=1474987135');
-      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-surround");
-    }
-    else if(hash == "prime-satellite-2-1") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3291105987');
-      $( ".prime-satellite-2-1" ).addClass( "active" );
-      $("#producttitle").html("Prime Satellite 2.1 Package");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/prime-satellite-2-1_large.jpg?v=1474986474');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite-2-1");
-    }
-    else if(hash == "prime-satellite-5-1") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3291216259');
-      $( ".prime-satellite-5-1" ).addClass( "active" );
-      $("#producttitle").html("Prime Satellite 5.1 Package");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Satellite-5-1_main_large.jpg?v=1474986682');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-satellite-5-1");
-    }
-    else if(hash == "prime-bookshelf-surround-system") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3291478787');
-      $( ".prime-bookshelf-surround-system" ).addClass( "active" );
-      $("#producttitle").html("Prime Bookshelf Surround Package");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Bookshelf-Surround_main_large.jpg?v=1474986780');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-bookshelf-surround-system");
-    }
-    else if(hash == "prime-tower-surround-system") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3291480899');
-      $( ".prime-tower-surround-system" ).addClass( "active" );
-      $("#producttitle").html("Prime Tower Surround Package");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Prime-Tower-Surround_main_large.jpg?v=1474986734');
-      $(".productlink").attr("href", "https://www.svsound.com/products/prime-tower-surround-system");
-    }
-    else if(hash == "ultra-bookshelf-surround-package") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3290765379');
-      $( ".ultra-bookshelf-surround-package" ).addClass( "active" );
-      $("#producttitle").html("Ultra Bookshelf Surround Package");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-bookshelf-surround-system_large.jpg?v=1474987225');
-      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-bookshelf-surround-package");
-    }
-    else if(hash == "ultra-tower-surround-package") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3302432387');
-      $( ".ultra-tower-surround-package" ).addClass( "active" );
-      $("#producttitle").html("Ultra Tower Surround Package");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/ultra-tower-surround-system_large.jpg?v=1474987180');
-      $(".productlink").attr("href", "https://www.svsound.com/products/ultra-tower-surround-package");
-    }
-    else if(hash == "soundpath-subwoofer-isolation-system") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3291267971');
-      $( ".soundpath-subwoofer-isolation-system" ).addClass( "active" );
-      $("#producttitle").html("SoundPath Subwoofer Isolation System");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/iso_feet_installed_alt_2_large.jpg?v=1452545338');
-      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-subwoofer-isolation-system");
-    }
-    else if(hash == "soundpath-rca-audio-interconnect-cable") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3971557766');
-      $( ".soundpath-rca-audio-interconnect-cable" ).addClass( "active" );
-      $("#producttitle").html("SoundPath RCA Audio Interconnect Cable");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_rca_single_large.jpg?v=1475248789');
-      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-rca-audio-interconnect-cable");
-    }
-    else if(hash == "soundpath-pivoting-wall-ceiling-bracket") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3537991491');
-      $( ".soundpath-pivoting-wall-ceiling-bracket" ).addClass( "active" );
-      $("#producttitle").html("SoundPath Pivoting Wall/Ceiling Bracket");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_pivoting_bracket_productshot_large.jpg?v=1465925508');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-pivoting-wall-ceiling-bracket");
-    }
-    else if(hash == "soundpath-ultra-speaker-cable") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3934422086');
-      $( ".soundpath-ultra-speaker-cable" ).addClass( "active" );
-      $("#producttitle").html("SoundPath Ultra Speaker Cable");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_ultra_complete.jpg?v=1448914805');
-      $(".productlink").attr("href", "https://www.svsound.com/products/soundpath-ultra-speaker-cable");
-    }
-    else if(hash == "soundpath-one-speaker-cable") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3970896134');
-      $( ".soundpath-one-speaker-cable" ).addClass( "active" );
-      $("#producttitle").html("SoundPath One Speaker Cable");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/soundpath_one_spool_large.png?v=1449693373');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-one-speaker-cable");
-    }
-    else if(hash == "soundpath-speaker-cable-terminals") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3970764614');
-      $( ".soundpath-speaker-cable-terminals" ).addClass( "active" );
-      $("#producttitle").html("SoundPath Speaker Cable Terminals");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/Spade_large.jpg?v=1449503019');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/soundpath-speaker-cable-terminals");
-    }
-    else if(hash == "ultra-bookshelf-stand") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180774467');
-      $( ".ultra-bookshelf-stand" ).addClass( "active" );
-      $("#producttitle").html("Ultra Bookshelf Stand");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/UltraBookshelfStandZOOM_large.jpg?v=1445983161');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/ultra-bookshelf-stand");
-    }
-    else if(hash == "ultra-center-stand") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180777539');
-      $( ".ultra-center-stand" ).addClass( "active" );
-      $("#producttitle").html("Ultra Center Stand");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/UltraCenterStandZOOM_large.jpg?v=1445983113');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/ultra-center-stand");
-    }
-    else if(hash == "prime-satellite-stand") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3181254403');
-      $( ".prime-satellite-stand" ).addClass( "active" );
-      $("#producttitle").html("Prime Satellite Stand");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/PrimeSatelliteStandZOOM_large.jpg?v=1445983139');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/prime-satellite-stand");
-    }
-    else if(hash == "svs-sound-revolution-t-shirt") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3281026435');
-      $( ".svs-sound-revolution-t-shirt" ).addClass( "active" );
-      $("#producttitle").html("SVS Sound|Revolution T-Shirt");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/SVST-Shirt_large.jpg?v=1452545169');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/svs-sound-revolution-t-shirt");
-    }
-    else if(hash == "gold-rca-y-adapter") {
-      $(".currentproduct").css("display", "block");
-      $('.yotpo').attr('data-product-id','3180359171');
-      $( ".gold-rca-y-adapter" ).addClass( "active" );
-      $("#producttitle").html("Gold RCA-Y Adapter");
-      $('#productimage').attr('src', 'https://cdn.shopify.com/s/files/1/0921/3560/products/RCASplitterAdditional1ZOOM_large.jpg?v=1445983079');
-      $(".productlink").attr("href", "https://www.svsound.com/collections/accessories/products/gold-rca-y-adapter");
-    }
-  }
-  
-  function hashselect() {
-    var hashtitle= $('#mobiledropdown option:selected').text();
-    var hash= $('#mobiledropdown option:selected').val();
-    ga('send', 'event', 'All Product Reviews Page', hashtitle + ' Sort - Mobile');
-    window.location.href = 'https://www.svsound.com/blogs/press-reviews/tagged/'+hash;
-  }
-
-  
-  function productSelect() {
-    var product = document.getElementById('productselector').value;
-    window.location.hash = '#' +product +'-write';
-    location.reload();
+                    <div class="readareviewholder hidden-md hidden-lg">
+                        <span class="readareviewbutton" id="readareview" onclick="document.getElementById('productselectormobile').style.display = 'block';">SELECT PRODUCT REVIEWS</span>
+                        <div class="product-selector-mobile" id="productselectormobile">
+                          <select id="mobiledropdown" onchange="hashselect();">
+                            <option value=""></option>
+                            <option value="pb-1000">PB-1000</option>
     
-  }
-</script>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 blog-content-area">
+
+                    <div class="blog-single-wrap">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> Speaker Topics </h1>
+                        </div>
+      
+                        {% for article in blog.articles %}<br/>
+                      
+                      {{ article.title }}
+                          
+
+                        {% endfor %}
+
+                        <a class="view-all-blog-posts" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+                    <div class="blog-single-wrap">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> Subwoofer Topics </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "subwoofer-topic"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> System Set-Up </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "system-set-up"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> Sound Experts Advice </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "sound-experts-advice"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> SVS Audio Bytes </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "audio-byte"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+
+                </div>
+
+                <div class="social-sidebar hidden-sm hidden-xs">
+                    {% include 'blog-sidebar_V2' %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

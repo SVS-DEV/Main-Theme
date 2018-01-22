@@ -1,164 +1,236 @@
 {{ 'blog-index.css' | asset_url | stylesheet_tag }}
+<style>
+  .blog-tagged {
+    display:none;
+  }
+  </style>
 <div class="blog-index-wrap">
     <section>
         <div class="wrap">
             <div class="container-fluid">
 
                 <div class="col-md-2 filter-wrap">
-                    <h3> Filter Area </h3>
-                    <ul>
-                        <li> Speaker Topics </li>
-                        <li> Subwoofer Topics </li>
-                        <li> System Set-Up </li>
-                        <li> Sound Experts Advice </li>
-                        <li> SVS Audio Bytes </li>
+                    <h3> Browse by Category </h3>
+                    <ul class="hidden-sm hidden-xs">
+                        <li> <a href="/blogs/svs/tagged/speaker-topic"> Speaker Related </a> </li>
+                        <li> <a href="/blogs/svs/tagged/subwoofer-topic"> Subwoofer Related </a> </li>
+                        <li> <a href="/blogs/svs/tagged/system-set-up"> System Set-Up Guides </a> </li>
+                        <li> <a href="/blogs/svs/tagged/sound-experts-advice"> Sound Experts Tips </a> </li>
+                        <li> <a href="/blogs/svs/tagged/audio-byte"> SVS News & Notes </a> </li>
                     </ul>
 
-                    <ul class="other-blogs">
-                        <li> <a href="/blogs/artist-spotlight"> Featured Artist Systems </a> </li>
+                    <ul class="other-blogs hidden-sm hidden-xs">
+                        <li> <a href="/blogs/svs"> Return to Main Blog </a></li>
+                        <!--<li> <a href="/blogs/artist-spotlight"> Featured Artist Systems </a> </li>
                         <li> <a href="/blogs/featured-systems"> Featured Customer Systems </a> </li>
-                        <li> <a href="/pages/svs-videos"> SVS Videos </a> </li>
+                        <li> <a href="/pages/svs-videos"> SVS Videos </a> </li>-->
                     </ul>
-                </div>
 
-                <div class="col-md-7">
-
-                    <div class="blog-single-wrap">
-                        <div class="blog-single-heading cf">
-                            <h1 class="col-md-12">
-                                Speaker Topics
-                            </h1>
-                            <a class="view-all-blog-posts col-md-12" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    <div class="readareviewholder hidden-md hidden-lg">
+                        <div class="product-selector-mobile" id="productselectormobile">
+                          <select id="mobiledropdown" onchange="hashselect();">
+                            <optgroup>
+                            <option value=""></option>
+                            <option value="speaker-topic"> Speaker Related </option>
+                            <option value="speaker-topic"> Subwoofer Related </option>
+                            <option value="speaker-topic"> System Set-Up Guides </option>
+                            <option value="speaker-topic"> Sound Experts Tips </option>
+                            <option value="speaker-topic"> SVS News & Notes </option>
+                            </optgroup>
+                          </select>
                         </div>
-
-                        {% paginate blog.articles by 2 %}
-                        {% for article in blog.articles %}
-                        <div class="blog-post cf">
-                            <div class="col-md-3 blog-thumbnail-wrap" data-match-height="thumb-height">
-                                <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
-                            </div>
-                            <div class="col-md-9" data-match-height="thumb-height">
-                                <h2>
-                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
-                                </h2>
-                                <p> {{ article.excerpt_or_content | strip_html | truncate: 180 }} </p>
-                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endpaginate %}
-
                     </div>
-                    <div class="blog-single-wrap">
-                        <div class="blog-single-heading cf">
-                            <h1 class="col-md-12">
-                                Subwoofer Topics
-                            </h1>
-                            <a class="view-all-blog-posts col-md-12" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
-                        </div>
-
-                        {% paginate blog.articles by 2 %}
-                        {% for article in blog.articles %}
-                        <div class="blog-post cf">
-                            <div class="col-md-3 blog-thumbnail-wrap" data-match-height="thumb-height">
-                                <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
-                            </div>
-                            <div class="col-md-9" data-match-height="thumb-height">
-                                <h2>
-                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
-                                </h2>
-                                <p> {{ article.excerpt_or_content | strip_html | truncate: 180 }} </p>
-                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endpaginate %}
-
-                    </div>
-
-                    <div class="blog-single-wrap">
-                        <div class="blog-single-heading cf">
-                            <h1 class="col-md-12">
-                                System Set-Up
-                            </h1>
-                            <a class="view-all-blog-posts col-md-12" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
-                        </div>
-
-                        {% paginate blog.articles by 2 %}
-                        {% for article in blog.articles %}
-                        <div class="blog-post cf">
-                            <div class="col-md-3 blog-thumbnail-wrap" data-match-height="thumb-height">
-                                <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
-                            </div>
-                            <div class="col-md-9" data-match-height="thumb-height">
-                                <h2>
-                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
-                                </h2>
-                                <p> {{ article.excerpt_or_content | strip_html | truncate: 180 }} </p>
-                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endpaginate %}
-
-                    </div>
-
-                    <div class="blog-single-wrap">
-                        <div class="blog-single-heading cf">
-                            <h1 class="col-md-12"> Sound Experts Advice </h1>
-                            <a class="view-all-blog-posts col-md-12" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
-                        </div>
-
-                        {% paginate blog.articles by 2 %}
-                        {% for article in blog.articles %}
-                        <div class="blog-post cf">
-                            <div class="col-md-3 blog-thumbnail-wrap" data-match-height="thumb-height">
-                                <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
-                            </div>
-                            <div class="col-md-9" data-match-height="thumb-height">
-                                <h2>
-                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
-                                </h2>
-                                <p> {{ article.excerpt_or_content | strip_html | truncate: 180 }} </p>
-                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endpaginate %}
-
-                    </div>
-
-                    <div class="blog-single-wrap">
-                        <div class="blog-single-heading cf">
-                            <h1 class="col-md-12">
-                                SVS Audio Bytes
-                            </h1>
-                            <a class="view-all-blog-posts col-md-12" href="#"> View All <i class="fa fa-angle-double-right"></i> </a>
-                        </div>
-
-                        {% paginate blog.articles by 2 %}
-                        {% for article in blog.articles %}
-                        <div class="blog-post cf">
-                            <div class="col-md-3 blog-thumbnail-wrap" data-match-height="thumb-height">
-                                <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
-                            </div>
-                            <div class="col-md-9" data-match-height="thumb-height">
-                                <h2>
-                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
-                                </h2>
-                                <p> {{ article.excerpt_or_content | strip_html | truncate: 180 }} </p>
-                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endpaginate %}
-
-                    </div>
-
 
                 </div>
 
-                <div class="social-sidebar">
+                <div class="col-md-7 blog-content-area">
+
+                  <div class="blog-single-wrap blog-tagged">
+                    <div class="blog-single-heading cf">
+                      <h1 class="filtered-header">Filtered:</h1>
+                    </div>
+
+                    {% for article in blog.articles %}<br/>
+                      <div class="blog-post cf">
+                        <div class="blog-thumbnail-wrap col-sm-3">
+                            <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                        </div>
+
+                        <div class="post-content-wrap col-sm-9">
+                                <h2>
+                                    <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                </h2>
+                                <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                  </div>
+
+                    <div class="blog-single-wrap blog-general">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> Speaker Related </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "speaker-topic"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+
+                        <a class="view-all-blog-posts" href="/blogs/svs/tagged/speaker-topic"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap blog-general">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> Subwoofer Related </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "subwoofer-topic"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="/blogs/svs/tagged/subwoofer-topic"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap blog-general">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> System Set-Up Guides </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "system-set-up"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="/blogs/svs/tagged/system-set-up"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap blog-general">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> Sound Experts Tips </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "sound-experts-advice"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="/blogs/svs/tagged/sound-experts-advice"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                    <div class="blog-single-wrap blog-general">
+                        <div class="blog-single-heading cf">
+                            <h1 class=""> SVS News & Notes </h1>
+                        </div>
+
+                        {% assign: my_limit = 2 %}
+                        {% assign: loops = 0 %}
+                        {% for article in blogs.svs.articles %}
+                            {% if article.tags contains "audio-byte"  %}
+                            {% assign: loops = loops | plus: 1 %}
+                                <div class="blog-post cf">
+                                    <div class="blog-thumbnail-wrap col-sm-3">
+                                        <img src="{{ article | img_url: 'large' }}" class="blog-thumbnail">
+                                    </div>
+
+                                    <div class="post-content-wrap col-sm-9">
+                                        <h2>
+                                            <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article List - {{ article.title }}')">{{ article.title }}</a>
+                                        </h2>
+                                        <p> {{ article.excerpt_or_content | strip_html | truncate: 100 }} </p>
+                                        <a href="{% if article.metafields.blog.link %}{{ article.metafields.blog.link }} {% else %}{{ article.url }}{% endif %}" onclick="ga('send', 'event', 'Blogs', 'Click', 'Article Read More - {{ article.title }}')" class="read-more"> Read More <i class="fa fa-angle-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                            {% endif %}
+                            {% if loops >= my_limit %}
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                        <a class="view-all-blog-posts" href="/blogs/svs/tagged/audio-byte"> View All <i class="fa fa-angle-double-right"></i> </a>
+                    </div>
+
+                </div>
+
+                <div class="social-sidebar hidden-sm hidden-xs">
                     {% include 'blog-sidebar_V2' %}
                 </div>
 
@@ -166,3 +238,31 @@
         </div>
     </section>
 </div>
+
+<script>
+  if(window.location.href.indexOf("tagged") > -1) {
+    $( ".blog-tagged" ).show();
+    $( ".blog-general" ).hide();
+  }
+
+  if (window.location.href.indexOf("speaker-topic") > -1) {
+    $( "body" ).addClass( "speaker-topic" );
+    $('.filtered-header').text('Speaker Related');
+  }
+  if (window.location.href.indexOf("subwoofer-topic") > -1) {
+    $( "body" ).addClass( "subwoofer-topic" );
+    $('.filtered-header').text('Subwoofer Related');
+  }
+  if (window.location.href.indexOf("system-set-up") > -1) {
+    $( "body" ).addClass( "system-set-up" );
+    $('.filtered-header').text('System Set-Up Guides');
+  }
+  if (window.location.href.indexOf("sound-experts-advice") > -1) {
+    $( "body" ).addClass( "sound-experts-advice" );
+    $('.filtered-header').text('Sound Experts Tips');
+  }
+  if (window.location.href.indexOf("audio-byte") > -1) {
+    $( "body" ).addClass( "audio-byte" );
+    $('.filtered-header').text('SVS News &amp; Notes');
+  }
+</script>

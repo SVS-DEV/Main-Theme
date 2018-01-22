@@ -1,0 +1,213 @@
+{{ article.tags | join: ', ' }}
+{% assign thisproduct = article.title %}
+{% assign: my_limit = 5 %}
+{% assign: loops = 0 %}
+<div class="row">
+  {% for article in blog.articles %}
+  	{% if article.title == "The Art Of Speaker Placement" or article.title == "The Art of Subwoofer Placement"%}
+  		{% if article.metafields.global.recommended_image  != blank %}
+  			{% assign blog-header = article.metafields.global.recommended_image %}
+  		{% else %}
+  			{% assign blog-header = article.image | img_url: 'large' %}
+  		{% endif %}
+  <div class="post featured col-lg-4 col-md-6 col-sm-12">
+    <a href="{{ article.url }}">
+      <img src="{{ blog-header }}" alt="{{ article.title }}">
+      <h2>{{ article.title }}</h2>
+    </a>
+  </div>
+  	{% endif %}
+  {% endfor %}
+  
+
+
+  
+  {% unless article.tags contains 'subwoofer-topic' or article.tags contains 'sound-experts-advice'%}
+  {% if article.tags contains 'speaker-topic'%}
+  This Page Contains Speaker Topic Tag
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+  		{% else %}
+  			{% if article.tags contains 'speaker-topic'%}
+  				{% assign: loops = loops | plus: 1 %}
+            		{% if article.metafields.global.recommended_image  != blank %}
+            			{% assign blog-header = article.metafields.global.recommended_image %}
+            		{% else %}
+            			{% assign blog-header = article.image | img_url: 'large' %}
+            		{% endif %}
+  				<div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+                  <a href="{{ article.url }}">
+                    <img src="{{ blog-header }}" alt="{{ article.title }}">
+                    <h2>{{ article.title }}</h2>
+                  </a>
+  				</div>
+  			{% endif %}
+  		{% endif %}
+  	{% endfor %}
+  {% endif %}
+  {% endunless%}
+  
+  {% unless article.tags contains 'speaker-topic'  or article.tags contains 'sound-experts-advice'%}
+  {% if article.tags contains 'subwoofer-topic'%}
+  This Page Contains Subwoofer Topic Tag
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+        {% else %}
+            {% if article.tags contains 'subwoofer-topic'%}
+  				{% assign: loops = loops | plus: 1 %}
+            	{% if article.metafields.global.recommended_image  != blank %}
+            		{% assign blog-header = article.metafields.global.recommended_image %}
+            	{% else %}
+            		{% assign blog-header = article.image | img_url: 'large' %}
+            	{% endif %}
+            <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+              <a href="{{ article.url }}">
+                <img src="{{ blog-header }}" alt="{{ article.title }}">
+                <h2>{{ article.title }}</h2>
+              </a>
+            </div>
+            {% endif %}
+        {% endif %}
+     {% endfor %}
+  {% endif %}
+  {% endunless%}
+  
+  {% if article.tags contains 'subwoofer-topic' and article.tags contains 'speaker-topic'%}
+  This Page Contains Subwoofer Topic and Speaker Topic
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+  		{% else %}
+        {% if article.tags contains 'speaker-topic' or article.tags contains 'subwoofer-topic'%}
+  	    	{% assign: loops = loops | plus: 1 %}
+            {% if article.metafields.global.recommended_image  != blank %}
+            	{% assign blog-header = article.metafields.global.recommended_image %}
+            {% else %}
+            	{% assign blog-header = article.image | img_url: 'large' %}
+            {% endif %}
+            <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+              <a href="{{ article.url }}">
+                <img src="{{ blog-header }}" alt="{{ article.title }}">
+                <h2>{{ article.title }}</h2>
+              </a>
+            </div>
+         {% endif %}
+       {% endif %}
+    {% endfor %}
+  {% endif %}
+  
+  
+  {% unless article.tags contains 'speaker-topic'  or article.tags contains 'subwoofer-topic' %}
+  {% if article.tags contains 'sound-experts-advice'%}
+  This Page Contains Only the Sound Expert Advice Tag
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+  		{% else %}
+        {% if article.tags contains 'sound-experts-advice'%}
+  	    	{% assign: loops = loops | plus: 1 %}
+            {% if article.metafields.global.recommended_image  != blank %}
+            	{% assign blog-header = article.metafields.global.recommended_image %}
+            {% else %}
+            	{% assign blog-header = article.image | img_url: 'large' %}
+            {% endif %}
+            <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+              <a href="{{ article.url }}">
+                <img src="{{ blog-header }}" alt="{{ article.title }}">
+                <h2>{{ article.title }}</h2>
+              </a>
+            </div>
+         {% endif %}
+       {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% endunless %}
+
+  {% unless article.tags contains 'speaker-topic'%}
+  {% if article.tags contains 'subwoofer-topic' and article.tags contains 'sound-experts-advice'%}
+  This Page Contains Sound Expert Advice and Subwoofer Topic
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+  		{% else %}
+        {% if article.tags contains 'sound-experts-advice' and article.tags contains 'subwoofer-topic'%}
+  	    	{% assign: loops = loops | plus: 1 %}
+            {% if article.metafields.global.recommended_image  != blank %}
+            	{% assign blog-header = article.metafields.global.recommended_image %}
+            {% else %}
+            	{% assign blog-header = article.image | img_url: 'large' %}
+            {% endif %}
+            <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+              <a href="{{ article.url }}">
+                <img src="{{ blog-header }}" alt="{{ article.title }}">
+                <h2>{{ article.title }}</h2>
+              </a>
+            </div>
+         {% endif %}
+       {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% endunless%}
+  
+  {% unless article.tags contains 'subwoofer-topic'%}
+  {% if article.tags contains 'speaker-topic' and article.tags contains 'sound-experts-advice'%}
+  This Page Contains Sound Expert Advice and Speaker Topic
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+  		{% else %}
+        {% if article.tags contains 'sound-experts-advice' and article.tags contains 'speaker-topic'%}
+  	    	{% assign: loops = loops | plus: 1 %}
+            {% if article.metafields.global.recommended_image  != blank %}
+            	{% assign blog-header = article.metafields.global.recommended_image %}
+            {% else %}
+            	{% assign blog-header = article.image | img_url: 'large' %}
+            {% endif %}
+            <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+              <a href="{{ article.url }}">
+                <img src="{{ blog-header }}" alt="{{ article.title }}">
+                <h2>{{ article.title }}</h2>
+              </a>
+            </div>
+         {% endif %}
+       {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% endunless%}
+  
+
+  {% if article.tags contains 'audio-byte' %}
+  This Page contains Audio Bytes Topic
+  {% for article in blog.articles %}
+  		{% if article.title == 'The Art Of Speaker Placement' or article.title == 'The Art of Subwoofer Placement' %}
+  		{% else %}
+        {% if article.tags contains 'audio-byte'%}
+  	    	{% assign: loops = loops | plus: 1 %}
+            {% if article.metafields.global.recommended_image  != blank %}
+            	{% assign blog-header = article.metafields.global.recommended_image %}
+            {% else %}
+            	{% assign blog-header = article.image | img_url: 'large' %}
+            {% endif %}
+            <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if loops >= my_limit %}bloghide{% endif %}">
+              <a href="{{ article.url }}">
+                <img src="{{ blog-header }}" alt="{{ article.title }}">
+                <h2>{{ article.title }}</h2>
+              </a>
+            </div>
+         {% endif %}
+       {% endif %}
+    {% endfor %}
+  {% endif %}
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+ 
+          </div>

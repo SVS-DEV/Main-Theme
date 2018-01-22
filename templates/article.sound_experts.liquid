@@ -41,28 +41,9 @@
           
 
 
-    
+    {% include 'related-blogs_sound-experts' %}
 
-          <div class="row">
-{% assign thisproduct = article.title %}
-                    {% for article in blog.articles %}
-
-    {% if article.title <> thisproduct %}
-
-                        {% if article.metafields.global.recommended_image  != blank %}
-                            {% assign blog-header = article.metafields.global.recommended_image %}
-                        {% else %}
-                            {% assign blog-header = article.image | img_url: 'large' %}
-                        {% endif %}
-                    <div class="post featured col-lg-4 col-md-6 col-sm-12 {%if forloop.index > 7 %}bloghide{% endif %}">
-                        <a href="{{ article.url }}">
-                            <img src="{{ blog-header }}" alt="{{ article.title }}">
-                            <h2>{{ article.title }}</h2>
-                        </a>
-                    </div>
-            {% endif %}
-                    {% endfor %}
-          </div>
+          
         </div>
             <div class="showmore" onclick="$('.bloghide').show(); $(this).hide()">Show All</div>
 

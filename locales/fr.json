@@ -16,11 +16,7 @@
     "search": {
       "placeholder": "recherche",
       "no_results_title": "Aucun résultat de recherche",
-<<<<<<< HEAD
-      "no_results_html": "Votre recherche pour <strong>{{ search }}</strong> n'a donné aucun résultat. Essayez une autre recherche.",
-=======
       "no_results_html": "Votre recherche pour <strong>{{ search }}<\/strong> n'a donné aucun résultat. Essayez une autre recherche.",
->>>>>>> origin/master
       "results_title": "Résultats de la recherche"
     },
     "meta": {
@@ -62,11 +58,7 @@
       }
     },
     "product_item": {
-<<<<<<< HEAD
-      "from_text_html": "<em>À partir de</em> {{ price }}"
-=======
       "from_text_html": "<em>À partir de<\/em> {{ price }}"
->>>>>>> origin/master
     },
     "list_collections": {
       "product_collections": "Collections de produits"
@@ -108,11 +100,7 @@
     "example_product": {
       "title": "Exemple de produit",
       "overlay_title": " Ceci est un exemple de page de produit",
-<<<<<<< HEAD
-      "subtext_html": "Ajoutez votre propre produit pour voir cette page en action et pour tester le processus de commande. Pour obtenir des conseils sur la rédaction de descriptions efficaces, lisez <a href=\"http://www.shopify.com/blog/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 façons simples d'écrire des descriptions de produits qui vendent.</a>",
-=======
       "subtext_html": "Ajoutez votre propre produit pour voir cette page en action et pour tester le processus de commande. Pour obtenir des conseils sur la rédaction de descriptions efficaces, lisez <a href=\"http:\/\/www.shopify.com\/blog\/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 façons simples d'écrire des descriptions de produits qui vendent.<\/a>",
->>>>>>> origin/master
       "add_product": "Ajouter un produit",
       "description_html": "La description de votre produit s'affichera à cet endroit."
     }
@@ -120,11 +108,7 @@
   "blogs": {
     "article": {
       "posted_on_date": "Publié le {{ date }}",
-<<<<<<< HEAD
-      "comment_meta_html": "<strong>{{ author }}</strong> le {{ date }}"
-=======
       "comment_meta_html": "<strong>{{ author }}<\/strong> le {{ date }}"
->>>>>>> origin/master
     },
     "comments": {
       "title": "Commentaires",
@@ -166,19 +150,11 @@
   "home_page": {
     "onboarding": {
       "products_title": "Vous n'avez pas encore ajouté de produits",
-<<<<<<< HEAD
-      "products_text_html": "<a href=\"/admin/products\">Ajouter votre premier produit</a> à votre boutique prend moins d'une minute. Assurez-vous de l'ajouter à la collection <strong>{{ frontpage }}</strong> pour qu'il s'affiche sur la page d'accueil.",
-      "add_product": "Ajouter un produit",
-      "view_sample": "Voir un exemple de produit",
-      "collections_title": "Vous y êtes presque...",
-      "collections_text_html": "Maintenant, ajoutez un produit à la collection <em>{{ frontpage }}</em> pour qu'il s'affiche sur la page d'accueil.",
-=======
       "products_text_html": "<a href=\"\/admin\/products\">Ajouter votre premier produit<\/a> à votre boutique prend moins d'une minute. Assurez-vous de l'ajouter à la collection <strong>{{ frontpage }}<\/strong> pour qu'il s'affiche sur la page d'accueil.",
       "add_product": "Ajouter un produit",
       "view_sample": "Voir un exemple de produit",
       "collections_title": "Vous y êtes presque...",
       "collections_text_html": "Maintenant, ajoutez un produit à la collection <em>{{ frontpage }}<\/em> pour qu'il s'affiche sur la page d'accueil.",
->>>>>>> origin/master
       "add_collection": "Ajouter à la collection",
       "learn_collections": "En apprendre plus sur les collections",
       "example_product_title": "Exemple de produit en vedette",
@@ -202,11 +178,7 @@
       "send": "Envoyer",
       "post_success": "Merci d'être entré en contact avec nous. Nous communiquerons avec vous dès que possible.",
       "post_error": "Oups, désolé. Nous n'avons pu soumettre votre demande. Veuillez corriger ce qui suit et soumettre à nouveau:",
-<<<<<<< HEAD
-      "post_field_error_html": "Le <strong>{{ field }}</strong> {{ error }}"
-=======
       "post_field_error_html": "Le <strong>{{ field }}<\/strong> {{ error }}"
->>>>>>> origin/master
     },
     "placeholder": {
       "name": "Pierre Untel",
@@ -244,11 +216,7 @@
       "city": "Ville",
       "country": "Pays",
       "province": "Province",
-<<<<<<< HEAD
-      "zip": "Code postal/ZIP",
-=======
       "zip": "Code postal\/ZIP",
->>>>>>> origin/master
       "phone": "téléphone",
       "set_default": "Définir comme adresse par défaut?",
       "add": "Ajouter l'adresse",
@@ -323,8 +291,4 @@
       "left": "Restant"
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master

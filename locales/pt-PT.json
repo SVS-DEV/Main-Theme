@@ -16,11 +16,7 @@
     "search": {
       "placeholder": "pesquisar a nossa loja",
       "no_results_title": "Sem resultados de pesquisa",
-<<<<<<< HEAD
-      "no_results_html": "A sua pesquisa por <strong>{{ search }}</strong> não produziu resultados. Experimente procurar outra coisa.",
-=======
       "no_results_html": "A sua pesquisa por <strong>{{ search }}<\/strong> não produziu resultados. Experimente procurar outra coisa.",
->>>>>>> origin/master
       "results_title": "Resultados da Pesquisa"
     },
     "meta": {
@@ -62,11 +58,7 @@
       }
     },
     "product_item": {
-<<<<<<< HEAD
-      "from_text_html": "<em>Desde</em> {{ price }}"
-=======
       "from_text_html": "<em>Desde<\/em> {{ price }}"
->>>>>>> origin/master
     },
     "list_collections": {
       "product_collections": "Coleções de Produtos"
@@ -106,29 +98,17 @@
       "example_title": "Título do Produto Exemplo"
     },
     "example_product": {
-<<<<<<< HEAD
-    "title": "Exemplo de produto",
-    "overlay_title": "Este é um exemplo de uma página de produto",
-    "subtext_html": "Adicione o seu próprio produto para ver esta página em funcionamento e para dar o primeiro passo a testar encomendas. Para dicas sobre como compor descrições eficazes, consulte <a href=\"http://www.shopify.com/blog/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 maneiras simples de compor descrições de produtos que levam à compra.</a>",
-    "add_product": "Adicione um produto",
-    "description_html": "É aqui que é apresentada a descrição do seu produto."
-=======
       "title": "Exemplo de produto",
       "overlay_title": "Este é um exemplo de uma página de produto",
       "subtext_html": "Adicione o seu próprio produto para ver esta página em funcionamento e para dar o primeiro passo a testar encomendas. Para dicas sobre como compor descrições eficazes, consulte <a href=\"http:\/\/www.shopify.com\/blog\/8211159-9-simple-ways-to-write-product-descriptions-that-sell?utm_source=default-theme&utm_medium=contextual&utm_campaign=default-theme-products-tooltips-experiment\" target=\"shopify_info\">9 maneiras simples de compor descrições de produtos que levam à compra.<\/a>",
       "add_product": "Adicione um produto",
       "description_html": "É aqui que é apresentada a descrição do seu produto."
->>>>>>> origin/master
     }
   },
   "blogs": {
     "article": {
       "posted_on_date": "Publicado em  {{ date }}",
-<<<<<<< HEAD
-      "comment_meta_html": "<strong>{{ author }}</strong> em {{ date }}"
-=======
       "comment_meta_html": "<strong>{{ author }}<\/strong> em {{ date }}"
->>>>>>> origin/master
     },
     "comments": {
       "title": "Comentários",
@@ -170,19 +150,11 @@
   "home_page": {
     "onboarding": {
       "products_title": "Ainda não adicionou nenhum produto",
-<<<<<<< HEAD
-      "products_text_html": "Demore menos de um minuto a <a href=\"/admin/products\">adicionar o seu primeiro produto</a> à sua loja. Certifique-se de que o adiciona à coleção <strong>{{ frontpage }}</strong> para o ver na página inicial.",
-      "add_product": "Adicionar um produto",
-      "view_sample": "Ver um produto de amostra",
-      "collections_title": "Está quase...",
-      "collections_text_html": "Agora, adicione um produto à coleção <strong>{{ frontpage }}</strong> para o ver na página inicial.",
-=======
       "products_text_html": "Demore menos de um minuto a <a href=\"\/admin\/products\">adicionar o seu primeiro produto<\/a> à sua loja. Certifique-se de que o adiciona à coleção <strong>{{ frontpage }}<\/strong> para o ver na página inicial.",
       "add_product": "Adicionar um produto",
       "view_sample": "Ver um produto de amostra",
       "collections_title": "Está quase...",
       "collections_text_html": "Agora, adicione um produto à coleção <strong>{{ frontpage }}<\/strong> para o ver na página inicial.",
->>>>>>> origin/master
       "add_collection": "Adicionar à coleção",
       "learn_collections": "Saiba mais sobre coleções",
       "example_product_title": "Produto em Destaque Exemplo",
@@ -206,11 +178,7 @@
       "send": "Enviar",
       "post_success": "Obrigado por entrar em contacto connosco. Responder-lhe-emos logo que possível.",
       "post_error": "Oh não. Lamentamos, mas não conseguímos enviar o seu pedido. Por favor, corrija os seguintes elementos e tente novamente:",
-<<<<<<< HEAD
-      "post_field_error_html": "O campo <strong>{{ field }}</strong> {{ error }}"
-=======
       "post_field_error_html": "O campo <strong>{{ field }}<\/strong> {{ error }}"
->>>>>>> origin/master
     },
     "placeholder": {
       "name": "Fulano de Tal",
@@ -323,8 +291,4 @@
       "left": "restante"
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master

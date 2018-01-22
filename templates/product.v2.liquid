@@ -11,7 +11,15 @@
 
 </style>
 {% endif %}
+
+
+
 <style>
+  .pp-jeeves h4:after {
+    content:"\f101";
+    font-family:'FontAwesome';
+    margin-left:5px;
+  }
   .spl-graph small {
   display: block;
   margin: 18px auto 24px auto;
@@ -339,7 +347,14 @@
                                 {% assign bundled_products_collection = collections.bundled-products %}
                                 <div class="product-details__offer-wrap hideRU">
                                     {% include 'bundle-selection' %}
+                                  {% if product.title == 'Prime Satellite 5.1 System' %}
                                     <div class="col-xs-12"> <div class="bs-bottom-border-fix"></div> </div>
+                                  <div class="col-xs-12 pp-jeeves">
+                                    <h4 style="font-size:16px;">Customize Your Perfect Speaker System and Save</h4>
+                                    <p style="font-size:14px;">Get exactly what you want with Jeeves, the SVS speaker and subwoofer system builder.</p>
+                                  </div>
+                                  {% endif %}
+                                  <div class="col-xs-12"> <div class="bs-bottom-border-fix"></div> </div>
                                 </div>
                                 {% endif %}
                             </div>
@@ -937,6 +952,7 @@
         document.getElementById("stockmanufacture").innerHTML='<p style="color:red;margin-top:10px; font-size:14px; line-height:18px;">Black Ash will resume shipping December 29th. Piano Gloss White will resume shipping January 26th.</p>';
         $( "#stockmanufacture" ).addClass( "nochange" );
 </script>
+
       {% endif %}
 <!-- Went up 11-27-2017 -->
 {% if product.title == "Prime Satellite 2.1 System"%}

@@ -1,0 +1,189 @@
+        <script src="//www.digitaldarts.com.au/relatedposts/timestamp.php?shop=svsound-2.myshopify.com"></script>
+        {% capture timestamp_content %}{% include 'timestamp' %}{% endcapture %}
+        {% unless timestamp_content contains "Liquid error" %}
+          {% include 'timestamp' %}
+        {% endunless %}
+       
+        {% if timestamp == '' %}
+                {% assign timestamp = 'now' | date : "%s" %}
+        {% endif %}
+        
+        {% assign ex_ids = ""%}
+                    {% assign ex_frmpool_id = article.id | append: '"' | prepend: '"' %}
+        
+        {% assign ex_tags = "" | split: "," %}
+        {% assign no_post_display = 6 %}
+
+        {% assign b_id = blog.id  %}
+
+                    {% assign blog_ids = "41209923"  %}
+        
+                                {% assign blog_handle_arr = "svs" | split: "," %}
+                    
+        {% assign blog_flag = "false" %}
+        
+        {% unless blog_ids contains b_id %}
+        {% assign blog_flag = "true" %}
+        {% endunless %}
+        
+        {% unless ex_ids contains article.id %}
+
+        {% if blog_flag == "false" %}  
+
+        {% assign article_temp = article.id %}
+
+        {% assign related_posts = "" %}
+        {% assign curr_blog = blog.handle %}
+
+        {% for article in blogs[curr_blog].articles %}
+        {% if article.id == article_temp %} 
+        {% assign current_post_tags = article.tags %}
+        {% assign article_author = article.author %}
+        {% assign article_title = article.title %}
+        {% assign article_title_arr = article_title | remove : " " | split: "" %}
+        {% endif %}
+        {% endfor %}
+
+        {% assign main_flag = "true" %}
+        {% for tag in ex_tags %}
+        {% assign ex_tags_temp = tag | strip %}
+        {% if current_post_tags contains ex_tags_temp %}
+        {% assign main_flag = "false" %}
+        {% endif %}
+        {% endfor %}
+
+        {% if main_flag == "true" %}
+
+        <div id="relatedblogs">
+
+            {% for blog in blog_handle_arr %}
+
+            {% assign blog_temp = blog %}   
+
+            {% for article in blogs[blog_temp].articles %}
+            {% unless ex_frmpool_id contains article.id %}
+            
+                {% assign atitle_temp = article.title | remove : " " | split: "" %}
+                {% assign flag = "false" %}
+                {% for word in atitle_temp %}
+                {% if article_title_arr contains word %}
+                {% assign flag = "true" %}
+                {% break %}
+                {% endif %}
+                {% endfor %}                
+
+                {% assign t_flag = "false" %}
+                {% for tag in current_post_tags %}
+                {% if article.tags contains tag %}
+                {% assign t_flag = "true" %}
+                {% break %}
+                {% endif %}
+                {% endfor %}
+
+                {% if t_flag == "true"  or article_author ==  article.author or flag == "true" %} 
+                {% unless related_posts contains article.id %}
+                {% assign related_posts = related_posts | append:article.id | append : ","%}
+                {% endunless %}
+                {% endif %}   
+                        
+            {% endunless %}
+            {% endfor %}
+
+
+            {% endfor %}
+            
+            {% if related_posts.size > 0 %}
+            
+            {% assign tsl = timestamp | slice : -1,1 | times:1 %}
+            
+            {% assign rids = related_posts | split: ',' %}
+
+           
+            {% assign rindex = tsl %}
+
+            {% if tsl > rids.size or tsl < 0 %}
+                    {% assign time_arr = timestamp | split: '' %}
+                    {% for t in time_arr reversed %}
+                    {% assign ti = t | times:1 %}
+                    {% if ti < rids.size %}
+                            {% assign rindex = forloop.index %}
+                  			{% break %}
+                    {% endif %}
+                    {% endfor %}
+            {% endif %}
+
+            {% if rindex == rids.size %}
+                    {% assign rindex = rindex | minus : 1%}
+            {% endif %}
+
+            {% assign articleids = '' %}
+            {% for rid in rids offset:rindex %}
+                    {% assign articleids = articleids | append:rid | append : "," %}
+            {% endfor %}
+          
+			{% assign rsize = articleids | split:","  %}
+         
+            {% if rsize.size < no_post_display %}          		
+                {% for rid in rids %}
+                {% unless articleids contains rid %}
+                {% assign articleids = articleids | append:rid | append : "," %}
+                {% endunless %}
+                {% endfor %}
+            {% endif %}
+          
+            {% assign rsize = articleids | size | minus:1 %}
+            {% assign articleids = articleids | slice: 0, rsize | split:"," %}
+            
+            <h3>Related Posts</h3>            <ul>                            
+            {% assign count = 0 %}
+            {% for aid in articleids %}
+                {% assign rflag = "false" %}
+                {% for blog in blog_handle_arr %}
+                    {% assign blog_temp = blog %}  
+
+                    {% for article in blogs[blog_temp].articles %}
+                        {% if count == no_post_display %}
+                        {% break %}
+                        {% endif %}
+                        {% if aid contains article.id %}
+
+                            <li>  
+
+                                                        <div class="rb_contents">
+                            <a href='{{ article.url }}'>{{ article.title }}</a>
+                                                        {% if article.content != "" %}
+                            <p>{{ article.content | strip_html | strip | truncate: 120 }}</p>
+                            {% endif %}
+                                                        </div>
+
+                            </li>    
+                            {% assign rflag = "true" %}
+                            {% assign count = count | plus:1 %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if rflag == "true" %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+            </ul>            {% else %}
+
+            
+            {% endif %}
+
+            
+                <style type="text/css">
+                    .rb_contents{display:inline-block}
+                                        #relatedblogs li{display:block;}
+                                    </style>
+            
+
+        </div>
+
+        {% endif %}
+        {% endif %}
+
+        {% endunless %}
+
+        

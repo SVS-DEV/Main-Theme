@@ -65,7 +65,7 @@ This is done in the following format data-{addon product title without spaces}-{
 
 {% endfor %}
 
-<div class="product-details__offer-holder" data-bundle-product-id="{{ product_bundle.id }}">
+<div class="{% if product.title == 'Prime Satellite 5.1 System' %}product-details__offer-holder_sidebyside col-xs-12 col-sm-12 col-md-6 col-lg-6{% else %}product-details__offer-holder{% endif %}" data-bundle-product-id="{{ product_bundle.id }}">
 
   <select class="bundle-variants" style="display: none !important;">
     {% for variant in product_bundle.variants %}
